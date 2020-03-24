@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TerminalSiges.Views.Lib"
+             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+             Title="Reporte Cierre Z"
+             x:Class="TerminalSiges.Views.Pages.Print.PrintReporteCierreZ">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White" >
+            <StackLayout x:Name="MainStack" >
+                <busyindicator:SfBusyIndicator IsVisible="True" x:Name="busyindicator" AnimationType="Ball" Title="Cargando datos cierre Z..." ViewBoxWidth = "100" ViewBoxHeight="100" Duration="0.5" TextColor="#1c4081" />
+
+            </StackLayout>
+            <StackLayout x:Name="pdfStack">
+                <local:CustomWebView  x:Name="PdfDocView"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="MenuItem1" Order="Primary" Text="Volver" Priority="0" Clicked="IrAlInicio" />
+    </ContentPage.ToolbarItems>
+</ContentPage>

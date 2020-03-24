@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:titan="clr-namespace:TerminalSIGES.Views.Lib" 
+            xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+            xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"             
+            xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+            xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+              xmlns:sfListView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms" 
+             Title="Busqueda de Documentos"
+            x:Class="TerminalSiges.Views.Pages.Invoce.ConsultaDocuments">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Spacing="0" x:Name="principal"  AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  >
+                <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Center" Padding="10,0">
+
+                    <ContentView>
+                        <BoxView  HeightRequest="3" WidthRequest="10" Color="#1c4081" />
+                    </ContentView>
+
+
+                    <StackLayout BackgroundColor="#cddbe6" Padding="10,10" >
+                        <Grid Padding="10,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="120" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Row="0" 
+                                   Grid.Column="0" 
+                                   FontSize="25"
+                                   VerticalOptions="Center" 
+                                   HorizontalOptions="Start"
+                                   HorizontalTextAlignment="Center" 
+                                   Text="Documento"
+                                   FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteRegular}}"/>
+
+                            <combobox:SfComboBox x:Name="cboDocuments"
+                                                 Grid.Row="0" Grid.Column="1" 
+                                                 Grid.ColumnSpan="2"   
+                                                 HorizontalOptions="FillAndExpand" 
+                                                 Text="Seleccione"  
+                                                 DropDownTextSize="25" 
+                                                 DropDownItemHeight="60" 
+                                                 DropDownCornerRadius="10"  
+                                                 HeightRequest="60"
+                                                 SelectedDropDownItemColor="#cddbe6"
+                                                 DropDownTextColor="#005797"  
+                                                 TextSize="30"  DisplayMemberPath="Nombre"/>
+
+                            <Label Grid.Row="1" 
+                                   Grid.Column="0"  
+                                   FontSize="25"
+                                   VerticalOptions="Center" 
+                                   HorizontalOptions="Start" 
+                                   HorizontalTextAlignment="Center"  
+                                   Text="Nro" 
+                                   FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteRegular}}"/>
+
+                            <inputLayout:SfTextInputLayout Grid.Row="1" Grid.Column="1"
+                                FocusedColor="#0450C2"
+                                ContainerBackgroundColor="#E6EEF9"
+                                ContainerType="Outlined" 
+                                HorizontalOptions="FillAndExpand"
+                                ReserveSpaceForAssistiveLabels="False">
+
+                                <Entry x:Name="txtCodigoDescription"  FontSize="30" TextChanged="Entry_TextChanged" />
+
+                            </inputLayout:SfTextInputLayout>
+
+                            <buttons:SfButton Grid.Row="1" Grid.Column="2" 
+                                              HorizontalOptions="Center"
+                                              VerticalOptions="Center"
+                                              HorizontalTextAlignment="Center"
+                                              VerticalTextAlignment="Center"
+                                              BackgroundColor="#005797"                                              
+                                              BorderColor="#005797" 
+                                              FontAttributes="Bold"
+                                              Text="&#xE773;"     
+                                              BorderWidth="0"
+                                              FontSize="40"
+                                              WidthRequest="60" 
+                                              Clicked="BtnSearcDocuments_Clicked"
+                                              FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteSegoe}}"
+                                              HeightRequest="60"
+                                              CornerRadius="10"/>
+
+                        </Grid>
+
+                    </StackLayout>
+
+                    <ContentView x:Name="busyindicator" IsVisible="False" >
+                        <busyindicator:SfBusyIndicator AnimationType="Ball" Title="Procesando..." ViewBoxWidth = "100" ViewBoxHeight="100" Duration="0.5" TextColor="#006ba6" />
+                    </ContentView>
+
+                    <ContentView>
+                        <BoxView  HeightRequest="3" WidthRequest="10" Color="#1c4081" />
+                    </ContentView>
+                    <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="15*" />
+                                <ColumnDefinition Width="25*" />
+                                <ColumnDefinition Width="15*" />
+                                <ColumnDefinition Width="25*" />
+                                <ColumnDefinition Width="20*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0"
+                                   Grid.Column="0" 
+                                   FontSize="20"     
+                                   Text="Tipo Doc"    
+                                   HorizontalTextAlignment="Center"     
+                                   FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"/>
+
+                            <Label Grid.Row="0"
+                                   Grid.Column="1" 
+                                   FontSize="20"  
+                                   Text="Nro"  
+                                   HorizontalTextAlignment="Center"    
+                                   FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"/>
+
+                            <Label Grid.Row="0" 
+                                   Grid.Column="2" 
+                                   FontSize="20" 
+                                   Text="Fecha"    
+                                   HorizontalTextAlignment="Center"  
+                                   FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"/>
+
+                            <Label  Grid.Row="0" 
+                                    Grid.Column="3"   
+                                    FontSize="20"
+                                    HorizontalTextAlignment="Center"  
+                                    Text="NroPos" 
+                                    FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"/>
+
+                            <Label Grid.Row="0"
+                                   Grid.Column="4"  
+                                   FontSize="20" 
+                                   HorizontalTextAlignment="Center" 
+                                   Text="Estado" 
+                                   FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"/>
+
+                        </Grid>
+                        <BoxView  HeightRequest="2" WidthRequest="10" Color="#1c4081" />
+                        <Grid >
+                            <sfListView:SfListView x:Name="listView" 
+                                                        AllowSwiping="True"
+                                                        SwipeOffset="120" 
+                                                        SwipeThreshold="30" 
+                                                        ItemSize="50" 
+                                                        VerticalOptions="FillAndExpand"
+                                                        HorizontalOptions="FillAndExpand"
+                                                        SwipeStarted="ListView_SwipeStarted" 
+                                                        SwipeEnded="ListView_SwipeEnded" >
+                                <sfListView:SfListView.LeftSwipeTemplate>
+                                    <DataTemplate x:Name="LeftSwipeTemplate">
+                                        <Grid Margin="0,5">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Grid BackgroundColor="#009EDA" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Column="0">
+                                                <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                                                    <Image Grid.Column="0"
+                                                           Grid.Row="0"
+                                                           BackgroundColor="Transparent"
+                                                           HeightRequest="65"
+                                                           WidthRequest="65"   BindingContextChanged="leftImage_BindingContextChanged" />
+                                                </Grid>
+                                            </Grid>
+                                            <Grid BackgroundColor="#DC595F" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Column="1">
+                                                <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                                                    <Image Grid.Column="0"
+                                                           Grid.Row="0"
+                                                           BackgroundColor="Transparent"
+                                                           HeightRequest="65"
+                                                           WidthRequest="65"   BindingContextChanged="rightImage_BindingContextChanged" />
+                                                </Grid>
+                                            </Grid>
+                                        </Grid>
+                                    </DataTemplate>
+                                </sfListView:SfListView.LeftSwipeTemplate>
+                                <sfListView:SfListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <StackLayout VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand" BackgroundColor="#cddbe6">
+                                                <Grid >
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="30" />
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="15*" />
+                                                        <ColumnDefinition Width="25*" />
+                                                        <ColumnDefinition Width="15*" />
+                                                        <ColumnDefinition Width="25*" />
+                                                        <ColumnDefinition Width="20*" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Label Grid.Row="0" 
+                                                           Grid.Column="0" 
+                                                           FontSize="20"   
+                                                           Text="{Binding  tipodoc }"
+                                                           HorizontalOptions="Center"   
+                                                           HorizontalTextAlignment="Start"    
+                                                           FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteRegular}}"/>
+
+                                                    <Label Grid.Row="0" 
+                                                           Grid.Column="1" 
+                                                           FontSize="20"  
+                                                           Text="{Binding nrodocumento}" 
+                                                           HorizontalOptions="Start"  
+                                                           HorizontalTextAlignment="Center"     
+                                                           FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteRegular}}"/>
+
+                                                    <Label Grid.Row="0" 
+                                                           Grid.Column="2" 
+                                                           FontSize="20"  
+                                                           Text="{Binding  fecdocumento, StringFormat='{0:dd/MM/yyyy}'}"  
+                                                           HorizontalTextAlignment="Center"  
+                                                           FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteRegular}}"/>
+
+                                                    <Label Grid.Row="0" 
+                                                           Grid.Column="3"  
+                                                           FontSize="20"
+                                                           HorizontalTextAlignment="Center" 
+                                                           Text="{Binding  nropos}" 
+                                                           FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteRegular}}"/>
+
+                                                    <Label Grid.Row="0"
+                                                           Grid.Column="4"  
+                                                           FontSize="20" 
+                                                           HorizontalTextAlignment="Center" 
+                                                           Text="{Binding  estado}"
+                                                           FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteRegular}}"/>
+
+                                                </Grid>
+
+                                            </StackLayout>
+
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </sfListView:SfListView.ItemTemplate>
+                            </sfListView:SfListView>
+                        </Grid>
+
+
+                    </StackLayout>
+
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

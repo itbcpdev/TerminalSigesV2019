@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="#cdcfd0"
+             xmlns:titan="clr-namespace:TerminalSIGES.Views.Lib" 
+             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"     
+             Title="Afiliación de clientes"
+             x:Class="TerminalSiges.Views.Pages.Afiliacion.AfiliacionLogin">
+    <ContentPage.Content>
+        <StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  >
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <Frame Padding="50" Margin="50, 10" CornerRadius="10"  BackgroundColor="#ffffff" BorderColor="#ffffff"  IsClippedToBounds="True" HasShadow="True">
+                    <StackLayout>
+                        <ContentView HorizontalOptions="Center">
+                            <Label Text="INGRESE SUS DATOS"/>
+                        </ContentView>
+                        <ContentView HorizontalOptions="CenterAndExpand">
+                            <BoxView HeightRequest="2" WidthRequest="300" HorizontalOptions="FillAndExpand" BackgroundColor="#1c4081"/>
+                        </ContentView>
+
+                        <Label Text="Usuario"/>
+                        <inputLayout:SfTextInputLayout FocusedColor="#0450C2"  
+                                                           ContainerBackgroundColor="#E6EEF9"
+                                                           ContainerType="Outlined" 
+                                                           HelperText="Ingrese su Usuario"
+                                                           ReserveSpaceForAssistiveLabels="False">
+                            <Entry x:Name="txtUsername" FontSize="25" Completed="TxtUsername_Completed" />
+                        </inputLayout:SfTextInputLayout>
+
+                        <Label Text="Contraseña"/>
+                        <inputLayout:SfTextInputLayout x:Name="PasswordLayout"
+                                                       ContainerType="Outlined"
+                                                       ErrorText="Introduzca su contraseña"     
+                                                       CharMaxLength="8"
+                                                       HelperText="Ingrese su contraseña"    
+                                                       LeadingViewPosition="Inside"
+                                                       EnablePasswordVisibilityToggle="True">
+                            <Entry x:Name="txtPassword" FontSize="25" IsPassword="True" Completed="TxtPassword_Completed" />
+                        </inputLayout:SfTextInputLayout>
+
+                        <busyindicator:SfBusyIndicator x:Name="busyindicator" IsVisible="False" HorizontalOptions="Center" AnimationType="Ball" Title="Cargando..." ViewBoxWidth = "60" ViewBoxHeight="60" Duration="0.5" TextColor="#006ba6" />
+
+                        <buttons:SfButton x:Name="circleBtnLogin"
+                                          HorizontalOptions="Center"
+                                          VerticalOptions="Center"
+                                          HorizontalTextAlignment="Center"
+                                          VerticalTextAlignment="Center"
+                                          BackgroundColor="#005797"  
+                                          BorderColor="#005797" 
+                                          FontAttributes="Bold"
+                                          Text=" Iniciar   &#xE768;"
+                                          BorderWidth="0"
+                                          FontSize="25"
+                                          Margin="0,20" 
+                                          WidthRequest="250"
+                                          FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteSegoe}}"
+                                          HeightRequest="50"
+                                          CornerRadius="10" 
+                                          Clicked="OnLogin"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+            <StackLayout Margin="0,0,0,0" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#005797" Padding="8">
+                <Label HorizontalTextAlignment="Center" TextColor="#cdcfd0" Text="SIGES - 2019" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"   />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary" Text="Salir" Priority="0" Clicked="OnSalir" />
+    </ContentPage.ToolbarItems>
+</ContentPage>

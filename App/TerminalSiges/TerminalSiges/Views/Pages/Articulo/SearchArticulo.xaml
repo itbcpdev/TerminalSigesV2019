@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:titan="clr-namespace:TerminalSIGES.Views.Lib" 
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:local="clr-namespace:TerminalSIGES.ViewModels" 
+             x:Class="TerminalSiges.Views.Pages.Articulo.SearchArticulo"
+             Title="Listado de Productos">
+    <ContentPage.BindingContext>
+        <local:MainViewModel></local:MainViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout Spacing="0" x:Name="principal"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  >
+                <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="10,0">
+
+                    <BoxView  HeightRequest="3" HorizontalOptions="FillAndExpand" Color="#1c4081" />
+
+                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" BackgroundColor="#cddbe6">
+
+                        <Label Text="Código o Descripción" FontSize="22"/>
+                        <inputLayout:SfTextInputLayout x:Name="txtCodigoDescription"
+                                                                   FocusedColor="#0450C2"
+                                                                   ContainerBackgroundColor="#E6EEF9"
+                                                                   ContainerType="Outlined" 
+                                                                   HorizontalOptions="FillAndExpand"
+                                                                   ReserveSpaceForAssistiveLabels="False">
+                            <Entry x:Name="txtCodigoProducto" Text="{Binding Codigo}" FontSize="26" TextChanged="Entry_TextChanged" />
+                        </inputLayout:SfTextInputLayout>
+                    </StackLayout>
+
+                    <BoxView  HeightRequest="3" HorizontalOptions="FillAndExpand" Color="#1c4081" />
+
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="15*" />
+                                <ColumnDefinition Width="45*" />
+                                <ColumnDefinition Width="20*" />
+                                <ColumnDefinition Width="20*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Row="0" 
+                                       Grid.Column="0" 
+                                       FontSize="25"     
+                                       Text="Código"    
+                                       HorizontalTextAlignment="Center"     
+                                       FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"/>
+
+                            <Label Grid.Row="0" 
+                                       Grid.Column="1" 
+                                       FontSize="25"   
+                                       Text="Descripción"  
+                                       HorizontalTextAlignment="Center"     
+                                       FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"/>
+
+                            <Label Grid.Row="0" 
+                                       Grid.Column="2" 
+                                       FontSize="25" 
+                                       Text="U.Medida"   
+                                       HorizontalTextAlignment="Center"  
+                                       FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"/>
+
+                            <Label Grid.Row="0" 
+                                       Grid.Column="3"   
+                                       FontSize="25" 
+                                       HorizontalTextAlignment="Center"
+                                       Text="Precio" 
+                                       FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"/>
+                        </Grid>
+
+                        <BoxView  HeightRequest="2" WidthRequest="10" Color="#1c4081" />
+
+                        <ListView x:Name="ListProducts" 
+                                      HorizontalOptions="FillAndExpand"
+                                      VerticalOptions="FillAndExpand"
+                                      HasUnevenRows="True"
+                                      SeparatorColor="#cddbe6"
+                                      ItemTapped="ListService_OnItemTapped"
+                                      ItemsSource="{Binding vArticulos}"
+                                      Margin="0,0">
+                            <ListView.ItemTemplate>
+
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout Margin="0,2"  BackgroundColor="#cddbe6">
+                                            <Grid >
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto" />
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="15*" />
+                                                    <ColumnDefinition Width="45*" />
+                                                    <ColumnDefinition Width="20*" />
+                                                    <ColumnDefinition Width="20*" />
+                                                </Grid.ColumnDefinitions>
+
+
+                                                <Label Grid.Row="0"
+                                                           Grid.Column="0" 
+                                                           FontSize="20"   
+                                                           Text="{Binding cdarticulo }" 
+                                                           HorizontalOptions="Center"    
+                                                           HorizontalTextAlignment="Start"     
+                                                           FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteRegular}}"/>
+
+                                                <Label Grid.Row="0" 
+                                                           Grid.Column="1" 
+                                                           FontSize="20"  
+                                                           Text="{Binding dsarticulo}"
+                                                           HorizontalOptions="Start"  
+                                                           HorizontalTextAlignment="Center"    
+                                                           FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteRegular}}"/>
+
+                                                <Label Grid.Row="0"
+                                                           Grid.Column="2" 
+                                                           FontSize="20"  
+                                                           Text="{Binding  cdunimed}"  
+                                                           HorizontalTextAlignment="Center"
+                                                           FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteRegular}}"/>
+
+                                                <Label Grid.Row="0"
+                                                           Grid.Column="3"  
+                                                           FontSize="20"
+                                                           HorizontalTextAlignment="Center" 
+                                                           Text="{Binding  precio}" 
+                                                           FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteRegular}}"/>
+                                            </Grid>
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+
+                    </StackLayout>
+
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout x:Name="popupbuscarProducto" BackgroundColor="#ffffff"  IsVisible="False" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Orientation="Vertical" Padding="10">
+
+                    <Label HorizontalTextAlignment="Center" 
+                           Text=" Información del Artículo Seleccionado"
+                           FontSize="26" 
+                           FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+
+                    <BoxView  HeightRequest="3" HorizontalOptions="FillAndExpand" Color="#1c4081" />
+                    <StackLayout Orientation="Horizontal"  HorizontalOptions="FillAndExpand" >
+                        <StackLayout Orientation="Vertical" Margin="10,0" HorizontalOptions="FillAndExpand">
+                            <Label Text="Código" FontSize="22"/>
+                            <inputLayout:SfTextInputLayout x:Name="txtCodigoArticulo"
+                                                           FocusedColor="#0450C2"
+                                                           ContainerBackgroundColor="#E6EEF9"
+                                                           ContainerType="Outlined" 
+                                                           HorizontalOptions="FillAndExpand"
+                                                           ReserveSpaceForAssistiveLabels="False"
+                                                           IsEnabled="False">
+                                <Entry  FontSize="26" />
+                            </inputLayout:SfTextInputLayout>
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical" Margin="10,0" HorizontalOptions="FillAndExpand" >
+                            <Label Text="Unidad Medida" FontSize="22"/>
+                            <inputLayout:SfTextInputLayout x:Name="txtUnidadMedidaArticulo"
+                                                           FocusedColor="#0450C2"
+                                                           ContainerBackgroundColor="#E6EEF9"
+                                                           ContainerType="Outlined" 
+                                                           HorizontalOptions="FillAndExpand"    
+                                                           ReserveSpaceForAssistiveLabels="False"
+                                                           IsEnabled="False">   
+                                <Entry  FontSize="26" />
+                            </inputLayout:SfTextInputLayout>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand" Margin="10,0">
+                        <Label Text="Descripción" FontSize="22"/>
+                        <inputLayout:SfTextInputLayout x:Name="txtDescripcionArticulo"
+                                        FocusedColor="#0450C2"
+                                        ContainerBackgroundColor="#E6EEF9"
+                                        ContainerType="Outlined" 
+                                        HorizontalOptions="FillAndExpand"
+                                        ReserveSpaceForAssistiveLabels="False"
+                                        IsEnabled="False">
+                            <Entry  FontSize="26" />
+                        </inputLayout:SfTextInputLayout>
+                    </StackLayout>
+                    
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <StackLayout Orientation="Vertical" Margin="10,0" HorizontalOptions="FillAndExpand">
+                            <Label Text="Precio" FontSize="22"/>
+                            <inputLayout:SfTextInputLayout x:Name="txtPrecioArticulo"
+                                                           FocusedColor="#0450C2"
+                                                           ContainerBackgroundColor="#E6EEF9"
+                                                           ContainerType="Outlined" 
+                                                           HorizontalOptions="FillAndExpand"
+                                                           ReserveSpaceForAssistiveLabels="False"
+                                                           IsEnabled="False">
+                                  <Entry  FontSize="26" />
+                            </inputLayout:SfTextInputLayout>
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical" Margin="10,0" HorizontalOptions="FillAndExpand">
+                            <Label Text="Cantidad" FontSize="22"/>
+                            <inputLayout:SfTextInputLayout x:Name="txtCantidadArticulo"
+                                                       FocusedColor="#0450C2"
+                                                       ContainerBackgroundColor="#E6EEF9"
+                                                       ContainerType="Outlined" 
+                                                       HorizontalOptions="FillAndExpand"
+                                                       ReserveSpaceForAssistiveLabels="False">
+                                <Entry Keyboard="Numeric" FontSize="26" Text="1"  />
+                            </inputLayout:SfTextInputLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout VerticalOptions="End" HorizontalOptions="Fill"  Orientation="Horizontal" Padding="20">
+
+                    <buttons:SfButton x:Name="btnCancelInfo"
+                                      Text="Cancelar" 
+                                      FontSize="26"
+                                      HorizontalTextAlignment="Center" 
+                                      HorizontalOptions="FillAndExpand"
+                                      VerticalTextAlignment="Center"
+                                      CornerRadius="10" 
+                                      HeightRequest="80"
+                                      Margin="0,0,10,0"
+                                      FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"
+                                      Clicked="BtnCancelarInfo_OnClicked"/>
+
+                    <buttons:SfButton x:Name="btnSaveArticulo" 
+                                      Text="Guardar"
+                                      FontSize="26" 
+                                      HorizontalTextAlignment="Center"
+                                      HorizontalOptions="FillAndExpand" 
+                                      VerticalTextAlignment="Center" 
+                                      CornerRadius="10"
+                                      HeightRequest="80" 
+                                      Margin="10,0,0,0"
+                                      BackgroundColor="#005797" 
+                                      BorderColor="#005797" 
+                                      FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"
+                                      Clicked="BtnSaveArticulo_Clicked"/>
+                </StackLayout>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

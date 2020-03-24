@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:titan="clr-namespace:TerminalSIGES.Views.Lib"  
+                xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms" 
+             x:Class="TerminalSiges.Views.Pages.Print.ReporteCierreZ"
+              Title="Procesando cierre Z">
+    <ContentPage.Content>
+        <StackLayout   VerticalOptions="CenterAndExpand" x:Name="stackConfirma"  >
+            <Frame Padding="50" Margin="50, 10" CornerRadius="10"  BackgroundColor="#ffffff" BorderColor="#ffffff"  IsClippedToBounds="True" HasShadow="True">
+                <StackLayout>
+                    <ContentView HorizontalOptions="Center" Margin="20">
+                        <Label Text="Ud. puede elegir estas opciones:" HorizontalTextAlignment="Center" FontSize="30" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"  ></Label>
+                    </ContentView>
+                    <ContentView HorizontalOptions="Center" >
+                        <BoxView HeightRequest="3" WidthRequest="500" HorizontalOptions="FillAndExpand" BackgroundColor="#1c4081">
+                        </BoxView>
+                    </ContentView>
+                    <ContentView HorizontalOptions="Center" VerticalOptions="Center" Margin="20">
+                        <buttons:SfButton x:Name="btnRegistrar" Text="Imprimir" ImageSource="iconconfig.png" ShowIcon="True" ImageAlignment="End" CornerRadius="10" FontSize="25" ImageWidth="50"  HeightRequest="80" WidthRequest="280" BackgroundColor="#1c4081" BorderColor="#76a9da" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"
+                                                        Clicked="OnImprimir"  >
+                        </buttons:SfButton>
+                    </ContentView>
+                    <ContentView HorizontalOptions="Center" VerticalOptions="Center" Margin="20">
+                        <buttons:SfButton x:Name="btnReporte" Text="Ver pantalla" ImageSource="icontienda.png" IsEnabled="False" ShowIcon="True" ImageAlignment="End" CornerRadius="10" FontSize="25" ImageWidth="50"  HeightRequest="80" WidthRequest="280" BackgroundColor="#1c4081" BorderColor="#76a9da" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"
+                                                      Clicked="OnReportes"   >
+                        </buttons:SfButton>
+                    </ContentView>
+                    <ContentView HorizontalOptions="Center" VerticalOptions="Center" Margin="20">
+                        <buttons:SfButton  Text="Volver al Inicio" FontSize="25" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" CornerRadius="10" HeightRequest="80" WidthRequest="280" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"
+                                     Clicked="OnCancelar"     >
+                        </buttons:SfButton>
+                    </ContentView>
+
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

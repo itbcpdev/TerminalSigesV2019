@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:titan="clr-namespace:TerminalSIGES.Views.Lib" 
+             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"  
+             xmlns:sfListView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms" 
+            Title="Ver lados por terminal"
+             x:Class="TerminalSiges.Views.Pages.Lados.ReporteLados">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <ContentView>
+                    <StackLayout Margin="10,0,10,30"  Padding="10,0,10,0" VerticalOptions="CenterAndExpand" >
+                        <ContentView  HorizontalOptions="Center"  >
+                            <Label VerticalOptions="Center" Font="30" HorizontalOptions = "Center" HorizontalTextAlignment="Center" Text="Lista de lados por terminal" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"  >
+                                <Label.Effects>
+                                    <titan:UnderlineEffect />
+                                </Label.Effects>
+                            </Label>
+                        </ContentView>
+                        <ContentView IsVisible="{Binding IsSearch}" >
+                            <busyindicator:SfBusyIndicator AnimationType="Ball" Title="Cargando..." ViewBoxWidth = "25" ViewBoxHeight="25" Duration="0.5" TextColor="#006ba6" />
+                        </ContentView>
+                        <Frame BorderColor="#006ba6" HorizontalOptions="CenterAndExpand" Padding="10,10" IsClippedToBounds="True" HasShadow="True" IsVisible="{Binding IsLoading}" >
+                            <StackLayout>
+
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="40" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Row="0" Grid.Column="0" FontSize="20" Text="Para eliminar un item, solo debe mantenerlo presionado mientras lo desplaza a la izquierda."
+                                           HorizontalTextAlignment="Start"   VerticalTextAlignment="Center"  
+                                           FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"/>
+                                </Grid>
+
+                                <BoxView  HeightRequest="2" WidthRequest="10" Color="#1c4081" />
+
+                                <Grid>
+
+                                    <sfListView:SfListView 
+                                                        ItemsSource="{Binding Elementos}"
+                                                        AllowSwiping="False"
+                                                        AutoFitMode="None"
+                                                        QueryItemSize="ListView_QueryItemSize"
+                                                        HeightRequest="600"
+                                                        ItemSpacing="5,0,0,0" >
+                                        <sfListView:SfListView.ItemTemplate>
+                                            <DataTemplate>
+
+                                                <ViewCell>
+
+                                                    <StackLayout Margin="0,10"  BackgroundColor="#cddbe6">
+                                                        <Grid Padding="10" >
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="Auto" />
+                                                                <RowDefinition Height="1" />
+                                                                <RowDefinition Height="Auto" />
+                                                                <RowDefinition Height="*"/>
+                                                                <RowDefinition Height="1" />
+                                                            </Grid.RowDefinitions>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition/>
+                                                            </Grid.ColumnDefinitions>
+
+
+                                                            <Label    Grid.Row="0" 
+                                                                      FontSize="20"  
+                                                                      Text="{Binding nropos}"       
+                                                                      HorizontalTextAlignment="Start"     
+                                                                      FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+                                                            <BoxView  Grid.Row="1" 
+                                                                      HeightRequest="1"  Color="#2187d2" />
+                                                            <Label    Grid.Row="2" 
+                                                                      FontSize="20"  
+                                                                      Text="LADOS :"      
+                                                                      
+                                                                      HorizontalTextAlignment="Start"     
+                                                                      FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+
+
+                                                            <sfListView:SfListView  Grid.Row="3"
+                                                                    ItemsSource="{Binding Items}"
+                                                                    AllowSwiping="True"
+                                                                    SwipeOffset="60" 
+                                                                    SwipeThreshold="30"
+                                                                    ItemSize="45"
+                                                                    SwipeStarted="ListView_SwipeStarted" 
+                                                                    SwipeEnded="ListView_SwipeEnded"
+                                                                    ItemSpacing="0,0,0,0" >
+                                                                <sfListView:SfListView.LeftSwipeTemplate>
+                                                                    <DataTemplate>
+                                                                        <Grid>
+                                                                            <Grid BackgroundColor="#DC595F" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Column="0">
+                                                                                <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                                                                                    <Image Grid.Column="0"
+                                                                                        Grid.Row="0"
+                                                                                        BackgroundColor="Transparent"
+                                                                                        HeightRequest="65"
+                                                                                        WidthRequest="65"
+                                                                                        BindingContextChanged="rightImage_BindingContextChanged"
+                                                                                               />
+                                                                                </Grid>
+                                                                            </Grid>
+                                                                        </Grid>
+                                                                    </DataTemplate>
+                                                                </sfListView:SfListView.LeftSwipeTemplate>
+                                                                <sfListView:SfListView.ItemTemplate>
+                                                                    <DataTemplate>
+
+                                                                        <ViewCell>
+
+                                                                            <StackLayout Margin="0,0"  BackgroundColor="#cddbe6">
+                                                                                <Grid>
+                                                                                    <Grid.RowDefinitions>
+                                                                                        <RowDefinition Height="Auto" />
+                                                                                    </Grid.RowDefinitions>
+                                                                                    <Grid.ColumnDefinitions>
+                                                                                        <ColumnDefinition Width="Auto" />
+
+                                                                                    </Grid.ColumnDefinitions>
+                                                                                    <Label    Grid.Row="0" FontSize="20" Text="{Binding lado}" HorizontalTextAlignment="Start"  VerticalTextAlignment="Center"   FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+
+                                                                                </Grid>
+
+                                                                            </StackLayout>
+
+                                                                        </ViewCell>
+                                                                    </DataTemplate>
+                                                                </sfListView:SfListView.ItemTemplate>
+                                                            </sfListView:SfListView>
+
+
+
+                                                            <BoxView  Grid.Row="4" 
+                                                                      HeightRequest="1"  Color="#2187d2" />
+                                                        </Grid>
+
+                                                    </StackLayout>
+
+
+                                                </ViewCell>
+                                            </DataTemplate>
+                                        </sfListView:SfListView.ItemTemplate>
+                                    </sfListView:SfListView>
+                                </Grid>
+
+                                <BoxView  HeightRequest="2" WidthRequest="10" Color="#1c4081" />
+                            </StackLayout>
+                        </Frame>
+
+
+                    </StackLayout>
+                </ContentView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

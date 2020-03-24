@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E5F4950B-C07B-4A3A-AB9B-6FF66E6092AF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ITBCP.ServiceSIGES.Infraestructure.IoC</RootNamespace>
+    <AssemblyName>ITBCP.ServiceSIGES.Infraestructure.IoC</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FabricaIoC.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Lib\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+    <Content Include="Lib\Microsoft.Practices.EnterpriseLibrary.Data.dll" />
+    <Content Include="Lib\Microsoft.Practices.ServiceLocation.dll" />
+    <Content Include="Lib\Microsoft.Practices.Unity.dll" />
+    <Content Include="Lib\Microsoft.Practices.Unity.Interception.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ITBCP.ServiceSIGES.Aplication.Interfaces\ITBCP.ServiceSIGES.Aplication.Interfaces.csproj">
+      <Project>{E8FEC3EC-8E48-42B1-8F63-CD1D399595D2}</Project>
+      <Name>ITBCP.ServiceSIGES.Aplication.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ITBCP.ServiceSIGES.Aplication\ITBCP.ServiceSIGES.Aplication.csproj">
+      <Project>{1755AAA0-CF0A-401A-B0FF-134EAD6F53CA}</Project>
+      <Name>ITBCP.ServiceSIGES.Aplication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ITBCP.ServiceSIGES.Domain\ITBCP.ServiceSIGES.Domain.csproj">
+      <Project>{FDDB5837-804F-4F68-82BF-3DFC5722E02F}</Project>
+      <Name>ITBCP.ServiceSIGES.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ITBCP.ServiceSIGES.Infraestructure.DataAcces\ITBCP.ServiceSIGES.Infraestructure.DataAcces.csproj">
+      <Project>{DCC2DACB-CF8F-4587-99E3-A7CA11BF5ABD}</Project>
+      <Name>ITBCP.ServiceSIGES.Infraestructure.DataAcces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

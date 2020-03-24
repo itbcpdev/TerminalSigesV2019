@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:titan="clr-namespace:TerminalSIGES.Views.Lib"  
+             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             mc:Ignorable="d"
+             Title="Imprimir último documento"
+             x:Class="TerminalSiges.Views.Pages.Invoce.ReImpresion">
+    <ContentPage.Content>
+        <StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  >
+            <busyindicator:SfBusyIndicator IsVisible="{Binding IsLoading}" AnimationType="Ball" Title="Procesando impresión..." ViewBoxWidth = "100" ViewBoxHeight="100" Duration="0.5" TextColor="#1c4081" />
+            <StackLayout  BackgroundColor="White" VerticalOptions="CenterAndExpand" Padding="50" Margin="50, 10" IsVisible="{Binding IsComplete}"  >
+                <ContentView VerticalOptions="Center" >
+                    <Image Source="no_autorizada.png" HeightRequest="100" WidthRequest="100"/>
+                </ContentView>
+                <ContentView VerticalOptions="Center" >
+                    <Label HorizontalTextAlignment="Center" TextColor="Red" FontSize="30" Text="{Binding Message}" Margin="20, 0" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"  />
+                </ContentView>
+                <ContentView VerticalOptions="Center" Margin="40, 20">
+                    <buttons:SfButton  Clicked="IrAlInicio" Text="Volver al Inicio" FontSize="25"  HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center"  CornerRadius="10" HeightRequest="80" WidthRequest="250" BackgroundColor="#005797" BorderColor="#005797" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+    </ContentPage>

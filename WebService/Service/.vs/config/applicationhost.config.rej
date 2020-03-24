@@ -1,0 +1,10 @@
+diff a/Development/WebService/ITBCP.ServiceSIGES.Web/.vs/config/applicationhost.config b/Development/WebService/ITBCP.ServiceSIGES.Web/.vs/config/applicationhost.config	(rejected hunks)
+@@ -178,7 +178,7 @@
+             </site>
+             <site name="ITBCP.ServiceSIGES.Services.Host" id="4">
+                 <application path="/" applicationPool="Clr4IntegratedAppPool">
+-                    <virtualDirectory path="/" physicalPath="C:\Users\roxanarivera2008\Documents\terminalsiges\Development\WebService\ITBCP.ServiceSIGES.Web\ITBCP.ServiceSIGES.Services.Host" />
++                    <virtualDirectory path="/" physicalPath="D:\WorkSpace\terminalsiges\Development\WebService\ITBCP.ServiceSIGES.Web\ITBCP.ServiceSIGES.Services.Host" />
+                 </application>
+                 <bindings>
+                     <binding protocol="http" bindingInformation="*:56220:localhost" />

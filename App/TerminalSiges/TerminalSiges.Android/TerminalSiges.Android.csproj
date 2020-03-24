@@ -1,0 +1,889 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{774E25CB-72EE-4345-A451-07D140521AB1}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TemplateGuid>{c9e5eea5-ca05-42a1-839b-61506e0a37df}</TemplateGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>TerminalSiges.Droid</RootNamespace>
+    <AssemblyName>TerminalSiges.Android</AssemblyName>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
+    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+    <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <AndroidKeyStore>false</AndroidKeyStore>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>portable</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <BundleAssemblies>false</BundleAssemblies>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
+    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
+    <MandroidI18n />
+    <AndroidLinkTool>r8</AndroidLinkTool>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidManagedSymbols>true</AndroidManagedSymbols>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
+    <BundleAssemblies>false</BundleAssemblies>
+    <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
+    <AndroidLinkTool>r8</AndroidLinkTool>
+    <AndroidLinkMode>Full</AndroidLinkMode>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Android" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Matcha.BackgroundService">
+      <Version>1.0.5478</Version>
+    </PackageReference>
+    <PackageReference Include="Rg.Plugins.Popup">
+      <Version>1.1.5.188</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.Buttons">
+      <Version>16.4.0.52</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.Core">
+      <Version>16.4.0.52</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfAutoComplete">
+      <Version>16.4.0.42</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfAutoComplete.Android">
+      <Version>16.4.0.42</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfBusyIndicator">
+      <Version>16.4.0.52</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfComboBox">
+      <Version>16.4.0.52</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfListView">
+      <Version>16.4.0.52</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfNumericTextBox">
+      <Version>16.4.0.52</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfPicker">
+      <Version>16.4.0.52</Version>
+    </PackageReference>
+    <PackageReference Include="Xam.Plugin.FilePicker">
+      <Version>1.1.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
+    <PackageReference Include="Xamarin.Android.Support.Design" Version="27.0.2.1" />
+    <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="27.0.2.1" />
+    <PackageReference Include="Xamarin.Android.Support.v4" Version="27.0.2.1" />
+    <PackageReference Include="Xamarin.Android.Support.v7.CardView" Version="27.0.2.1" />
+    <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter" Version="27.0.2.1" />
+    <PackageReference Include="Xamarin.HotReload">
+      <Version>1.5.3</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomWebViewRenderer.cs" />
+    <Compile Include="FilePrintDocumentAdapter.cs" />
+    <Compile Include="MainActivity.cs" />
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AndroidFeatureService.cs" />
+    <Compile Include="SplashActivity.cs" />
+    <Compile Include="UnderlineEffect.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Lato-Black.ttf" />
+    <AndroidAsset Include="Assets\Lato-BlackItalic.ttf" />
+    <AndroidAsset Include="Assets\Lato-Bold.ttf" />
+    <AndroidAsset Include="Assets\Lato-BoldItalic.ttf" />
+    <AndroidAsset Include="Assets\Lato-Hairline.ttf" />
+    <AndroidAsset Include="Assets\Lato-HairlineItalic.ttf" />
+    <AndroidAsset Include="Assets\Lato-Heavy.ttf" />
+    <AndroidAsset Include="Assets\Lato-HeavyItalic.ttf" />
+    <AndroidAsset Include="Assets\Lato-Italic.ttf" />
+    <AndroidAsset Include="Assets\Lato-Light.ttf" />
+    <AndroidAsset Include="Assets\Lato-LightItalic.ttf" />
+    <AndroidAsset Include="Assets\Lato-Medium.ttf" />
+    <AndroidAsset Include="Assets\Lato-MediumItalic.ttf" />
+    <AndroidAsset Include="Assets\Lato-Regular.ttf" />
+    <AndroidAsset Include="Assets\Lato-Semibold.ttf" />
+    <AndroidAsset Include="Assets\Lato-SemiboldItalic.ttf" />
+    <AndroidAsset Include="Assets\Lato-Thin.ttf" />
+    <AndroidAsset Include="Assets\Lato-ThinItalic.ttf" />
+    <AndroidAsset Include="Assets\SegmentIcon.ttf" />
+    <AndroidAsset Include="Assets\IcoMoonFree.ttf" />
+    <AndroidAsset Include="Assets\Segoe-MDL2-Assets.ttf" />
+    <AndroidAsset Include="Assets\web\compressed.tracemonkey-pldi-09.pdf" />
+    <AndroidAsset Include="Assets\web\viewer.js.map" />
+    <AndroidAsset Include="Assets\web\cmaps\78-EUC-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\78-EUC-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\78-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\78-RKSJ-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\78-RKSJ-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\78-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\78ms-RKSJ-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\78ms-RKSJ-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\83pv-RKSJ-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\90ms-RKSJ-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\90ms-RKSJ-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\90msp-RKSJ-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\90msp-RKSJ-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\90pv-RKSJ-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\90pv-RKSJ-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Add-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Add-RKSJ-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Add-RKSJ-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Add-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Adobe-CNS1-0.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Adobe-CNS1-1.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Adobe-CNS1-2.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Adobe-CNS1-3.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Adobe-CNS1-4.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Adobe-CNS1-5.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Adobe-CNS1-6.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Adobe-CNS1-UCS2.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Adobe-GB1-0.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Adobe-GB1-1.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Adobe-GB1-2.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Adobe-GB1-3.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Adobe-GB1-4.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Adobe-GB1-5.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Adobe-GB1-UCS2.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Adobe-Japan1-0.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Adobe-Japan1-1.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Adobe-Japan1-2.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Adobe-Japan1-3.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Adobe-Japan1-4.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Adobe-Japan1-5.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Adobe-Japan1-6.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Adobe-Japan1-UCS2.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Adobe-Korea1-0.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Adobe-Korea1-1.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Adobe-Korea1-2.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Adobe-Korea1-UCS2.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\B5-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\B5-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\B5pc-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\B5pc-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\CNS-EUC-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\CNS-EUC-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\CNS1-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\CNS1-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\CNS2-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\CNS2-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\ETen-B5-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\ETen-B5-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\ETenms-B5-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\ETenms-B5-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\ETHK-B5-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\ETHK-B5-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\EUC-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\EUC-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Ext-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Ext-RKSJ-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Ext-RKSJ-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Ext-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\GB-EUC-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\GB-EUC-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\GB-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\GB-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\GBK-EUC-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\GBK-EUC-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\GBK2K-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\GBK2K-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\GBKp-EUC-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\GBKp-EUC-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\GBpc-EUC-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\GBpc-EUC-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\GBT-EUC-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\GBT-EUC-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\GBT-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\GBT-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\GBTpc-EUC-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\GBTpc-EUC-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Hankaku.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Hiragana.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\HKdla-B5-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\HKdla-B5-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\HKdlb-B5-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\HKdlb-B5-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\HKgccs-B5-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\HKgccs-B5-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\HKm314-B5-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\HKm314-B5-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\HKm471-B5-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\HKm471-B5-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\HKscs-B5-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\HKscs-B5-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Katakana.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\KSC-EUC-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\KSC-EUC-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\KSC-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\KSC-Johab-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\KSC-Johab-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\KSC-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\KSCms-UHC-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\KSCms-UHC-HW-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\KSCms-UHC-HW-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\KSCms-UHC-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\KSCpc-EUC-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\KSCpc-EUC-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\LICENSE" />
+    <AndroidAsset Include="Assets\web\cmaps\NWP-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\NWP-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\RKSJ-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\RKSJ-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\Roman.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniCNS-UCS2-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniCNS-UCS2-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniCNS-UTF16-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniCNS-UTF16-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniCNS-UTF32-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniCNS-UTF32-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniCNS-UTF8-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniCNS-UTF8-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniGB-UCS2-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniGB-UCS2-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniGB-UTF16-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniGB-UTF16-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniGB-UTF32-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniGB-UTF32-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniGB-UTF8-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniGB-UTF8-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniJIS-UCS2-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniJIS-UCS2-HW-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniJIS-UCS2-HW-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniJIS-UCS2-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniJIS-UTF16-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniJIS-UTF16-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniJIS-UTF32-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniJIS-UTF32-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniJIS-UTF8-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniJIS-UTF8-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniJIS2004-UTF16-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniJIS2004-UTF16-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniJIS2004-UTF32-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniJIS2004-UTF32-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniJIS2004-UTF8-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniJIS2004-UTF8-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniJISPro-UCS2-HW-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniJISPro-UCS2-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniJISPro-UTF8-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniJISX0213-UTF32-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniJISX0213-UTF32-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniJISX02132004-UTF32-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniJISX02132004-UTF32-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniKS-UCS2-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniKS-UCS2-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniKS-UTF16-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniKS-UTF16-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniKS-UTF32-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniKS-UTF32-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniKS-UTF8-H.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\UniKS-UTF8-V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\V.bcmap" />
+    <AndroidAsset Include="Assets\web\cmaps\WP-Symbol.bcmap" />
+    <AndroidAsset Include="Assets\web\locale\locale.properties" />
+    <AndroidAsset Include="Assets\web\locale\ach\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\af\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\ak\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\an\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\ar\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\as\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\ast\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\az\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\be\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\bg\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\bn-BD\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\bn-IN\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\br\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\brx\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\bs\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\ca\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\cak\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\crh\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\cs\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\csb\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\cy\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\da\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\de\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\el\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\en-CA\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\en-GB\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\en-US\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\en-ZA\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\eo\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\es-AR\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\es-CL\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\es-ES\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\es-MX\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\et\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\eu\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\fa\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\ff\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\fi\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\fr\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\fy-NL\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\ga-IE\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\gd\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\gl\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\gn\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\gu-IN\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\he\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\hi-IN\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\hr\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\hsb\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\hto\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\hu\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\hy-AM\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\ia\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\id\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\is\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\it\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\ja\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\ka\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\kab\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\kk\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\km\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\kn\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\ko\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\kok\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\ks\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\ku\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\lg\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\lij\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\lo\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\lt\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\ltg\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\lv\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\mai\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\meh\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\mk\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\ml\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\mn\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\mr\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\ms\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\my\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\nb-NO\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\ne-NP\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\nl\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\nn-NO\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\nso\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\oc\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\or\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\pa-IN\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\pl\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\pt-BR\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\pt-PT\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\rm\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\ro\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\ru\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\rw\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\sah\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\sat\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\si\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\sk\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\sl\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\son\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\sq\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\sr\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\sv-SE\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\sw\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\ta\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\ta-LK\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\te\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\th\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\tl\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\tn\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\tr\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\tsz\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\uk\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\ur\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\uz\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\vi\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\wo\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\xh\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\zam\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\zh-CN\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\zh-TW\viewer.properties" />
+    <AndroidAsset Include="Assets\web\locale\zu\viewer.properties" />
+    <AndroidAsset Include="Assets\build\pdf.js.map" />
+    <AndroidAsset Include="Assets\build\pdf.worker.js.map" />
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Assets\AboutAssets.txt" />
+    <None Include="Properties\AndroidManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Tabbar.axml" />
+    <AndroidResource Include="Resources\layout\Toolbar.axml" />
+    <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\values\colors.xml" />
+    <AndroidResource Include="Resources\mipmap-anydpi-v26\icon.xml" />
+    <AndroidResource Include="Resources\mipmap-anydpi-v26\icon_round.xml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\icon.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\icon.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\icon.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\drawable-hdpi\" />
+    <Folder Include="Resources\drawable-xhdpi\" />
+    <Folder Include="Resources\drawable-xxhdpi\" />
+    <Folder Include="Resources\drawable-xxxhdpi\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ticket.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\QRSample.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\splash_screen.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ViewCellBackground.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\debugger.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\viewer.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\viewer.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\viewer.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\annotation-check.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\annotation-comment.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\annotation-help.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\annotation-insert.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\annotation-key.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\annotation-newparagraph.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\annotation-noicon.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\annotation-note.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\annotation-paragraph.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\findbarButton-next-rtl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\findbarButton-next-rtl%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\findbarButton-next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\findbarButton-next%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\findbarButton-previous-rtl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\findbarButton-previous-rtl%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\findbarButton-previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\findbarButton-previous%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\grab.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\grabbing.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\loading-icon.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\loading-small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\loading-small%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\secondaryToolbarButton-documentProperties.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\secondaryToolbarButton-documentProperties%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\secondaryToolbarButton-firstPage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\secondaryToolbarButton-firstPage%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\secondaryToolbarButton-handTool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\secondaryToolbarButton-handTool%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\secondaryToolbarButton-lastPage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\secondaryToolbarButton-lastPage%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\secondaryToolbarButton-rotateCcw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\secondaryToolbarButton-rotateCcw%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\secondaryToolbarButton-rotateCw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\secondaryToolbarButton-rotateCw%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\secondaryToolbarButton-scrollHorizontal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\secondaryToolbarButton-scrollHorizontal%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\secondaryToolbarButton-scrollVertical.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\secondaryToolbarButton-scrollVertical%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\secondaryToolbarButton-scrollWrapped.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\secondaryToolbarButton-scrollWrapped%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\secondaryToolbarButton-selectTool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\secondaryToolbarButton-selectTool%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\secondaryToolbarButton-spreadEven.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\secondaryToolbarButton-spreadEven%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\secondaryToolbarButton-spreadNone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\secondaryToolbarButton-spreadNone%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\secondaryToolbarButton-spreadOdd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\secondaryToolbarButton-spreadOdd%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\shadow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\texture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-bookmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-bookmark%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-download%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-menuArrows.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-menuArrows%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-openFile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-openFile%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-pageDown-rtl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-pageDown-rtl%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-pageDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-pageDown%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-pageUp-rtl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-pageUp-rtl%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-pageUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-pageUp%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-presentationMode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-presentationMode%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-print%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-search%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-secondaryToolbarToggle-rtl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-secondaryToolbarToggle-rtl%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-secondaryToolbarToggle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-secondaryToolbarToggle%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-sidebarToggle-rtl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-sidebarToggle-rtl%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-sidebarToggle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-sidebarToggle%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-viewAttachments.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-viewAttachments%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-viewOutline-rtl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-viewOutline-rtl%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-viewOutline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-viewOutline%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-viewThumbnail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-viewThumbnail%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-zoomIn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-zoomIn%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-zoomOut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\toolbarButton-zoomOut%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\treeitem-collapsed-rtl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\treeitem-collapsed-rtl%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\treeitem-collapsed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\treeitem-collapsed%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\treeitem-expanded.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\images\treeitem-expanded%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\build\pdf.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\build\pdf.worker.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\autorizada.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\back_button_image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Favorites.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Glyphsearch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\hamburger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\iconCheck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\iconconfig.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icondeposito.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\iconfacturacion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\iconMas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\IconoSalir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\iconPicker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icontienda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\InboxIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\logoitbcp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\no_autorizada.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\slideout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\lado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\iconCollapse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\iconCollapseOut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\play.png" />
+  </ItemGroup>
+  <Import Project="..\TerminalSiges\TerminalSiges.projitems" Label="Shared" />
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+</Project>

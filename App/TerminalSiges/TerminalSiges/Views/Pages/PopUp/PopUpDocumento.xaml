@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             mc:Ignorable="d"
+             x:Class="TerminalSiges.Views.Pages.PopUp.PopUpDocumento">
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation DurationIn="0"
+                                   DurationOut="0"
+                                   EasingIn="SinIn"
+                                   EasingOut="SinIn"                                  
+                                   HasBackgroundAnimation="True"
+                                   PositionIn="Center"
+                                   PositionOut="Center"
+                                   ScaleIn="0.1"
+                                   ScaleOut="0.1" />
+    </pages:PopupPage.Animation>
+    <StackLayout Margin="12"
+                 WidthRequest="500"
+                 Padding="20"
+                 HeightRequest="550"
+                 BackgroundColor="White"
+                 HorizontalOptions="CenterAndExpand"
+                 VerticalOptions="CenterAndExpand"
+                 Orientation="Vertical">
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Button BackgroundColor="#1b4382" HeightRequest="70" CornerRadius="10"
+                FontSize="30"
+                Text="BOLETA O FACTURA "
+                TextColor="White" Clicked="OnFacturaBoleta"/>
+            <Button BackgroundColor="#1b4382" HeightRequest="70" CornerRadius="10"
+                FontSize="30"
+                Text="NOTA DE DESPACHO"
+                TextColor="White" 
+                Margin="0,10,0,0"
+                Clicked="OnNotaDespacho"/>
+            <Button
+                x:Name="btnTranfGrat"
+                BackgroundColor="#1b4382" HeightRequest="70" CornerRadius="10"
+                FontSize="30"
+                Text="TRANFERENCIA GRATUITA"
+                TextColor="White" 
+                Margin="0,10,0,0"
+                Clicked="OnTranferenciaGratuita"/>
+            <Button 
+                x:Name="btnSerafin"
+                BackgroundColor="#1b4382" HeightRequest="70" CornerRadius="10"
+                FontSize="30"
+                Text="SERAFIN"
+                TextColor="White" 
+                Margin="0,10,0,0"
+                Clicked="OnSerafin"/>
+            <!--<Button BackgroundColor="#1b4382" HeightRequest="70" CornerRadius="10"
+                FontSize="30"
+                Text="CANJE PRODUCTO"
+                TextColor="White" 
+                Margin="0,10,0,0"
+                Clicked="OnCanje"/>-->
+        </StackLayout>
+    </StackLayout>
+</pages:PopupPage>

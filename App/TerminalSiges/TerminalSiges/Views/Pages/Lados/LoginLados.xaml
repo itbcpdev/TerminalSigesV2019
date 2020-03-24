@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:titan="clr-namespace:TerminalSIGES.Views.Lib" 
+             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms" 
+             Title="Configuración de Lados"
+             x:Class="TerminalSiges.Views.Pages.Lados.LoginLados">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="0">
+
+                <StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  >
+
+                    <StackLayout   VerticalOptions="CenterAndExpand" x:Name="stacklogin" IsVisible="True" >
+                        <Frame Padding="50" Margin="50, 10" CornerRadius="10"  BackgroundColor="#ffffff" BorderColor="#ffffff"  IsClippedToBounds="True" HasShadow="True">
+
+                            <StackLayout>
+                                <ContentView HorizontalOptions="Center">
+                                    <Label Text="INGRESE SUS DATOS"></Label>
+
+                                </ContentView>
+                                <ContentView HorizontalOptions="CenterAndExpand">
+                                    <BoxView HeightRequest="2" WidthRequest="300" HorizontalOptions="FillAndExpand" BackgroundColor="#1c4081">
+                                    </BoxView>
+                                </ContentView>
+                                <Label Text="Usuario"></Label>
+                                <inputLayout:SfTextInputLayout
+                                     FocusedColor="#0450C2"
+                                     ContainerBackgroundColor="#E6EEF9"
+                                     ContainerType="Outlined" 
+                                     HelperText="Ingrese su Usuario"
+                                     ReserveSpaceForAssistiveLabels="False">
+                                    <Entry  x:Name="txtUsername" FontSize="25"   Text="" />
+                                </inputLayout:SfTextInputLayout>
+
+                                <Label Text="Contraseña"></Label>
+                                <inputLayout:SfTextInputLayout
+                                x:Name="PasswordLayout"
+                                ContainerType="Outlined"
+                                ErrorText="Introduzca su contraseña"           
+                                CharMaxLength="8"
+                                HelperText="Ingrese su contraseña"
+                                
+                               
+                                LeadingViewPosition="Inside"
+                                EnablePasswordVisibilityToggle="True">
+
+                                    <Entry x:Name="txtPassword" FontSize="25" IsPassword="True" Text="" />
+
+                                </inputLayout:SfTextInputLayout>
+
+                                <ContentView x:Name="busyindicator" IsVisible="False" >
+                                    <busyindicator:SfBusyIndicator AnimationType="Ball" Title="Cargando..." ViewBoxWidth = "60" ViewBoxHeight="60" Duration="0.5" TextColor="#006ba6" />
+                                </ContentView>
+                                <ContentView  x:Name="ctvLogin" Grid.ColumnSpan="2" Grid.RowSpan="4" HorizontalOptions="Center" VerticalOptions="Center" >
+                                    <buttons:SfButton x:Name="circleBtnLogin"
+                                             HorizontalOptions="Center"
+                                             VerticalOptions="Center"
+                                             HorizontalTextAlignment="Center"
+                                             VerticalTextAlignment="Center"
+                                              BackgroundColor="#005797"  
+                                            BorderColor="#005797" 
+                                            FontAttributes="Bold"
+                                             Text=" Iniciar   &#xE768;"
+                                             BorderWidth="0"
+                                             FontSize="25"
+                                                      Margin="0,20" 
+                                             WidthRequest="250"
+                                             FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteSegoe}}"
+                                             HeightRequest="50"
+                                            CornerRadius="10" 
+                                                      Clicked="OnLogin">
+
+                                    </buttons:SfButton>
+                                </ContentView>
+
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                    <StackLayout   VerticalOptions="CenterAndExpand" x:Name="stackConfirma" IsVisible="False" >
+                        <Frame Padding="50" Margin="50, 10" CornerRadius="10"  BackgroundColor="#ffffff" BorderColor="#ffffff"  IsClippedToBounds="True" HasShadow="True">
+                            <StackLayout>
+                                <ContentView HorizontalOptions="Center" Margin="20">
+                                    <Label Text="Ud. puede elegir estas opciones:" HorizontalTextAlignment="Center" FontSize="30" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"  ></Label>
+                                </ContentView>
+                                <ContentView HorizontalOptions="Center" >
+                                    <BoxView HeightRequest="3" WidthRequest="500" HorizontalOptions="FillAndExpand" BackgroundColor="#1c4081">
+                                    </BoxView>
+                                </ContentView>
+                                <ContentView HorizontalOptions="Center" VerticalOptions="Center" Margin="20">
+                                    <buttons:SfButton x:Name="btnRegistrar" Text="Configurar lados" ImageSource="iconconfig.png" ShowIcon="True" ImageAlignment="End" CornerRadius="10" FontSize="25" ImageWidth="50"  HeightRequest="80" WidthRequest="280" BackgroundColor="#1c4081" BorderColor="#76a9da" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"
+                                                        Clicked="OnRegistrar"  >
+                                    </buttons:SfButton>
+                                </ContentView>
+                                <ContentView HorizontalOptions="Center" VerticalOptions="Center" Margin="20">
+                                    <buttons:SfButton x:Name="btnReporte" Text="Ver lista" ImageSource="icontienda.png" ShowIcon="True" ImageAlignment="End" CornerRadius="10" FontSize="25" ImageWidth="50"  HeightRequest="80" WidthRequest="280" BackgroundColor="#1c4081" BorderColor="#76a9da" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"
+                                                      Clicked="OnReportes"   >
+                                    </buttons:SfButton>
+                                </ContentView>
+                                <ContentView HorizontalOptions="Center" VerticalOptions="Center" Margin="20">
+                                    <buttons:SfButton  Text="Volver al Inicio" FontSize="25" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" CornerRadius="10" HeightRequest="80" WidthRequest="280" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"
+                                     Clicked="OnCancelar"     >
+                                    </buttons:SfButton>
+                                </ContentView>
+
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+
+                    <StackLayout x:Name="stackfooter" Margin="0,0,0,0" VerticalOptions="End" BackgroundColor="#005797" Padding="8" IsVisible="False">
+                        <Label HorizontalTextAlignment="Center" TextColor="#cdcfd0" Text="SIGES - 2019" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"   />
+
+
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary" Text="Salir" Priority="0" Clicked="OnSalir" />
+    </ContentPage.ToolbarItems>
+</ContentPage>

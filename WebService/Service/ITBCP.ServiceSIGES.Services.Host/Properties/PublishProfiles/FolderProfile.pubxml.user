@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\TSIGES</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="assets/resources/CloseShift.do">
+      <publishTime>11/07/2019 14:00:44</publishTime>
+    </File>
+    <File Include="assets/resources/CorreoCliente.html">
+      <publishTime>10/31/2019 22:07:40</publishTime>
+    </File>
+    <File Include="Autentication.svc">
+      <publishTime>10/31/2019 22:07:40</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Aplication.dll">
+      <publishTime>11/25/2019 17:47:04</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Aplication.dll.config">
+      <publishTime>11/06/2019 13:36:11</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Aplication.Interfaces.dll">
+      <publishTime>11/25/2019 17:47:01</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Aplication.Interfaces.pdb">
+      <publishTime>11/25/2019 17:47:01</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Aplication.pdb">
+      <publishTime>11/25/2019 17:47:04</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Domain.dll">
+      <publishTime>11/25/2019 17:23:41</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Domain.Entities.dll">
+      <publishTime>11/25/2019 17:23:40</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Domain.Entities.pdb">
+      <publishTime>11/25/2019 17:23:40</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Domain.pdb">
+      <publishTime>11/25/2019 17:23:41</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Infraestructure.DataAcces.dll">
+      <publishTime>11/25/2019 17:47:03</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Infraestructure.DataAcces.pdb">
+      <publishTime>11/25/2019 17:47:03</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Infraestructure.IoC.dll">
+      <publishTime>11/25/2019 17:47:04</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Infraestructure.IoC.dll.config">
+      <publishTime>11/06/2019 13:36:11</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Infraestructure.IoC.pdb">
+      <publishTime>11/25/2019 17:47:04</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Services.Host.dll">
+      <publishTime>11/25/2019 17:47:05</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Services.Host.pdb">
+      <publishTime>11/25/2019 17:47:05</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Services.Interfaces.dll">
+      <publishTime>11/25/2019 17:47:01</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Services.Interfaces.pdb">
+      <publishTime>11/25/2019 17:47:01</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Services.Services.dll">
+      <publishTime>11/25/2019 17:47:05</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Services.Services.dll.config">
+      <publishTime>11/06/2019 13:36:12</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Services.Services.pdb">
+      <publishTime>11/25/2019 17:47:05</publishTime>
+    </File>
+    <File Include="bin/Microsoft.IdentityModel.JsonWebTokens.dll">
+      <publishTime>06/24/2019 19:50:48</publishTime>
+    </File>
+    <File Include="bin/Microsoft.IdentityModel.Logging.dll">
+      <publishTime>06/24/2019 19:52:42</publishTime>
+    </File>
+    <File Include="bin/Microsoft.IdentityModel.Tokens.dll">
+      <publishTime>06/24/2019 19:55:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.ServiceLocation.dll">
+      <publishTime>10/31/2019 22:07:39</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.Unity.dll">
+      <publishTime>10/31/2019 22:07:39</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>04/22/2019 01:06:16</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.pdb">
+      <publishTime>11/27/2018 17:59:08</publishTime>
+    </File>
+    <File Include="bin/System.IdentityModel.Tokens.Jwt.dll">
+      <publishTime>06/24/2019 19:49:42</publishTime>
+    </File>
+    <File Include="Facturacion.svc">
+      <publishTime>10/31/2019 22:07:40</publishTime>
+    </File>
+    <File Include="Impresion.svc">
+      <publishTime>10/31/2019 22:07:40</publishTime>
+    </File>
+    <File Include="Parameters.svc">
+      <publishTime>10/31/2019 22:07:40</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>07/18/2019 16:12:58</publishTime>
+    </File>
+    <File Include="Reimpresion.svc">
+      <publishTime>05/30/2019 17:18:58</publishTime>
+    </File>
+    <File Include="Sales.svc">
+      <publishTime>10/31/2019 22:07:40</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>11/13/2019 12:52:05</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

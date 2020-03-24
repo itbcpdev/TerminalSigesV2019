@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+           xmlns:titan="clr-namespace:TerminalSIGES.Views.Lib" 
+            xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+            xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"                           
+            Title=".::GRIFERO POR CARA::."
+             x:Class="TerminalSiges.Views.Pages.GriferosCara.ConfigGriferoCaraCompleted">
+    <ContentPage.Content>
+        <StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  >
+            <busyindicator:SfBusyIndicator IsVisible="True" x:Name="IndicadorDeCarga" AnimationType="Ball" Title="Procesando registros..." ViewBoxWidth = "100" ViewBoxHeight="100" Duration="0.5" TextColor="#1c4081" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

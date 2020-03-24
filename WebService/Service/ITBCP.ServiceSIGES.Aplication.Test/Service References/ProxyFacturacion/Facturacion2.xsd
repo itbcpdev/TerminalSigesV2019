@@ -1,0 +1,1518 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="TS_BEVariables">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="clave" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="config" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="flgelimina" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="tipovar" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="valor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="valorpto" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="varid" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BEVariables" nillable="true" type="tns:TS_BEVariables" />
+  <xs:complexType name="ArrayOfTS_BEVariables">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BEVariables" nillable="true" type="tns:TS_BEVariables" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BEVariables" nillable="true" type="tns:ArrayOfTS_BEVariables" />
+  <xs:complexType name="Excepcion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mensaje" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Excepcion" nillable="true" type="tns:Excepcion" />
+  <xs:complexType name="TS_BERuta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdruta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dsruta" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BERuta" nillable="true" type="tns:TS_BERuta" />
+  <xs:complexType name="ArrayOfTS_BERuta">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BERuta" nillable="true" type="tns:TS_BERuta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BERuta" nillable="true" type="tns:ArrayOfTS_BERuta" />
+  <xs:complexType name="TS_BEDescuento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cantidad" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="cantidad1" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="cantidad2" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="cdarticulo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descuento" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="nroitem" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="porcentaje" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BEDescuento" nillable="true" type="tns:TS_BEDescuento" />
+  <xs:complexType name="ArrayOfTS_BEDescuento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BEDescuento" nillable="true" type="tns:TS_BEDescuento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BEDescuento" nillable="true" type="tns:ArrayOfTS_BEDescuento" />
+  <xs:complexType name="TS_BELocal">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdlocal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdsunat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdzona" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="deplocal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dislocal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="drlocal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dslocal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nro_centralizacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="provlocal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tlflocal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tlflocal1" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BELocal" nillable="true" type="tns:TS_BELocal" />
+  <xs:complexType name="ArrayOfTS_BELocal">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BELocal" nillable="true" type="tns:TS_BELocal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BELocal" nillable="true" type="tns:ArrayOfTS_BELocal" />
+  <xs:complexType name="TS_BETipo_Igv">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fecha" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="igv" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BETipo_Igv" nillable="true" type="tns:TS_BETipo_Igv" />
+  <xs:complexType name="ArrayOfTS_BETipo_Igv">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BETipo_Igv" nillable="true" type="tns:TS_BETipo_Igv" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BETipo_Igv" nillable="true" type="tns:ArrayOfTS_BETipo_Igv" />
+  <xs:complexType name="TS_BEAlmacen">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="activo" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="cdalmacen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="daalmacen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dsalmacen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fecinventario" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="inventario" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BEAlmacen" nillable="true" type="tns:TS_BEAlmacen" />
+  <xs:complexType name="ArrayOfTS_BEAlmacen">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BEAlmacen" nillable="true" type="tns:TS_BEAlmacen" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BEAlmacen" nillable="true" type="tns:ArrayOfTS_BEAlmacen" />
+  <xs:complexType name="TS_BETerminal">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="_virtual" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="activa_boton_playa" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="boleta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="boletafmt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="boletaimpre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="boletapreimpre" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="cdalmacen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdprecio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdusuario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="conexion_dispensador" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="displayimpre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="factura" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="facturafmt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="facturaimpre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="facturapreimpre" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="fe_idpos" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="fe_nompos" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fecproceso" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="flg_formato_a4" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_nc_correlativo" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_nd_correlativo" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_pdf417" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_print_qr" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgaperturacaja" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgautomatica" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgcierrezok" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgfacturacion" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flghotkey" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgpagocheque" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgpagocredito" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgpagoefectivo" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgpagoncredito" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgpagotarjeta" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgtransferencia" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgvalidaz" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="gavetachr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="gavetaimpre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="grabarcliente" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="guia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="guiafmt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="guiaimpre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="letra" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="letrafmt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="letraimpre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="modalmacen" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="moddsctogral" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="moddsctoitem" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="modfecha" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="modif_corr" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="modlistap" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="modmoneda" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="modobservacion" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="modocompra" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="modprecio" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="modservicio" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="modvendedor" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="mtodsctomax" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="mtozeta" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ncredito" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ncreditoboleta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ncreditofmt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ncreditoimpre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ndebito" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ndebitoboleta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ndebitofmt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ndebitoimpre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nrodeposito" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="nropos" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nroserie1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nroserie2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nroseriemaq" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nrozeta" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="nventa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nventachrfin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nventachrini" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nventafeed" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="nventaimpre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="path_loteria" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="playa_formasdepago" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="preciocero" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="proforma" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="proformafmt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="proformaimpre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="promocion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="promocionchrfin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="promocionchrini" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="promocionfeed" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="promocionfmt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="promocionimpre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="promocionpreimpre" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="rucinvalido" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="seriehd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ticket" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ticket2columnas" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ticketchrfin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ticketchrini" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ticketfactura" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ticketfeed" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ticketimpre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ticketlineacorte" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="tipoterminal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tktboleta" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="tktfactura" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="tktnotadespacho" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="tktpromocion" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="tranvirtual" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="turno" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BETerminal" nillable="true" type="tns:TS_BETerminal" />
+  <xs:complexType name="ArrayOfTS_BETerminal">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BETerminal" nillable="true" type="tns:TS_BETerminal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BETerminal" nillable="true" type="tns:ArrayOfTS_BETerminal" />
+  <xs:complexType name="TS_BECambio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cambio" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="fecha" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BECambio" nillable="true" type="tns:TS_BECambio" />
+  <xs:complexType name="ArrayOfTS_BECambio">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BECambio" nillable="true" type="tns:TS_BECambio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BECambio" nillable="true" type="tns:ArrayOfTS_BECambio" />
+  <xs:complexType name="TS_BEZona">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdzona" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dazona" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dszona" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BEZona" nillable="true" type="tns:TS_BEZona" />
+  <xs:complexType name="ArrayOfTS_BEZona">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BEZona" nillable="true" type="tns:TS_BEZona" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BEZona" nillable="true" type="tns:ArrayOfTS_BEZona" />
+  <xs:complexType name="TS_BEVw_Puntos_Por_Tarjeta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdarticulo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdgrupo02" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ctipo_punto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dsarticulo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="expr1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ruccliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tarjafiliacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipovar" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="valorid" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="valorpunto" nillable="true" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BEVw_Puntos_Por_Tarjeta" nillable="true" type="tns:TS_BEVw_Puntos_Por_Tarjeta" />
+  <xs:complexType name="ArrayOfTS_BEVw_Puntos_Por_Tarjeta">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BEVw_Puntos_Por_Tarjeta" nillable="true" type="tns:TS_BEVw_Puntos_Por_Tarjeta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BEVw_Puntos_Por_Tarjeta" nillable="true" type="tns:ArrayOfTS_BEVw_Puntos_Por_Tarjeta" />
+  <xs:complexType name="TS_BEVentap">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdbanco" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdlocal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdtarjeta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdtipodoc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdtppago" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fecdocumento" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fecproceso" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="flgcierrez" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="mtopagodol" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="mtopagosol" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="nrocheque" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nrocuenta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nrodocumento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nroncredito" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nropos" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nroseriemaq" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nrotarjeta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="turno" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="valoracumula" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BEVentap" nillable="true" type="tns:TS_BEVentap" />
+  <xs:complexType name="ArrayOfTS_BEVentap">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BEVentap" nillable="true" type="tns:TS_BEVentap" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BEVentap" nillable="true" type="tns:ArrayOfTS_BEVentap" />
+  <xs:complexType name="TS_BEVenta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="archturno" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="c_centralizacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cantcupon" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="cdalmacen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdcliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdgrupo02" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdhash" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdlocal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdmedio_pago" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdmoneda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdprecio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdruta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdtipodoc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdtranspor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdusuanula" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdusuario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdvendedor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="chkespecial" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="chofer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="codeid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="codes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ctadetraccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="drdestino" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="drpartida" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fact_elect" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="fecanula" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fecanulasis" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fecdocumento" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fecproceso" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fecsistema" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="flgcierrez" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgmanual" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgmovimiento" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="inscripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="marcavehic" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mensaje1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mensaje2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mtocanje" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="mtodetraccion" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="mtodscto" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="mtoimpuesto" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="mtonoafecto" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="mtopercepcion" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="mtorecaudo" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="mtoservicio" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="mtosubtotal" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="mtototal" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="mtovueltodol" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="mtovueltosol" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="nrobonus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nrocelular" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nrodocumento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nroguia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nrolicencia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nroocompra" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nroplaca" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nropos" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nroproforma" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nroserie1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nroserie2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nroseriemaq" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nrotarjeta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="observacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="odometro" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pdf417" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="porcdetraccion" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="pordscto1" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="pordscto2" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="pordscto3" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="pordsctoeq" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="porservicio" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="precio_orig" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ptosganados" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="redondea_indecopi" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="referencia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rscliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ruccliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rucinvalido" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="scop" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tcambio" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="tipoacumula" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipofactura" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoventa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="turno" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="usadecimales" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="valoracumula" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="valorvta" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BEVenta" nillable="true" type="tns:TS_BEVenta" />
+  <xs:complexType name="ArrayOfTS_BEVenta">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BEVenta" nillable="true" type="tns:TS_BEVenta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BEVenta" nillable="true" type="tns:ArrayOfTS_BEVenta" />
+  <xs:complexType name="TS_BEVentad">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="archturno" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="cant_ncredito" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="cantidad" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="cara" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdalterna" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdarticulo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdarticulosunat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdgrupo02" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdlocal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdpack" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdtipodoc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdvendedor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="costo" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="costo_venta" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="fecdocumento" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fecproceso" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="flgcierrez" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="glosa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="impuesto" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="manguera" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="moverstock" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="mtodetraccion" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="mtodscto" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="mtoimpuesto" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="mtonoafecto" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="mtopercepcion" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="mtoservicio" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="mtosubtotal" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="mtototal" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="nrodocumento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nrogasboy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nroguia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nroitem" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="nropos" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nroproforma" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nroseriemaq" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="porcdetraccion" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="pordscto1" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="pordscto2" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="pordscto3" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="pordsctoeq" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="precio" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="precio_orig" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="precioafiliacion" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ptosganados" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="redondea_indecopi" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="talla" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoacumula" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tiposuma" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="trfgratuita" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="turno" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="valoracumula" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="valorvta" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BEVentad" nillable="true" type="tns:TS_BEVentad" />
+  <xs:complexType name="ArrayOfTS_BEVentad">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BEVentad" nillable="true" type="tns:TS_BEVentad" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BEVentad" nillable="true" type="tns:ArrayOfTS_BEVentad" />
+  <xs:complexType name="TS_BEConceptoVariables">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TipoAA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="clave" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="concepto" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="conceptos_prefijo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="config" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="flgelimina" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="prefijocard" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="tipoacumula" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipocanje" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipopunto" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="tipovar" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="valor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="valorid" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="valorpto" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="valorpunto" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="varid" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BEConceptoVariables" nillable="true" type="tns:TS_BEConceptoVariables" />
+  <xs:complexType name="ArrayOfTS_BEConceptoVariables">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BEConceptoVariables" nillable="true" type="tns:TS_BEConceptoVariables" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BEConceptoVariables" nillable="true" type="tns:ArrayOfTS_BEConceptoVariables" />
+  <xs:complexType name="TS_BEHvale">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="archturno" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="cdcliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdmoneda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdtipodoc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdtipodocfac" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="docvale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fecdocumento" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fecdocumentofac" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fecproceso" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fecprocesofac" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fecvale" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="mtovale" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="nrodocumento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nrodocumentofac" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nroplaca" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nroseriemaq" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nroseriemaqfac" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nrovale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="placa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="turno" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BEHvale" nillable="true" type="tns:TS_BEHvale" />
+  <xs:complexType name="ArrayOfTS_BEHvale">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BEHvale" nillable="true" type="tns:TS_BEHvale" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BEHvale" nillable="true" type="tns:ArrayOfTS_BEHvale" />
+  <xs:complexType name="TS_BECierres">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdusuario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fecha" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fecsistema" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BECierres" nillable="true" type="tns:TS_BECierres" />
+  <xs:complexType name="ArrayOfTS_BECierres">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BECierres" nillable="true" type="tns:TS_BECierres" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BECierres" nillable="true" type="tns:ArrayOfTS_BECierres" />
+  <xs:complexType name="TS_BEOp_Tran">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="c_interno" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="cara" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdtipodoc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="controlador" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dateproce" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="documento" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fecha" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fecsistema" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="galones" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="hora" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="manguera" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="numero" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="precio" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="producto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="soles" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="turno" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BEOp_Tran" nillable="true" type="tns:TS_BEOp_Tran" />
+  <xs:complexType name="ArrayOfTS_BEOp_Tran">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BEOp_Tran" nillable="true" type="tns:TS_BEOp_Tran" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BEOp_Tran" nillable="true" type="tns:ArrayOfTS_BEOp_Tran" />
+  <xs:complexType name="TS_BETipopago">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdtppago" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dstppago" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="flgpago" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgsistema" nillable="true" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BETipopago" nillable="true" type="tns:TS_BETipopago" />
+  <xs:complexType name="ArrayOfTS_BETipopago">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BETipopago" nillable="true" type="tns:TS_BETipopago" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BETipopago" nillable="true" type="tns:ArrayOfTS_BETipopago" />
+  <xs:complexType name="TS_BETarjeta_Concepto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ruccliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tarjafiliacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="valorid" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BETarjeta_Concepto" nillable="true" type="tns:TS_BETarjeta_Concepto" />
+  <xs:complexType name="ArrayOfTS_BETarjeta_Concepto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BETarjeta_Concepto" nillable="true" type="tns:TS_BETarjeta_Concepto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BETarjeta_Concepto" nillable="true" type="tns:ArrayOfTS_BETarjeta_Concepto" />
+  <xs:complexType name="TS_BETallad">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdtalla" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="orden" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="talla" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BETallad" nillable="true" type="tns:TS_BETallad" />
+  <xs:complexType name="ArrayOfTS_BETallad">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BETallad" nillable="true" type="tns:TS_BETallad" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BETallad" nillable="true" type="tns:ArrayOfTS_BETallad" />
+  <xs:complexType name="TS_BEStock">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdalmacen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdarticulo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdlocal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ctoinicial" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ctoinventario" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ctoreposicion" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="fecingreso" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fecinicial" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fecinventario" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fecsalida" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fecventa" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="is_recalculo" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="monctoinicial" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="monctoinventario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="monctorepo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="stockactual" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="stockinicial" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="stockinventario" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="stockmaximo" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="stockminimo" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="stockseparado" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="talla" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="usuingreso" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ususalida" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="usuventa" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BEStock" nillable="true" type="tns:TS_BEStock" />
+  <xs:complexType name="ArrayOfTS_BEStock">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BEStock" nillable="true" type="tns:TS_BEStock" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BEStock" nillable="true" type="tns:ArrayOfTS_BEStock" />
+  <xs:complexType name="TS_BEListaprecio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdprecio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dsprecio" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BEListaprecio" nillable="true" type="tns:TS_BEListaprecio" />
+  <xs:complexType name="ArrayOfTS_BEListaprecio">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BEListaprecio" nillable="true" type="tns:TS_BEListaprecio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BEListaprecio" nillable="true" type="tns:ArrayOfTS_BEListaprecio" />
+  <xs:complexType name="TS_BESaldoclic">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdcliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdtipodoc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="consumto" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="fechainicio" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="flgbloquea" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgilimit" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="limitemto" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="nrocontrato" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nrodocumento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipocredito" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipodespacho" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tpsaldo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BESaldoclic" nillable="true" type="tns:TS_BESaldoclic" />
+  <xs:complexType name="ArrayOfTS_BESaldoclic">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BESaldoclic" nillable="true" type="tns:TS_BESaldoclic" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BESaldoclic" nillable="true" type="tns:ArrayOfTS_BESaldoclic" />
+  <xs:complexType name="TS_BESaldoclid">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdarticulo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdcliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdgrupo02" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdtipodoc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="clave" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="consumto" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="enviado" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="fechaatencion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="flgbloquea" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgilimit" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="limitemto" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="nrobonus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nrodocumento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nroplaca" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nrotarjeta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipodespacho" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BESaldoclid" nillable="true" type="tns:TS_BESaldoclid" />
+  <xs:complexType name="ArrayOfTS_BESaldoclid">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BESaldoclid" nillable="true" type="tns:TS_BESaldoclid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BESaldoclid" nillable="true" type="tns:ArrayOfTS_BESaldoclid" />
+  <xs:complexType name="TS_BEAfiliaciontarj">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bloqueado" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="canjeado" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="cdcliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdlocal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="csql_actualiza" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="disponible" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="drcliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="emcliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="estado" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="fechaultconsumo" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="provtelefonia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="provtelefonia1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="puntos" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="rscliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ruccliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tarjafiliacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tarjafiliacion_traspaso" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tlfcliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tlfcliente1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="valoracumula" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BEAfiliaciontarj" nillable="true" type="tns:TS_BEAfiliaciontarj" />
+  <xs:complexType name="ArrayOfTS_BEAfiliaciontarj">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BEAfiliaciontarj" nillable="true" type="tns:TS_BEAfiliaciontarj" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BEAfiliaciontarj" nillable="true" type="tns:ArrayOfTS_BEAfiliaciontarj" />
+  <xs:complexType name="TS_BEPrecio_Varios">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdarticulo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdcliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechamodificacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="rango1" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="rango2" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipocli" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tiporango" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="valor" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BEPrecio_Varios" nillable="true" type="tns:TS_BEPrecio_Varios" />
+  <xs:complexType name="ArrayOfTS_BEPrecio_Varios">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BEPrecio_Varios" nillable="true" type="tns:TS_BEPrecio_Varios" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BEPrecio_Varios" nillable="true" type="tns:ArrayOfTS_BEPrecio_Varios" />
+  <xs:complexType name="TS_BEPrecio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdarticulo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdmoneda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdmonoferta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdprecio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fecedicion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fecfinoferta" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fecinioferta" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="horfinoferta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="horinioferta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mtoprecio" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="mtoprecioferta" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="porcomision" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="promocionid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="talla" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BEPrecio" nillable="true" type="tns:TS_BEPrecio" />
+  <xs:complexType name="ArrayOfTS_BEPrecio">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BEPrecio" nillable="true" type="tns:TS_BEPrecio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BEPrecio" nillable="true" type="tns:ArrayOfTS_BEPrecio" />
+  <xs:complexType name="TS_BEPreciocliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdarticulo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdcliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nrocontrato" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="precio" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="tipocli" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipodes" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BEPreciocliente" nillable="true" type="tns:TS_BEPreciocliente" />
+  <xs:complexType name="ArrayOfTS_BEPreciocliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BEPreciocliente" nillable="true" type="tns:TS_BEPreciocliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BEPreciocliente" nillable="true" type="tns:ArrayOfTS_BEPreciocliente" />
+  <xs:complexType name="TS_BETmpmovpuntosArticulo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="_virtual" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="almacen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="bloqcom" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="bloqgral" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="bloqvta" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="c_centrocosto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="c_cuenta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="c_cuenta_compras" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="c_cuenta_ventas" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cantfidelizacion" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="cantidad" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="cdamarre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdarticulo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdarticulosunat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdarticulovulcano" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdgrupo01" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdgrupo02" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdgrupo03" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdgrupo04" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdgrupo05" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdmedequiv" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdproducto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdtalla" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdtipodoc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdunimed" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="clienteid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="consignacion" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="credito" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ctaalmacen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ctacompra" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ctacosto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ctaventa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ctoinicial" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ctoinventario" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ctopromedio" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ctoreposicion" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="dsarticulo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dsarticulo1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="enviado" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="equivalencia" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fecedicion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechadoc" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechasis" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fecinicial" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fecinventario" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="flgglosa" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgpromocion" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="glosa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="glosaArticulo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="impuesto" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="impuesto1" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="impuestoArticulo" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="is_easytaxi" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="item" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="localid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mgutilidad" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="monctoinicial" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="monctoinventario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="monctoprom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="monctorepo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="moneda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="montofidelizacion" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="moverstock" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="movimiento" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="mtodescto" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="mtoimpuesto" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="mtosubtotal" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="mtototal" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="nrodocumento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nropos" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="porcdetraccion" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="porcpercepcion" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="precio" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="precioafiliacion" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="puntos" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="puntosfidelizacion" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="referencia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rscliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ruccliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="serieprinter" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tarjafiliacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tcambio" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="ticketfactura" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipotran" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tmstamp" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="tpconversion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tpformula" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="trfgratuita" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="turno" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="usadecimales" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="valoracumulado" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="valorconversion" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="venta" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="vtaxmonto" nillable="true" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BETmpmovpuntosArticulo" nillable="true" type="tns:TS_BETmpmovpuntosArticulo" />
+  <xs:complexType name="ArrayOfTS_BETmpmovpuntosArticulo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BETmpmovpuntosArticulo" nillable="true" type="tns:TS_BETmpmovpuntosArticulo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BETmpmovpuntosArticulo" nillable="true" type="tns:ArrayOfTS_BETmpmovpuntosArticulo" />
+  <xs:complexType name="TS_BETmpmovpuntos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="almacen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cantidad" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="cdproducto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdtipodoc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="clienteid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="credito" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="enviado" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechadoc" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechasis" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="glosa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="impuesto" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="item" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="localid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="moneda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mtodescto" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="mtoimpuesto" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="mtosubtotal" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="mtototal" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="nrodocumento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nropos" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="precio" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="puntos" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="referencia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rscliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ruccliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="serieprinter" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tarjafiliacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tcambio" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="tipotran" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tmstamp" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="turno" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="valoracumulado" nillable="true" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BETmpmovpuntos" nillable="true" type="tns:TS_BETmpmovpuntos" />
+  <xs:complexType name="ArrayOfTS_BETmpmovpuntos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BETmpmovpuntos" nillable="true" type="tns:TS_BETmpmovpuntos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BETmpmovpuntos" nillable="true" type="tns:ArrayOfTS_BETmpmovpuntos" />
+  <xs:complexType name="TS_BETmpmovfactura">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="almacen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cantidad" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="cara" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdproducto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdtipodoc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="clienteid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="costo" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="credito" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="drcliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="enviado" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechadoc" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechasis" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fecproceso" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="glosa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="impuesto" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="item" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="localid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="moneda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mtodescto" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="mtoimpuesto" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="mtosubtotal" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="mtototal" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="nrodocumento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nropos" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="precio" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="puntos" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="referencia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rscliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ruccliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tcambio" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="tmstamp" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="turno" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="valoracumulado" nillable="true" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BETmpmovfactura" nillable="true" type="tns:TS_BETmpmovfactura" />
+  <xs:complexType name="ArrayOfTS_BETmpmovfactura">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BETmpmovfactura" nillable="true" type="tns:TS_BETmpmovfactura" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BETmpmovfactura" nillable="true" type="tns:ArrayOfTS_BETmpmovfactura" />
+  <xs:complexType name="TS_BEGruposconsumo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdgrupo02" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdgrupos" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dsgrupos" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BEGruposconsumo" nillable="true" type="tns:TS_BEGruposconsumo" />
+  <xs:complexType name="ArrayOfTS_BEGruposconsumo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BEGruposconsumo" nillable="true" type="tns:TS_BEGruposconsumo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BEGruposconsumo" nillable="true" type="tns:ArrayOfTS_BEGruposconsumo" />
+  <xs:complexType name="TS_BETicket">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="documento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="linea" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="texto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BETicket" nillable="true" type="tns:TS_BETicket" />
+  <xs:complexType name="ArrayOfTS_BETicket">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BETicket" nillable="true" type="tns:TS_BETicket" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BETicket" nillable="true" type="tns:ArrayOfTS_BETicket" />
+  <xs:complexType name="TS_BECnfgvalorpuntoVariables">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="clave" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="concepto" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="conceptos_prefijo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="config" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descripcionTipoPunto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descripcionVariable" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="flgelimina" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="prefijocard" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="tipoacumula" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipocanje" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipopunto" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="tipovar" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="valor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="valorid" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="valorpto" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="valorpunto" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="varid" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BECnfgvalorpuntoVariables" nillable="true" type="tns:TS_BECnfgvalorpuntoVariables" />
+  <xs:complexType name="ArrayOfTS_BECnfgvalorpuntoVariables">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BECnfgvalorpuntoVariables" nillable="true" type="tns:TS_BECnfgvalorpuntoVariables" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BECnfgvalorpuntoVariables" nillable="true" type="tns:ArrayOfTS_BECnfgvalorpuntoVariables" />
+  <xs:complexType name="TS_BECliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bloqcredito" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="cdalmacen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdcliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cddepartamento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cddistrito" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdgrupocli" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdzona" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="consulta_sunat" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="contacto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="diascredito" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="diasmax_nd" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="drcliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="drcobranza" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="drentrega" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="emcliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="faxcliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fecha_creacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fecnacimiento" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="flg_pideclave" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgpreciond" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgtotalnd" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="gruporuta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="monlimite" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mtodisponible" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="mtolimite" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="rscliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ruccliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sunat_actualiza" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="tipocli" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tlfcliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tlfcliente1" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BECliente" nillable="true" type="tns:TS_BECliente" />
+  <xs:complexType name="ArrayOfTS_BECliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BECliente" nillable="true" type="tns:TS_BECliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BECliente" nillable="true" type="tns:ArrayOfTS_BECliente" />
+  <xs:complexType name="TS_BECierre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdcierre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="flgarticulo" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgarticulodesc" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgcanjearticulo" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgcara" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgconsolidarlados" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgdepositogrifero" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgdesc" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgdocmanual" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flggastogrifero" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flggrupo01" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flggrupo02" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flggrupo03" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flggrupo04" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flggrupo05" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgpago" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgusuario" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgvendedor" nillable="true" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BECierre" nillable="true" type="tns:TS_BECierre" />
+  <xs:complexType name="ArrayOfTS_BECierre">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BECierre" nillable="true" type="tns:TS_BECierre" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BECierre" nillable="true" type="tns:ArrayOfTS_BECierre" />
+  <xs:complexType name="TS_BEGrupo02">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdgrupo02" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dagrupo02" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dsgrupo02" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BEGrupo02" nillable="true" type="tns:TS_BEGrupo02" />
+  <xs:complexType name="ArrayOfTS_BEGrupo02">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BEGrupo02" nillable="true" type="tns:TS_BEGrupo02" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BEGrupo02" nillable="true" type="tns:ArrayOfTS_BEGrupo02" />
+  <xs:complexType name="TS_BECara">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cara" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nropos" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BECara" nillable="true" type="tns:TS_BECara" />
+  <xs:complexType name="ArrayOfTS_BECara">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BECara" nillable="true" type="tns:TS_BECara" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BECara" nillable="true" type="tns:ArrayOfTS_BECara" />
+  <xs:complexType name="TS_BEArticulo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="_virtual" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="bloqcom" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="bloqgral" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="bloqvta" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="c_centrocosto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="c_cuenta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="c_cuenta_compras" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="c_cuenta_ventas" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cantfidelizacion" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="cdamarre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdarticulo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdarticulosunat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdarticulovulcano" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdgrupo01" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdgrupo02" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdgrupo03" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdgrupo04" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdgrupo05" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdmedequiv" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdtalla" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdunimed" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="consignacion" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ctaalmacen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ctacompra" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ctacosto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ctaventa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ctoinicial" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ctoinventario" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ctopromedio" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ctoreposicion" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="dsarticulo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dsarticulo1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="equivalencia" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="fecedicion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fecinicial" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fecinventario" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="flgglosa" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgpromocion" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="glosa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="impuesto" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="impuesto1" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="is_easytaxi" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="mgutilidad" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="monctoinicial" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="monctoinventario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="monctoprom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="monctorepo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="montofidelizacion" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="moverstock" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="movimiento" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="porcdetraccion" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="porcpercepcion" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="precioafiliacion" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="puntosfidelizacion" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ticketfactura" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tpconversion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tpformula" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="trfgratuita" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="usadecimales" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="valorconversion" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="venta" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="vtaxmonto" nillable="true" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BEArticulo" nillable="true" type="tns:TS_BEArticulo" />
+  <xs:complexType name="ArrayOfTS_BEArticulo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BEArticulo" nillable="true" type="tns:TS_BEArticulo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BEArticulo" nillable="true" type="tns:ArrayOfTS_BEArticulo" />
+  <xs:complexType name="TS_BEParametro">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="activa_camedi" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="activa_elsol" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="activa_formas_pago" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="activa_repro_stock" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="activadispensador" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="activasawa" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="arequipa" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="bbddsetup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="bdweb" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="bloqventaplaya" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="boton_transfer_gratuita" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="cambioturno" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="cancelado" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="cant_turno" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="cantdigitos_tarjpromo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="cd_estacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdalmacen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdcliente_automatico" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdclienteautomatico" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdcliprintndespacho" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cddepart_base" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdestacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdgrupocombustible" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdgrupovtaplaya" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdletrainicial" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdlocal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdtipodocautomatico" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="chkclientedia" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="cierre_especial" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="cierre_kardex" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="cierrex_formatos" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="clubgazel" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="cod_viatico" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="colorgrid" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="coloroff" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="coloron" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="colum_termica" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="conexiondispensador" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="conexionweb" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="conf_cierrex" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="conigv" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="consulta_sunat" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="correlativos2_ticket" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="credplaca" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="cursor_tienda" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="depositos_playa" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="desactivar_foxypreviewer" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="desanular" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="diasresetptos" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="digitocdcliente" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="digitoruc" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="escirsa" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="factura_c" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="facturafmt_c" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="facturaimpre_c" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fe_fecvalida" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fecinstall" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="flg_activa_ti_todosprod" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_activar_clientes_varios" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_afectarcosto_fletecompras" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_anula_easytaxi" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_anulapos" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_boton_facturacionmanual" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_boton_promo" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_botoncredito" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_botontiendaenplaya" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_btn_credito_playa" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_canjend" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_cliente_automatico" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_credito_centralizado" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_desc_prefijo" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="flg_facturacion_automatica" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_fecsrv" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_gastos_playa" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_imprimirnd_menos5s" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_invent_2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="flg_invent_fisicoteorico" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_kardex_unalinea" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_modo_fact" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_nc_liberand" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_noaplica_desc_tarj" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_nobuscar_nombre" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_notas_multiref" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_nrodias" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_ocultar_campos_tck" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_ocultarvta_menos5s" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_pideclavecred" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_pideodometro" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_pideplaca" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_pideplacatb" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_prefij_seriesdoc" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_print_qr" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_repx_terminal" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_round_dec_indecopi" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_round_indecopi_1_9" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_transfer_gratuita_cero" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_valdscto" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_valfecpos" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_valida_fecproce_dia" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flg_validateclas_cdcliente" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgcierraturnoxcaja" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgcontometro" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgcreaprodmov" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgformula" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flggrifo" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgintegrador" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgmostrar_precio_orig" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgprintndespacho" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgruta" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgsistema01" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgsistema02" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgsistema03" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgsoloterminal" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgsolotienda" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgtalla" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgvalida_nrovale" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flgvalidaruc" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="galones_decimales" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="guia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="guiafmt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="guiaimpr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="horacierrepd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="impr_veces_bol" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="impr_veces_fac" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="impr_veces_nd" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="imprime_canjeweb" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="imprime_clientes_credito" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="imprime_fact_playa" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="imprime_nvta" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="imprime_ptosacumulados" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="imprime_tiketera" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="imprime_total_dispensado" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="imprimir_cdarticulo_config" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="impuesto" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="iniciodia" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="instanciaweb" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="interfaz" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="intervaltimer" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="label_bellavista" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="lin1display" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lin2display" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="longtarjeta" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="masccantidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="masccantidadf" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="masccosto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mascprecio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="masctotal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="minutosxtktbol" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="modifica_depositos_parte" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="modifica_precio_tienda" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="monsistema" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="monticket" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mostrar_articulo_kardex" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="mostrar_igv_pantalla" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="mostrar_local_gastos" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="mostrar_ptos_ganados" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="msg_anula_documento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mto_desc_descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mto_facturacion_automatica" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="mtocupon" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="mtominautomatico" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="mtominideposito" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="mtominimodetraccion" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="mtominimodni" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="mtominimodni_sunat" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="nd_imp_saldoyconsumo" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="nd_playa" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="nivelserafin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="noconectawpuntos" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="notad_cdarticulo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nro_caracteres_rsocial" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="nrocara" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="nrocdbarra" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="nrocompra" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nrodeposito" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="nroimportacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nroinventario" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="nropago" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="nrotransgasboy" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="nrovale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nroversionbo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nroversionplaya" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nroversionti" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nroversiontienda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pantalland_cliprintnd" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="parte_tienda" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="passwordweb" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pd_separaglp" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="porcipm" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="porservicio" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="precio_varios" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="precioconigv" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="precioconservicio" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="prefbonus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prefcredcorp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prefcredlocal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prefflotlocal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ptobonus" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="punto_nd" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="rango_valfecpos" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="redondeasolescombus" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="redondeo" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="repite_articulo" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="rscliente_automatico" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ruta_backup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ruta_qr_jpg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ruta_webclubgazel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ruta_websaldos" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ruta_ws_easytaxy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="saltoauto" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="seriehd_imprime_ticket_web" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="stknegativo" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="tarjcredplaca" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="tarjeta_actu_cdcliente" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="tarjeta_mascara" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="terminalserver" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="tienda_cant_neg" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="tiendagazel" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="tipo_canje" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipo_menu" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="tipoafiliacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipocierrextienda" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="tipocontrol" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoptoafiliacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tpanulacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tpcambiotalla" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tpcompra" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tpguiatransferencia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tpingimportacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tpingreso" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tpinicial" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tppgocanje" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tppgogasto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tpsaldev" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tpsalida" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tpsalmerma" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tptransferencia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tptransferenciainterna" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tptransftienda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="triveno" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="userweb" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="utilidadcosto" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="valida_cdarticulo" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="valida_correlativo" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="valida_fecha_playa" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="valorcanje_regvta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="valorigv" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="versionbo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="versionplaya" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="versiontienda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="versiontinven" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="vertiposventa" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="zenpantalla" nillable="true" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BEParametro" nillable="true" type="tns:TS_BEParametro" />
+  <xs:complexType name="ArrayOfTS_BEParametro">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BEParametro" nillable="true" type="tns:TS_BEParametro" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BEParametro" nillable="true" type="tns:ArrayOfTS_BEParametro" />
+  <xs:complexType name="TS_BELoteriaaviso">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="linea1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="linea2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="linea3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="linea4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="linea5" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_BELoteriaaviso" nillable="true" type="tns:TS_BELoteriaaviso" />
+  <xs:complexType name="ArrayOfTS_BELoteriaaviso">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TS_BELoteriaaviso" nillable="true" type="tns:TS_BELoteriaaviso" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTS_BELoteriaaviso" nillable="true" type="tns:ArrayOfTS_BELoteriaaviso" />
+</xs:schema>

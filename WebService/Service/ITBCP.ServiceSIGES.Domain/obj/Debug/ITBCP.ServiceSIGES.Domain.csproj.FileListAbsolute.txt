@@ -1,0 +1,10 @@
+D:\Usuarios\Documents\TerminalSiges\Development\WebService\ITBCP.ServiceSIGES.Web\ITBCP.ServiceSIGES.Domain\bin\Debug\ITBCP.ServiceSIGES.Domain.dll
+D:\Usuarios\Documents\TerminalSiges\Development\WebService\ITBCP.ServiceSIGES.Web\ITBCP.ServiceSIGES.Domain\bin\Debug\ITBCP.ServiceSIGES.Domain.pdb
+D:\Usuarios\Documents\TerminalSiges\Development\WebService\ITBCP.ServiceSIGES.Web\ITBCP.ServiceSIGES.Domain\bin\Debug\ITBCP.ServiceSIGES.Domain.Entities.dll
+D:\Usuarios\Documents\TerminalSiges\Development\WebService\ITBCP.ServiceSIGES.Web\ITBCP.ServiceSIGES.Domain\bin\Debug\Newtonsoft.Json.dll
+D:\Usuarios\Documents\TerminalSiges\Development\WebService\ITBCP.ServiceSIGES.Web\ITBCP.ServiceSIGES.Domain\bin\Debug\ITBCP.ServiceSIGES.Domain.Entities.pdb
+D:\Usuarios\Documents\TerminalSiges\Development\WebService\ITBCP.ServiceSIGES.Web\ITBCP.ServiceSIGES.Domain\bin\Debug\Newtonsoft.Json.xml
+D:\Usuarios\Documents\TerminalSiges\Development\WebService\ITBCP.ServiceSIGES.Web\ITBCP.ServiceSIGES.Domain\obj\Debug\ITBCP.ServiceSIGES.Domain.csprojAssemblyReference.cache
+D:\Usuarios\Documents\TerminalSiges\Development\WebService\ITBCP.ServiceSIGES.Web\ITBCP.ServiceSIGES.Domain\obj\Debug\ITBCP.ServiceSIGES.Domain.csproj.CopyComplete
+D:\Usuarios\Documents\TerminalSiges\Development\WebService\ITBCP.ServiceSIGES.Web\ITBCP.ServiceSIGES.Domain\obj\Debug\ITBCP.ServiceSIGES.Domain.dll
+D:\Usuarios\Documents\TerminalSiges\Development\WebService\ITBCP.ServiceSIGES.Web\ITBCP.ServiceSIGES.Domain\obj\Debug\ITBCP.ServiceSIGES.Domain.pdb

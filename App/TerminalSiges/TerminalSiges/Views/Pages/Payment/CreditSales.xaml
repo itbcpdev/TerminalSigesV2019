@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:titan="clr-namespace:TerminalSIGES.Views.Lib" 
+             xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfNumericTextBox.XForms;assembly=Syncfusion.SfNumericTextBox.XForms"
+             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+             x:Class="TerminalSiges.Views.Pages.Payment.CreditSales"
+             Title="Ventas a Credito">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="10" >
+           
+            <StackLayout HorizontalOptions="FillAndExpand">
+
+                <BoxView  HeightRequest="3" HorizontalOptions="FillAndExpand" Color="#1c4081" />
+
+                <ContentView BackgroundColor="#cddbe6" Padding="10">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="250" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Row="0" 
+                               Grid.Column="0" 
+                               FontSize="30" 
+                               VerticalOptions="Center" 
+                               HorizontalTextAlignment="Center"  
+                               Text="Saldo Disponible   " 
+                               FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+
+                        <Label Grid.Row="0" 
+                               Grid.Column="1"
+                               FontSize="30"
+                               BackgroundColor="#1c4081"
+                               TextColor="AliceBlue"   
+                               Text="{Binding Saldo}"
+                               VerticalOptions="Center" 
+                               HorizontalTextAlignment="Center"  
+                               FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"
+                               HorizontalOptions="Fill"/>
+
+                    </Grid>
+                </ContentView>
+
+                <BoxView  HeightRequest="3" HorizontalOptions="FillAndExpand" Color="#1c4081" />
+
+                <busyindicator:SfBusyIndicator IsVisible="{Binding IsLoading}" 
+                                               AnimationType="Ball" 
+                                               Title="Cargando..." 
+                                               ViewBoxWidth = "25" 
+                                               ViewBoxHeight="25" 
+                                               Duration="0.5" TextColor="#006ba6" />
+            
+            </StackLayout>
+
+            <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition x:Name="OrientationGridColumn1" Width="0"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout x:Name="OrientationStackTarjetaCliente" Grid.Row="0" Grid.Column="0" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+
+                        <Label Text="Tarjeta del cliente" FontSize="22"/>
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+
+                            <combobox:SfComboBox  MultiSelectMode="None"
+                                                  x:Name="cmboPrefij"
+                                                  TextSize="26"
+                                                  DropDownTextSize="26"
+                                                  IsEditableMode="false"
+                                                  IgnoreDiacritic="true"
+                                                  DataSource="{Binding Prefijos}"
+                                                  SelectedValue="{Binding SelectedItem}"
+                                                  HorizontalOptions="Start"
+                                                  VerticalOptions="FillAndExpand"
+                                                  Watermark="Select an Item"
+                                                  ComboBoxMode="Suggest"
+                                                  WidthRequest="140"/>
+
+                            <inputLayout:SfTextInputLayout  FocusedColor="#0450C2"
+                                                            ContainerBackgroundColor="#E6EEF9"
+                                                            ContainerType="Outlined" 
+                                                            HorizontalOptions="FillAndExpand"
+                                                            ReserveSpaceForAssistiveLabels="False">
+
+                                <Entry  x:Name="txtTarjetaCliente" Text="{Binding cTextTarjetaCreditoBusqueda}" IsEnabled="{Binding IsSearch}" FontSize="26"/>
+
+                            </inputLayout:SfTextInputLayout>
+
+                            <buttons:SfButton IsEnabled="{Binding IsSearch}"
+                                              HorizontalOptions="Center"
+                                              VerticalOptions="Center"
+                                              HorizontalTextAlignment="Center"
+                                              VerticalTextAlignment="Center"
+                                              BackgroundColor="#005797"  
+                                              BorderColor="#005797" 
+                                              FontAttributes="Bold"
+                                              Text="&#xE773;"
+                                              BorderWidth="0"
+                                              FontSize="40"
+                                              WidthRequest="60" 
+                                              Clicked="search_Cliente_click"
+                                              FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteSegoe}}"
+                                              HeightRequest="60"
+                                              CornerRadius="10"/>
+
+                        </StackLayout>
+                   
+                    </StackLayout>
+
+                    <StackLayout x:Name="OrientationStackCodigoCliente" Grid.Row="1" Grid.Column="0" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                        <Label Text="Código del cliente" FontSize="22"/>
+
+                        <inputLayout:SfTextInputLayout  IsEnabled="False"
+                                                        HorizontalOptions="FillAndExpand"
+                                                        FocusedColor="#0450C2"
+                                                        ContainerBackgroundColor="#E6EEF9"
+                                                        ContainerType="Outlined" 
+                                                        ReserveSpaceForAssistiveLabels="False">
+
+                            <Entry x:Name="txtCodigoCliente" Text="{Binding Codigo_cliente}" FontSize="26" />
+
+                        </inputLayout:SfTextInputLayout>
+                    
+                    </StackLayout>
+
+                    <StackLayout x:Name="OrientationStackRazonSocial" Grid.Row="2" Grid.Column="0" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                        <Label Text="Razón Social" FontSize="22"/>
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+
+                            <inputLayout:SfTextInputLayout HorizontalOptions="FillAndExpand"
+                                                           IsEnabled="False"
+                                                           FocusedColor="#0450C2"
+                                                           ContainerBackgroundColor="#E6EEF9"
+                                                           ContainerType="Outlined" 
+                                                           ReserveSpaceForAssistiveLabels="False">
+
+                                <Entry x:Name="txtRazonSocial" Text="{Binding Razon_social_cliente}" FontSize="24" />
+
+                            </inputLayout:SfTextInputLayout>
+
+                            <buttons:SfButton IsEnabled="{Binding IsSearch}"
+                                              HorizontalOptions="Center"
+                                              VerticalOptions="Center"
+                                              HorizontalTextAlignment="Center"
+                                              VerticalTextAlignment="Center"
+                                              BackgroundColor="#005797"  
+                                              BorderColor="#005797" 
+                                              FontAttributes="Bold"
+                                              Text="&#xE773;"
+                                              BorderWidth="0"
+                                              FontSize="40"
+                                              WidthRequest="60"
+                                              Clicked="search_rscliente_click"
+                                              FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteSegoe}}"
+                                              HeightRequest="60"
+                                              CornerRadius="10"/>
+                        </StackLayout>
+                    
+                    </StackLayout>
+
+                    <StackLayout x:Name="OrientationStackChofer" Grid.Row="3" Grid.Column="0" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+
+                        <Label Text="Chofer" IsVisible="{Binding IsChoferVisible}" FontSize="22"/>
+
+                        <inputLayout:SfTextInputLayout IsVisible="{Binding IsChoferVisible}"
+                                                       FocusedColor="#0450C2"
+                                                       ContainerBackgroundColor="#E6EEF9"
+                                                       HorizontalOptions="FillAndExpand"
+                                                       ContainerType="Outlined" 
+                                                       ReserveSpaceForAssistiveLabels="False">
+
+                            <Entry x:Name="txtChofer" 
+                                   IsVisible="{Binding IsChoferVisible}"   
+                                   IsEnabled="{Binding IsChoferEnabled}"
+                                   Text="{Binding Chofer}"
+                                   FontSize="26"/>
+
+                        </inputLayout:SfTextInputLayout>
+
+                    </StackLayout>
+
+                    <StackLayout x:Name="OrientationStackPlacaOdometro" Grid.Row="4" Grid.Column="0" Orientation="Horizontal" HorizontalOptions="FillAndExpand"> 
+                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+
+                            <Label Text="Placa"  IsVisible="{Binding IsPlacaVisible}" FontSize="22" />
+
+                            <inputLayout:SfTextInputLayout IsVisible="{Binding IsPlacaVisible}" 
+                                                           FocusedColor="#0450C2"
+                                                           ContainerBackgroundColor="#E6EEF9"
+                                                           ContainerType="Outlined" 
+                                                           HorizontalOptions="FillAndExpand"
+                                                           ReserveSpaceForAssistiveLabels="False">
+
+                                <Entry x:Name="txtPlaca"
+                                       Text="{Binding Placa}" 
+                                       IsVisible="{Binding IsPlacaVisible}" 
+                                       IsEnabled="{Binding IsPlacaEnabled}"
+                                       FontSize="24"/>
+
+                            </inputLayout:SfTextInputLayout>
+
+                        </StackLayout>
+
+                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+
+                            <Label Text="Odómetro"
+                                   IsVisible="{Binding IsOdometroVisible}" 
+                                   FontSize="22"/>
+
+                            <inputLayout:SfTextInputLayout IsVisible="{Binding IsOdometroVisible}"
+                                                           FocusedColor="#0450C2"
+                                                           ContainerBackgroundColor="#E6EEF9"
+                                                           ContainerType="Outlined" 
+                                                           HorizontalOptions="FillAndExpand"
+                                                           ReserveSpaceForAssistiveLabels="False">
+                                <Entry x:Name="txtOdoMetro" 
+                                       Text="{Binding Odometro}"
+                                       IsVisible="{Binding IsOdometroVisible}" 
+                                       IsEnabled="{Binding IsOdometroEnabled}" 
+                                       Keyboard="Numeric" FontSize="26"/>
+
+                            </inputLayout:SfTextInputLayout>
+
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
+                
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary"  Text="Guardar"  Clicked="BtnSaveCredito_Clicked" Priority="0"/>
+    </ContentPage.ToolbarItems>
+</ContentPage>

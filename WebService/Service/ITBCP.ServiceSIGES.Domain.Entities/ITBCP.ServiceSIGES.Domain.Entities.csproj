@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5EF3204A-D00C-4FC0-8CDB-F1E5C4C7366C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ITBCP.ServiceSIGES.Domain.Entities</RootNamespace>
+    <AssemblyName>ITBCP.ServiceSIGES.Domain.Entities</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Articulo\TS_BEArticuloOutput.cs" />
+    <Compile Include="Campos\TS_BEField.cs" />
+    <Compile Include="Campos\TS_BECreditosValidacion.cs" />
+    <Compile Include="CierreX\TS_BECierreXInput.cs" />
+    <Compile Include="Cierrres\TS_BEXCierre.cs" />
+    <Compile Include="Cierrres\TS_BEXCierreInput.cs" />
+    <Compile Include="Cierrres\TS_BEZCierre.cs" />
+    <Compile Include="Cierrres\TS_BEZCierreInput.cs" />
+    <Compile Include="Cierrres\XObjetos\TS_BECCierre.cs" />
+    <Compile Include="Cierrres\XObjetos\TS_BEXArticuloStock.cs" />
+    <Compile Include="Cierrres\XObjetos\TS_BEXCara.cs" />
+    <Compile Include="Cierrres\XObjetos\TS_BEXDepositosVendedor.cs" />
+    <Compile Include="Cierrres\XObjetos\TS_BEXDocumentos.cs" />
+    <Compile Include="Cierrres\XObjetos\TS_BEXGrupo.cs" />
+    <Compile Include="Cierrres\XObjetos\TS_BEXGrupoProductos.cs" />
+    <Compile Include="Cierrres\XObjetos\TS_BEXTipoPago.cs" />
+    <Compile Include="Cierrres\XObjetos\TS_BEXTotales.cs" />
+    <Compile Include="Cierrres\XObjetos\TS_BEXVendedor.cs" />
+    <Compile Include="Cierrres\ZObjetos\TS_BEZArticuloStock.cs" />
+    <Compile Include="Cierrres\ZObjetos\TS_BEZCara.cs" />
+    <Compile Include="Cierrres\ZObjetos\TS_BEZCCierre.cs" />
+    <Compile Include="Cierrres\ZObjetos\TS_BEZDepositosVendedor.cs" />
+    <Compile Include="Cierrres\ZObjetos\TS_BEZDocumentos.cs" />
+    <Compile Include="Cierrres\ZObjetos\TS_BEZGrupo.cs" />
+    <Compile Include="Cierrres\ZObjetos\TS_BEZGrupoProductos.cs" />
+    <Compile Include="Cierrres\ZObjetos\TS_BEZTipoPago.cs" />
+    <Compile Include="Cierrres\ZObjetos\TS_BEZTotales.cs" />
+    <Compile Include="Cierrres\ZObjetos\TS_BEZVendedor.cs" />
+    <Compile Include="Cliente\TS_BEClienteInput.cs" />
+    <Compile Include="Cliente\TS_BEClienteLista.cs" />
+    <Compile Include="Cliente\TS_BEClienteOutput.cs" />
+    <Compile Include="Cliente\TS_BEClienteSearch.cs" />
+    <Compile Include="Cliente\TS_BEGestionFlotaC.cs" />
+    <Compile Include="Cliente\TS_BEGestionFlotaD.cs" />
+    <Compile Include="Cliente\TS_BEOpTransInput.cs" />
+    <Compile Include="Cliente\TS_BEOpTransOutput.cs" />
+    <Compile Include="Cliente\TS_BESaldos.cs" />
+    <Compile Include="Excepcion.cs" />
+    <Compile Include="Facturacion\Electronica\TS_BERespuestaFE.cs" />
+    <Compile Include="Facturacion\TS_BEFacturacion.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reimpresion\TS_BEDocumentoInput.cs" />
+    <Compile Include="Reimpresion\TS_BEReimpresionL.cs" />
+    <Compile Include="Reimpresion\TS_BEReimpresionLInput.cs" />
+    <Compile Include="Reimpresion\TS_BEReimpresionLOutput.cs" />
+    <Compile Include="Reimpresion\TS_BEUltimoDocumentoInput.cs" />
+    <Compile Include="Reimpresion\TS_BEVentagInput.cs" />
+    <Compile Include="Retorno.cs" />
+    <Compile Include="Sales\TS_BECabecera.cs" />
+    <Compile Include="Sales\TS_BECabeceraOutPut.cs" />
+    <Compile Include="Sales\TS_BECorrelativoInput.cs" />
+    <Compile Include="Sales\TS_BECorrelativoOutput.cs" />
+    <Compile Include="Sales\TS_BEDAnulaInput.cs" />
+    <Compile Include="Sales\TS_BEDetalleInput.cs" />
+    <Compile Include="Sales\TS_BELoadInput.cs" />
+    <Compile Include="Sales\TS_BEPago.cs" />
+    <Compile Include="Sales\TS_BEPagoInput.cs" />
+    <Compile Include="Sales\TS_BESales.cs" />
+    <Compile Include="TS_BEAfiliacionptos.cs" />
+    <Compile Include="TS_BEAfiliaciontarj.cs" />
+    <Compile Include="TS_BEAlmacen.cs" />
+    <Compile Include="TS_BEArticulo.cs" />
+    <Compile Include="Sales\TS_BECabeceraInput.cs" />
+    <Compile Include="TS_BEArticuloInput.cs" />
+    <Compile Include="TS_BECambio.cs" />
+    <Compile Include="TS_BECara.cs" />
+    <Compile Include="TS_BECemisor.cs" />
+    <Compile Include="TS_BECierre.cs" />
+    <Compile Include="TS_BECierremov.cs" />
+    <Compile Include="TS_BECierres.cs" />
+    <Compile Include="Cliente\TS_BECliente.cs" />
+    <Compile Include="TS_BEClienteCreditoOutput.cs" />
+    <Compile Include="TS_BECnfgvalorpuntoVariables.cs" />
+    <Compile Include="TS_BEConceptoVariables.cs" />
+    <Compile Include="TS_BECnfgvalorpunto.cs" />
+    <Compile Include="TS_BECredcliente.cs" />
+    <Compile Include="TS_BECventa.cs" />
+    <Compile Include="TS_BECventad.cs" />
+    <Compile Include="TS_BECventap.cs" />
+    <Compile Include="TS_BEDepartamento.cs" />
+    <Compile Include="TS_BEDeposito.cs" />
+    <Compile Include="TS_BEDepositoEInput.cs" />
+    <Compile Include="TS_BEDepositoInput.cs" />
+    <Compile Include="TS_BEDepositos.cs" />
+    <Compile Include="TS_BEDescuento.cs" />
+    <Compile Include="TS_BEDespachos.cs" />
+    <Compile Include="TS_BEDocumento.cs" />
+    <Compile Include="TS_BEEmisor.cs" />
+    <Compile Include="TS_BEEncripta.cs" />
+    <Compile Include="TS_BEFormato.cs" />
+    <Compile Include="TS_BEGlobal.cs" />
+    <Compile Include="TS_BEGrabarConfig.cs" />
+    <Compile Include="TS_BEGrupo02.cs" />
+    <Compile Include="TS_BEGruposconsumo.cs" />
+    <Compile Include="TS_BEHvale.cs" />
+    <Compile Include="TS_BEInicioDiaOutput.cs" />
+    <Compile Include="TS_BEInsumo.cs" />
+    <Compile Include="TS_BEInsumois.cs" />
+    <Compile Include="TS_BEInsumoisr.cs" />
+    <Compile Include="TS_BELado.cs" />
+    <Compile Include="TS_BELadoEInput.cs" />
+    <Compile Include="TS_BELados.cs" />
+    <Compile Include="TS_BEListaprecio.cs" />
+    <Compile Include="TS_BELocal.cs" />
+    <Compile Include="TS_BELoteria.cs" />
+    <Compile Include="TS_BELoteriaart.cs" />
+    <Compile Include="TS_BELoteriaaviso.cs" />
+    <Compile Include="TS_BELoteriahora.cs" />
+    <Compile Include="TS_BELoteriawin.cs" />
+    <Compile Include="TS_BEMensaje.cs" />
+    <Compile Include="TS_BEMoneda.cs" />
+    <Compile Include="TS_BENropos.cs" />
+    <Compile Include="TS_BEOp_Tran.cs" />
+    <Compile Include="TS_BEParameters.cs" />
+    <Compile Include="TS_BEParametro.cs" />
+    <Compile Include="TS_BEPlaca.cs" />
+    <Compile Include="TS_BEPrecio.cs" />
+    <Compile Include="TS_BEPreciocliente.cs" />
+    <Compile Include="TS_BEPrecio_Varios.cs" />
+    <Compile Include="TS_BERespuesta.cs" />
+    <Compile Include="TS_BERespuestaCanje.cs" />
+    <Compile Include="TS_BEResultSunat.cs" />
+    <Compile Include="TS_BERetornoTransaccion.cs" />
+    <Compile Include="TS_BERuta.cs" />
+    <Compile Include="TS_BESaldoclic.cs" />
+    <Compile Include="TS_BESaldoclid.cs" />
+    <Compile Include="TS_BEStock.cs" />
+    <Compile Include="TS_BETallad.cs" />
+    <Compile Include="TS_BETarjbonus.cs" />
+    <Compile Include="TS_BETarjeta.cs" />
+    <Compile Include="TS_BETarjeta_Concepto.cs" />
+    <Compile Include="TS_BETerminal.cs" />
+    <Compile Include="TS_BETicket.cs" />
+    <Compile Include="TS_BETipopago.cs" />
+    <Compile Include="TS_BETipoTarjetaRegistro.cs" />
+    <Compile Include="TS_BETipo_Igv.cs" />
+    <Compile Include="TS_BETmpmovfactura.cs" />
+    <Compile Include="TS_BETmpmovpuntosArticulo.cs" />
+    <Compile Include="TS_BETmpmovpuntos.cs" />
+    <Compile Include="TS_BEVale.cs" />
+    <Compile Include="TS_BEVariables.cs" />
+    <Compile Include="TS_BEVendedor.cs" />
+    <Compile Include="TS_BEVendedores.cs" />
+    <Compile Include="TS_BEVenta.cs" />
+    <Compile Include="TS_BEVentad.cs" />
+    <Compile Include="TS_BEVentag.cs" />
+    <Compile Include="TS_BEVentap.cs" />
+    <Compile Include="TS_BEVentar.cs" />
+    <Compile Include="TS_BEVw_Puntos_Por_Tarjeta.cs" />
+    <Compile Include="TS_BEZona.cs" />
+    <Compile Include="TS_BE_ReporteCierreX.cs" />
+    <Compile Include="Users\RetornoLogin.cs" />
+    <Compile Include="Users\TS_BEAccesos.cs" />
+    <Compile Include="Users\TS_BEEmpresaUser.cs" />
+    <Compile Include="Users\TS_BELogin.cs" />
+    <Compile Include="Users\TS_BELoginOutPut.cs" />
+    <Compile Include="Users\TS_BELoginTurno.cs" />
+    <Compile Include="Users\TS_BELoginTurnoOutPut.cs" />
+    <Compile Include="Users\TS_BELoginVendedor.cs" />
+    <Compile Include="Users\TS_BEModulo.cs" />
+    <Compile Include="Users\TS_BENivel.cs" />
+    <Compile Include="Users\TS_BEUsers.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

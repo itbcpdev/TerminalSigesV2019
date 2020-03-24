@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:titan="clr-namespace:TerminalSIGES.Views.Lib" 
+             xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+                   xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+                 	xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:segmentCollection="clr-namespace:System.Collections.Generic;assembly=mscorlib" 
+                   xmlns:local="clr-namespace:TerminalSIGES.ViewModels" 
+             Title="Consultar Documentos"
+             x:Class="TerminalSiges.Views.Pages.Invoce.AnularReimprimir">
+    <ContentPage.BindingContext>
+        <local:MainViewModel></local:MainViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+
+        <AbsoluteLayout  Margin="0,0,0,0"  >
+            <StackLayout Spacing="0" x:Name="principal"  AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  >
+
+
+                <StackLayout Margin="5,5"  VerticalOptions="StartAndExpand" >
+                    <Frame     BorderColor="#006ba6"  Padding="10,10" Margin="20,0" IsClippedToBounds="True" HasShadow="True">
+
+                        <StackLayout VerticalOptions="Center" >
+                        
+                                <Grid Padding="10,0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" /> 
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="200" />
+                                        <ColumnDefinition Width="150" />
+                                        <ColumnDefinition Width="200" />
+                                        <ColumnDefinition Width="150" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Row="0" Grid.Column="0" FontSize="25" VerticalOptions="Center" HorizontalOptions="Start" HorizontalTextAlignment="Center"  Text="Tipo de Documento" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}">
+                                    </Label>
+                                    <combobox:SfComboBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"   HorizontalOptions="End" Text="Seleccione"  DropDownTextSize="25" DropDownItemHeight="60" DropDownCornerRadius="10"  SelectedDropDownItemColor="#cddbe6" DropDownTextColor="#005797"  TextSize="30"  DataSource="{Binding TipoTarjetas}" DisplayMemberPath="Descripcion" >
+
+                                    </combobox:SfComboBox>
+
+                                    <Label Grid.Row="1" Grid.Column="0"  FontSize="25" VerticalOptions="Center" HorizontalOptions="Start" HorizontalTextAlignment="Center"  Text="Nro Documento" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}">
+                                    </Label>
+                                    
+                                    <inputLayout:SfTextInputLayout  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+                            FocusedColor="#0450C2"
+                            ContainerBackgroundColor="#E6EEF9"
+                            ContainerType="Outlined" 
+                             ReserveSpaceForAssistiveLabels="False"
+                            >
+                                        <Entry Keyboard="Numeric" FontSize="45"  />
+                                    </inputLayout:SfTextInputLayout>
+                            
+                                     <buttons:SfButton   Grid.Row="1" Grid.Column="3" 
+                                                        HorizontalOptions="Center"
+                                                        VerticalOptions="Center"
+                                                        HorizontalTextAlignment="Center"
+                                                        VerticalTextAlignment="Center"
+                                                        BackgroundColor="#005797"  
+                                                        BorderColor="#005797" 
+                                                        FontAttributes="Bold"
+                                                        Text="&#xE773;"
+                                                        BorderWidth="0"
+                                                        FontSize="60"
+                                                        WidthRequest="90"
+                                                    
+                                                        FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteSegoe}}"
+                                                        HeightRequest="90"
+                                                        CornerRadius="10" >
+
+                                    </buttons:SfButton>
+                             
+                                   
+
+
+
+                                </Grid>
+                           
+
+
+                        </StackLayout>
+                    </Frame>
+
+
+
+                    <Frame     BorderColor="#006ba6"  HorizontalOptions="CenterAndExpand" Padding="10,10" Margin="20,0" IsClippedToBounds="True" HasShadow="True">
+                        <StackLayout>
+
+                         
+                            <ListView x:Name="ListService"
+                          ItemsSource="{Binding Productos}"
+                          HeightRequest="550"  
+                          HasUnevenRows="True"
+                          SeparatorColor="#cddbe6"
+                          ItemTapped="ListService_OnItemTapped"
+                          Margin="0,0" >
+                              
+                            </ListView>
+
+                        </StackLayout>
+
+
+                    </Frame>
+                  
+                 
+
+
+                </StackLayout>
+
+                <StackLayout Padding="0,0,0,0" VerticalOptions="End" BackgroundColor="#cddbe6" HeightRequest="150" >
+
+                    <ContentView >
+
+                        <buttons:SfSegmentedControl 
+                        x:Name="segmentedControl" 
+                     
+                        ItemsSource = "{Binding ImageTextCollectionDocuments}"
+                        DisplayMode="ImageWithText"
+                        Margin="0,0"
+                            SegmentBorderColor="#1c4081" 
+                            SegmentBorderThickness="0.5"
+                          SegmentCornerRadius="5"
+                             SegmentHeight="150"
+                               SegmentPadding="2"
+                               FontSize="30" 
+                        CornerRadius="5" 
+                        SelectedIndex="1"
+                        BorderColor="Transparent"
+                   
+                        Color="#005797"                     
+                     
+                        HeightRequest="150"                       
+                        VisibleSegmentsCount="3"
+                        FontColor="#FFFFFF"
+                            FontIconFontSize="30"
+                            SelectionChanged="SegmentedControl_SelectionChanged"
+                        FontIconFontFamily = "IcoMoonFree.ttf">
+                            <buttons:SfSegmentedControl.SelectionIndicatorSettings>
+                                <buttons:SelectionIndicatorSettings 
+                                                    Color="#1c4081"
+                                                    Position="Fill">
+                                </buttons:SelectionIndicatorSettings>
+                            </buttons:SfSegmentedControl.SelectionIndicatorSettings>
+
+                        </buttons:SfSegmentedControl>
+                    </ContentView>
+
+                </StackLayout>
+
+            </StackLayout>
+
+            <Frame CornerRadius="10"  
+                   OutlineColor="#0450C2" x:Name="popupbuscarProducto" BackgroundColor="#ffffff"  Padding="20, 20" Margin="20,20" IsVisible="false" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Center">
+                    <StackLayout VerticalOptions="FillAndExpand">
+
+                        <ContentView HorizontalOptions="Center">
+                            <Label HorizontalTextAlignment="Center" Text=" Buscar artículos" FontSize="30" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"></Label>
+                        </ContentView>
+                        <ContentView>
+                            <BoxView  HeightRequest="3" WidthRequest="10" Color="#1c4081" />
+                        </ContentView>
+
+
+                        <StackLayout Orientation="Horizontal"  BackgroundColor="#cddbe6" Padding="10,10" >
+                            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" >
+
+
+                                <Label Text="Código"></Label>
+                                <StackLayout Orientation="Horizontal">
+
+                                    <inputLayout:SfTextInputLayout
+                                     FocusedColor="#0450C2"
+                            ContainerBackgroundColor="#E6EEF9"
+                            ContainerType="Outlined" 
+                                WidthRequest="610"
+                             ReserveSpaceForAssistiveLabels="False"
+                                     
+                                 >
+                                        <Entry  FontSize="45" />
+
+                                    </inputLayout:SfTextInputLayout>
+                                    <buttons:SfButton x:Name="BtnSearcProductsSercwe"
+                                             HorizontalOptions="Center"
+                                             VerticalOptions="Center"
+                                             HorizontalTextAlignment="Center"
+                                             VerticalTextAlignment="Center"
+                                                  BackgroundColor="#005797"  
+                                                       BorderColor="#005797" 
+                                                                 FontAttributes="Bold"
+                                             Text="&#xE773;"
+                                             BorderWidth="0"
+                                             FontSize="60"
+                                             WidthRequest="90"
+                                                      Clicked="BtnSearcProducts_Clicked"
+                                             FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteSegoe}}"
+                                             HeightRequest="90"
+                                             CornerRadius="10" >
+
+                                    </buttons:SfButton>
+                                </StackLayout>
+                            </StackLayout>
+
+                        </StackLayout>
+
+
+
+                        <ContentView>
+                            <BoxView  HeightRequest="3" WidthRequest="10" Color="#1c4081" />
+                        </ContentView>
+                        <StackLayout>
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="300" />
+                                    <ColumnDefinition Width="120" />
+                                    <ColumnDefinition Width="120" />
+                                    <ColumnDefinition Width="120" />
+                                </Grid.ColumnDefinitions>
+
+
+
+                                <!--obs-->
+                                <Label Grid.Row="0" Grid.Column="0" FontSize="25"     Text="Descripción"     HorizontalTextAlignment="Center"     FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}">
+                                </Label>
+                                <Label   Grid.Row="0" Grid.Column="1" FontSize="25"   Text="Precio"   HorizontalTextAlignment="Center"     FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"
+                                              >
+
+                                </Label>
+                                <Label Grid.Row="0" Grid.Column="2" FontSize="25"  Text="Cantidad"     HorizontalTextAlignment="Center"  FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}">
+                                </Label>
+                                <Label  Grid.Row="0" Grid.Column="3"   FontSize="25" HorizontalTextAlignment="Center"  Text="Total" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"
+                                        >
+                                </Label>
+                            </Grid>
+                            <BoxView  HeightRequest="2" WidthRequest="10" Color="#1c4081" />
+                            <ListView x:Name="ListProducts"
+                          ItemsSource="{Binding Productos}"
+                          HeightRequest="550"  
+                          HasUnevenRows="True"
+                          SeparatorColor="#cddbe6"
+                          ItemTapped="ListService_OnItemTapped"
+                          Margin="0,0" >
+                                <ListView.ItemTemplate>
+
+                                    <DataTemplate>
+                                        <ViewCell>
+
+                                            <StackLayout Margin="0,2"  BackgroundColor="#cddbe6">
+                                                <Grid Padding="5,5" >
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="*" />
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="300" />
+                                                        <ColumnDefinition Width="120" />
+                                                        <ColumnDefinition Width="120" />
+                                                        <ColumnDefinition Width="120" />
+                                                    </Grid.ColumnDefinitions>
+
+
+                                                    <Label Grid.Row="0" Grid.Column="0" FontSize="25"   Text="{Binding Descripcion}"    HorizontalTextAlignment="Start"     FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}">
+                                                    </Label>
+                                                    <Label   Grid.Row="0" Grid.Column="1" FontSize="25"   Text="{Binding Precio}"   HorizontalTextAlignment="Center"     FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"
+                                              >
+
+                                                    </Label>
+                                                    <Label Grid.Row="0" Grid.Column="2" FontSize="25"  Text="{Binding Cantidad}"   HorizontalTextAlignment="Center"  FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}">
+                                                    </Label>
+                                                    <Label  Grid.Row="0" Grid.Column="3"   FontSize="25" HorizontalTextAlignment="Center"  Text="{Binding Total}" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"
+                                        >
+                                                    </Label>
+                                                </Grid>
+
+                                            </StackLayout>
+
+                                        </ViewCell>
+
+                                    </DataTemplate>
+
+                                </ListView.ItemTemplate>
+                            </ListView>
+
+                        </StackLayout>
+
+                    </StackLayout>
+
+                    <StackLayout VerticalOptions="End" HorizontalOptions="Fill"  Orientation="Horizontal" Margin="0,0">
+
+                        <buttons:SfButton x:Name="btnCancel" Text="Cancelar" FontSize="30" HorizontalTextAlignment="Center" HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center" CornerRadius="10" HeightRequest="100" WidthRequest="350" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"
+                                          Clicked="BtnCancelarProducto_OnClicked">
+                        </buttons:SfButton>
+                        <buttons:SfButton x:Name="btnSave" Text="Guardar" FontSize="30"  HorizontalTextAlignment="Center" HorizontalOptions="EndAndExpand" VerticalTextAlignment="Center"  CornerRadius="10" HeightRequest="100" WidthRequest="350" BackgroundColor="#005797" BorderColor="#005797" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}">
+                        </buttons:SfButton>
+                    </StackLayout>
+
+                </StackLayout>
+
+            </Frame>
+        </AbsoluteLayout>
+
+    </ContentPage.Content>
+</ContentPage>

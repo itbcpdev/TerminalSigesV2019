@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                          xmlns:titan="clr-namespace:TerminalSIGES.Views.Lib"
+             x:Class="TerminalSiges.App">
+    <Application.Resources>
+        <!-- GENERAL -->
+        <ResourceDictionary>
+            <titan:Estilos x:Key="Estilos"></titan:Estilos>
+            <Style TargetType="Label" x:Key ="TitleLabel">
+                <Setter Property="TextColor" Value="#1c4081" />
+                <Setter Property="FontFamily" Value="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"></Setter>
+            </Style>
+          
+            
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="#1c4081" />
+                <Setter Property="FontSize" Value="25" />
+                <Setter Property="FontFamily" Value="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"></Setter>
+            </Style>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BackgroundColor" Value="#ECEDEF" />
+                <Setter Property="BarBackgroundColor" Value="#2482ce" />
+                <Setter Property="BarTextColor" Value="#ffffff"/>
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#1c4081" />
+                <Setter Property="BorderColor" Value="#76a9da" />
+                <Setter Property="FontFamily" Value="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"></Setter>
+                <Setter Property="TextColor" Value="#FFFFFF" />
+                <Setter Property="BorderRadius" Value="5" />
+                <Setter Property="Margin" Value="2" />
+                <Setter Property="BorderWidth" Value="1" />
+            </Style>
+            <Style TargetType="Button" x:Key="RegButton">
+                <Setter Property="BackgroundColor" Value="#1c4081" />
+                <Setter Property="BorderColor" Value="#76a9da" />
+                <Setter Property="TextColor" Value="#FFFFFF" />
+                <Setter Property="BorderRadius" Value="5" />
+                <Setter Property="Margin" Value="20, 5" />
+                <Setter Property="BorderWidth" Value="0.5" />
+                <Setter Property="FontFamily" Value="{Binding  Source={x:Static titan:Estilos.FuenteRegular}}"></Setter>
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+            <Style TargetType="Entry" x:Key="RegFacturacion">
+                <Setter Property="TextColor" Value="#1c4081" />
+                <Setter Property="VerticalOptions" Value="End" />
+                <Setter Property="FontSize" Value="Small"></Setter>
+                <Setter Property="FontFamily" Value="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"></Setter>
+
+            </Style>
+            <Style TargetType="Button" x:Key="FormButton">
+                <Setter Property="BackgroundColor" Value="#1c4081" />
+                <Setter Property="BorderColor" Value="#76a9da" />
+                <Setter Property="TextColor" Value="#FFFFFF" />
+                <Setter Property="BorderRadius" Value="1" />
+                <Setter Property="Margin" Value="20, 5" />
+                <Setter Property="BorderWidth" Value="0.5" />
+                <Setter Property="FontFamily" Value="{Binding  Source={x:Static titan:Estilos.FuenteRegular}}"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+             BackgroundColor="#cddbe6"
+             Title="Cargando facturación. . ."
+             x:Class="TerminalSiges.Views.Pages.Invoce.LoadingSales">
+    <ContentPage.Content>
+        <busyindicator:SfBusyIndicator x:Name="busyindicator" AnimationType="Globe" Title="Bienvenido a SIGES, cargando parametros..." ViewBoxWidth = "100" ViewBoxHeight="100" Duration="0.5" TextColor="#1c4081" />
+    </ContentPage.Content>
+</ContentPage>

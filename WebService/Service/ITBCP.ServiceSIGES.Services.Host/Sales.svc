@@ -1,0 +1,3 @@
+﻿
+<%@ ServiceHost Language="C#" Debug="true" Service="ITBCP.ServiceSIGES.Services.Services.TS_SESales" CodeBehind="ITBCP.ServiceSIGES.Services.Services.TS_SESales.cs" %>
+

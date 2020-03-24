@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FDDB5837-804F-4F68-82BF-3DFC5722E02F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ITBCP.ServiceSIGES.Domain</RootNamespace>
+    <AssemblyName>ITBCP.ServiceSIGES.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ITS_DOAceptaFE.cs" />
+    <Compile Include="ITS_DOAfiliacionTarjeta.cs" />
+    <Compile Include="ITS_DOAutentication.cs" />
+    <Compile Include="ITS_DOBackOffice.cs" />
+    <Compile Include="ITS_DOCabeceraVenta.cs" />
+    <Compile Include="ITS_DOCliente.cs" />
+    <Compile Include="ITS_DOColaImpresion.cs" />
+    <Compile Include="ITS_DOCorrelativo.cs" />
+    <Compile Include="ITS_DOCredclienteVenta.cs" />
+    <Compile Include="ITS_DODeposito.cs" />
+    <Compile Include="ITS_DODetalleVenta.cs" />
+    <Compile Include="ITS_DOEmisor.cs" />
+    <Compile Include="ITS_DOGrabarTransaccion.cs" />
+    <Compile Include="ITS_DOHvale.cs" />
+    <Compile Include="ITS_DOIgv.cs" />
+    <Compile Include="ITS_DOArticulo.cs" />
+    <Compile Include="ITS_DOInicioDia.cs" />
+    <Compile Include="ITS_DOLados.cs" />
+    <Compile Include="ITS_DOPagoVenta.cs" />
+    <Compile Include="ITS_DOParametro.cs" />
+    <Compile Include="ITS_DOReimpresion.cs" />
+    <Compile Include="ITS_DOServer.cs" />
+    <Compile Include="ITS_DOStock.cs" />
+    <Compile Include="ITS_DOTarjeta.cs" />
+    <Compile Include="ITS_DOTipoPago.cs" />
+    <Compile Include="ITS_DOTurno.cs" />
+    <Compile Include="ITS_DOVendedor.cs" />
+    <Compile Include="ITS_DOXCierre.cs" />
+    <Compile Include="ITS_DOZCierre.cs" />
+    <Compile Include="ITS_DSales.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ITS_DOCara.cs" />
+    <Compile Include="ITS_DOCierre.cs" />
+    <Compile Include="ITS_DOMoneda.cs" />
+    <Compile Include="ITS_DOOpTransaction.cs" />
+    <Compile Include="ITS_DOTerminal.cs" />
+    <Compile Include="ITS_DOTipoCambio.cs" />
+    <Compile Include="TS_BEControlDBF.cs" />
+    <Compile Include="TS_BEPTarjeta.cs" />
+    <Compile Include="TS_BESaldoWS.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ITBCP.ServiceSIGES.Domain.Entities\ITBCP.ServiceSIGES.Domain.Entities.csproj">
+      <Project>{5EF3204A-D00C-4FC0-8CDB-F1E5C4C7366C}</Project>
+      <Name>ITBCP.ServiceSIGES.Domain.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

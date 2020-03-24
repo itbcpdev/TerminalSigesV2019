@@ -1,0 +1,2 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="ITBCP.ServiceSIGES.Services.Services.TS_SEAutentication" CodeBehind="ITBCP.ServiceSIGES.Services.Services.TS_SEAutentication.cs" %>
+ 

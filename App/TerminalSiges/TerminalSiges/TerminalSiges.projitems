@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{F75259D9-E8DF-426D-BD39-08C89C3D03D2}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>TerminalSiges</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainPage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\InputFloat.xaml.cs">
+      <DependentUpon>InputFloat.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MessengingCenterAlert.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ObservableObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ObservableRangeCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\RegexExpresion.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Lib\Autenticate\TSLogin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Lib\Autenticate\TSLoginApp.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Lib\Customer\TSCustomer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Lib\Customer\TSCustomerApp.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Config.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Helper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Lib\Loading\TSLoad.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Lib\Loading\TSLoadApp.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Lib\Prints\TSPrint.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Lib\Prints\TSPrintApp.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Lib\Sales\TSSales.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Lib\Sales\TSSalesApp.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Lib\Sales\TSSalesFunctions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Lib\Sales\TSSalesInput.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\BaseDataObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\DtoFactura.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Item.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ModelView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\AutomaticService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\IFeatureService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Proxys\Autentication.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Proxys\Impresion.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Proxys\Sales.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BindingAutomatic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BindingDocument.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BindingProgressCustomers.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BindingProgressAutomatic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Lib\BaseEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Lib\BasePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Lib\BaseTabbedPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Lib\BordeEditor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Lib\BordeEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Lib\CapitalizeKeyboardEffect.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Lib\CaseConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Lib\CustomWebView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Lib\DeleteEvent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Lib\EmpresaBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Lib\EntryLengthValidatorBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Lib\Estilos.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Lib\KeyboardStyle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Lib\ListViewHighlightEffect.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Lib\MasterPageItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Lib\NegarBooleano.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Lib\NumericEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Lib\ReturnType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Lib\ShadowEffect.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Lib\StringCaseConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Lib\StringValueAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Lib\SynchronizedObservableCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Lib\UnderlineEffect.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Lib\ValidadorEditor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Lib\ValidadorEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Afiliacion\AfiliacionClientes.xaml.cs">
+      <DependentUpon>AfiliacionClientes.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Afiliacion\AfiliacionLogin.xaml.cs">
+      <DependentUpon>AfiliacionLogin.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Articulo\SearchArticulo.xaml.cs">
+      <DependentUpon>SearchArticulo.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Articulo\SearchArticuloByAfiliacion.xaml.cs">
+      <DependentUpon>SearchArticuloByAfiliacion.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Articulo\SearchCombustible.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Articulo\SelectArticulo.xaml.cs">
+      <DependentUpon>SelectArticulo.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\CambioTurno\CambioTurCompleted.xaml.cs">
+      <DependentUpon>CambioTurCompleted.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\CambioTurno\CambioTurnoRegister.xaml.cs">
+      <DependentUpon>CambioTurnoRegister.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Customer\SearchCustomer.xaml.cs">
+      <DependentUpon>SearchCustomer.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Customer\SearchCustomerAutomatic.xaml.cs">
+      <DependentUpon>SearchCustomerAutomatic.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Customer\SearchCustomerByName.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Customer\SearchCustomerByPlaca.xaml.cs">
+      <DependentUpon>SearchCustomerByPlaca.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Depositos\DepositoLogin.xaml.cs">
+      <DependentUpon>DepositoLogin.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Depositos\DepositoRegistra.xaml.cs">
+      <DependentUpon>DepositoRegistra.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Depositos\DepositoRegistraCompleted.xaml.cs">
+      <DependentUpon>DepositoRegistraCompleted.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Depositos\DepositoReporte.xaml.cs">
+      <DependentUpon>DepositoReporte.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\GriferosCara\ConfigGriferoCaraCompleted.xaml.cs">
+      <DependentUpon>ConfigGriferoCaraCompleted.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\GriferosCara\ConfigGriferoCaraLogin.xaml.cs">
+      <DependentUpon>ConfigGriferoCaraLogin.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\GriferosCara\ConfigGriferoCaraReporte.xaml.cs">
+      <DependentUpon>ConfigGriferoCaraReporte.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\GriferosCara\ConfigGriferoRegister.xaml.cs">
+      <DependentUpon>ConfigGriferoRegister.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Invoce\AnularReimprimir.xaml.cs">
+      <DependentUpon>AnularReimprimir.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Invoce\Automatic.xaml.cs">
+      <DependentUpon>Automatic.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Invoce\ConsultaDocuments.xaml.cs">
+      <DependentUpon>ConsultaDocuments.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Invoce\DetailProducts.xaml.cs">
+      <DependentUpon>DetailProducts.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Invoce\LoadingSales.xaml.cs">
+      <DependentUpon>LoadingSales.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Invoce\ReImpresion.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Invoce\SaleAutomatic.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Invoce\SemiAutomatic.xaml.cs">
+      <DependentUpon>SemiAutomatic.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Lados\LoginLados.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Lados\RegistrarLadoCompleted.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Lados\RegistrarLados.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Lados\ReporteLados.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Payment\CanjeCompleted.xaml.cs">
+      <DependentUpon>CanjeCompleted.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Payment\CreditoCompleted.xaml.cs">
+      <DependentUpon>CreditoCompleted.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Payment\CreditSales.xaml.cs">
+      <DependentUpon>CreditSales.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Payment\EfectivoVisaCompleted.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Payment\PaymentCompleted.xaml.cs">
+      <DependentUpon>PaymentCompleted.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Payment\PaymentStart.xaml.cs">
+      <DependentUpon>PaymentStart.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Payment\SerafinCompleted.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Payment\TranfGratuitaCompleted.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\PopUp\LoginPopUp.xaml.cs">
+      <DependentUpon>LoginPopUp.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\PopUp\PopUpDocumento.xaml.cs">
+      <DependentUpon>PopUpDocumento.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\PopUp\VisaPopUpCompleted.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Print\InicioDeDia.xaml.cs">
+      <DependentUpon>InicioDeDia.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Print\InicioDeDiaCompleted.xaml.cs">
+      <DependentUpon>InicioDeDiaCompleted.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Print\PrintCierreXCompleted.xaml.cs">
+      <DependentUpon>PrintCierreXCompleted.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Print\PrintCierreZCompleted.xaml.cs">
+      <DependentUpon>PrintCierreZCompleted.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Print\PrintReporteCierreX.xaml.cs">
+      <DependentUpon>PrintReporteCierreX.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Print\PrintReporteCierreZ.xaml.cs">
+      <DependentUpon>PrintReporteCierreZ.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Print\ReImpresionCompleted.xaml.cs">
+      <DependentUpon>ReImpresionCompleted.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Print\ReporteCierreX.xaml.cs">
+      <DependentUpon>ReporteCierreX.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Print\ReporteCierreZ.xaml.cs">
+      <DependentUpon>ReporteCierreZ.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Users\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Invoce\SemiAutomatic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Users\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Invoce\DetailProducts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Invoce\AnularReimprimir.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Invoce\LoadingSales.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Articulo\SearchArticulo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Articulo\SelectArticulo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Customer\SearchCustomer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Payment\PaymentStart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Payment\CreditSales.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Payment\PaymentCompleted.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="C:\Users\Teo\Documents\appsiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\CambioTurno\CambioTurCompleted.xaml.cs">
+      <DependentUpon>CambioTurCompleted.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="C:\Users\Teo\Documents\appsiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\CambioTurno\CambioTurno.xaml.cs">
+      <DependentUpon>CambioTurno.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="C:\Users\Teo\Documents\appsiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\CambioTurno\CambioTurnoRegister.xaml.cs">
+      <DependentUpon>CambioTurnoRegister.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="C:\Users\Teo\Documents\appsiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Depositos\DepositoLogin.xaml.cs">
+      <DependentUpon>DepositoLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="C:\Users\Teo\Documents\appsiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Depositos\DepositoRegistra.xaml.cs">
+      <DependentUpon>DepositoRegistra.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="C:\Users\Teo\Documents\appsiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Depositos\DepositoRegistraCompleted.xaml.cs">
+      <DependentUpon>DepositoRegistraCompleted.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="C:\Users\Teo\Documents\appsiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Depositos\DepositoReporte.xaml.cs">
+      <DependentUpon>DepositoReporte.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="C:\Users\Teo\Documents\appsiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\GriferosCara\ConfigGriferoCara.xaml.cs">
+      <DependentUpon>ConfigGriferoCara.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="C:\Users\Teo\Documents\appsiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\GriferosCara\ConfigGriferoCaraCompleted.xaml.cs">
+      <DependentUpon>ConfigGriferoCaraCompleted.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="C:\Users\Teo\Documents\appsiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\GriferosCara\ConfigGriferoCaraLogin.xaml.cs">
+      <DependentUpon>ConfigGriferoCaraLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="C:\Users\Teo\Documents\appsiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\GriferosCara\ConfigGriferoCaraReporte.xaml.cs">
+      <DependentUpon>ConfigGriferoCaraReporte.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="C:\Users\Teo\Documents\appsiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\GriferosCara\ConfigGriferoRegister.xaml.cs">
+      <DependentUpon>ConfigGriferoRegister.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="C:\Users\Teo\Documents\appsiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Invoce\ConsultaDocuments.xaml.cs">
+      <DependentUpon>ConsultaDocuments.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="C:\Users\Teo\Documents\appsiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Invoce\ReImpresion.xaml.cs">
+      <DependentUpon>ReImpresion.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="C:\Users\Teo\Documents\appsiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Payment\CreditoCompleted.xaml.cs">
+      <DependentUpon>CreditoCompleted.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="C:\Users\Teo\Documents\appsiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Payment\SerafinCompleted.xaml.cs">
+      <DependentUpon>SerafinCompleted.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="C:\Users\Teo\Documents\appsiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Payment\TranfGratuitaCompleted.xaml.cs">
+      <DependentUpon>TranfGratuitaCompleted.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="C:\Users\Teo\Documents\appsiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Print\CambioTurCompleted.xaml.cs">
+      <DependentUpon>CambioTurCompleted.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="C:\Users\Teo\Documents\appsiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Print\CambioTurno.xaml.cs">
+      <DependentUpon>CambioTurno.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="C:\Users\Teo\Documents\appsiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Print\ConfigGriferoCara.xaml.cs">
+      <DependentUpon>ConfigGriferoCara.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="C:\Users\Teo\Documents\appsiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Print\ConfigGriferoCaraCompleted.xaml.cs">
+      <DependentUpon>ConfigGriferoCaraCompleted.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="C:\Users\Teo\Documents\appsiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Print\ConfigGriferoCaraReporte.xaml.cs">
+      <DependentUpon>ConfigGriferoCaraReporte.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="C:\Users\Teo\Documents\appsiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Print\ConfigGriferoRegister.xaml.cs">
+      <DependentUpon>ConfigGriferoRegister.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="C:\Users\Teo\Documents\appsiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Print\DepositoLogin.xaml.cs">
+      <DependentUpon>DepositoLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="C:\Users\Teo\Documents\appsiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Print\DepositoRegistra.xaml.cs">
+      <DependentUpon>DepositoRegistra.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="C:\Users\Teo\Documents\appsiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Print\DepositoRegistraCompleted.xaml.cs">
+      <DependentUpon>DepositoRegistraCompleted.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="C:\Users\Teo\Documents\appsiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Print\DepositoReporte.xaml.cs">
+      <DependentUpon>DepositoReporte.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="C:\Users\Teo\Documents\appsiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Print\InicioDeDia.xaml.cs">
+      <DependentUpon>InicioDeDia.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="C:\Users\Teo\Documents\appsiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Print\InicioDeDiaCompleted.xaml.cs">
+      <DependentUpon>InicioDeDiaCompleted.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="C:\Users\Teo\Documents\appsiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Print\PrintCierreXCompleted.xaml.cs">
+      <DependentUpon>PrintCierreXCompleted.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="C:\Users\Teo\Documents\appsiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Print\PrintCierreZCompleted.xaml.cs">
+      <DependentUpon>PrintCierreZCompleted.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="C:\Users\Teo\Documents\appsiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Print\ReImpresionCompleted.xaml.cs">
+      <DependentUpon>ReImpresionCompleted.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="C:\Users\Teo\Documents\appsiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Print\ReporteCierreX.xaml.cs">
+      <DependentUpon>ReporteCierreX.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="C:\Users\Teo\Documents\appsiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Print\ReporteCierreZ.xaml.cs">
+      <DependentUpon>ReporteCierreZ.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="C:\Users\Teo\Documents\appsiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\SettingPage.xaml.cs">
+      <DependentUpon>SettingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="D:\Usuarios\Documents\AppSiges\TerminalSiges\TerminalSiges\TerminalSiges\Helpers\RegexExpresion.xaml.cs">
+      <DependentUpon>RegexExpresion.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="D:\Usuarios\Documents\AppSiges\TerminalSiges\TerminalSiges\TerminalSiges\Models\GradientButtonxaml.xaml.cs">
+      <DependentUpon>GradientButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="D:\Usuarios\Documents\AppSiges\TerminalSiges\TerminalSiges\TerminalSiges\ViewModels\BindingProgressAutomatic.xaml.cs">
+      <DependentUpon>BindingProgressAutomatic.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="D:\Usuarios\Documents\AppSiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Lib\GradientButton.xaml.cs">
+      <DependentUpon>GradientButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="D:\Usuarios\Documents\AppSiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Articulo\SearchCombustible.xaml.cs">
+      <DependentUpon>SearchCombustible.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="D:\Usuarios\Documents\AppSiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Articulo\SelectedCombustible.xaml.cs">
+      <DependentUpon>SelectedCombustible.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="D:\Usuarios\Documents\AppSiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Customer\SeachCustomerByName.xaml.cs">
+      <DependentUpon>SeachCustomerByName.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="D:\Usuarios\Documents\AppSiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Customer\SearchCustomerByName.xaml.cs">
+      <DependentUpon>SearchCustomerByName.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="D:\Usuarios\Documents\AppSiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Invoce\ReImpresion.xaml.cs">
+      <DependentUpon>ReImpresion.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="D:\Usuarios\Documents\AppSiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Invoce\SaleAutomatic.xaml.cs">
+      <DependentUpon>SaleAutomatic.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="D:\Usuarios\Documents\AppSiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Lados\LoginLados.xaml.cs">
+      <DependentUpon>LoginLados.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="D:\Usuarios\Documents\AppSiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Lados\RegistrarLadoCompleted.xaml.cs">
+      <DependentUpon>RegistrarLadoCompleted.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="D:\Usuarios\Documents\AppSiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Lados\RegistrarLados.xaml.cs">
+      <DependentUpon>RegistrarLados.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="D:\Usuarios\Documents\AppSiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Lados\ReporteLados.xaml.cs">
+      <DependentUpon>ReporteLados.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="D:\Usuarios\Documents\AppSiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Payment\EfectivoVisaCompleted.xaml.cs">
+      <DependentUpon>EfectivoVisaCompleted.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="D:\Usuarios\Documents\AppSiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\PopUp\VisaPopUpCompleted.xaml.cs">
+      <DependentUpon>VisaPopUpCompleted.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="D:\Usuarios\Documents\AppSiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Print\Automatic.xaml.cs">
+      <DependentUpon>Automatic.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="D:\Usuarios\Documents\AppSiges\TerminalSiges\TerminalSiges\TerminalSiges\Views\Pages\Users\Prueba.xaml.cs">
+      <DependentUpon>Prueba.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Payment\SerafinCompleted.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Payment\TranfGratuitaCompleted.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Invoce\SaleAutomatic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Articulo\SearchCombustible.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Payment\EfectivoVisaCompleted.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\PopUp\VisaPopUpCompleted.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Invoce\ReImpresion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Customer\SearchCustomerByName.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Lados\LoginLados.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Lados\RegistrarLados.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Lados\ReporteLados.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Lados\RegistrarLadoCompleted.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Invoce\Automatic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Customer\SearchCustomerAutomatic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Controls\InputFloat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\PopUp\PopUpDocumento.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Depositos\DepositoLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Depositos\DepositoRegistra.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Depositos\DepositoRegistraCompleted.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Depositos\DepositoReporte.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\CambioTurno\CambioTurCompleted.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\CambioTurno\CambioTurnoRegister.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Customer\SearchCustomerByPlaca.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Payment\CanjeCompleted.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\PopUp\LoginPopUp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Afiliacion\AfiliacionClientes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Articulo\SearchArticuloByAfiliacion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\GriferosCara\ConfigGriferoCaraCompleted.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\GriferosCara\ConfigGriferoCaraLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\GriferosCara\ConfigGriferoCaraReporte.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\GriferosCara\ConfigGriferoRegister.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Invoce\ConsultaDocuments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Payment\CreditoCompleted.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Print\InicioDeDia.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Print\InicioDeDiaCompleted.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Print\PrintCierreXCompleted.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Print\PrintCierreZCompleted.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Print\PrintReporteCierreX.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Print\PrintReporteCierreZ.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Print\ReImpresionCompleted.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Print\ReporteCierreX.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Print\ReporteCierreZ.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\Afiliacion\AfiliacionLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

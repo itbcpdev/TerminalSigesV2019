@@ -1,0 +1,1094 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:56220/Facturacion.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" />
+  <xs:element name="SP_ITBCP_VALIDAR_OPCION_PRINT_PANTALLA_OR_FISICO">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q1:TS_BEVariables" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_VALIDAR_OPCION_PRINT_PANTALLA_OR_FISICOResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_VALIDAR_OPCION_PRINT_PANTALLA_OR_FISICOResult" nillable="true" type="q2:ArrayOfTS_BEVariables" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_OBTENER_TOPES_MONTO_VENTA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q3:TS_BEVariables" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_OBTENER_TOPES_MONTO_VENTAResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_OBTENER_TOPES_MONTO_VENTAResult" nillable="true" type="q4:ArrayOfTS_BEVariables" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_OBTENER_TIPO_INGRESO">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q5:TS_BEVariables" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_OBTENER_TIPO_INGRESOResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_OBTENER_TIPO_INGRESOResult" nillable="true" type="q6:ArrayOfTS_BEVariables" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_OBTENER_RUTA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q7:TS_BERuta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_OBTENER_RUTAResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_OBTENER_RUTAResult" nillable="true" type="q8:ArrayOfTS_BERuta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_OBTENER_PORCENTAJE_DSCTO">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q9:TS_BEDescuento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_OBTENER_PORCENTAJE_DSCTOResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_OBTENER_PORCENTAJE_DSCTOResult" nillable="true" type="q10:ArrayOfTS_BEDescuento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_OBTENER_LOCAL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q11:TS_BELocal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_OBTENER_LOCALResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_OBTENER_LOCALResult" nillable="true" type="q12:ArrayOfTS_BELocal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_OBTENER_IGV">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q13:TS_BETipo_Igv" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_OBTENER_IGVResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_OBTENER_IGVResult" nillable="true" type="q14:ArrayOfTS_BETipo_Igv" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_OBTENER_FECHA_SERVIDOR">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_OBTENER_FECHA_SERVIDORResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SP_ITBCP_OBTENER_FECHA_SERVIDORResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_OBTENER_ALMACEN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q15:TS_BEAlmacen" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_OBTENER_ALMACENResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_OBTENER_ALMACENResult" nillable="true" type="q16:ArrayOfTS_BEAlmacen" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LSITAR_TERMINAL_POR_USUARIO">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q17:TS_BETerminal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LSITAR_TERMINAL_POR_USUARIOResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LSITAR_TERMINAL_POR_USUARIOResult" nillable="true" type="q18:ArrayOfTS_BETerminal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTARTIPOCAMBIO">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q19:TS_BECambio" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTARTIPOCAMBIOResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTARTIPOCAMBIOResult" nillable="true" type="q20:ArrayOfTS_BECambio" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_ZONAS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q21:TS_BEZona" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_ZONASResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_ZONASResult" nillable="true" type="q22:ArrayOfTS_BEZona" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VISTA_PUNTOS_TARJETA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q23:TS_BEVw_Puntos_Por_Tarjeta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VISTA_PUNTOS_TARJETAResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_VISTA_PUNTOS_TARJETAResult" nillable="true" type="q24:ArrayOfTS_BEVw_Puntos_Por_Tarjeta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VENTAP_2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q25:TS_BEVentap" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VENTAP_2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_VENTAP_2Result" nillable="true" type="q26:ArrayOfTS_BEVentap" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_VENTA_CABECERA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q27:TS_BEVenta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_VENTA_CABECERAResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_VENTA_CABECERAResult" nillable="true" type="q28:ArrayOfTS_BEVenta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VENTAP_1">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q29:TS_BEVentap" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VENTAP_1Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_VENTAP_1Result" nillable="true" type="q30:ArrayOfTS_BEVentap" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VENTAP">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q31:TS_BEVentap" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VENTAPResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_VENTAPResult" nillable="true" type="q32:ArrayOfTS_BEVentap" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VENTAD_2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q33:TS_BEVentad" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VENTAD_2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_VENTAD_2Result" nillable="true" type="q34:ArrayOfTS_BEVentad" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VENTAD_1">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q35:TS_BEVentad" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VENTAD_1Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_VENTAD_1Result" nillable="true" type="q36:ArrayOfTS_BEVentad" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VENTAD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q37:TS_BEVentad" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VENTADResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_VENTADResult" nillable="true" type="q38:ArrayOfTS_BEVentad" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VENTA_9">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q39:TS_BEVenta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VENTA_9Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_VENTA_9Result" nillable="true" type="q40:ArrayOfTS_BEVenta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VENTA_8">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q41:TS_BEVenta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VENTA_8Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_VENTA_8Result" nillable="true" type="q42:ArrayOfTS_BEVenta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VENTA_7">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q43:TS_BEVenta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VENTA_7Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_VENTA_7Result" nillable="true" type="q44:ArrayOfTS_BEVenta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VENTA_6">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q45:TS_BEVenta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VENTA_6Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_VENTA_6Result" nillable="true" type="q46:ArrayOfTS_BEVenta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VENTA_5">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q47:TS_BEVentad" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VENTA_5Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_VENTA_5Result" nillable="true" type="q48:ArrayOfTS_BEVentad" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VENTA_4">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q49:TS_BEVenta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VENTA_4Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_VENTA_4Result" nillable="true" type="q50:ArrayOfTS_BEVenta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VENTA_3">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q51:TS_BEVenta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VENTA_3Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_VENTA_3Result" nillable="true" type="q52:ArrayOfTS_BEVenta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VENTA_2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q53:TS_BEVenta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VENTA_2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_VENTA_2Result" nillable="true" type="q54:ArrayOfTS_BEVenta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VENTA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q55:TS_BEVenta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VENTAResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_VENTAResult" nillable="true" type="q56:ArrayOfTS_BEVenta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VARIABLES_1">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q57:TS_BEConceptoVariables" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VARIABLES_1Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_VARIABLES_1Result" nillable="true" type="q58:ArrayOfTS_BEConceptoVariables" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VARIABLES">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q59:TS_BEVariables" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VARIABLESResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_VARIABLESResult" nillable="true" type="q60:ArrayOfTS_BEVariables" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VALE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q61:TS_BEHvale" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_VALEResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_VALEResult" nillable="true" type="q62:ArrayOfTS_BEHvale" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_ULTIMO_CIERRE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q63:TS_BECierres" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_ULTIMO_CIERREResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_ULTIMO_CIERREResult" nillable="true" type="q64:ArrayOfTS_BECierres" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_TRANSACCION_ARTICULO">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q65:TS_BEOp_Tran" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_TRANSACCION_ARTICULOResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_TRANSACCION_ARTICULOResult" nillable="true" type="q66:ArrayOfTS_BEOp_Tran" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_TIPO_PAGOS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q67:TS_BETipopago" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_TIPO_PAGOSResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_TIPO_PAGOSResult" nillable="true" type="q68:ArrayOfTS_BETipopago" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_TIPO_PAGO_EFECTIVO">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q69:TS_BETipopago" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_TIPO_PAGO_EFECTIVOResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_TIPO_PAGO_EFECTIVOResult" nillable="true" type="q70:ArrayOfTS_BETipopago" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_TIPO_CAMBIO">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q71:TS_BECambio" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_TIPO_CAMBIOResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_TIPO_CAMBIOResult" nillable="true" type="q72:ArrayOfTS_BECambio" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_TERMINALES">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q73:TS_BETerminal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_TERMINALESResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_TERMINALESResult" nillable="true" type="q74:ArrayOfTS_BETerminal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_TARJETA_CONCEPTO_1">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q75:TS_BETarjeta_Concepto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_TARJETA_CONCEPTO_1Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_TARJETA_CONCEPTO_1Result" nillable="true" type="q76:ArrayOfTS_BETarjeta_Concepto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_TALLAS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q77:TS_BETallad" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_TALLASResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_TALLASResult" nillable="true" type="q78:ArrayOfTS_BETallad" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_STOCK">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q79:TS_BEStock" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_STOCKResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_STOCKResult" nillable="true" type="q80:ArrayOfTS_BEStock" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_PRECIOS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q81:TS_BEListaprecio" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_PRECIOSResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_PRECIOSResult" nillable="true" type="q82:ArrayOfTS_BEListaprecio" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_SALDOCLID_1">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q83:TS_BESaldoclic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_SALDOCLID_1Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_SALDOCLID_1Result" nillable="true" type="q84:ArrayOfTS_BESaldoclic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_SALDOCLID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q85:TS_BESaldoclid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_SALDOCLIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_SALDOCLIDResult" nillable="true" type="q86:ArrayOfTS_BESaldoclid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_SALDO_CLIENTE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q87:TS_BESaldoclic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_SALDO_CLIENTEResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_SALDO_CLIENTEResult" nillable="true" type="q88:ArrayOfTS_BESaldoclic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_PTOS_DISPONIBLES_POR_TARJETA_AFILIACION">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q89:TS_BEAfiliaciontarj" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_PTOS_DISPONIBLES_POR_TARJETA_AFILIACIONResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_PTOS_DISPONIBLES_POR_TARJETA_AFILIACIONResult" nillable="true" type="q90:ArrayOfTS_BEAfiliaciontarj" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_PRECIOS_VARIOS_1">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q91:TS_BEPrecio_Varios" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_PRECIOS_VARIOS_1Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_PRECIOS_VARIOS_1Result" nillable="true" type="q92:ArrayOfTS_BEPrecio_Varios" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_PRECIOS_VARIOS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q93:TS_BEPrecio_Varios" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_PRECIOS_VARIOSResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q94="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_PRECIOS_VARIOSResult" nillable="true" type="q94:ArrayOfTS_BEPrecio_Varios" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_PRECIO_POR_ARTICULO_PRECIO">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q95:TS_BEPrecio" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_PRECIO_POR_ARTICULO_PRECIOResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_PRECIO_POR_ARTICULO_PRECIOResult" nillable="true" type="q96:ArrayOfTS_BEPrecio" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_PRECIO_CLIENTE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q97="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q97:TS_BEPreciocliente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_PRECIO_CLIENTEResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_PRECIO_CLIENTEResult" nillable="true" type="q98:ArrayOfTS_BEPreciocliente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_MOVPUNTOS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q99:TS_BETmpmovpuntosArticulo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_MOVPUNTOSResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_MOVPUNTOSResult" nillable="true" type="q100:ArrayOfTS_BETmpmovpuntosArticulo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_MOVIMIENTO_PUNTOS_POR_GRUPO_COMBUSTIBLE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q101:TS_BETmpmovpuntosArticulo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_MOVIMIENTO_PUNTOS_POR_GRUPO_COMBUSTIBLEResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_MOVIMIENTO_PUNTOS_POR_GRUPO_COMBUSTIBLEResult" nillable="true" type="q102:ArrayOfTS_BETmpmovpuntosArticulo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_MOVDET_PUNTOS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q103:TS_BETmpmovpuntos" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_MOVDET_PUNTOSResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_MOVDET_PUNTOSResult" nillable="true" type="q104:ArrayOfTS_BETmpmovpuntos" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_MOV_FACTURA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q105:TS_BETmpmovfactura" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_MOV_FACTURAResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_MOV_FACTURAResult" nillable="true" type="q106:ArrayOfTS_BETmpmovfactura" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_LOCAL_POR_ID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q107="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q107:TS_BELocal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_LOCAL_POR_IDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q108="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_LOCAL_POR_IDResult" nillable="true" type="q108:ArrayOfTS_BELocal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_GRUPOS_CONSUMOS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q109="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q109:TS_BEGruposconsumo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_GRUPOS_CONSUMOSResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q110="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_GRUPOS_CONSUMOSResult" nillable="true" type="q110:ArrayOfTS_BEGruposconsumo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_FORMATO_TICKET">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q111="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q111:TS_BETicket" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_FORMATO_TICKETResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q112="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_FORMATO_TICKETResult" nillable="true" type="q112:ArrayOfTS_BETicket" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_FORMATO_NOTA_VENTA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q113="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q113:TS_BETicket" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_FORMATO_NOTA_VENTAResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q114="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_FORMATO_NOTA_VENTAResult" nillable="true" type="q114:ArrayOfTS_BETicket" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_FORMATO_GUIA_DESPACHO">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q115="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q115:TS_BETicket" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_FORMATO_GUIA_DESPACHOResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q116="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_FORMATO_GUIA_DESPACHOResult" nillable="true" type="q116:ArrayOfTS_BETicket" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_CONF_PUNTO">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q117="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q117:TS_BECnfgvalorpuntoVariables" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_CONF_PUNTOResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q118="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_CONF_PUNTOResult" nillable="true" type="q118:ArrayOfTS_BECnfgvalorpuntoVariables" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_CLIENTE_POR_CODIGO">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q119="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q119:TS_BECliente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_CLIENTE_POR_CODIGOResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q120="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_CLIENTE_POR_CODIGOResult" nillable="true" type="q120:ArrayOfTS_BECliente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_CIERRE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q121="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q121:TS_BECierre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_CIERREResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q122="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_CIERREResult" nillable="true" type="q122:ArrayOfTS_BECierre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_CATEGORIAS_GRUPO2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q123="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q123:TS_BEGrupo02" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_CATEGORIAS_GRUPO2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q124="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_CATEGORIAS_GRUPO2Result" nillable="true" type="q124:ArrayOfTS_BEGrupo02" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_CARA_POR_POSICION">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q125="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q125:TS_BECara" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_CARA_POR_POSICIONResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q126="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_CARA_POR_POSICIONResult" nillable="true" type="q126:ArrayOfTS_BECara" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_ARTICULO_POR_GRUPO_COMBUSTIBLE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q127="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q127:TS_BEArticulo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_ARTICULO_POR_GRUPO_COMBUSTIBLEResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q128="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_ARTICULO_POR_GRUPO_COMBUSTIBLEResult" nillable="true" type="q128:ArrayOfTS_BEArticulo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_ARTICULO_POR_CODIGO">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q129="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q129:TS_BEArticulo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_ARTICULO_POR_CODIGOResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q130="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_ARTICULO_POR_CODIGOResult" nillable="true" type="q130:ArrayOfTS_BEArticulo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_ARTICULO">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q131="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q131:TS_BEArticulo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_LISTAR_ARTICULOResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q132="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_LISTAR_ARTICULOResult" nillable="true" type="q132:ArrayOfTS_BEArticulo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_IMPRIMIR_IMPRESORA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q133="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q133:TS_BETipopago" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_IMPRIMIR_IMPRESORAResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q134="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_IMPRIMIR_IMPRESORAResult" nillable="true" type="q134:ArrayOfTS_BETipopago" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_IMPRIMIR_CLIENTE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q135="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q135:TS_BECliente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_IMPRIMIR_CLIENTEResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q136="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_IMPRIMIR_CLIENTEResult" nillable="true" type="q136:ArrayOfTS_BECliente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_IMPRIMIR">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q137="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q137:TS_BEVenta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_IMPRIMIRResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q138="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_IMPRIMIRResult" nillable="true" type="q138:ArrayOfTS_BEVenta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_ELIMINAR_MOV_FACTURA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q139="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q139:TS_BETmpmovfactura" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_ELIMINAR_MOV_FACTURAResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q140="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_ELIMINAR_MOV_FACTURAResult" nillable="true" type="q140:ArrayOfTS_BETmpmovfactura" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_BUSCAR_TERMINAL_POR_SERIEHD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q141="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q141:TS_BETerminal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_BUSCAR_TERMINAL_POR_SERIEHDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q142="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_BUSCAR_TERMINAL_POR_SERIEHDResult" nillable="true" type="q142:ArrayOfTS_BETerminal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_BLOQUEA_VENTANA_PLAYA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q143="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q143:TS_BEParametro" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_BLOQUEA_VENTANA_PLAYAResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q144="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_BLOQUEA_VENTANA_PLAYAResult" nillable="true" type="q144:ArrayOfTS_BEParametro" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_AVISO_LOTERIA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q145="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q145:TS_BELoteriaaviso" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_AVISO_LOTERIAResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q146="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_AVISO_LOTERIAResult" nillable="true" type="q146:ArrayOfTS_BELoteriaaviso" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_ARTICULOS_EN_PLAYA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q147="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q147:TS_BEArticulo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_ARTICULOS_EN_PLAYAResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q148="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_ARTICULOS_EN_PLAYAResult" nillable="true" type="q148:ArrayOfTS_BEArticulo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_ACTUALIZAR_VENTA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q149="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q149:TS_BEVenta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_ACTUALIZAR_VENTAResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q150="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_ACTUALIZAR_VENTAResult" nillable="true" type="q150:ArrayOfTS_BEVenta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_ACTUALIZAR_TERMINAL_2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q151="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q151:TS_BETerminal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_ACTUALIZAR_TERMINAL_2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q152="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_ACTUALIZAR_TERMINAL_2Result" nillable="true" type="q152:ArrayOfTS_BETerminal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_ACTUALIZAR_TERMINAL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q153="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="input" nillable="true" type="q153:TS_BETerminal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ITBCP_ACTUALIZAR_TERMINALResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q154="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" minOccurs="0" name="SP_ITBCP_ACTUALIZAR_TERMINALResult" nillable="true" type="q154:ArrayOfTS_BETerminal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

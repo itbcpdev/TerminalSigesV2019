@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:titan="clr-namespace:TerminalSIGES.Views.Lib" 
+             BackgroundColor="#cdcfd0"
+             xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"         
+             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+             xmlns:controls="clr-namespace:TerminalSiges.Controls"
+             x:Class="TerminalSiges.Views.Pages.Users.Login">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid BackgroundColor="White">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Margin="20,0,20,0">
+                    <Grid.RowDefinitions>
+
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="*"/>
+
+                    </Grid.RowDefinitions>
+                    <Image Source="logoitbcp" Opacity="0.6" HeightRequest="150" VerticalOptions="EndAndExpand"/>
+                    <Frame Grid.Row="1" Grid.RowSpan="6" Margin="0,10,0,10" CornerRadius="10" BorderColor="#006ba6" WidthRequest="600" HeightRequest="400" VerticalOptions="Center" IsClippedToBounds="True" HasShadow="True" HorizontalOptions="Center">
+                        <StackLayout>
+                            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="Start" Padding="15,15,15,5">
+                                <controls:InputFloat x:Name="txtUsuario" Text="" Title="Usuario" FontSizeEntry="24" FontSize="22" FontSizeLabel="18" Margin="0,0,0,15"/>
+                                <controls:InputFloat x:Name="txtClave" Text="" Title="Contraseña" FontSizeEntry="24" FontSize="22" FontSizeLabel="18" Margin="0,0,0,15" IsPassword="true" />
+                                <combobox:SfComboBox x:Name="cboEmpresas" IsVisible="False"  
+                                                 HorizontalOptions="End"  Text="Seleccione" 
+                                                 DropDownTextSize="30" DropDownItemHeight="50"   
+                                                 TextSize="25" DataSource="{Binding Empresas}" 
+                                                 DisplayMemberPath="dsempresa" SelectionChanged="CboEmpresas_SelectionChanged"/>
+                                <Button x:Name="circleBtnLoginMultiple" FontSize="24" IsVisible="False"
+                                            Clicked="OnLoginMultiple" Text="Ingresar" 
+                                            BackgroundColor="#3897f0" TextColor="White" 
+                                            HeightRequest="50" VerticalOptions="End"
+                                            CornerRadius="10"/>
+                            </StackLayout>
+                            <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand" Padding="15,15,15,5" Margin="0,15,0,15">
+                                <busyindicator:SfBusyIndicator x:Name="busyindicator" IsVisible="False" HeightRequest="50" AnimationType="Ball" Title=""  Duration="0.5" TextColor="#006ba6" />
+                                <Button x:Name="circleBtnLogin" FontSize="24" 
+                                            Clicked="OnLogin" Text="Ingresar" 
+                                            BackgroundColor="#3897f0" TextColor="White" 
+                                            HeightRequest="50" VerticalOptions="End"
+                                            CornerRadius="10"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </Grid>
+
+                <StackLayout Grid.Row="1" BackgroundColor="#005797">
+                    <Label Text="SIGES - 2019" 
+                       TextColor="White"
+                       VerticalOptions="FillAndExpand" 
+                       VerticalTextAlignment="Center" 
+                       HorizontalTextAlignment="Center"
+                       FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}" />
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="MenuItem1" Order="Primary" Icon="hamburger.png" Text="Item 1" Priority="0" Clicked="OnSetting" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <titan:CaseConverter x:Key="caseUpperConverter"></titan:CaseConverter>
+            <Style TargetType="Label" x:Key="Iconbuttun">
+                <Setter Property="TextColor" Value="Red"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+</ContentPage>

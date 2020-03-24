@@ -1,0 +1,3116 @@
+Parameter lGrabarCliente, lTipoCli, oBoton_TrfGratuita
+
+*!*	WAIT WINDOW "Sev va a suspender"
+*!*	suspend
+
+Local lExtension, lflgmov
+lflgmov = .F.
+
+Wait Wind 'Grabando El Documento' Nowait
+
+LF = Len(Alltrim(Sys(0)))-At("#",Sys(0))+2
+WEQUIPO = Subs(Sys(0),1,At("#",Sys(0))-1)
+WUSUARIO = Subs(Sys(0),At("#",Sys(0))+2,LF)
+
+If _Screen.TerminalServer = 1
+	xserie = WUSUARIO
+Else
+	xserie = _Screen.seriehd
+Endif
+
+xtipgr="00009"
+
+*/--------- Se obtiene Fecha de Proceso d la tabla Terminal ----------------------
+***xsql = "Select fecproceso,turno from terminal where ?_screen.seriehd = LTRIM(RTRIM(seriehd)) "
+xsql = "Select fecproceso,turno from terminal where ?xserie = LTRIM(RTRIM(seriehd)) "
+If SQLExec(con, xsql, 'cOtroTerminal')=-1
+	lError = Aerror(Mi_Error)
+	=MensajeErrorSQL()
+	Return .F.
+Endif
+
+
+
+ldfechadia = Date()
+Select cOtroTerminal
+Go Top
+xfecproceso = cOtroTerminal.fecproceso
+
+Select  cCabecera
+lfecha = cCabecera.fecha
+Replace fecproceso With xfecproceso
+*IF ccabecera.turno=0
+*	replace turno With cOtroTerminal.turno
+*Endif
+
+If cCabecera.flgmanual   &&&& Facturacion Manual
+
+	Replace cCabecera.fecproceso With lfecha   &&&&&& Solo aqui cambia la fecha de proceso
+	Replace cCabecera.fecdocumento With lfecha
+	ldfechadia = lfecha
+
+Else
+
+	If cTerminal.modfecha = .T.
+
+		Replace cCabecera.fecdocumento 	With lfecha
+		Replace cCabecera.fecproceso 	With lfecha
+
+	Else
+
+		If _Screen.flg_fecsrv = .T. && FLAG PARA GRABAR CON FECHA Y HORA DEL SERVIDOR
+
+			xsql = "SELECT GETDATE() AS Fecha"
+
+			If SQLExec(con, xsql, 'cFechaSRV') = -1
+				lError=Aerror(Mi_Error)
+				=MensajeErrorSQL()
+				Return .F.
+			Endif
+
+			lFechaSRV = cFechaSRV.fecha
+
+			Replace cCabecera.fecdocumento With lFechaSRV
+
+		Else
+
+			Replace cCabecera.fecdocumento With Datetime()
+
+		Endif
+
+	Endif
+
+	Replace cCabecera.turno With cOtroTerminal.turno
+
+Endif
+
+If cCabecera.fecproceso <= cCierres.fecha
+	Wait Clear
+	=Messagebox('La Fecha Debe Ser Mayor A '+Dtoc(cCierres.fecha)+Chr(13)+'  - Ya Se Realizó El Cierre De Mes'+Chr(13)+'    Para '+Cmonth(cCierres.fecha)+' Del '+Str(Year(cCierres.fecha),4), 58, ' Facturación')
+	Return .F.
+Endif
+If cCabecera.tcambio <= 0
+	Wait Clear
+	=Messagebox('Actualice El Tipo De Cambio',16, ' Facturación' )
+	Return .F.
+Endif
+lcdtipodoc = Alltrim(cCabecera.cdtipodoc)
+*lnrodocumento = Substr(cCabecera.nrodocumento,1,3)+Substr(cCabecera.nrodocumento, 5,7)
+lnrodocumento = Alltrim(Strtran(Alltrim(cCabecera.nrodocumento), '-', ''))
+
+If _Screen.facturacion_electronica = .T.
+
+	lNroSerieMaq = Alltrim(cTerminal.nroseriemaq)
+
+Else
+
+	lNroSerieMaq = ''
+
+	If Alltrim(lcdtipodoc) = _Screen.tpticket Or Alltrim(lcdtipodoc) = _Screen.tpntavta Or Alltrim(lcdtipodoc) = _Screen.tppromocion      &&&&&& 12  or 9999 or 9998 Solo grabará el nro serie de maq registradora cuando sea un ticket o una nota de venta o una promocion
+
+		lNroSerieMaq = Alltrim(cTerminal.nroseriemaq)
+
+	Endif
+
+Endif
+
+Select  cDetalle
+Delete For Empty(cDetalle.cdarticulo)
+
+cFormu = 0
+
+Count To cFormu For cDetalle.tpformula = 'A'    &&&&& Es Una Formula por Agrupamiento
+
+lc_centra = ''
+lmens = ''
+
+*/------------- CREAMOS EL INSUMOIS SI NO EXISTE SI ES QUE CFORMU ES MAYOR A CERO !!!!!!! ---------------/*
+xInsumois = 'Insumois'+Str(Year(cCabecera.fecdocumento),4)+Padl(Alltrim(Str(Month(cCabecera.fecdocumento),2)),2, '0')
+If cFormu>0
+	cmdEx = "SELECT * from dbo.sysobjects where id = object_id('" + xInsumois + "') "
+	If SQLExec(con, cmdEx, 'cExiste') = -1
+		lError=Aerror(Mi_Error)
+		=MensajeErrorSQL()
+		Return
+	Endif
+	Select cExiste
+	llExiste = Iif(Reccount()>0, .T., .F.)
+	Use
+	If !llExiste		&&& NO EXISTE LA TABLA, SE CREA
+		If CreaInsumois(xInsumois)=.F.
+			=Messagebox('No se pudo Crear la Tabla '+xInsumois , 0+48, '')
+			Return
+		Endif
+	Endif
+Endif
+
+*/-------------REVISAR SI EXISTEN VENTA200XYY SI NO CREARLOS ---------------------------------------------/*
+lExtension = Str(Year(cCabecera.fecdocumento),4)+Padl(Alltrim(Str(Month(cCabecera.fecdocumento),2)),2, '0')
+*/-------------------- Venta ------------------------------------/*
+nameVenta = 'Venta' + lExtension
+cmdEx = "SELECT * from dbo.sysobjects where id = object_id('" + nameVenta + "') "
+If SQLExec(con, cmdEx, 'cExiste') = -1
+	lError=Aerror(Mi_Error)
+	=MensajeErrorSQL()
+	Return
+Endif
+Select cExiste
+llExiste = Iif(Reccount()>0, .T., .F.)
+Use
+If !llExiste		&&& NO EXISTE LA TABLA, SE CREA
+	If CreaVenta(nameVenta)=.F.
+		=Messagebox('No se pudo Crear la Tabla '+nameVenta , 0+48, '')
+		Return
+	Endif
+Endif
+
+*/-------------------- Ventad ------------------------------------/*
+nameVentaD = 'VentaD' + lExtension
+cmdEx = "SELECT * from dbo.sysobjects where id = object_id('" + nameVentaD + "') "
+If SQLExec(con, cmdEx, 'cExiste') = -1
+	lError=Aerror(Mi_Error)
+	=MensajeErrorSQL()
+	Return
+Endif
+Select cExiste
+llExiste = Iif(Reccount()>0, .T., .F.)
+Use
+If !llExiste		&&& NO EXISTE LA TABLA, SE CREA
+	If CreaVentaD(nameVentaD)=.F.
+		=Messagebox('No se pudo Crear la Tabla '+nameVentaD , 0+48, '')
+		Return
+	Endif
+Endif
+
+*/-------------------- Ventap ------------------------------------/*
+nameVentaP = 'VentaP' + lExtension
+cmdEx = "SELECT * from dbo.sysobjects where id = object_id('" + nameVentaP + "') "
+If SQLExec(con, cmdEx, 'cExiste') = -1
+	lError=Aerror(Mi_Error)
+	=MensajeErrorSQL()
+	Return
+Endif
+Select cExiste
+llExiste = Iif(Reccount()>0, .T., .F.)
+Use
+If !llExiste		&&& NO EXISTE LA TABLA, SE CREA
+	If CreaVentaP(nameVentaP)=.F.
+		=Messagebox('No se pudo Crear la Tabla '+nameVentaP , 0+48, '')
+		Return
+	Endif
+Endif
+*/--------------------------------------------------------------------------/*
+
+Select cCliente
+
+lruccliente = Alltrim(cCliente.ruccliente)
+
+If lcdtipodoc = _Screen.tpboleta And lruccliente <> ""
+	Messagebox('Boleta de venta no debe contener RUC', 16, '')
+	Return .F.
+Endif
+
+*** Facturación Electronica ***
+
+If _Screen.facturacion_electronica = .T. And cCabecera.flgmanual=.F.
+
+	Do Case
+
+	Case _Screen.fe_proveedor = "PPL"
+
+		If Alltrim(lcdtipodoc) = _Screen.tpfactura Or Alltrim(lcdtipodoc) = _Screen.tpboleta  && SOLO GENERA TRAMA SI ES BOLETA O FACTURA
+
+			xfe_trama = fact_electronica_trama()
+
+			If !xfe_trama
+
+				Messagebox('Ha ocurrido un error al generar el mensaje', 16, ' ERROR')
+				Return .F.
+
+			Else
+
+				xfe_conexion = fact_electronica_conexion()
+
+				If !xfe_conexion
+
+					Messagebox('Ha ocurrido un error al realizar la conexión', 16, ' ERROR')
+					Return .F.
+
+				Else
+
+					xfe_envio = fact_electronica_envio()
+
+					If !xfe_envio
+
+						Messagebox('Ha ocurrido un error al enviar el mensaje', 16, ' ERROR')
+						Return .F.
+
+					Else
+
+						xfe_respuesta = fact_electronica_respuesta()
+
+						If !xfe_respuesta
+
+							Messagebox('Ha ocurrido un error al recepcionar respuesta', 16, ' ERROR')
+							Return .F.
+
+						Endif
+
+					Endif
+
+				Endif
+
+			Endif
+
+		Endif
+
+	Case Inlist(_Screen.fe_proveedor,"CRV","CR2")
+
+		If Alltrim(lcdtipodoc) = _Screen.tpfactura Or Alltrim(lcdtipodoc) = _Screen.tpboleta  && SOLO GENERA TRAMA SI ES BOLETA O FACTURA
+
+			xfe_trama = fact_electronica_trama()
+
+			If !xfe_trama
+
+				Messagebox('Ha ocurrido un error al generar el mensaje', 16, ' ERROR')
+				Return .F.
+
+			Else
+
+				xfe_respuesta = fact_electronica_respuesta()
+
+				If !xfe_respuesta
+
+					Messagebox('Ha ocurrido un error al recepcionar respuesta', 16, ' ERROR')
+					Return .F.
+
+				Endif
+
+			Endif
+
+		Endif
+
+	Case _Screen.fe_proveedor = "DBZ"
+
+		If Alltrim(lcdtipodoc) = _Screen.tpfactura Or Alltrim(lcdtipodoc) = _Screen.tpboleta  && SOLO GENERA TRAMA SI ES BOLETA O FACTURA
+
+			xfe_trama = fact_electronica_trama()
+
+			If !xfe_trama
+
+				Messagebox('Ha ocurrido un error al generar el mensaje', 16, ' ERROR')
+				Return .F.
+
+			Else
+
+				xfe_envio = fact_electronica_envio()
+
+				If !xfe_envio
+
+					Messagebox('Ha ocurrido un error al enviar el mensaje', 16, ' ERROR')
+					Return .F.
+
+				Else
+
+					xfe_respuesta = fact_electronica_respuesta()
+
+					If !xfe_respuesta
+
+						Messagebox('Ha ocurrido un error al recepcionar respuesta', 16, ' ERROR')
+						Return .F.
+
+					Endif
+
+				Endif
+
+			Endif
+
+		Endif
+
+	Case _Screen.fe_proveedor = "BZL" Or _Screen.fe_proveedor = "BZ2"
+
+		If Alltrim(lcdtipodoc) = _Screen.tpfactura Or Alltrim(lcdtipodoc) = _Screen.tpboleta  && SOLO GENERA TRAMA SI ES BOLETA O FACTURA
+
+			xfe_trama = fact_electronica_trama()
+
+			If !xfe_trama
+
+				Messagebox('Ha ocurrido un error al generar el mensaje', 16, ' ERROR')
+				Return .F.
+
+				*!*					ELSE
+				*!*
+				*!*						xfe_conf_envio = fact_electronica_confirmacion_envio()
+				*!*
+				*!*						IF !xfe_conf_envio
+				*!*
+				*!*							MESSAGEBOX('Ha ocurrido un error al actualizar estado de documento', 16, ' ERROR')
+				*!*							RETURN .F.
+				*!*
+				*!*						ELSE
+				*!*
+				*!*							xfe_conf_respuesta = fact_electronica_confirmacion_respuesta()
+				*!*
+				*!*							IF !xfe_conf_respuesta
+				*!*
+				*!*								MESSAGEBOX('Ha ocurrido un error al recepcionar respuesta de confirmación', 16, ' ERROR')
+				*!*								RETURN .F.
+				*!*
+				*!*							ENDIF
+				*!*
+				*!*						ENDIF
+
+			Endif
+
+		Endif
+
+		*!*			CASE _screen.fe_proveedor = "ACT"
+		*!*
+		*!*				IF ALLTRIM(lcdtipodoc) = _screen.tpfactura OR ALLTRIM(lcdtipodoc) = _screen.tpboleta  && SOLO GENERA TRAMA SI ES BOLETA O FACTURA
+		*!*
+		*!*					xfe_trama = fact_electronica_trama()
+		*!*
+		*!*					IF !xfe_trama
+		*!*
+		*!*						MESSAGEBOX('Ha ocurrido un error al generar el mensaje', 16, ' ERROR')
+		*!*						RETURN .F.
+		*!*									ELSE
+		*!*
+		*!*						xfe_envio = fact_electronica_envio()
+		*!*
+		*!*						IF !xfe_envio
+		*!*
+		*!*							MESSAGEBOX('Ha ocurrido un error al enviar el mensaje', 16, ' ERROR')
+		*!*							RETURN .F.
+		*!*
+		*!*						ELSE
+		*!*
+		*!*							xfe_respuesta = fact_electronica_respuesta()
+		*!*
+		*!*							IF !xfe_respuesta
+		*!*
+		*!*								MESSAGEBOX('Ha ocurrido un error al recepcionar respuesta', 16, ' ERROR')
+		*!*								RETURN .F.
+		*!*
+		*!*							ENDIF
+		*!*
+		*!*						ENDIF
+
+		*!*					ENDIF
+		*!*
+		*!*				ENDIF
+
+		*!*			CASE _screen.fe_proveedor = "AC2"
+		*!*
+		*!*				IF ALLTRIM(lcdtipodoc) = _screen.tpfactura OR ALLTRIM(lcdtipodoc) = _screen.tpboleta  && SOLO GENERA TRAMA SI ES BOLETA O FACTURA
+		*!*
+		*!*					xfe_trama = fact_electronica_trama()
+		*!*
+		*!*					IF !xfe_trama
+		*!*
+		*!*						MESSAGEBOX('Ha ocurrido un error al generar el mensaje', 16, ' ERROR')
+		*!*						RETURN .F.
+		*!*									ELSE
+		*!*
+		*!*						xfe_envio = fact_electronica_envio()
+		*!*
+		*!*						IF !xfe_envio
+		*!*
+		*!*							MESSAGEBOX('Ha ocurrido un error al enviar el mensaje', 16, ' ERROR')
+		*!*							RETURN .F.
+		*!*
+		*!*						ELSE
+		*!*
+		*!*							xfe_respuesta = fact_electronica_respuesta()
+		*!*
+		*!*							IF !xfe_respuesta
+		*!*
+		*!*								MESSAGEBOX('Ha ocurrido un error al recepcionar respuesta', 16, ' ERROR')
+		*!*								RETURN .F.
+		*!*
+		*!*							ENDIF
+		*!*
+		*!*						ENDIF
+
+		*!*					ENDIF
+		*!*
+		*!*				ENDIF
+
+	CASE _screen.fe_proveedor = "TCI"
+
+		IF ALLTRIM(lcdtipodoc) = _screen.tpfactura OR ALLTRIM(lcdtipodoc) = _screen.tpboleta  && SOLO GENERA TRAMA SI ES BOLETA O FACTURA
+
+			xfe_trama = fact_electronica_trama()
+
+			IF !xfe_trama
+
+				MESSAGEBOX('Ha ocurrido un error al generar el mensaje', 16, ' ERROR')
+				RETURN .F.
+
+			ELSE
+
+				xfe_respuesta = fact_electronica_respuesta()
+
+				IF !xfe_respuesta
+
+					MESSAGEBOX('Ha ocurrido un error al recepcionar respuesta', 16, ' ERROR')
+					RETURN .F.
+
+				ENDIF
+
+			ENDIF
+
+		ENDIF
+
+	Case _Screen.fe_proveedor = "ASP"
+
+		If Alltrim(lcdtipodoc) = _Screen.tpfactura Or Alltrim(lcdtipodoc) = _Screen.tpboleta  && SOLO GENERA TRAMA SI ES BOLETA O FACTURA
+
+			xfe_trama = fact_electronica_trama()
+
+			If !xfe_trama
+
+				Messagebox('Ha ocurrido un error al generar el mensaje', 16, ' ERROR')
+				Return .F.
+
+			Else
+
+				xfe_respuesta = fact_electronica_respuesta()
+
+				If !xfe_respuesta
+
+					Messagebox('Ha ocurrido un error al recepcionar respuesta', 16, ' ERROR')
+					Return .F.
+
+				Else
+
+					xfe_log = fact_electronica_log()
+
+					If !xfe_log
+
+						Messagebox('Ha ocurrido un error al insertar documento en log', 16, ' ERROR')
+						Return .F.
+
+					Endif
+
+				Endif
+
+			Endif
+
+		Endif
+
+	Case _Screen.fe_proveedor = "CTN"
+
+		If Alltrim(lcdtipodoc) = _Screen.tpfactura Or Alltrim(lcdtipodoc) = _Screen.tpboleta  && SOLO GENERA TRAMA SI ES BOLETA O FACTURA
+
+			xfe_trama = fact_electronica_trama()
+
+			If !xfe_trama
+
+				Messagebox('Ha ocurrido un error al generar el mensaje', 16, ' ERROR')
+				Return .F.
+
+			Else
+
+				xfe_respuesta = fact_electronica_respuesta()
+
+				If !xfe_respuesta
+
+					Messagebox('Ha ocurrido un error al recepcionar respuesta', 16, ' ERROR')
+					Return .F.
+
+				Endif
+
+			Endif
+
+		Endif
+
+	Case _Screen.fe_proveedor = "SNT"
+
+		If Alltrim(lcdtipodoc) = _Screen.tpfactura Or Alltrim(lcdtipodoc) = _Screen.tpboleta  && SOLO GENERA TRAMA SI ES BOLETA O FACTURA
+
+			xfe_trama = fact_electronica_trama()
+
+			If !xfe_trama
+
+				Messagebox('Ha ocurrido un error al generar el mensaje', 16, ' ERROR')
+				Return .F.
+
+			Else
+
+				xfe_envio = fact_electronica_envio()
+
+				If !xfe_envio
+
+					Messagebox('Ha ocurrido un error al enviar el mensaje', 16, ' ERROR')
+					Return .F.
+
+				Else
+
+					xfe_respuesta = fact_electronica_respuesta()
+
+					If !xfe_respuesta
+
+						Messagebox('Ha ocurrido un error al recepcionar respuesta', 16, ' ERROR')
+						Return .F.
+
+					Endif
+
+				Endif
+
+			Endif
+
+		Endif
+
+	Case _Screen.fe_proveedor = "MST"
+
+		If Alltrim(lcdtipodoc) = _Screen.tpfactura Or Alltrim(lcdtipodoc) = _Screen.tpboleta  && SOLO GENERA TRAMA SI ES BOLETA O FACTURA
+
+			xfe_trama = fact_electronica_trama()
+
+			If !xfe_trama
+
+				Messagebox('Ha ocurrido un error al generar el mensaje', 16, ' ERROR')
+				Return .F.
+
+			Else
+
+				xfe_envio = fact_electronica_envio()
+
+				If !xfe_envio
+
+					Messagebox('Ha ocurrido un error al enviar el mensaje', 16, ' ERROR')
+					Return .F.
+
+				Endif
+
+			Endif
+
+		Endif
+
+	Case _Screen.fe_proveedor = "SGE"
+
+		If Alltrim(lcdtipodoc) = _Screen.tpfactura Or Alltrim(lcdtipodoc) = _Screen.tpboleta  && SOLO GENERA TRAMA SI ES BOLETA O FACTURA
+
+			xfe_trama = fact_electronica_trama()
+
+			If !xfe_trama
+
+				Messagebox('Ha ocurrido un error al generar el mensaje', 16, ' ERROR')
+				Return .F.
+
+			Else
+
+				xfe_envio = fact_electronica_envio()
+
+				If !xfe_envio
+
+					Messagebox('Ha ocurrido un error al enviar el mensaje', 16, ' ERROR')
+					Return .F.
+
+				Endif
+
+			Endif
+
+		Endif
+
+	Case _Screen.fe_proveedor = "INC"
+
+		If Alltrim(lcdtipodoc) = _Screen.tpfactura Or Alltrim(lcdtipodoc) = _Screen.tpboleta  && SOLO GENERA TRAMA SI ES BOLETA O FACTURA
+
+			xfe_trama = fact_electronica_trama()
+
+			If !xfe_trama
+
+				Messagebox('Ha ocurrido un error al generar el mensaje', 16, ' ERROR')
+				Return .F.
+
+			Else
+
+				xfe_envio = fact_electronica_respuesta()
+
+				If !xfe_envio
+
+					Messagebox('Ha ocurrido un error al recepcionar respuesta', 16, ' ERROR')
+					Return .F.
+
+				Endif
+
+			Endif
+
+		Endif
+
+	Case _Screen.fe_proveedor = "ARS"
+
+		If Alltrim(lcdtipodoc) = _Screen.tpfactura Or Alltrim(lcdtipodoc) = _Screen.tpboleta  && SOLO GENERA TRAMA SI ES BOLETA O FACTURA
+
+			xfe_trama = fact_electronica_trama()
+
+			If !xfe_trama
+
+				Messagebox('Ha ocurrido un error al generar el mensaje', 16, ' ERROR')
+				Return .F.
+
+			Else
+
+				xfe_envio = fact_electronica_envio()
+
+				If !xfe_envio
+
+					Messagebox('Ha ocurrido un error al enviar el mensaje', 16, ' ERROR')
+					Return .F.
+
+				Else
+
+					xfe_respuesta = fact_electronica_respuesta()
+
+					If !xfe_respuesta
+
+						Messagebox('Ha ocurrido un error al recepcionar respuesta', 16, ' ERROR')
+						Return .F.
+
+					Endif
+
+				Endif
+
+			Endif
+
+		Endif
+
+		*!*			CASE _screen.fe_proveedor = "TC2"
+		*!*
+		*!*				IF ALLTRIM(lcdtipodoc) = _screen.tpfactura OR ALLTRIM(lcdtipodoc) = _screen.tpboleta  && SOLO GENERA TRAMA SI ES BOLETA O FACTURA
+		*!*
+		*!*					xfe_trama = fact_electronica_trama()
+		*!*
+		*!*					IF !xfe_trama
+		*!*
+		*!*						MESSAGEBOX('Ha ocurrido un error al generar el mensaje', 16, ' ERROR')
+		*!*						RETURN .F.
+		*!*
+		*!*					ELSE
+		*!*
+		*!*						xfe_envio = fact_electronica_envio()
+		*!*
+		*!*						IF !xfe_envio
+		*!*
+		*!*							MESSAGEBOX('Ha ocurrido un error al enviar el mensaje', 16, ' ERROR')
+		*!*							RETURN .F.
+		*!*
+		*!*						ELSE
+		*!*
+		*!*							xfe_respuesta = fact_electronica_respuesta()
+		*!*
+		*!*							IF !xfe_respuesta
+		*!*
+		*!*								MESSAGEBOX('Ha ocurrido un error al recepcionar respuesta', 16, ' ERROR')
+		*!*								RETURN .F.
+		*!*
+		*!*							ENDIF
+		*!*
+		*!*						ENDIF
+		*!*
+		*!*					ENDIF
+		*!*
+		*!*				ENDIF
+
+	Endcase
+
+Endif
+
+*** Fin de Facturación Electronica ***
+
+*** Club Gazel ***
+
+If _Screen.clubgazel = .T.
+
+	x_clubgazel = proceso_club_gazel()
+
+	If !x_clubgazel
+
+		Messagebox('Ha ocurrido un error al acumular puntos Club Gazel', 16, ' ERROR')
+		Return .F.
+
+	Endif
+
+Endif
+
+If _Screen.facturacion_electronica
+	Select cCabecera
+	Replace cCabecera.fact_elect	With .T.
+
+Else
+	Select cCabecera
+	Replace cCabecera.fact_elect	With .F.
+
+Endif
+
+
+*** Fin de Club Gazel ***
+
+*/--------------------------------------------------------------------------/*
+If !AbreTran()   && Cambio a Transacciones manuales.
+	Return .F.
+Endif
+*/----------------  GRABAMOS EN VENTAG Y SI YA EXISTE NO GRABAMOS NADA Y RETORNA -------------------------------/*
+xsql = "Insert Into Ventag (cdlocal, NroSerieMaq, nropos, cdtipodoc, nrodocumento, fecdocumento, fecproceso, cdcliente, declarado) "+;
+	"values (?_screen.cdlocal, ?lNroSerieMaq, ?cTerminal.nropos, ?lcdtipodoc, ?lnrodocumento, ?cCabecera.fecdocumento, "+;
+	"?cCabecera.fecproceso, ?cCliente.cdcliente, 0) "
+If SQLExec(con, xsql) = -1
+	lError = Aerror(Mi_Error)
+	If lError != 0
+		If Mi_Error[1,1] = 1526 And Mi_Error[1,5] = 2627
+			= Messagebox('Este Documento ya Existe en la Base de Datos'+Chr(13)+' - Revise los Correlativos', 54, ' Duplicidad de Registro')
+		Else
+			If	Mi_Error[1,5] <> 702		&&&  ???
+				=MensajeErrorSQL()
+			Endif
+		Endif
+	Endif
+	=CancelaTran()		&& =Sqlrollback(con)
+	Return .F.
+Endif
+*/-----------------------  GRABAMOS EN VENTAR FECHAS ------------------------------------------------------/*
+xsql = 'Insert into ventar (cdlocal, fecdocumento, fecproceso) Values (?_screen.cdlocal, ?ldfechadia, ?cCabecera.fecproceso)'
+If SQLExec(con, xsql) = -1
+	lError = Aerror(Mi_Error)
+	If Mi_Error[1,1] = 1526 And Mi_Error[1,5] = 2627
+		&&&&&&&&   Ya Existe este registro entonces continuamos
+	Else
+		If	Mi_Error[1,5] <> 702
+			=MensajeErrorSQL()
+		Endif
+		*		=MensajeErrorSQL()
+		=CancelaTran()		&&& =Sqlrollback(con)
+		Return .F.
+	Endif
+Endif
+*/-----------------------    CREDITO  Y NOTA DE VENTA ---------------------------------/*
+lGrabarcredito = .F.
+If lGrabarCliente And !Empty(cCliente.cdcliente)
+	lGrabarcredito = .T.
+Endif
+*!*	If lGrabarcredito = .t.
+*!*		lfecven = Ttod(cCabecera.fecdocumento) + cPago.nrodias
+*!*		Store 0 to lMtoEmision, lmtosoles, lmtodolares
+*!*		If cCabecera.cdmoneda = _screen.monpais   &&&& Soles
+*!*			lmtoemision = cCabecera.mtototal
+*!*			lmtosoles = cCabecera.mtototal
+*!*			lMtodolares = cCabecera.mtototal/cCabecera.tcambio
+*!*		Else                                                                               &&&&& Dolares
+*!*			lmtoemision = cCabecera.mtototal*cCabecera.tcambio
+*!*			lmtosoles = cCabecera.mtototal*cCabecera.tcambio
+*!*			lMtodolares = cCabecera.mtototal
+*!*		Endif
+*!*		lRenovacion = Space(2)
+*!*		xsql = "Insert Into CredCliente (cdtipodoc, nrodocumento, renovacion, fecdocumento, fecvencimiento, fecsistema, cdalmacen, cdcliente, cdmoneda, "+;
+*!*				"mtototal, mtoemision, mtosoles, mtodolares, cdvendedor, tcambio, docpago, cdlocal, nropos ) values ( ?lcdtipodoc, ?lnrodocumento, ?lRenovacion, ?cCabecera.fecdocumento, ?lFecVen, "+;
+*!*				"datetime(), ?cCabecera.cdalmacen, ?cCliente.cdcliente, ?cCabecera.cdmoneda, "+;
+*!*				"?cCabecera.mtototal, ?lmtoemision, ?lmtosoles, ?lmtodolares, ?cCabecera.cdvendedor, ?cCabecera.tcambio, 'D', ?_screen.cdlocal, ?cTerminal.nropos)"
+*!*		If Sqlexec(con, xsql) = -1
+*!*			=MensajeErrorSQL()
+*!*			=Sqlrollback(con)
+*!*			End transaction
+*!*			Return .f.
+*!*		EndIf
+*!*		*/------------------------   Disminuir el credito ---------------------/*
+*!*		If cCliente.monlimite = cCabecera.cdmoneda
+*!*			lQuitar = cCabecera.mtototal
+*!*		Else
+*!*			If cCliente.monlimite = _screen.monpais      &&&&&&&   Credito en soles y doc en dolares
+*!*				lQuitar = cCabecera.mtototal*cCabecera.tcambio
+*!*			Else     &&&&&&&    Credito en dolares y doc en soles
+*!*				lQuitar = cCabecera.mtototal/cCabecera.tcambio
+*!*			EndIf
+*!*		EndIf
+*!*		xsql = "Update Cliente Set mtodisponible = mtodisponible - ?lQuitar Where ?cCliente.cdcliente == cdcliente"
+*!*		If Sqlexec(con, xsql) = -1
+*!*			=MensajeErrorSQL()
+*!*			=Sqlrollback(con)
+*!*			End transaction
+*!*			Return .f.
+*!*		EndIf
+*!*	EndIf
+*/-----------------------------    FACTURACION DE DOCUMENTOS  --------------------------------------------/*
+
+ldFecha = Date()
+
+If _Screen.flg_fecsrv = .T. && FLAG PARA GRABAR CON FECHA Y HORA DEL SERVIDOR
+
+	xsql = "SELECT GETDATE() AS Fecha"
+
+	If SQLExec(con, xsql, 'cFechaSRV') = -1
+		lError=Aerror(Mi_Error)
+		=MensajeErrorSQL()
+		Return .F.
+	Endif
+
+	lFechaSRV = cFechaSRV.fecha
+
+	ltFecha = lFechaSRV
+
+Else
+
+	ltFecha = Datetime()
+
+Endif
+
+
+Do Case
+Case cCabecera.tipofactura = 'V' And Used('cVale_despachado')    &&&& Vales de Credito
+	*/--------grabar en hvale
+	*!*		*********** RESUMIR PARA PODER GRABARLO EN CREDCLIENTE
+	*!*		xsql = "SELECT sum(v.mtototal) as mtototal, v.nrovale, v.cdtipodoc, v.nrodocumento, v.fecdocumento, v.cdmoneda  "+;
+	*!*				"FROM cVale_Despachado v  GROUP BY v.nrovale, v.cdtipodoc, v.nrodocumento, v.fecdocumento, v.cdmoneda "+;
+	*!*				"ORDER BY v.nrovale, v.cdtipodoc, v.nrodocumento, v.fecdocumento, v.cdmoneda "
+	*!*		If Sqlexec(con, xsql, "cValeresu") = -1
+	*!*			lError = Aerror(Mi_Error)
+	*!*			=MensajeErrorSQL()
+	*!*			=CancelaTran()		&&& =SqlRollBack(con)
+	*!*			lErrorBusca = .t.
+	*!*		Endif
+	*!*
+	*!*			End transaction
+	*!*			Return .f.
+	*!*		Endif
+	*!*
+
+	Select cVale_despachado
+	Go Top
+	Do While !Eof()
+		If cVale_despachado.nrovale = '0000000000' Or cVale_despachado.chk = .F.
+			Skip
+			Loop
+		Endif
+		_Tally = 0
+		xsql = "Update hvale Set nroseriemaqfac = ?lNroSerieMaq, cdtipodocfac = ?lcdtipodoc, "+;
+			"nrodocumentofac = ?lnrodocumento, fecdocumentofac = ?cCabecera.fecdocumento, "+;
+			"fecprocesofac = ?cCabecera.fecproceso, turno = ?cCabecera.turno, docvale=?cVale.docvale "+;
+			"Where nrovale = ?cVale_despachado.nrovale And (cdtipodocfac IS NULL or LTRIM(RTRIM(cdtipodocfac))='' "+;
+			"or nrodocumentofac IS NULL or LTRIM(RTRIM(nrodocumentofac))='') "
+		If SQLExec(con, xsql) = -1
+			lError = Aerror(Mi_Error)
+			=MensajeErrorSQL()
+			=CancelaTran()	&&& =Sqlrollback(con)
+			Return .F.
+		Endif
+
+		SUMVAL = 0
+		LDOC = cVale_despachado.nrodocumento
+		Do While !Eof() And cVale_despachado.nrodocumento = LDOC
+			SUMVAL = SUMVAL + cVale_despachado.MTOTOTAL
+			Skip
+		Enddo
+		Skip -1
+
+		******pagar nde venta de credcliente
+		*lmtodoc = cVale_despachado.mtototal
+		lmtodoc = SUMVAL
+		ltc = cCabecera.tcambio
+		lmon = cVale_despachado.cdmoneda
+		If lmon = _Screen.monpais &&&& soles
+			lmtoemi = lmtodoc
+			lmtosol = lmtodoc
+			lmtodol = Iif(ltc= 0, 0, Round(lmtodoc/ltc,2))
+		Else  &&&&&& dolares
+			lmtoemi = Round(lmtodoc*ltc,2)
+			lmtosol = Round(lmtodoc*ltc,2)
+			lmtodol = lmtodoc
+		Endif
+
+		xsql = "Insert Into credcliente (docpago, cdtipodoc, nrodocumento, renovacion, cdlocal, nropos, "+;
+			"cdalmacen, fecdocumento, fecpago, fecsistema, cdcliente, cdmoneda, mtototal, mtoemision, "+;
+			"mtosoles, mtodolares, tcambio, mtodifcambio, cdtppago, fecproceso, NROPAGO ) Values ( 'P', "+;
+			"?cVale_despachado.cdtipodoc, ?cVale_despachado.nrodocumento, Space(0), ?_screen.cdlocal, "+;
+			"?cTerminal.nropos, ?cCabecera.cdalmacen, ?cVale_despachado.fecdocumento, ?ldFecha, ?ltFecha, "+;
+			"?cCliente.cdcliente, ?lmon, ?lmtodoc, ?lmtoemi, ?lmtosol, ?lmtodol, ?ltc, 0, ?cPago.cdtppago, "+;
+			"?cCabecera.fecproceso, 0 ) "
+		If SQLExec(con, xsql) = -1
+			lError = Aerror(Mi_Error)
+			=MensajeErrorSQL()
+			=CancelaTran()		&& =Sqlrollback(con)
+			Return .F.
+		Endif
+		Select cVale_despachado
+		Skip
+	Enddo
+Endcase
+
+If lptransferGratuita = 1
+
+	*/-----------------------------    FACTURACION DE DOCUMENTOS  --------------------------------------------/*
+	ldFecha = Date()
+	ltFecha = Datetime()
+
+
+	*/--------- INICIO PROCESO PARA GRABAR CON TAJETA FIDELIZACION -------------------------
+
+	*/---------- Tarj Afiliacion (Tipo BONUS) -------------------------
+	_PtosGanados = 0
+	lcTarjAfil = ''
+	ntipocanje = 2
+
+	*IF _screen.clubgazel = .F.
+
+	If  _Screen.tipoafiliacion = 'O'   && Para hacer los Canjes
+
+		*	lcTarjAfil = _Screen.prefbonus + ALLTRIM(cCliente.NroBonus)
+		lcTarjAfil = Alltrim(cCliente.NroBonus)
+		Select cCabecera
+		*REPLACE cCabecera.PtosGanados WITH 0  && _PtosGanados
+		_PtosCanjeados = cCabecera.TotalPuntos
+
+		If _PtosCanjeados > 0
+			If ntipocanje = 1
+				xsql = "Update AfiliacionTarj Set Canjeado=Canjeado+?_PtosCanjeados, Disponible=Disponible-?_PtosCanjeados "+;
+					"Where TarjAfiliacion = ?lcTarjAfil and bloqueado=0 "
+			Else
+				xsql = "Update AfiliacionTarj Set ValorAcumula=ValorAcumula - ?_PtosCanjeados "+;
+					"Where TarjAfiliacion = ?lcTarjAfil and bloqueado=0 "
+			Endif
+			If SQLExec(con, xsql) = -1
+				lError = Aerror(Mi_Error)
+				=MensajeErrorSQL()
+				=CancelaTran()	&&& =Sqlrollback(con)
+				Return .F.
+			Endif
+		Endif
+		lcTarjAfil = Alltrim(cCliente.NroBonus)
+		Select cDetalle
+		Go Top
+		nnPtosGanados = 0
+		nnValorAcumula = 0
+		Do While !Eof()
+			_codi = cDetalle.cdarticulo
+			nValorAcumula = 0
+			_PtosCanj = 0
+			If ntipocanje = 1
+				_PtosCanj = cDetalle.PrecioAfiliacion * cDetalle.Cantidad
+			Else
+				nValorAcumula = cDetalle.PrecioAfiliacion
+			Endif
+			nnPtosGanados = nnPtosGanados + _PtosCanj
+			nnValorAcumula = nnValorAcumula + nValorAcumula
+			*InsAfil="INSERT INTO AfiliacionPtos (cdlocal, TarjAfiliacion, Tipo, nropos, cdtipodoc, nrodocumento, "+;
+			"fecha, fecproceso, total, cdproducto, cantidad, Puntos, canjeados, Estado, ValorAcumula) Values (?_screen.cdlocal, "+;
+			"?lcTarjAfil, 'C', ?cTerminal.nropos, ?lcdtipodoc, ?lnrodocumento, ?cCabecera.fecdocumento, "+;
+			"?cCabecera.fecproceso, ?cDetalle.Total, ?cDetalle.cdarticulo, ?cDetalle.Cantidad, "+;
+			" ?_PtosCanj, ?_PtosCanj, '', ?nValorAcumula) "
+			*!*						?cDetalle.PtosGanados, '', ?cDetalle.ValorAcumula
+			*InsAfil="INSERT INTO AfiliacionPtos (cdlocal, TarjAfiliacion, Tipo, nropos, cdtipodoc, nrodocumento, "+;
+			"fecha, fecproceso, total, cdproducto, cantidad, Puntos, canjeados, Estado, ValorAcumula) Values (?_screen.cdlocal, "+;
+			"?lcTarjAfil, 'C', ?cTerminal.nropos, ?lcdtipodoc, ?lnrodocumento, ?cCabecera.fecdocumento, "+;
+			"?cCabecera.fecproceso, ?cDetalle.Total, ?cDetalle.cdarticulo, ?cDetalle.Cantidad, "+;
+			" ?cDetalle.PtosGanados, ?_PtosCanjeados, '', ?_PtosCanjeados) "
+			InsAfil="INSERT INTO AfiliacionPtos (cdlocal, TarjAfiliacion, Tipo, nropos, cdtipodoc, nrodocumento, "+;
+				"fecha, fecproceso, total, cdproducto, cantidad, Puntos, canjeados, Estado, ValorAcumula) Values (?_screen.cdlocal, "+;
+				"?lcTarjAfil, 'C', ?cTerminal.nropos, ?lcdtipodoc, ?lnrodocumento, ?cCabecera.fecdocumento, "+;
+				"?cCabecera.fecproceso, ?cDetalle.Total, ?cDetalle.cdarticulo, ?cDetalle.Cantidad, "+;
+				" ?_PtosCanjeados, ?_PtosCanjeados, '', 0) "
+			If SQLExec(con, InsAfil) = -1
+				lError = Aerror(Mi_Error)
+				=MensajeErrorSQL()
+				=CancelaTran()		&& =Sqlrollback(con)
+				Return .F.
+			Endif
+			Select cDetalle
+			Skip
+		Enddo
+	Endif
+Else
+	*/---------- Tarj Afiliacion (Tipo BONUS) -------------------------
+	_PtosGanados = 0
+
+
+	Select cCliente
+	Replace cCliente.NroBonus With cCabecera.NroBonus
+
+	lcTarjAfil = ''
+	If !Empty(Alltrim(cCliente.NroBonus)) And _Screen.tipoafiliacion = 'O'
+		*lcTarjAfil = _Screen.prefbonus + ALLTRIM(cCliente.NroBonus)
+		lcTarjAfil =Alltrim(cCliente.NroBonus)
+		If _Screen.tipoptoafiliacion = 'T'   &&& x el total de la venta
+			_PtosGanados = cCabecera.PtosGanados &&IIF(_screen.ptobonus > 0, INT(cCabecera.mtototal/_screen.ptobonus), 0)
+			If _PtosGanados > 0 Or cCabecera.ValorAcumula > 0
+				InsAfil="INSERT INTO AfiliacionPtos (cdlocal, TarjAfiliacion, Tipo, nropos, cdtipodoc, nrodocumento, fecha, "+;
+					"fecproceso, total, cdproducto, cantidad, Puntos, Estado, ValorAcumula) Values (?_screen.cdlocal, "+;
+					"?lcTarjAfil, 'V', ?cTerminal.nropos, ?lcdtipodoc, ?lnrodocumento, ?cCabecera.fecdocumento, "+;
+					"?cCabecera.fecproceso, ?cCabecera.mtototal, '', 0, ?_PtosGanados, '', ?cCabecera.ValorAcumula) "
+				If SQLExec(con, InsAfil) = -1
+					lError = Aerror(Mi_Error)
+					=MensajeErrorSQL()
+					=CancelaTran()		&& =Sqlrollback(con)
+					Return .F.
+				Endif
+			Endif
+		Endif
+
+		If _Screen.tipoptoafiliacion = 'P'   &&& x el total x Producto
+			*!*			xAfil = "Select cdarticulo, ValorPunto from AfiliacionValorPto "
+			*!*			If Sqlexec(con, xAfil, 'cValorPto')=-1
+			*!*				lError = Aerror(Mi_Error)
+			*!*				=MensajeErrorSQL()
+			*!*				Return .f.
+			*!*			Endif
+			*!*			SELECT cValorPto
+			*!*			INDEX ON cdarticulo TAG id1
+
+			Select cDetalle
+			Go Top
+			Do While !Eof()
+				_codi = cDetalle.cdarticulo
+				*IF SEEK(_codi, 'cValorPto')
+				*_PtosAcum = IIF(cValorPto.ValorPunto > 0, INT(cDetalle.total / cValorPto.ValorPunto), 0)
+				*_PtosGanados = _PtosGanados + _PtosAcum
+
+				*				IF _PtosAcum > 0
+				*					InsAfil="INSERT INTO AfiliacionPtos (cdlocal, TarjAfiliacion, Tipo, nropos, cdtipodoc, nrodocumento, fecha, "+;
+				"fecproceso, total, cdproducto, cantidad, Puntos, Estado) Values (?_screen.cdlocal, "+;
+				"?lcTarjAfil, 'V', ?cTerminal.nropos, ?lcdtipodoc, ?lnrodocumento, ?cCabecera.fecdocumento, "+;
+				"?cCabecera.fecproceso, ?cDetalle.Total, ?cDetalle.cdarticulo, ?cDetalle.Cantidad, "+;
+				"?_PtosAcum, '') "
+
+				InsAfil="INSERT INTO AfiliacionPtos (cdlocal, TarjAfiliacion, Tipo, nropos, cdtipodoc, nrodocumento, fecha, "+;
+					"fecproceso, total, cdproducto, cantidad, Puntos, Estado, ValorAcumula) Values (?_screen.cdlocal, "+;
+					"?lcTarjAfil, 'V', ?cTerminal.nropos, ?lcdtipodoc, ?lnrodocumento, ?cCabecera.fecdocumento, "+;
+					"?cCabecera.fecproceso, ?cDetalle.Total, ?cDetalle.cdarticulo, ?cDetalle.Cantidad, "+;
+					"?cDetalle.PtosGanados, '', ?cDetalle.ValorAcumula) "
+				If SQLExec(con, InsAfil) = -1
+					lError = Aerror(Mi_Error)
+					=MensajeErrorSQL()
+					=CancelaTran()		&& =Sqlrollback(con)
+					Return .F.
+				Endif
+				*				ENDIF
+				*ENDIF
+				Select cDetalle
+				Skip
+			Enddo
+
+			*SELECT cValorPto
+			*USE
+		Endif
+	Endif
+	*ENDIF
+
+	Select cCabecera
+	*REPLACE cCabecera.PtosGanados WITH _PtosGanados
+
+	_PtosGanados = cCabecera.PtosGanados
+	nValorAcumula = cCabecera.ValorAcumula
+	If _PtosGanados > 0 Or nValorAcumula > 0
+		*	lcTarjAfil = _Screen.prefbonus + ALLTRIM(cCliente.NroBonus)
+		lcTarjAfil = Alltrim(cCliente.NroBonus)
+		dFechaUltConsumo = Dtot(Date())
+		xsql = "Update AfiliacionTarj Set Puntos=Puntos+?_PtosGanados, Disponible=Disponible+?_PtosGanados, ValorAcumula = ValorAcumula+?nValorAcumula, FechaUltConsumo = ?dFechaUltConsumo "+;
+			"Where TarjAfiliacion = ?lcTarjAfil and bloqueado=0 "
+		If SQLExec(con, xsql) = -1
+			lError = Aerror(Mi_Error)
+			=MensajeErrorSQL()
+			=CancelaTran()	&&& =Sqlrollback(con)
+			Return .F.
+		Endif
+	Endif
+
+Endif
+
+*/--------- FINAL PROCESO PARA GRABAR CON TAJETA FIDELIZACION -------------------------
+
+*/-----------------------    VENTA - CABECERA DEL DIA   ---------------------------------/*
+If cCabecera.tipofactura = 'G' Or cCabecera.tipofactura = 'V'   &&&&&&  las guias y los vales ya generaron movimiento
+	lflgmov = .F.
+Else
+	If cCabecera.cdtipodoc = _Screen.tppromocion
+		lflgmov = .F.
+	Else
+		lflgmov = .T.
+	Endif
+Endif
+
+cSQL_Busca = "select * from parametro "
+SQLExec(con, cSQL_Busca, "cParametro")
+Select cParametro
+ltocupon=0
+If cParametro.mTocupon > 0
+	ltocupon=Int(cCabecera.MTOTOTAL/cParametro.mTocupon)
+Endif
+
+If _Screen.flg_transfer_gratuita_cero = .T.
+
+	Select cCabecera
+	Go Top
+
+	xtipoventa = cCabecera.TipoVenta
+
+	If xtipoventa = "T"
+
+		Select cCabecera
+
+		Replace cCabecera.MTOTOTAL With 0.00
+		Replace cCabecera.mtosubtotal With 0.00
+		Replace cCabecera.valorvta With 0.00
+		Replace cCabecera.mtoimpuesto With 0.00
+
+	Endif
+
+Endif
+
+If _Screen.FLg_round_dec_indecopi = .T.
+	** NADA
+Else
+	Select cCabecera
+	Replace cCabecera.redondea_indecopi With 0
+Endif
+
+xSql1 = "Insert Into Venta"
+*!*	xSql2 = " (cdtipodoc, nrodocumento, fecdocumento, fecproceso, fecsistema, nropos, cdalmacen, cdcliente, ruccliente, "+;
+*!*			"rscliente, cdprecio, cdmoneda, porservicio, pordscto1, pordscto2, pordscto3, pordsctoeq, mtonoafecto, valorvta, "+;
+*!*			"mtodscto, mtosubtotal, mtoservicio, mtoimpuesto, mtototal,  cdusuario, cdvendedor, tipofactura, flgmanual, "+;
+*!*			"tcambio, nroocompra, observacion, flgmovimiento, cdlocal, referencia, mtovueltosol, mtovueltodol, cdtranspor, "+;
+*!*			"nroplaca, drpartida, drdestino, NroSerieMaq, nroserie1, nroserie2, turno, nrobonus, nrotarjeta, odometro, "+;
+*!*			"marcavehic, inscripcion, chofer, nrolicencia, chkespecial, tipoventa, PtosGanados, nroproforma ) "+;
+*!*			"values (?lcdtipodoc, ?lnrodocumento, ?cCabecera.fecdocumento, ?cCabecera.fecproceso, ?ltFecha, "+;
+*!*			"?cTerminal.nropos, ?cCabecera.cdalmacen, ?cCliente.cdcliente, ?cCliente.ruccliente, ?cCliente.rscliente, "+;
+*!*			"?cCabecera.cdprecio, ?cCabecera.cdmoneda, ?_screen.porservicio, ?cCabecera.pordscto1, ?cCabecera.pordscto2, "+;
+*!*			"?cCabecera.pordscto3, ?cCabecera.pordsctoeq, ?cCabecera.mtonoafecto, ?cCabecera.valorvta, ?cCabecera.mtodscto, "+;
+*!*			"?cCabecera.mtosubtotal, ?cCabecera.mtoservicio, ?cCabecera.mtoimpuesto, ?cCabecera.mtototal, ?_screen.cdusuario, "+;
+*!*			"?cCabecera.cdvendedor, ?cCabecera.tipofactura, ?cCabecera.flgmanual, ?cCabecera.tcambio, ?cCabecera.nroocompra, "+;
+*!*			"?cCabecera.observacion, ?lflgmov, ?_screen.cdlocal, ?cCabecera.referencia, ?cCabecera.mtovueltosol, "+;
+*!*			"?cCabecera.mtovueltodol, ?cCabecera.cdtranspor, ?cCabecera.nroplaca, ?cCabecera.drpartida, ?cCabecera.drdestino, "+;
+*!*			"?lNroSerieMaq, ?cTerminal.nroserie1, ?cTerminal.nroserie2, ?cCabecera.turno, ?cCabecera.nrobonus, "+;
+*!*			"?cCabecera.nrotarjeta, ?cCabecera.odometro, ?cCabecera.marcavehic, ?cCabecera.inscripcion, "+;
+*!*			"?cCabecera.chofer, ?cCabecera.nrolicencia, ?cCabecera.chkespecial, ?cCabecera.tipoventa, ?cCabecera.PtosGanados, ?cCabecera.nroproforma) "
+xSql2 = " (cdtipodoc, nrodocumento, fecdocumento, fecproceso, fecsistema, nropos, cdalmacen, cdcliente, ruccliente, "+;
+	"rscliente, cdprecio, cdmoneda, porservicio, pordscto1, pordscto2, pordscto3, pordsctoeq, mtonoafecto, valorvta, "+;
+	"mtodscto, mtosubtotal, mtoservicio, mtoimpuesto, mtototal,  cdusuario, cdvendedor, tipofactura, flgmanual, "+;
+	"tcambio, nroocompra, observacion, flgmovimiento, cdlocal, referencia, mtovueltosol, mtovueltodol, cdtranspor, "+;
+	"nroplaca, drpartida, drdestino, NroSerieMaq, nroserie1, nroserie2, turno, nrobonus, nrotarjeta, odometro, "+;
+	"marcavehic, inscripcion, chofer, nrolicencia, chkespecial, tipoventa, PtosGanados, nroproforma, " + ;
+	"TipoAcumula, ValorAcumula, c_centralizacion, CANTCUPON, MTOCANJE, mtopercepcion, CDRUTA, mensaje1, mensaje2, pdf417, cdhash, fact_elect, redondea_indecopi) "+;
+	"values (?lcdtipodoc, ?lnrodocumento, ?cCabecera.fecdocumento, ?cCabecera.fecproceso, ?ltFecha, "+;
+	"?cTerminal.nropos, ?cCabecera.cdalmacen, ?cCliente.cdcliente, ?cCliente.ruccliente, ?cCliente.rscliente, "+;
+	"?cCabecera.cdprecio, ?cCabecera.cdmoneda, ?_screen.porservicio, ?cCabecera.pordscto1, ?cCabecera.pordscto2, "+;
+	"?cCabecera.pordscto3, ?cCabecera.pordsctoeq, ?cCabecera.mtonoafecto, ?cCabecera.valorvta, ?cCabecera.mtodscto, "+;
+	"?cCabecera.mtosubtotal, ?cCabecera.mtoservicio, ?cCabecera.mtoimpuesto, ?cCabecera.mtototal, ?_screen.cdusuario, "+;
+	"?cCabecera.cdvendedor, ?cCabecera.tipofactura, ?cCabecera.flgmanual, ?cCabecera.tcambio, ?cCabecera.nroocompra, "+;
+	"?cCabecera.observacion, ?lflgmov, ?_screen.cdlocal, ?cCabecera.referencia, ?cCabecera.mtovueltosol, "+;
+	"?cCabecera.mtovueltodol, ?cCabecera.cdtranspor, ?cCabecera.nroplaca, ?cCabecera.drpartida, ?cCabecera.drdestino, "+;
+	"?lNroSerieMaq, ?cTerminal.nroserie1, ?cTerminal.nroserie2, ?cCabecera.turno, ?cCabecera.nrobonus, "+;
+	"?cCabecera.nrotarjeta, ?cCabecera.odometro, ?cCabecera.marcavehic, ?cCabecera.inscripcion, "+;
+	"?cCabecera.chofer, ?cCabecera.nrolicencia, ?cCabecera.chkespecial, ?cCabecera.tipoventa, ?cCabecera.PtosGanados, ?cCabecera.nroproforma, "+;
+	"?cCabecera.TipoAcumula, ?cCabecera.ValorAcumula,  ?lc_centra, ?ltocupon, ?cCabecera.mtocanje, ?cCabecera.mtopercepcion, ?cRuta.cdRUTA, "+;
+	"?cCabecera.mensaje1, ?cCabecera.mensaje2, ?cCabecera.pdf417, ?cCabecera.cdhash, ?cCabecera.fact_elect, ?cCabecera.redondea_indecopi ) "
+
+xsql = xSql1 + xSql2
+If SQLExec(con, xsql) = -1
+	lError = Aerror(Mi_Error)
+	=MensajeErrorSQL()
+	=CancelaTran()		&& =Sqlrollback(con)
+	Return .F.
+Endif
+*/-----------------------    Venta - cabecera mensual   ---------------------------------/*
+xsql = xSql1 +lExtension+ xSql2
+If SQLExec(con, xsql) = -1
+	lError = Aerror(Mi_Error)
+	=MensajeErrorSQL()
+	=CancelaTran()		&& =Sqlrollback(con)
+	Return .F.
+Endif
+
+********* GUIA DE REMISION SOLO SI ES TRIVEÑO
+If SQLExec(con, 'SELECT triveno from parametro ', 'cEmpr') = -1
+	lError = Aerror(Mi_Error)
+	=MensajeErrorSQL()
+	Return .F.
+Endif
+
+*!*	IF cempr.triveno
+*!*		xguia1=RIGHT(STR(VAL(xguia)+10000000000+1,11),10)
+
+*!*		*CABECERA GUIA DE REMISION
+*!*		xSqlx1 = "Insert Into Guias "
+*!*		xSqlx2 = " (cdtipodoc, nrodocumento, fecdocumento, fecproceso, fecsistema, nropos, cdalmacen, cdcliente, ruccliente, "+;
+*!*			"rscliente, cdusuario, cdvendedor, tipofactura, flgmanual, "+;
+*!*			"nroocompra, observacion, flgmovimiento, cdlocal, referencia, cdtranspor, "+;
+*!*			"nroplaca, drpartida, drdestino, NroSerieMaq, nroserie1, nroserie2, turno, nrobonus, nrotarjeta, odometro, "+;
+*!*			"marcavehic, inscripcion, chofer, cdtipodoc1, nrodocumento1) "+;
+*!*			"values (?xtipgr, ?xguia1, ?cCabecera.fecdocumento, ?cCabecera.fecproceso, ?ltFecha, "+;
+*!*			"?cTerminal.nropos, ?cCabecera.cdalmacen, ?cCliente.cdcliente, ?cCliente.ruccliente, ?cCliente.rscliente, "+;
+*!*			"?_screen.cdusuario, "+;
+*!*			"?cCabecera.cdvendedor, ?cCabecera.tipofactura, ?cCabecera.flgmanual, ?cCabecera.nroocompra, "+;
+*!*			"?cCabecera.observacion, ?lflgmov, ?_screen.cdlocal, ?cCabecera.referencia,  "+;
+*!*			"?cCabecera.cdtranspor, ?cCabecera.nroplaca, ?cCabecera.drpartida, ?cCabecera.drdestino, "+;
+*!*			"?lNroSerieMaq, ?cTerminal.nroserie1, ?cTerminal.nroserie2, ?cCabecera.turno, ?cCabecera.nrobonus, "+;
+*!*			"?cCabecera.nrotarjeta, ?cCabecera.odometro, ?cCabecera.marcavehic, ?cCabecera.inscripcion, "+;
+*!*			"?cCabecera.chofer,?lcdtipodoc, ?lnrodocumento) "
+*!*		xSql = xSqlx1 + xSqlx2
+*!*		If Sqlexec(con, xsql) = -1
+*!*			lError = Aerror(Mi_Error)
+*!*			=MensajeErrorSQL()
+*!*			=CancelaTran()		&& =Sqlrollback(con)
+*!*			Return .f.
+*!*		ENDIF
+*!*		xguia2=xguia1
+*!*		xSqlx1 = "update terminal set guiaremnd=?xguia2 where ?_screen.seriehd = LTRIM(RTRIM(seriehd)) "
+*!*		xSql = xSqlx1
+*!*		If Sqlexec(con, xsql) = -1
+*!*			lError = Aerror(Mi_Error)
+*!*			=MensajeErrorSQL()
+*!*			=CancelaTran()		&& =Sqlrollback(con)
+*!*			Return .f.
+*!*		ENDIF
+*!*	ENDIF
+*!*	USE IN cempr
+
+*/----------------------------------------- VENTA - PAGOS ------------------------------------------------------------------------------/*
+Select cPago
+Go Top
+Do While !Eof()
+	*/------ si es nota de credito grabamos en credcliente
+	If cPago.cdtppago = _Screen.tpaplicncred
+		lMtoPago = Iif(cPago.monncredito = _Screen.monpais, cPago.mtopagosol, cPago.mtopagodol)
+		xsql = "Insert Into credcliente (docpago, cdtipodoc, nrodocumento, renovacion, nropos, cdlocal, fecdocumento, "+;
+			"fecpago, fecsistema, cdcliente, cdmoneda, mtototal, mtoemision, mtosoles, mtodolares, fecproceso, "+;
+			"NROPAGO) Values ('P', ?_screen.tpncredito, ?cPago.nroncredito, ?Space(0),?cTerminal.nropos, "+;
+			"?_screen.cdlocal, ?cCabecera.fecdocumento,?cCabecera.fecdocumento, ?ltFecha, ?cCliente.cdcliente, "+;
+			"?cPago.monncredito, ?lMtoPago, ?cPago.mtopagosol,?cPago.mtopagosol,?cPago.mtopagodol, "+;
+			"?cCabecera.fecproceso, 0 ) "
+		If SQLExec(con, xsql) = -1
+			lError = Aerror(Mi_Error)
+			=MensajeErrorSQL()
+			=CancelaTran()		&& =Sqlrollback(con)
+			Return .F.
+		Endif
+	Endif
+	If cPago.cdtppago = _Screen.tppgocredito
+		lfecven = Ttod(cCabecera.fecdocumento) + cPago.nrodias
+		Store 0 To lmtosoles, lmtodolares, lMtoPago
+		If cPago.mtopagosol > 0
+			lmtosoles = cPago.mtopagosol
+			lmtodolares = cPago.mtopagosol/cCabecera.tcambio
+		Else
+			lmtosoles = cPago.mtopagodol*cCabecera.tcambio
+			lmtodolares = cPago.mtopagodol
+		Endif
+		lMtoPago = Iif(cCabecera.cdmoneda = _Screen.monpais, lmtosoles, lmtodolares)
+		lRenovacion = Space(2)
+		xsql = "Insert Into CredCliente (cdtipodoc, nrodocumento, renovacion, fecdocumento, fecvencimiento, "+;
+			"fecsistema, cdalmacen, cdcliente, cdmoneda, mtototal, mtoemision, mtosoles, mtodolares, cdvendedor, "+;
+			"tcambio, docpago, cdlocal, nropos,fecproceso, NROPAGO ) values ( ?lcdtipodoc, ?lnrodocumento, "+;
+			"?lRenovacion, ?cCabecera.fecdocumento, ?lFecVen, ?ltFecha, ?cCabecera.cdalmacen, ?cCliente.cdcliente, "+;
+			"?cCabecera.cdmoneda, ?lMtoPago, ?lMtosoles, ?lMtosoles, ?lmtodolares, ?cCabecera.cdvendedor, "+;
+			"?cCabecera.tcambio, 'D', ?_screen.cdlocal, ?cTerminal.nropos, ?cCabecera.fecproceso, 0)"
+		If SQLExec(con, xsql) = -1
+			lError = Aerror(Mi_Error)
+			=MensajeErrorSQL()
+			=CancelaTran()		&& =Sqlrollback(con)
+			Return .F.
+		Endif
+		*/------------------------   Disminuir el credito ---------------------/*
+		If cCliente.monlimite = cCabecera.cdmoneda
+			lQuitar = lMtoPago
+		Else
+			If cCliente.monlimite = _Screen.monpais      &&&&&&&   Credito en soles y doc en dolares
+				lQuitar = lmtosoles
+			Else     &&&&&&&    Credito en dolares y doc en soles
+				lQuitar = lmtodolares
+			Endif
+		Endif
+		xsql = "Update Cliente Set mtodisponible = mtodisponible - ?lQuitar Where ?cCliente.cdcliente = cdcliente"
+		If SQLExec(con, xsql) = -1
+			lError = Aerror(Mi_Error)
+			=MensajeErrorSQL()
+			=CancelaTran()		&& =Sqlrollback(con)
+			Return .F.
+		Endif
+		Select cPago
+		*		Replace cPago.mtopagosol With 0
+		*		Replace cPago.mtopagodol With 0
+	Endif
+	*/-----------------------    VENTA - PAGOS DEL DIA   ---------------------------------/*
+
+	If _Screen.flg_transfer_gratuita_cero = .T.
+
+		Select cCabecera
+		Go Top
+
+		xtipoventa = cCabecera.TipoVenta
+
+		If xtipoventa = "T"
+
+			Select cPago
+			Go Top
+
+			Replace cPago.mtopagosol With 0.00
+
+		Endif
+
+	Endif
+
+
+	** /// Validación para que cdtppago no sea null
+
+	If Isnull(cPago.cdtppago)  Or cPago.cdtppago=''
+		Replace cPago.cdtppago With _Screen.tppgoefectivo
+		If cPago.mtopagosol = 0 And cPago.mtopagodol=0
+			Replace cPago.mtopagosol With cCabecera.MTOTOTAL
+		Endif
+
+	Endif
+
+	xSql1 = "Insert Into Ventap"
+	xSql2 = " (cdlocal, cdtipodoc, nrodocumento, fecdocumento, fecproceso, cdtppago, cdbanco, nrocuenta, nrocheque, "+;
+		"cdtarjeta, nrotarjeta, mtopagosol, mtopagodol, NroSerieMaq, nropos, turno, nroncredito) "+;
+		"Values (?_screen.cdlocal, ?lcdtipodoc, ?lnrodocumento, ?cCabecera.fecdocumento, ?cCabecera.fecproceso, "+;
+		"?cPago.cdtppago, ?cPago.cdbanco, ?cPago.nrocuenta, ?cPago.nrocheque, ?cPago.cdtarjeta, ?cPago.nrotarjeta, "+;
+		"?cPago.mtopagosol, ?cPago.mtopagodol, ?lNroSerieMaq, ?cTerminal.nropos, ?cCabecera.turno, ?cPago.nroncredito)"
+	xsql = xSql1 + xSql2
+	If SQLExec(con, xsql) = -1
+		lError = Aerror(Mi_Error)
+		=MensajeErrorSQL()
+		=CancelaTran()		&& =Sqlrollback(con)
+		Return .F.
+	Endif
+	*/-----------------------    Venta - pagos mensual   ---------------------------------/*
+	xsql = xSql1 +lExtension+ xSql2
+	If SQLExec(con, xsql) = -1
+		lError = Aerror(Mi_Error)
+		=MensajeErrorSQL()
+		=CancelaTran()		&& =Sqlrollback(con)
+		Return .F.
+	Endif
+	Select cPago
+	Skip
+Enddo
+Select cPago
+Go Top
+
+************************************************
+***   CALCULAR COSTO PROMEDIO DEL PRODUCTO   ***
+************************************************
+
+If _Screen.valorcanje_regvta = 'COSTO' And oBoton_TrfGratuita = 1
+
+	Select cDetalle
+	Go Top
+	Do While !Eof()
+
+		Select cDetalle
+		oArticulo = cDetalle.cdarticulo
+
+		xSqli ="exec pa_Calcular_Costo_Promedio ?'oArticulo', ?'xfecproceso'"
+
+		If SQLExec(con, xSqli, 'ctabla_costo2') = -1
+			lError=Aerror(Mi_Error)
+			=MensajeErrorSQL()
+			Return .F.
+		Endif
+
+		Select ctabla_costo2
+		oCosto_Canje = ctabla_costo2.costo
+
+		Select cDetalle
+		Replace cDetalle.costo With oCosto_Canje
+
+		Skip
+	Enddo
+
+Endif
+
+************************************************
+*** FIN CALCULO COSTO PROMEDIO DEL PRODUCTO  ***
+************************************************
+
+If _Screen.FLg_round_dec_indecopi = .T.
+	** NADA
+Else
+	Select cDetalle
+	Replace cDetalle.redondea_indecopi With 0
+Endif
+
+*/-----------------------    VENTA - DETALLE  ---------------------------------/*
+Select cDetalle
+Go Top
+Do While !Eof()
+	Replace cDetalle.talla	With ""
+	Skip
+Enddo
+Select cDetalle
+Go Top
+Do While !Eof() And !Empty(cDetalle.cdarticulo)
+	*/------------------------------  Del Dia ------------------------------------------/*
+
+	If _Screen.flg_transfer_gratuita_cero = .T.
+
+		Select cCabecera
+		Go Top
+
+		xtipoventa = cCabecera.TipoVenta
+
+		If xtipoventa = "T"
+
+			Select cDetalle
+
+			Replace cDetalle.Total With 0.00
+			Replace cDetalle.subtotal With 0.00
+			Replace cDetalle.valorvta With 0.00
+			Replace cDetalle.mtoimpuesto With 0.00
+
+		Endif
+
+	Endif
+
+	xSql1 = "Insert Into Ventad"
+
+	xSql2 = " (cdtipodoc, nrodocumento, fecdocumento, fecproceso, nroitem, cdarticulo, talla, cdvendedor, impuesto, "+;
+		"pordscto1, pordscto2, pordscto3, pordsctoeq, cantidad, precio, mtonoafecto, valorvta, mtodscto, mtosubtotal, "+;
+		"mtoservicio, mtoimpuesto, mtototal, cdlocal, cara, nrogasboy, turno, NroSerieMaq, nropos, moverstock, "+;
+		"cant_ncredito, glosa, manguera, COSTO, precio_orig, PtosGanados, TipoAcumula, ValorAcumula, TipoSuma, "+;
+		"mtopercepcion, redondea_indecopi, cdarticulosunat) " +;
+		"Values (?lcdtipodoc, ?lnrodocumento, ?cCabecera.fecdocumento, "+;
+		"?cCabecera.fecproceso, ?cDetalle.item, ?cDetalle.cdarticulo, ?cDetalle.talla, ?cCabecera.cdvendedor, "+;
+		"?cDetalle.impuesto, ?cDetalle.pordscto1, ?cDetalle.pordscto2, ?cDetalle.pordscto3, ?cDetalle.pordsctoeq, "+;
+		IIF(cDetalle.cantidad2>0, "?cDetalle.cantidad2, ","?cDetalle.cantidad, ") +;
+		IIF(cDetalle.precio2>0, "?cDetalle.precio2, ", "?cDetalle.precio, ")+;
+		"?cDetalle.mtonoafecto, ?cDetalle.valorvta, "+;
+		"?cDetalle.mtodscto, ?cDetalle.subtotal, ?cDetalle.mtoservicio, ?cDetalle.mtoimpuesto, ?cDetalle.total, "+;
+		"?_screen.cdlocal, ?cDetalle.cara, ?cDetalle.nrogasboy, ?cCabecera.turno, ?lNroSerieMaq, ?cTerminal.nropos, "+;
+		"?cDetalle.moverstock, 0, ?cDetalle.dsarticulo, ?cDetalle.manguera, ?cDetalle.costo, ?cDetalle.precio_orig, "+;
+		"?cDetalle.PtosGanados,?cDetalle.TipoAcumula, ?cDetalle.ValorAcumula, ?cDetalle.TipoSuma, ?cDetalle.mtopercepcion, "+;
+		"?cDetalle.redondea_indecopi, ?cDetalle.cdarticulosunat) "
+
+	*xSql2 = " (cdtipodoc, nrodocumento, fecdocumento, fecproceso, nroitem, cdarticulo, talla, cdvendedor, impuesto, "+;
+	"pordscto1, pordscto2, pordscto3, pordsctoeq, cantidad, precio, mtonoafecto, valorvta, mtodscto, mtosubtotal, "+;
+	"mtoservicio, mtoimpuesto, mtototal, cdlocal, cara, nrogasboy, turno, NroSerieMaq, nropos, moverstock, "+;
+	"cant_ncredito, glosa, manguera, COSTO, precio_orig, PtosGanados, TipoAcumula, ValorAcumula, TipoSuma) " + ;
+	"Values (?lcdtipodoc, ?lnrodocumento, ?cCabecera.fecdocumento, "+;
+	"?cCabecera.fecproceso, ?cDetalle.item, ?cDetalle.cdarticulo, ?cDetalle.talla, ?cCabecera.cdvendedor, "+;
+	"?cDetalle.impuesto, ?cDetalle.pordscto1, ?cDetalle.pordscto2, ?cDetalle.pordscto3, ?cDetalle.pordsctoeq, "+;
+	IIF(cDetalle.cantidad2>0, "?cDetalle.cantidad2, ","?cDetalle.cantidad, ") +;
+	IIF(cDetalle.precio2>0, "?cDetalle.precio2, ", "?cDetalle.precio, ")+;
+	"?cDetalle.mtonoafecto, ?cDetalle.valorvta, "+;
+	"?cDetalle.mtodscto, ?cDetalle.subtotal, ?cDetalle.mtoservicio, ?cDetalle.mtoimpuesto, ?cDetalle.total, "+;
+	"?_screen.cdlocal, ?cDetalle.cara, ?cDetalle.nrogasboy, ?cCabecera.turno, ?lNroSerieMaq, ?cTerminal.nropos, "+;
+	"?cDetalle.moverstock, 0, ?cDetalle.dsarticulo, ?cDetalle.manguera, ?cDetalle.costo, ?cDetalle.precio_orig, " + ;
+	"?cDetalle.PtosGanados,?cDetalle.TipoAcumula, ?cDetalle.ValorAcumula, ?cDetalle.TipoSuma) "
+
+	**************** corregir otra vez
+
+	*			"?cDetalle.PtosGanados, ?cDetalle.TipoAcumula, ?cDetalle.ValorAcumula, ?cDetalle.TipoSuma) "
+
+	*!*		xSql2 = " (cdtipodoc, nrodocumento, fecdocumento, fecproceso, nroitem, cdarticulo, talla, cdvendedor, impuesto, "+;
+	*!*				"pordscto1, pordscto2, pordscto3, pordsctoeq, cantidad, precio, mtonoafecto, valorvta, mtodscto, mtosubtotal, "+;
+	*!*				"mtoservicio, mtoimpuesto, mtototal, cdlocal, cara, nrogasboy, turno, NroSerieMaq, nropos, moverstock, "+;
+	*!*				"cant_ncredito, glosa, manguera, COSTO, precio_orig ) Values (?lcdtipodoc, ?lnrodocumento, ?cCabecera.fecdocumento, "+;
+	*!*				"?cCabecera.fecproceso, ?cDetalle.item, ?cDetalle.cdarticulo, ?cDetalle.talla, ?cCabecera.cdvendedor, "+;
+	*!*				"?cDetalle.impuesto, ?cDetalle.pordscto1, ?cDetalle.pordscto2, ?cDetalle.pordscto3, ?cDetalle.pordsctoeq, "+;
+	*!*				IIF(cDetalle.cantidad2>0, "?cDetalle.cantidad2, ","?cDetalle.cantidad, ") +;
+	*!*				IIF(cDetalle.precio2>0, "?cDetalle.precio2, ", "?cDetalle.precio, ")+;
+	*!*				"?cDetalle.mtonoafecto, ?cDetalle.valorvta, "+;
+	*!*				"?cDetalle.mtodscto, ?cDetalle.subtotal, ?cDetalle.mtoservicio, ?cDetalle.mtoimpuesto, ?cDetalle.total, "+;
+	*!*				"?_screen.cdlocal, ?cDetalle.cara, ?cDetalle.nrogasboy, ?cCabecera.turno, ?lNroSerieMaq, ?cTerminal.nropos, "+;
+	*!*				"?cDetalle.moverstock, 0, ?cDetalle.glosa, ?cDetalle.manguera, ?cDetalle.costo, ?cDetalle.precio_orig) "
+	xsql = xSql1 + xSql2
+	If SQLExec(con, xsql) = -1
+		lError = Aerror(Mi_Error)
+		=MensajeErrorSQL()
+		=CancelaTran()		&& =Sqlrollback(con)
+		Return .F.
+	Endif
+
+	********* GUIA DE REMISION SOLO SI ES TRIVEÑO
+	*!*		If Sqlexec(con, 'SELECT triveno from parametro ', 'cEmpr') = -1
+	*!*			lError = Aerror(Mi_Error)
+	*!*			=MensajeErrorSQL()
+	*!*			Return .f.
+	*!*		ENDIF
+	*!*
+	*!*		IF cempr.triveno
+	*!*			*DETALLE GUIA DE REMISION
+	*!*			xSqlx1 = "Insert Into GuiasD "
+	*!*			xSqlx2 = "(cdtipodoc, nrodocumento, fecdocumento, fecproceso, nroitem, cdarticulo, talla, cdvendedor, impuesto, "+;
+	*!*					"pordscto1, pordscto2, pordscto3, pordsctoeq, cantidad, precio,  "+;
+	*!*					"cdlocal, cara, nrogasboy, turno, NroSerieMaq, nropos, moverstock, "+;
+	*!*					"cant_ncredito, glosa, manguera, COSTO, precio_orig, PtosGanados, TipoAcumula, ValorAcumula, TipoSuma,cdtipodoc1, nrodocumento1) " + ;
+	*!*					"Values (?xtipgr, ?xguia1, ?cCabecera.fecdocumento, "+;
+	*!*					"?cCabecera.fecproceso, ?cDetalle.item, ?cDetalle.cdarticulo, ?cDetalle.talla, ?cCabecera.cdvendedor, "+;
+	*!*					"?cDetalle.impuesto, ?cDetalle.pordscto1, ?cDetalle.pordscto2, ?cDetalle.pordscto3, ?cDetalle.pordsctoeq, "+;
+	*!*					IIF(cDetalle.cantidad2>0, "?cDetalle.cantidad2, ","?cDetalle.cantidad, ") +;
+	*!*					IIF(cDetalle.precio2>0, "?cDetalle.precio2, ", "?cDetalle.precio, ")+;
+	*!*					"?_screen.cdlocal, ?cDetalle.cara, ?cDetalle.nrogasboy, ?cCabecera.turno, ?lNroSerieMaq, ?cTerminal.nropos, "+;
+	*!*					"?cDetalle.moverstock, 0, ?cDetalle.dsarticulo, ?cDetalle.manguera, ?cDetalle.costo, ?cDetalle.precio_orig, " + ;
+	*!*					"?cDetalle.PtosGanados, ?cDetalle.TipoAcumula, ?cDetalle.ValorAcumula, ?cDetalle.TipoSuma,?lcdtipodoc, ?lnrodocumento) "
+	*!*			xSql = xSqlx1 + xSqlx2
+	*!*			If Sqlexec(con, xsql) = -1
+	*!*				lError = Aerror(Mi_Error)
+	*!*				=MensajeErrorSQL()
+	*!*				=CancelaTran()		&& =Sqlrollback(con)
+	*!*				Return .f.
+	*!*			ENDIF
+	*!*		ENDIF
+	*!*		USE IN cempr
+	*/------------------------------  Mensual ------------------------------------------/*
+	xsql = xSql1 +lExtension+ xSql2
+	If SQLExec(con, xsql) = -1
+		lError = Aerror(Mi_Error)
+		=MensajeErrorSQL()
+		=CancelaTran()		&& =Sqlrollback(con)
+		Return .F.
+	Endif
+
+	************************************************
+	***      CALCULAR TOTALES PARA EL TICKET     ***
+	************************************************
+
+	*IF _screen.valorcanje_regvta = 'COSTO' AND oBoton_TrfGratuita = 1
+	If oBoton_TrfGratuita = 1
+
+		*!*			  Select cDetalle
+		*!*			  replace cDetalle.precio WITH (cDetalle.costo)
+		*!*			  replace cDetalle.subtotal WITH (cDetalle.costo * cDetalle.cantidad)
+		*!*			  replace cDetalle.mtoimpuesto WITH SubIgv(cDetalle.subtotal, cDetalle.impuesto)
+		*!*			  oSubTotal_Ticket = cDetalle.subtotal
+		*!*			  oImpuesto_Ticket = cDetalle.mtoimpuesto
+		*!*
+		*!*
+		*!*			  Select cCabecera
+		*!*			  replace cCabecera.mtosubtotal WITH cCabecera.mtosubtotal + oSubTotal_Ticket
+		*!*			  replace cCabecera.mtoimpuesto WITH cCabecera.mtoimpuesto + oImpuesto_Ticket
+		*!*			  replace cCabecera.mtototal WITH 0.00
+		*!*			  replace cCabecera.mtosubtotal WITH 0.00
+		*!*			  replace cCabecera.mtoimpuesto WITH 0.00
+		*!*			  replace cDetalle.Total WITH 0.00
+		*!*		      replace cpago.mtopagosol WITH 0.00
+		*!*			  Select cDetalle
+
+	Endif
+
+	************************************************
+	***        FIN DEL CALCULO DE TOTALES        ***
+	************************************************
+
+	If _Screen.flgruta
+
+		Select cCabecera
+		Go Top
+		lhorades = Substr(Ttoc(cCabecera.fecdocumento),12,11)
+		*/----------------  GRABAMOS DESPACHOS EN UNA SOLA TABLA -------------------------------/*
+		xsql = "Insert Into DESPACHOS (codvehiculo, CODRUTA, fecha, hora, cantidad, total, nrodocumento) "+;
+			"values (?cCliente.cdcliente, ?cruta.cdruta, ?cCabecera.fecdocumento, ?lhorades, ?cDetalle.cantidad, ?cDetalle.total, ?cCabecera.nrodocumento) "
+		If SQLExec(con, xsql) = -1
+			lError = Aerror(Mi_Error)
+			If lError != 0
+				If Mi_Error[1,1] = 1526 And Mi_Error[1,5] = 2627
+					= Messagebox('Este Documento ya Existe en la Base de Datos'+Chr(13)+' - Revise los Correlativos', 54, ' Duplicidad de Registro')
+				Else
+					If	Mi_Error[1,5] <> 702		&&&  ???
+						=MensajeErrorSQL()
+					Endif
+				Endif
+			Endif
+			=CancelaTran()		&& =Sqlrollback(con)
+			Return .F.
+		Endif
+
+	Endif
+
+	*/-------------------------------------flag movimiento en la tabla articulo ---------------------------------------/*
+	If cDetalle.movimiento = .F.
+		xsql = "Update Articulo set movimiento = 1 Where cdarticulo = ?cDetalle.cdarticulo "
+		If SQLExec(con, xsql )  = -1
+			lError = Aerror(Mi_Error)
+			=MensajeErrorSQL()
+			=CancelaTran()		&& =Sqlrollback(con)
+			Return .F.
+		Endif
+	Endif
+	*!*		*/------------     GRABA LOS TRAN?? DE GASBOY SOLO SI EXISTE CARA ---------------------------------------------------------------/*
+	*!*		xcara = Alltrim(cDetalle.cara)
+	*!*		If !Empty(xcara) And xCara !='00'
+	*!*			cAlias = _screen.path_gasboy+'Tran'+xcara
+	*!*			If !File(cAlias+'.dbf')
+	*!*				=Messagebox('   No Existe El Alias '+cAlias+'.dbf',0,'Quattro Sistemas Perú S.A.')
+	*!*				=Sqlrollback(con)
+	*!*				End transaction
+	*!*				Return
+	*!*			Endif
+	*!*			Use (cAlias) In 0 Alias Tranx Shared
+	*!*
+	*!*			Select Tranx
+	*!*
+	*!*			Update (cAlias)  Set cdtipodoc = lcdtipodoc, documento = lnrodocumento, fecproceso = cCabecera.fecproceso Where numero=cDetalle.nrogasboy
+
+	*!*			Use in Tranx   &&&&&&& cerrar la tabla
+	*!*		Endif
+
+	*/------- Actualiza SaldoCliente ------------/*
+
+	lConsumoIni = 0
+
+	If Used('cSaldos')
+
+		Do Case
+		Case lTipoCli = 'L'   && OR lTipoCli = 'C'   &&&&&&&&&   CLIENTE LOCAL O CORPORATIVO   &&&&&&&&&&
+
+			*!*					SELECT cDetalle
+			*!*					GO top
+
+			Select cSaldos
+			Go Top
+			Do Case
+			Case cSaldos.tpsaldo = "P"		&& Por Producto
+
+				Select cSaldos
+				Locate For cSaldos.cdarticulo = cDetalle.cdarticulo
+				lctarj  = Alltrim(cSaldos.nrotarjeta)
+				lcclien = Alltrim(cSaldos.cdcliente)
+				lcarti  = Alltrim(cSaldos.cdarticulo)
+
+				If cSaldos.TIPODESPACHO = 'C'
+					If cDetalle.Cantidad != cDetalle.cantidad_orig
+						lcValor = 'Consumto = Consumto + ?cDetalle.cantidad_orig '
+					Else
+						lcValor = 'Consumto = Consumto + ?cDetalle.cantidad '
+					Endif
+
+				Else
+					lcValor = 'Consumto = Consumto + ?cDetalle.Total '
+				Endif
+
+				If lTipoCli = 'L'
+					xsql = "Update SaldoCliD Set " + lcValor + " Where ?lcTarj=LTRIM(RTRIM(nrotarjeta)) "+;
+						"and ?lcclien=LTRIM(RTRIM(cdcliente)) and ?lcarti=LTRIM(RTRIM(cdarticulo)) "
+					If SQLExec(con, xsql) = -1
+						lError = Aerror(Mi_Error)
+						=MensajeErrorSQL()
+						=CancelaTran()		&& =Sqlrollback(con)
+						Return .F.
+					Endif
+				Else
+					dbfSald = _Screen.path_clicorp + 'SaldoCliD.dbf'
+					Update (dbfSald) Set Consumto = Consumto + cDetalle.Total  Where lctarj==Alltrim(nrotarjeta) ;
+						and lcclien==Alltrim(cdcliente) And lcarti==Alltrim(cdarticulo)
+				Endif
+
+			Case cSaldos.tpsaldo = "G"		&& Por Grupo
+
+				Select cArticulo
+				Locate For cArticulo.cdarticulo = cDetalle.cdarticulo
+				xcodgru = cArticulo.cdgrupo02
+
+				*SELECT cGruposconsumo
+				*LOCATE FOR cGruposconsumo.cdgrupo02 = xcodgru
+				*xcdgrupos = cGruposconsumo.cdgrupos
+
+				Select cGruposconsumo
+				Go Top
+				Locate For cGruposconsumo.cdgrupo02 = xcodgru
+				Do While !Eof()
+					xcdgrupos = cGruposconsumo.cdgrupos
+					Select cSaldos
+					Locate For cSaldos.cdgrupo02 = xcdgrupos
+					If Found()
+						Exit
+					Endif
+					Select cGruposconsumo
+					Skip
+				Enddo
+
+				**SELECT cSaldos
+				**LOCATE FOR cSaldos.cdgrupo02 = xcdgrupos
+				Select cSaldos
+				lctarj  = Alltrim(cSaldos.nrotarjeta)
+				lcclien = Alltrim(cSaldos.cdcliente)
+				lcgru   = Alltrim(cSaldos.cdgrupo02)
+				lcValor = 'Consumto = Consumto + ?cDetalle.Total '
+
+				If lTipoCli = 'L'
+					xsql = "Update SaldoCliD Set " + lcValor + " Where ?lcTarj=LTRIM(RTRIM(nrotarjeta)) "+;
+						"and ?lcclien=LTRIM(RTRIM(cdcliente)) and ?lcgru=LTRIM(RTRIM(cdgrupo02)) "
+					If SQLExec(con, xsql) = -1
+						lError = Aerror(Mi_Error)
+						=MensajeErrorSQL()
+						=CancelaTran()		&& =Sqlrollback(con)
+						Return .F.
+					Endif
+				Else
+					dbfSald = _Screen.path_clicorp + 'SaldoCliD.dbf'
+					Update (dbfSald) Set Consumto = Consumto + cDetalle.Total  Where lctarj=Alltrim(nrotarjeta);
+						and lcclien==Alltrim(cdcliente) And lcgru==Alltrim(cdgrupo02)
+				Endif
+
+			Case cSaldos.tpsaldo = "T"		&& Por Tarjeta
+
+				*!*						SELECT cDetalle
+				*!*						GO TOP
+
+				Select cSaldos
+				Go Top
+				lctarj  = Alltrim(cSaldos.nrotarjeta)
+				lcclien = Alltrim(cSaldos.cdcliente)
+
+				*** GUARDAMOS SALDO ANTES DE ACTUALIZAR
+
+				xsql = "select Consumto from saldoclid Where ?lcclien=LTRIM(RTRIM(cdcliente))"
+
+				If SQLExec(con, xsql, 'cConsumoIni') = -1
+					lError = Aerror(Mi_Error)
+					=MensajeErrorSQL()
+					=CancelaTran()		&& =Sqlrollback(con)
+					Return .F.
+				Endif
+
+				lConsumoIni = cConsumoIni.Consumto
+
+				*lcValor = 'Consumto = Consumto + ?cDetalle.Total '
+				If cSaldos.TIPODESPACHO = "C"
+					If cDetalle.cantidad_orig!=0 And cDetalle.Cantidad != cDetalle.cantidad_orig
+						lcValor = 'Consumto = Consumto + ?cDetalle.cantidad_orig '
+					Else
+						lcValor = 'Consumto = Consumto + ?cDetalle.cantidad '
+					Endif
+
+				Else
+					lcValor = 'Consumto = Consumto + ?cDetalle.Total '
+				Endif
+
+
+				If lTipoCli = 'L'
+					xsql = "Update SaldoCliD Set " + lcValor + " Where ?lcTarj=LTRIM(RTRIM(nrotarjeta)) "+;
+						"and ?lcclien=LTRIM(RTRIM(cdcliente)) "
+					If SQLExec(con, xsql) = -1
+						lError = Aerror(Mi_Error)
+						=MensajeErrorSQL()
+						=CancelaTran()		&& =Sqlrollback(con)
+						Return .F.
+					Endif
+				Else
+					dbfSald = _Screen.path_clicorp + 'SaldoCliD.dbf'
+					Update (dbfSald) Set Consumto = Consumto + cDetalle.Total  Where lctarj=Alltrim(nrotarjeta) ;
+						and lcclien==Alltrim(cdcliente)
+				Endif
+
+			Case cSaldos.tpsaldo = "C"
+				&& por cliente
+
+				*!*						SELECT cDetalle
+				*!*						GO TOP
+
+				Select cSaldos
+				Go Top
+
+				lcclien = Alltrim(cSaldos.cdcliente)
+
+				*** GUARDAMOS SALDO ANTES DE ACTUALIZAR
+
+				xsql = "select Consumto from saldoclic Where ?lcclien=LTRIM(RTRIM(cdcliente))"
+
+				If SQLExec(con, xsql, 'cConsumoIni') = -1
+					lError = Aerror(Mi_Error)
+					=MensajeErrorSQL()
+					=CancelaTran()		&& =Sqlrollback(con)
+					Return .F.
+				Endif
+
+				lConsumoIni = cConsumoIni.Consumto
+				lcclien = Alltrim(cSaldos.cdcliente)
+
+
+				*!*						IF ctrans.soles!=cCabecera.mtototal OR cCabecera.mtototal<=0
+				*!*							=Messagebox('Revisar saldos y volver a emitir venta',4), 58, ' Facturación')
+				*!*							Return .f.
+				*!*						ENDIF
+
+				*!*						IF cRegsalc.consumto+cCabecera.mtototal != cRegSalc.limitemto-(cSaldos.saldomto-cvale.mtovale)
+				*!*							=Messagebox('Revisar saldos y volver a emitir venta',4), 58, ' Facturación')
+				*!*							Return .f.
+				*!*						ENDIF
+
+				If cSaldos.TIPODESPACHO = "C"
+
+					If cDetalle.cantidad_orig!=0 And cDetalle.Cantidad != cDetalle.cantidad_orig
+						lcValor = 'Consumto = Consumto + ?cDetalle.cantidad_orig '
+					Else
+						lcValor = 'Consumto = Consumto + ?cDetalle.cantidad '
+					Endif
+
+				Else
+
+					Select cCabecera
+					Go Top
+
+					lcValor = 'Consumto = Consumto + ?cCabecera.mtototal '
+
+				Endif
+
+				If lTipoCli = 'L'
+					xsql = "Update SaldoCliC Set " + lcValor + " Where ?lcclien=LTRIM(RTRIM(cdcliente)) "
+					If SQLExec(con, xsql) = -1
+						lError = Aerror(Mi_Error)
+						=MensajeErrorSQL()
+						=CancelaTran()		&& =Sqlrollback(con)
+						Return .F.
+					Endif
+				Else
+					dbfSald = _Screen.path_clicorp + 'SaldoCliC.dbf'
+					Update (dbfSald) Set Consumto = Consumto + cDetalle.Total  Where lcclien==Alltrim(cdcliente)
+				Endif
+
+			Endcase
+
+			*			CASE lTipoCli = 'C'           &&&&&&& CLIENTE CORPORATIVO  &&&&&&&&&&&&&&&&&&&&6
+			*				xProd = cDetalle.cdarticulo
+			*				SELECT cSaldos
+			*				lcNtarj = cSaldos.nrotarjeta
+			*				LOCATE FOR cdarticulo=xProd
+			*
+			*				dbfSald = _screen.path_clicorp + 'SaldoCliente.dbf'
+			*				IF FOUND()
+			*				    lcValor = ''
+			*					IF cSaldos.saldocantidad != 0
+			*						lcValor = 'SaldoCanti = SaldoCanti - cDetalle.Cantidad '
+			*					ELSE
+			*						lcValor = 'SaldoMonto = SaldoMonto - cDetalle.Total '
+			*					ENDIF
+			*					IF !USED('SaldoCliente')
+			*						USE &dbfsald IN 0
+			*					Endif
+			*					Update (dbfSald) Set &lcValor Where nrotarjeta==lcNtarj AND cdcliente==cCliente.cdcliente and cdarticulo==cDetalle.cdarticulo
+			*					SELECT saldoCliente    &&& (dbfsald)
+			*					use
+			*				ELSE
+			*/------------- El saldo que se crea será en monto ---------------
+
+			*					IF !USED('SaldoCliente')
+			*						USE &dbfsald IN 0
+			*					ENDIF
+			*					INSERT INTO saldocliente (cdcliente, nrotarjeta, cdgrupo02, cdarticulo, saldomonto);
+			*						VALUES (cCliente.cdcliente, lcNtarj, cDetalle.cdgrupo01, cDetalle.cdarticulo,;
+			*						cDetalle.Total*-1)
+			*					SELECT saldocliente   &&& (dbfsald)
+			*					use
+			*
+			*				ENDIF
+
+		Endcase
+	Endif
+	*/*/*/
+
+	*	EndIf
+
+	*** GUARDAMOS SALDO DESPUES DE ACTUALIZAR
+
+	If Used('cSaldos')
+
+		Select cSaldos
+
+		Do Case
+
+		Case cSaldos.tpsaldo = "C"
+
+			lcclien = Alltrim(cSaldos.cdcliente)
+
+			xsql = "select Consumto from saldoclic Where ?lcclien=LTRIM(RTRIM(cdcliente)) "
+
+			If SQLExec(con, xsql, 'cConsumoFin') = -1
+				lError = Aerror(Mi_Error)
+				=MensajeErrorSQL()
+				=CancelaTran()		&& =Sqlrollback(con)
+				Return .F.
+			Endif
+
+			lConsumoFin = cConsumoFin.Consumto
+
+		Case cSaldos.tpsaldo = "T"
+
+			lctarj  = Alltrim(cSaldos.nrotarjeta)
+			lcclien = Alltrim(cSaldos.cdcliente)
+
+			xsql = "select Consumto from saldoclid Where ?lcTarj=LTRIM(RTRIM(nrotarjeta)) "+;
+				"and ?lcclien=LTRIM(RTRIM(cdcliente)) "
+
+			If SQLExec(con, xsql, 'cConsumoFin') = -1
+				lError = Aerror(Mi_Error)
+				=MensajeErrorSQL()
+				=CancelaTran()		&& =Sqlrollback(con)
+				Return .F.
+			Endif
+
+			lConsumoFin = cConsumoFin.Consumto
+
+		Endcase
+
+		****************************************
+
+		*** SI EL SALDO NO ACTUALIZO
+
+		If lConsumoIni = lConsumoFin
+
+			Select cSaldos
+
+			Do Case
+
+			Case cSaldos.tpsaldo = "C"
+
+				If cSaldos.TIPODESPACHO = "C"
+
+					Select cDetalle
+					If cDetalle.cantidad_orig!=0 And cDetalle.Cantidad != cDetalle.cantidad_orig
+						lcValor = 'Consumto = Consumto + ?cDetalle.cantidad_orig '
+					Else
+						lcValor = 'Consumto = Consumto + ?cDetalle.cantidad '
+					Endif
+
+				Else
+
+					Select cDetalle
+					lcValor = 'Consumto = Consumto + ?cDetalle.Total '
+
+				Endif
+
+				xsql = "Update SaldoCliC Set " + lcValor + " Where ?lcclien=LTRIM(RTRIM(cdcliente)) "
+				If SQLExec(con, xsql) = -1
+					lError = Aerror(Mi_Error)
+					=MensajeErrorSQL()
+					=CancelaTran()		&& =Sqlrollback(con)
+					Return .F.
+				Endif
+
+			Case cSaldos.tpsaldo = "T"
+
+				If cSaldos.TIPODESPACHO = "C"
+
+					Select cDetalle
+					If cDetalle.cantidad_orig!=0 And cDetalle.Cantidad != cDetalle.cantidad_orig
+						lcValor = 'Consumto = Consumto + ?cDetalle.cantidad_orig '
+					Else
+						lcValor = 'Consumto = Consumto + ?cDetalle.cantidad '
+					Endif
+
+				Else
+
+					Select cDetalle
+					lcValor = 'Consumto = Consumto + ?cDetalle.Total '
+
+				Endif
+
+				xsql = "Update SaldoCliD Set " + lcValor + " Where ?lcTarj=LTRIM(RTRIM(nrotarjeta)) "+;
+					"and ?lcclien=LTRIM(RTRIM(cdcliente)) "
+				If SQLExec(con, xsql) = -1
+					lError = Aerror(Mi_Error)
+					=MensajeErrorSQL()
+					=CancelaTran()		&& =Sqlrollback(con)
+					Return .F.
+				Endif
+
+			Endcase
+
+		Endif
+
+	Endif
+
+	*********** BORRAR REGISTRO TMPMVPUNTOS ********
+	If _Screen.imprime_canjeweb = 1
+		*ltipocabeza = cCabeza.cdtipodoc
+		lnrocabeza	= cCabecera.doc_canje
+		xsql = "Delete From TMPMOVPUNTOS Where nrodocumento=?lnrocabeza and localid=?_screen.cdlocal and " + ;
+			" nropos=?cTerminal.nropos and cdproducto=?cDetalle.cdarticulo"
+
+		If SQLExec(con, xsql) = -1
+			lError = Aerror(Mi_Error)
+			=MensajeErrorSQL()
+			=CancelaTran()		&& =Sqlrollback(con)
+			Return .F.
+		Endif
+
+	Endif
+
+	Select cDetalle
+	Skip
+Enddo
+
+*/-----------------------      STOCK      ---------------------------------/*
+If lflgmov = .T.
+	Select cDetalle
+	Go Top
+	lNroItem = 0
+	Do While !Eof() And !Empty(cDetalle.cdarticulo)
+		If Isnull(_Screen.tipoafiliacion) Or _Screen.tipoafiliacion = 'B'
+			*/---------------- B O N U S
+			If !Empty(Alltrim(cCliente.NroBonus))
+				xestac = Padl(Alltrim(_Screen.cdestacion),6,'0')
+				xProd = Padl(Alltrim(cDetalle.cdarticulo),14,'0')
+				lcBonus = Padl(Alltrim(cCliente.NroBonus),11,'0')
+				lcHora = Right('0'+Alltrim(Str(Hour(cCabecera.fecdocumento))),2)+Right('0'+Alltrim(Str(Minute(cCabecera.fecdocumento))),2)
+				lcFec = Dtoc(Ttod(cCabecera.fecdocumento))
+				lcFec = Substr(lcFec,1,2) + Substr(lcFec,4,2) + Substr(lcFec,7,4)
+				lcSerieMaq = Padl(Right(Alltrim(lNroSerieMaq),6), 6, '0')
+				lcLetra =  Padl(Alltrim(Right(cTerminal.Letra,6)),6,'0')  &&&&  Correlativo de Transaccion Bonus
+				lcCan = Alltrim(Str(cDetalle.Cantidad,10,3))
+				lcCan = Padl(Stuff(lcCan,Len(lcCan)-3,1,''),8,'0')
+
+				lcTot = Alltrim(Str(cDetalle.Total,10,2))  &&& ALLTRIM(STR(cCabecera.Mtototal,10,2))
+				lcTot = Padl(Stuff(lcTot,Len(lcTot)-2,1,''),7,'0')
+				xsqlBon = "INSERT INTO TARJBONUS (cdestacion, nrobonus,fecha, hora, nroequipo, nrotransac, total, "+;
+					"cdproducto, cantidad, totalvta) VALUES (?xestac, ?lcbonus, ?lcFec, ?lcHora, ?lcSerieMaq, "+;
+					"?lcLetra, ?lcTot, ?xProd, ?lcCan, ?lcTot) "
+				If SQLExec(con, xsqlBon) = -1
+					lError = Aerror(Mi_Error)
+					=MensajeErrorSQL()
+					=CancelaTran()		&& =Sqlrollback(con)
+					Return .F.
+				Endif
+			Endif
+			*/---------------- B O N U S
+		Endif
+
+		If cDetalle.moverstock = .F. And cDetalle.tpformula <> 'A'		&&&&& no mueve stock
+			Select cDetalle
+			Skip
+			Loop
+		Endif
+		If cDetalle.tpformula = 'A'     &&&&& Es Una Formula por Agrupamiento
+			Create Cursor cInsumos ( cdarticulo C(20), talla C(10), Cantidad N(14,6), tpformula C(1))
+			xcodbusca = Alltrim(cDetalle.cdarticulo)
+			xcantidad = cDetalle.Cantidad
+			lErrorBusca = .F.
+			=buscainsumos(xcodbusca, xcantidad)     &&&&&& devuelve el select de los insumos multiplicados por su cantidad
+			If lErrorBusca = .T.
+				Return .F.
+			Endif
+			Select cInsumos
+			Do While .T.     &&&&&&&&&&&    este proceso buscara las formulas de formulas, etc (n anidaciones)
+				lInsumoFormula = .F.
+				Scan For cInsumos.tpformula = 'A'
+					xcodbusca = Alltrim(cInsumos.cdarticulo)
+					xcantidad = cInsumos.Cantidad
+					Delete     &&&&&&& lo eliminamos por que se va a agregar sus insumos
+					=buscainsumos(xcodbusca, xcantidad)
+					lInsumoFormula = .T.
+				Endscan
+				If lInsumoFormula = .F.
+					Exit
+				Endif
+			Enddo
+			If lErrorBusca = .T.
+				Return .F.
+			Endif
+			Select cdarticulo, talla, Sum(Cantidad) As Cantidad From cInsumos ;
+				Group By 1,2 Into Cursor cDetalleF     &&&&&&&  agrupo sumando los mismos productos
+			Go Top
+			Do While !Eof()
+				lNroItem = lNroItem + 1
+				xsql = "Insert Into Stock (cdlocal, cdalmacen, cdarticulo, talla, fecinicial, stockinicial, monctoinicial, "+;
+					"ctoinicial, fecinventario, stockinventario, monctoinventario, ctoinventario, stockactual, "+;
+					"monctorepo, ctoreposicion, usuventa, fecventa) Values (?_screen.cdlocal, ?cCabecera.cdalmacen, "+;
+					"?cDetalleF.cdarticulo, ?cDetalleF.talla, ?_screen.fecinstall, 0, ?_screen.monpais, 0, "+;
+					"?_screen.fecinstall, 0, ?_screen.monpais, 0, ?cDetalleF.cantidad*-1, ?_screen.monpais, 0, "+;
+					"?_screen.cdusuario, ?cCabecera.fecdocumento)"
+				If SQLExec(con, xsql) = -1
+					lError = Aerror(Mi_Error)
+					If lError != 0
+						If Mi_Error[1,1] = 1526 And Mi_Error[1,5] = 2627    &&&&&&   Ya Existe El Registro entonces Update
+							xsql = "Update Stock set stockactual = stockactual - ?cDetalleF.cantidad, "+;
+								"usuventa = ?_screen.cdusuario, fecventa = ?cCabecera.fecdocumento "+;
+								"Where ?cCabecera.cdalmacen = cdalmacen and ?cDetalleF.cdarticulo = cdarticulo and "+;
+								"?cDetalleF.talla = talla and ?_screen.cdlocal = LTRIM(RTRIM(cdlocal)) "
+							If SQLExec(con, xsql) = -1
+								lError = Aerror(Mi_Error)
+								=MensajeErrorSQL()
+								=CancelaTran()		&&&=SqlRollBack(con)
+								Return .F.
+							Endif
+						Else
+							lError = Aerror(Mi_Error)
+							=MensajeErrorSQL()
+							=CancelaTran()		&& =Sqlrollback(con)
+							Return .F.
+						Endif
+					Endif
+				Endif
+				*/-----------------------  GRABAMOS EN INSUMOISR FECHAS ----------------------------------------------------------------/*
+				_fecDocum = Ttod(cCabecera.fecdocumento)
+				xsql = "Insert into insumoisr (cdlocal, fecdocumento, fecproceso) "+;
+					"Values (?_screen.cdlocal, ?_fecDocum, ?cCabecera.fecproceso)"
+				If SQLExec(con, xsql) = -1
+					lError = Aerror(Mi_Error)
+					If Mi_Error[1,1] = 1526 And Mi_Error[1,5] = 2627
+						&&&&&&&&   Ya Existe este registro entonces continuamos
+					Else
+						=MensajeErrorSQL()
+						=CancelaTran()		&& =Sqlrollback(con)
+						Return .F.
+					Endif
+				Endif
+				*/---------------------------------------------------------------------------------------------------------------------------------------------------------------/*
+				xsql = "Insert Into "+xInsumois+" (cdlocal, nroseriemaq, movimiento, cdtpmov, nromov, cdtipodoc, "+;
+					"nrodocumento, nroitem, cdarticulo, talla, cdalmacen, cantidad, fecdocumento, flganulacion, "+;
+					"fecsistema, fecproceso) Values (?_screen.cdlocal, ?lNroSerieMaq, 'S', '', '', ?lcdtipodoc, "+;
+					"?lnrodocumento, ?lNroItem, ?cDetalleF.cdarticulo, ?cDetalleF.talla, ?cCabecera.cdalmacen, "+;
+					"?cDetalleF.cantidad, ?cCabecera.fecdocumento, 0 , ?ltFecha, ?cCabecera.fecproceso )"
+				If SQLExec(con, xsql) = -1
+					lError = Aerror(Mi_Error)
+					If Mi_Error[1,1] = 1526 And Mi_Error[1,5] = 2627
+						= Messagebox('Detalle de Los Insumos Esta Duplicado ', 16, ' Duplicidad de Registros'  )
+					Else
+						=MensajeErrorSQL()
+					Endif
+					=CancelaTran()		&& =Sqlrollback(con)
+					Return .F.
+				Endif
+				xsql = "Update Articulo set movimiento = 1 "+;
+					"Where LTRIM(RTRIM(cdarticulo)) = LTRIM(RTRIM(?cDetalleF.cdarticulo)) "
+				If SQLExec(con, xsql )  = -1
+					lError = Aerror(Mi_Error)
+					=MensajeErrorSQL()
+					=CancelaTran()		&& =Sqlrollback(con)
+					Return .F.
+				Endif
+				*/------- CIERRE DE TIENDA
+				If _Screen.flgSistema01 = .T.
+					xCier = "Insert Into CierreMov (cdlocal, cdalmacen, cdarticulo, ventas, ingresos, salidas) "+;
+						"Values (?_screen.cdlocal, ?cCabecera.cdalmacen, ?cDetalleF.cdarticulo, "+;
+						"?cDetalleF.cantidad, 0, 0) "
+					If SQLExec(con, xCier) = -1
+						lError = Aerror(Mi_Error)
+						If lError != 0
+							If Mi_Error[1,1] = 1526 And Mi_Error[1,5] = 2627    &&&&&&   Ya Existe El Registro entonces Update
+								xCier = "Update CierreMov set Ventas = Ventas + ?cDetalleF.cantidad "+;
+									"Where ?_screen.cdlocal = LTRIM(RTRIM(cdlocal)) and "+;
+									"?cCabecera.cdalmacen = cdalmacen and ?cDetalleF.cdarticulo = cdarticulo "
+								If SQLExec(con, xCier) = -1
+									lError = Aerror(Mi_Error)
+									=MensajeErrorSQL()
+									=CancelaTran()
+									Return .F.
+								Endif
+							Else
+								lError = Aerror(Mi_Error)
+								=MensajeErrorSQL()
+								=CancelaTran()
+								Return .F.
+							Endif
+						Endif
+					Endif
+				Endif
+				*/-----------<<<<<
+				Select cDetalleF
+				Skip
+			Enddo
+		Else        &&&&&&& No es una formula
+			xsql = "Insert Into Stock (cdlocal, cdalmacen, cdarticulo, talla, fecinicial, stockinicial, monctoinicial, "+;
+				"ctoinicial, fecinventario, stockinventario, monctoinventario, ctoinventario, stockactual, "+;
+				"monctorepo, ctoreposicion, usuventa, fecventa) Values (?_screen.cdlocal, ?cCabecera.cdalmacen, "+;
+				"?cDetalle.cdarticulo, ?cDetalle.talla, ?_screen.fecinstall, 0, ?_screen.monpais, 0, "+;
+				"?_screen.fecinstall, 0, ?_screen.monpais, 0, ?cDetalle.cantidad*-1, ?_screen.monpais, 0, "+;
+				"?_screen.cdusuario, ?cCabecera.fecdocumento)"
+			If SQLExec(con, xsql) = -1
+				lError = Aerror(Mi_Error)
+				If lError != 0
+					If Mi_Error[1,1] = 1526 And Mi_Error[1,5] = 2627
+
+						lnCantidadConv=  Iif(cDetalle.cantidad2>0, cDetalle.cantidad2, cDetalle.Cantidad)
+
+						xsql = "Update Stock set stockactual = stockactual - ?lnCantidadConv, "+;
+							"usuventa = ?_screen.cdusuario, fecventa = ?cCabecera.fecdocumento "+;
+							"Where LTRIM(RTRIM(?cCabecera.cdalmacen)) = LTRIM(RTRIM(cdalmacen)) and "+;
+							"LTRIM(RTRIM(?cDetalle.cdarticulo)) = LTRIM(RTRIM(cdarticulo)) and "+;
+							"LTRIM(RTRIM(?cDetalle.talla)) = LTRIM(RTRIM(talla)) "+;
+							"and ?_screen.cdlocal = LTRIM(RTRIM(cdlocal)) "
+
+						*!*							xsql = "Update Stock set stockactual = stockactual - ?cDetalle.cantidad, "+;
+						*!*									"usuventa = ?_screen.cdusuario, fecventa = ?cCabecera.fecdocumento "+;
+						*!*									"Where LTRIM(RTRIM(?cCabecera.cdalmacen)) = LTRIM(RTRIM(cdalmacen)) and "+;
+						*!*									"LTRIM(RTRIM(?cDetalle.cdarticulo)) = LTRIM(RTRIM(cdarticulo)) and "+;
+						*!*									"LTRIM(RTRIM(?cDetalle.talla)) = LTRIM(RTRIM(talla)) "+;
+						*!*									"and ?_screen.cdlocal = LTRIM(RTRIM(cdlocal)) "
+						If SQLExec(con, xsql) = -1
+							=MensajeErrorSQL()
+							=CancelaTran()		&& =Sqlrollback(con)
+							Return .F.
+						Endif
+					Else
+						=MensajeErrorSQL()
+						=CancelaTran()		&& =Sqlrollback(con)
+						Return .F.
+					Endif
+				Endif
+			Endif
+
+			*/------- CIERRE DE TIENDA
+			If _Screen.flgSistema01 = .T.
+				xCier = "Insert Into CierreMov (cdlocal, cdalmacen, cdarticulo, ventas, ingresos, salidas) "+;
+					"Values (?_screen.cdlocal, ?cCabecera.cdalmacen, ?cDetalle.cdarticulo, "+;
+					"?cDetalle.cantidad, 0, 0) "
+				If SQLExec(con, xCier) = -1
+					lError = Aerror(Mi_Error)
+					If lError != 0
+						If Mi_Error[1,1] = 1526 And Mi_Error[1,5] = 2627    &&&&&&   Ya Existe El Registro entonces Update
+							xCier = "Update CierreMov set Ventas = Ventas + ?cDetalle.cantidad "+;
+								"Where ?_screen.cdlocal = LTRIM(RTRIM(cdlocal)) and "+;
+								"?cCabecera.cdalmacen = cdalmacen and ?cDetalle.cdarticulo = cdarticulo "
+							If SQLExec(con, xCier) = -1
+								lError = Aerror(Mi_Error)
+								=MensajeErrorSQL()
+								=CancelaTran()
+								Return .F.
+							Endif
+						Else
+							lError = Aerror(Mi_Error)
+							=MensajeErrorSQL()
+							=CancelaTran()
+							Return .F.
+						Endif
+					Endif
+				Endif
+			Endif
+			*/-----------<<<<<
+
+		Endif
+		Select cDetalle
+		Skip
+	Enddo
+Endif
+*/-----------------------    CLIENTE  ---------------------------------/*
+If cTerminal.GrabarCliente = .T. Or lGrabarCliente     &&&&&  credito
+	xcdcli = Alltr(cCliente.cdcliente)
+	xruccli = Alltr(cCliente.ruccliente)
+	If lTipoCli = 'F'
+		If !Empty(xruccli)
+			xsql = "Insert Into Cliente (cdcliente, ruccliente, rscliente, drcliente, drcobranza, drentrega, tlfcliente, "+;
+				"tlfcliente1, faxcliente, cddistrito, cddepartamento, cdzona, monlimite, mtolimite, mtodisponible, "+;
+				"bloqcredito, consulta_sunat) Values ( ?cCliente.ruccliente, ?cCliente.ruccliente, ?cCliente.rscliente, "+;
+				"?cCliente.drcliente, ?cCliente.drcobranza, ?cCliente.drentrega, ?cCliente.tlfcliente, "+;
+				"?cCliente.tlfcliente1, ?cCliente.faxcliente, ?cCliente.cddistrito, ?cCliente.cddepartamento, "+;
+				"?cCliente.cdzona, ?_screen.monsistema, 0, 0, 1, ?cCliente.consulta_sunat)"
+			If SQLExec(con, xsql) = -1
+				lError = Aerror(Mi_Error)
+				If lError != 0
+					If Mi_Error[1,1] = 1526 And Mi_Error[1,5] = 2627
+						xsql = "Update Cliente Set rscliente = ?cCliente.rscliente, drcliente = ?cCliente.drcliente, "+;
+							"drcobranza = ?cCliente.drcobranza, drentrega = ?cCliente.drentrega, "+;
+							"tlfcliente = ?cCliente.tlfcliente, tlfcliente1 = ?cCliente.tlfcliente1, "+;
+							"faxcliente = ?cCliente.faxcliente, consulta_sunat = ?cCliente.consulta_sunat "+;
+							"Where ?cCliente.ruccliente = cdcliente"
+						If SQLExec(con, xsql) = -1
+							=MensajeErrorSQL()
+							=CancelaTran()		&& =Sqlrollback(con)
+							Return .F.
+						Endif
+					Else
+						=MensajeErrorSQL()
+						=CancelaTran()		&& =Sqlrollback(con)
+						Return .F.
+					Endif
+				Endif
+			Endif
+		Endif
+	Else
+		If !Empty(xcdcli)
+			xsql = "Insert Into Cliente (cdcliente, ruccliente, rscliente, drcliente, drcobranza, drentrega, tlfcliente, "+;
+				"tlfcliente1, faxcliente, cddistrito, cddepartamento, cdzona, monlimite, mtolimite, mtodisponible, "+;
+				"bloqcredito, consulta_sunat) Values ( ?cCliente.cdcliente, ?cCliente.ruccliente, ?cCliente.rscliente, "+;
+				"?cCliente.drcliente, ?cCliente.drcobranza, ?cCliente.drentrega, ?cCliente.tlfcliente, "+;
+				"?cCliente.tlfcliente1, ?cCliente.faxcliente, ?cCliente.cddistrito, ?cCliente.cddepartamento, "+;
+				"?cCliente.cdzona, ?_screen.monsistema, 0, 0, 1, ?cCliente.consulta_sunat)"
+			If SQLExec(con, xsql) = -1
+				lError = Aerror(Mi_Error)
+				If lError != 0
+					If Mi_Error[1,1] = 1526 And Mi_Error[1,5] = 2627
+						xsql = "Update Cliente Set rscliente = ?cCliente.rscliente, drcliente = ?cCliente.drcliente, "+;
+							"drcobranza = ?cCliente.drcobranza, drentrega = ?cCliente.drentrega, "+;
+							"tlfcliente = ?cCliente.tlfcliente, tlfcliente1 = ?cCliente.tlfcliente1, "+;
+							"faxcliente = ?cCliente.faxcliente, consulta_sunat = ?cCliente.consulta_sunat "+;
+							"Where ?cCliente.cdcliente = cdcliente"
+						If SQLExec(con, xsql) = -1
+							=MensajeErrorSQL()
+							=CancelaTran()		&& =Sqlrollback(con)
+							Return .F.
+						Endif
+					Else
+						=MensajeErrorSQL()
+						=CancelaTran()		&& =Sqlrollback(con)
+						Return .F.
+					Endif
+				Endif
+			Endif
+		Endif
+	Endif
+Endif
+*/-----------------------    PLACA  ---------------------------------/*
+Select cCabecera
+Go Top
+lPlaca = Alltrim(cCabecera.nroplaca)
+If !Empty(lPlaca)
+	xsql = "Insert Into Placa (nroplaca) Values ( ?cCabecera.nroplaca)"
+	If SQLExec(con, xsql) = -1
+		lError = Aerror(Mi_Error)
+		If lError != 0
+			If !(Mi_Error[1,1] = 1526 And Mi_Error[1,5] = 2627)
+				=MensajeErrorSQL()
+				=CancelaTran()		&& =Sqlrollback(con)
+				Return .F.
+			Endif
+		Endif
+	Endif
+Endif
+*/-----------------------    CONGELADOS  ---------------------------------/*
+xpos = Alltrim(cCabecera.PosCongelado)
+xfecha = cCabecera.FechaCongelado
+If !Empty(xfecha) And !Empty(xpos)
+	xsql = "Delete From cVenta Where nropos = ?xpos and fecha = ?xfecha "
+	If SQLExec(con, xsql) = -1
+		lError = Aerror(Mi_Error)
+		=MensajeErrorSQL()
+		=CancelaTran()		&& =Sqlrollback(con)
+		Return .F.
+	Endif
+	xsql = "Delete From cVentad Where nropos = ?xpos and fecha = ?xfecha "
+	If SQLExec(con, xsql) = -1
+		lError = Aerror(Mi_Error)
+		=MensajeErrorSQL()
+		=CancelaTran()		&& =Sqlrollback(con)
+		Return .F.
+	Endif
+Endif
+*/-----------------------    VALES DE CREDITO ---------------------------------/*
+*** cuando tipocli = 'L' o 'C'
+Select cVale
+Go Top
+
+****** llena
+
+If !Empty(cVale.cdcliente) And cVale.mtovale>0 And cVale.nrovale != '000-0000000'
+
+	****** Valida q se grabe ND en campo nrovale y cod cliente ****
+	xnrovale = Substr(cVale.nrovale,1,3)+Substr(cVale.nrovale,5,7)
+	If Len(xnrovale)!=10
+		xnrovale = lnrodocumento
+	Endif
+
+	If Isnull(cVale.cdcliente) Or Empty(cVale.cdcliente)
+
+		Select cCliente
+		Go Top
+		Replace cVale.cdcliente	With cCliente.cdcliente
+
+	Endif
+	****** Fin - Valida q se grabe ND en campo nrovale y cod cliente ****
+
+	xsql = 'Delete From vale Where nrovale = ?xnrovale'
+	If SQLExec(con, xsql) = -1
+		lError = Aerror(Mi_Error)
+		=MensajeErrorSQL()
+		=CancelaTran()		&& =Sqlrollback(con)
+		Return .F.
+	Endif
+	xsql = "Insert Into hVale (nrovale, fecvale, cdmoneda, mtovale, cdcliente, nroplaca, nroseriemaq, cdtipodoc, "+;
+		"nrodocumento, fecdocumento, fecproceso, turno, docvale) Values (?xnrovale, ?cVale.fecvale, ?cVale.cdmoneda, "+;
+		"?cVale.mtovale, ?cVale.cdcliente, ?cCabecera.nroplaca, ?lNroSerieMaq, ?lcdtipodoc, ?lnrodocumento, "+;
+		"?cCabecera.fecdocumento, ?cCabecera.fecproceso, ?cCabecera.turno, ?cVale.docvale) "
+	If SQLExec(con, xsql) = -1
+		lError = Aerror(Mi_Error)
+		=MensajeErrorSQL()
+		If Mi_Error[1,1] = 1526 And Mi_Error[1,5] = 2627
+			= Messagebox('Detalle de Los Vales Esta Duplicado ', 16, ' Duplicidad de Registros'  )
+		Else
+			=MensajeErrorSQL()
+		Endif
+		=CancelaTran()		&& =Sqlrollback(con)
+		Return .F.
+	Endif
+Endif
+
+
+*/--------- Enviar trama -------------------------
+*
+If _Screen.facturacion_electronica = .T. And cCabecera.flgmanual=.F.
+
+	Do Case
+	Case _Screen.fe_proveedor = "AC2" Or _Screen.fe_proveedor = "ACT" &&AC2 Acepta UBL 2.1, ACT Acepta UBL 2.0
+
+		If Alltrim(lcdtipodoc) = _Screen.tpfactura Or Alltrim(lcdtipodoc) = _Screen.tpboleta  && SOLO GENERA TRAMA SI ES BOLETA O FACTURA
+
+			xfe_trama = fact_electronica_trama()
+
+			If !xfe_trama
+
+				*--Se registra el error en el Log. HG 07/01/2019
+				*
+				registra_error_trama(lnrodocumento,lcdtipodoc,'Error al generar la trama (fact_electronica_trama)')
+
+				Messagebox('Ha ocurrido un error al generar el mensaje', 16, ' ERROR')
+				=CancelaTran()
+				Return .F.
+
+			Else
+
+				xfe_envio = fact_electronica_envio()
+
+				If !xfe_envio
+
+					*--Se registra el error en el Log. HG 07/01/2019
+					*
+					registra_error_trama(lnrodocumento,lcdtipodoc,'Error al enviar la trama (fact_electronica_envio)')
+
+					Messagebox('Ha ocurrido un error al enviar el mensaje', 16, ' ERROR')
+					=CancelaTran()
+					Return .F.
+
+				Else
+
+					xfe_respuesta = fact_electronica_respuesta()
+
+					If !xfe_respuesta
+						*--Se registra el error en el Log. HG 07/01/2019
+						*
+						registra_error_trama(lnrodocumento,lcdtipodoc,'Error al obtener la respuesta de la trama (fact_electronica_respuesta)')
+
+						Messagebox('Ha ocurrido un error al recepcionar respuesta', 16, ' ERROR')
+						=CancelaTran()
+						Return .F.
+
+					Else
+
+						Select cCabecera
+						lcdhash = Alltrim(cCabecera.cdhash)
+
+						If Empty(lcdhash) Or Isnull(lcdhash )
+							*--Se registra el error en el Log. HG 07/01/2019
+							*
+							registra_error_trama(lnrodocumento,lcdtipodoc,'No se registro el codigo Hash ')
+
+							Messagebox('El código Hash no presenta información', 0+16, ' ERROR')
+							=CancelaTran()
+							Return .F.
+						Endif
+
+						nameVenta = 'Venta'
+						cmdEx = "UPDATE " + nameVenta + " SET cdhash = ?lcdhash WHERE cdtipodoc = ?lcdtipodoc AND nrodocumento = ?lnrodocumento "
+						If SQLExec(con, cmdEx, 'cExiste') = -1
+
+							*--Se registra el error en el Log. HG 07/01/2019
+							*
+							registra_error_trama(lnrodocumento,lcdtipodoc,'Error al realizar el Update en la taba '+nameVenta )
+
+							lError=Aerror(Mi_Error)
+							=MensajeErrorSQL()
+							Return
+						Endif
+
+						nameVenta = 'Venta' + lExtension
+						cmdEx = "UPDATE " + nameVenta + " SET cdhash = ?lcdhash WHERE cdtipodoc = ?lcdtipodoc AND nrodocumento = ?lnrodocumento "
+						If SQLExec(con, cmdEx, 'cExiste') = -1
+
+							*--Se registra el error en el Log. HG 07/01/2019
+							*
+							registra_error_trama(lnrodocumento,lcdtipodoc,'Error al realizar el Update en la taba '+nameVenta )
+
+							lError=Aerror(Mi_Error)
+							=MensajeErrorSQL()
+							Return
+						Endif
+					Endif
+				Endif
+			Endif
+		Endif
+
+	Case _Screen.fe_proveedor = "TC2" &&TCI UBL 2.1
+
+		If Alltrim(lcdtipodoc) = _Screen.tpfactura Or Alltrim(lcdtipodoc) = _Screen.tpboleta  && SOLO GENERA TRAMA SI ES BOLETA O FACTURA
+
+			xfe_trama = fact_electronica_trama()
+
+			If !xfe_trama
+
+				Messagebox('Ha ocurrido un error al generar el mensaje', 16, ' ERROR')
+				Return .F.
+
+			Else
+
+				xfe_envio = fact_electronica_envio()
+
+				If !xfe_envio
+
+					Messagebox('Ha ocurrido un error al enviar el mensaje', 16, ' ERROR')
+					Return .F.
+
+				Else
+
+					xfe_respuesta = fact_electronica_respuesta()
+
+					If !xfe_respuesta
+
+						Messagebox('Ha ocurrido un error al recepcionar respuesta', 16, ' ERROR')
+						Return .F.
+
+					Endif
+
+				Endif
+
+			Endif
+		Endif
+	Endcase
+
+Endif
+
+=GrabaTran()		&&& =SqlCommit(Con)
+
+*/---------------------------------------------------------------/*
+If !AbreTranSis()   && Cambio a Transacciones manuales del SIS
+	Return .F.
+Endif
+
+
+
+*/-----------------------    TERMINAL  ---------------------------------/*
+lIncrementa = .F.
+
+If cCabecera.flgmanual   &&&& Facturacion Manual
+	******Revisar Si se ha respetado el correlativo para despues aumentar uno el corr del terminal
+	xDoc = ''
+	Do Case
+	Case lcdtipodoc = _Screen.tpfactura
+		xDoc = Padl(Alltrim(Str(Val(cTerminal.factura)+ 1)), 10, '0')
+	Case lcdtipodoc = _Screen.tpboleta
+		xDoc = Padl(Alltrim(Str(Val(cTerminal.boleta)+ 1)), 10, '0')
+	Case lcdtipodoc = _Screen.tpticket
+		xDoc = Padl(Alltrim(Str(Val(cTerminal.ticket)+ 1)), 10, '0')
+	Case lcdtipodoc = _Screen.tppromocion
+		xDoc = Padl(Alltrim(Str(Val(cTerminal.promocion)+ 1)), 10, '0')
+	Case lcdtipodoc = _Screen.tpntavta
+		xDoc = Padl(Alltrim(Str(Val(cTerminal.nVenta)+ 1)), 10, '0')
+	Endcase
+	If xDoc = lnrodocumento
+		lIncrementa = .T.
+	Endif
+Else   &&&& Facturación Directa
+	lIncrementa = .T.
+Endif
+lcvirtual = ' '
+If lIncrementa = .T.
+	*** se comento por JPP 03/01/2014
+	***xserie = _screen.seriehd
+	Select cTerminal
+	lcCmd = ''
+	If !Empty(Alltrim(cCliente.NroBonus))
+		Replace Letra With Padl(Alltrim(Str(Val(cTerminal.Letra)+ 1)), 10, '0')
+		lcCmd = ', letra = ?cTerminal.letra '
+	Endif
+	If !Empty(Alltrim(cCabecera.Nrocelular))
+		Replace tranvirtual With Padl(Alltrim(Str(Val(cTerminal.tranvirtual)+ 1)), 4, '0')
+		lcvirtual = ', tranvirtual = ?cTerminal.tranvirtual '
+	Endif
+	Do Case
+	Case lcdtipodoc = _Screen.tpfactura
+		Replace cTerminal.factura With Padl(Alltrim(Str(Val(cTerminal.factura)+ 1)), 10, '0')
+		*xsql = "Update terminal Set factura = ?cTerminal.factura " + lcCmd + " Where ?xserie = LTRIM(RTRIM(seriehd)) "
+		xsql = "Update terminal Set factura = ?cTerminal.factura " + lcCmd + lcvirtual + " Where ?xserie = LTRIM(RTRIM(seriehd)) "
+	Case lcdtipodoc = _Screen.tpboleta
+		Replace cTerminal.boleta With Padl(Alltrim(Str(Val(cTerminal.boleta)+ 1)), 10, '0')
+		*xsql = "Update terminal Set boleta = ?cTerminal.boleta " + lcCmd + " Where ?xserie = LTRIM(RTRIM(seriehd)) "
+		xsql = "Update terminal Set boleta = ?cTerminal.boleta " + lcCmd +  lcvirtual + " Where ?xserie = LTRIM(RTRIM(seriehd)) "
+	Case lcdtipodoc = _Screen.tpticket
+		If _Screen.correlativos2_ticket	= .T. And !Empty(cCliente.ruccliente)
+			Replace cTerminal.ticketfactura With Padl(Alltrim(Str(Val(cTerminal.ticketfactura)+ 1)), 10, '0')
+			*xsql = "Update terminal Set ticket = ?cTerminal.ticket " + lcCmd + " Where ?xserie = LTRIM(RTRIM(seriehd)) "
+			xsql = "Update terminal Set ticketfactura = ?cTerminal.ticketfactura " + lcCmd +  lcvirtual + " Where ?xserie = LTRIM(RTRIM(seriehd)) "
+		Else
+			Replace cTerminal.ticket With Padl(Alltrim(Str(Val(cTerminal.ticket)+ 1)), 10, '0')
+			*xsql = "Update terminal Set ticket = ?cTerminal.ticket " + lcCmd + " Where ?xserie = LTRIM(RTRIM(seriehd)) "
+			xsql = "Update terminal Set ticket = ?cTerminal.ticket " + lcCmd +  lcvirtual + " Where ?xserie = LTRIM(RTRIM(seriehd)) "
+		Endif
+	Case lcdtipodoc = _Screen.tpticketFac
+		If _Screen.correlativos2_ticket	= .T. And !Empty(cCliente.ruccliente)
+			Replace cTerminal.ticketfactura With Padl(Alltrim(Str(Val(cTerminal.ticketfactura)+ 1)), 10, '0')
+			*xsql = "Update terminal Set ticket = ?cTerminal.ticket " + lcCmd + " Where ?xserie = LTRIM(RTRIM(seriehd)) "
+			xsql = "Update terminal Set ticketfactura = ?cTerminal.ticketfactura " + lcCmd +  lcvirtual + " Where ?xserie = LTRIM(RTRIM(seriehd)) "
+		Else
+			Replace cTerminal.ticket With Padl(Alltrim(Str(Val(cTerminal.ticket)+ 1)), 10, '0')
+			*xsql = "Update terminal Set ticket = ?cTerminal.ticket " + lcCmd + " Where ?xserie = LTRIM(RTRIM(seriehd)) "
+			xsql = "Update terminal Set ticket = ?cTerminal.ticket " + lcCmd +  lcvirtual + " Where ?xserie = LTRIM(RTRIM(seriehd)) "
+		Endif
+	Case lcdtipodoc = _Screen.tppromocion
+		Replace cTerminal.promocion With Padl(Alltrim(Str(Val(cTerminal.promocion)+ 1)), 10, '0')
+		*xsql = "Update terminal Set promocion = ?cTerminal.promocion " + lcCmd + " Where ?xserie = LTRIM(RTRIM(seriehd)) "
+		xsql = "Update terminal Set promocion = ?cTerminal.promocion " + lcCmd +  lcvirtual + " Where ?xserie = LTRIM(RTRIM(seriehd)) "
+	Case lcdtipodoc = _Screen.tpntavta
+		Replace cTerminal.nVenta With Padl(Alltrim(Str(Val(cTerminal.nVenta)+ 1)), 10, '0')
+		*xsql = "Update terminal Set nventa = ?cTerminal.nventa " + lcCmd + " Where ?xserie = LTRIM(RTRIM(seriehd)) "
+		xsql = "Update terminal Set nventa = ?cTerminal.nventa " + lcCmd +  lcvirtual + " Where ?xserie = LTRIM(RTRIM(seriehd)) "
+	Endcase
+	If SQLExec(con, xsql) = -1
+		=MensajeErrorSQL()
+		=CancelaTran()		&& =Sqlrollback(con)
+		Return .F.
+	Endif
+Endif
+*/--------------------------------------------- LOTERIA  --------------------------------/*
+If Used('xloteria')    &&&&&&& solo se crea en facturacion de combustible
+	lErrorLoteria = .F.
+	=loteria()
+	If lErrorLoteria = .T.
+		Return .F.
+	Endif
+Endif
+Select cCabecera
+Replace cCabecera.grabado With .T.
+
+*/--------- GRabando en Centralizador de SALDOS -------------------------
+
+If Empty(_Screen.ruta_websaldos) Or Isnull(_Screen.ruta_websaldos)
+Else
+
+	Select cVale
+	Go Top
+
+	If !Empty(cVale.cdcliente) And cVale.mtovale>0 And cVale.nrovale != '000-0000000'   && validar que sea nota de despacho
+
+		lRptaService = service_saldo_actualizar(_Screen.cdlocal, cCliente.cdcliente,  cCabecera.nrotarjeta, cCabecera.MTOTOTAL, lNroSerieMaq, lcdtipodoc, lnrodocumento, lmens)
+
+		If !lRptaService
+
+			Messagebox('Ha ocurrido un error al actualizar saldo', 16, ' ERROR')
+			=CancelaTran()
+			Return .F.
+
+		Else
+
+			If Used('TmpGrabaSaldo')
+				Select TmpGrabaSaldo
+				Go Top
+				If TmpGrabaSaldo.resultado = 'SI'
+					lc_centra = '1SALDOS'
+				Endif
+			Endif
+
+		Endif
+
+	Endif
+Endif
+
+*/--------- Grabando en Centralizador de SALDOS -------------------------
+
+*/--------- Grabando en tabla de anticipos -------------------------
+
+*!*	IF cCabecera.tipoventa = 'N'
+
+*!*		IF ALLTRIM(cCabecera.cdhash) <> ''
+*!*			lhash = .t.
+*!*		ELSE
+*!*			lhash = .f.
+*!*		ENDIF
+
+*!*		xSql = "Insert Into anticipos (cdcliente, cdtipodoc, nrodocumento, fecdocumento, mtototal, consumo, saldo, flg_electronico) "+;
+*!*			   "Values (?cCabecera.cdcliente, ?lcdtipodoc, ?lnrodocumento, ?cCabecera.fecdocumento, ?cCabecera.mtototal, 0, ?cCabecera.mtototal, ?lhash)"
+*!*		If Sqlexec(con, xsql) = -1
+*!*			lError = Aerror(Mi_Error)
+*!*			=MensajeErrorSQL()
+*!*			If Mi_Error[1,1] = 1526 AND mi_error[1,5] = 2627
+*!*				= Messagebox('Documento de anticipo ya existe ', 16, ' Duplicidad de Registros'  )
+*!*			Else
+*!*				=MensajeErrorSQL()
+*!*			EndIf
+*!*			=CancelaTran()		&& =Sqlrollback(con)
+*!*			Return .f.
+*!*		ENDIF
+*!*
+*!*	ENDIF
+
+*/--------- Grabando en tabla de anticipos -------------------------
+
+*!*	IF _screen.facturacion_electronica = .t. AND cCabecera.flgmanual=.f.
+
+*!*		IF _screen.fe_proveedor = "AC2" OR _screen.fe_proveedor = "ACT"
+*!*
+*!*			IF ALLTRIM(lcdtipodoc) = _screen.tpfactura OR ALLTRIM(lcdtipodoc) = _screen.tpboleta  && SOLO GENERA TRAMA SI ES BOLETA O FACTURA
+*!*
+*!*				xfe_trama = fact_electronica_trama()
+*!*
+*!*				IF !xfe_trama
+*!*
+*!*					MESSAGEBOX('Ha ocurrido un error al generar el mensaje', 16, ' ERROR')
+*!*					=CancelaTran()
+*!*					RETURN .F.
+*!*
+*!*				ELSE
+*!*
+*!*					xfe_envio = fact_electronica_envio()
+*!*
+*!*					IF !xfe_envio
+*!*
+*!*						MESSAGEBOX('Ha ocurrido un error al enviar el mensaje', 16, ' ERROR')
+*!*						=CancelaTran()
+*!*						RETURN .F.
+*!*
+*!*					ELSE
+*!*
+*!*						xfe_respuesta = fact_electronica_respuesta()
+*!*
+*!*						IF !xfe_respuesta
+*!*
+*!*							MESSAGEBOX('Ha ocurrido un error al recepcionar respuesta', 16, ' ERROR')
+*!*							=CancelaTran()
+*!*							RETURN .F.
+*!*
+*!*						ELSE
+*!*
+*!*							SELECT cCabecera
+*!*							lcdhash = ALLTRIM(cCabecera.cdhash)
+*!*
+*!*							nameVenta = 'Venta'
+*!*							cmdEx = "UPDATE " + nameVenta + " SET cdhash = ?lcdhash WHERE cdtipodoc = ?lcdtipodoc AND nrodocumento = ?lnrodocumento "
+*!*							IF SQLEXEC(con, cmdEx, 'cExiste') = -1
+*!*								lError=AERROR(Mi_Error)
+*!*								=MensajeErrorSQL()
+*!*								RETURN
+*!*							ENDIF
+*!*
+*!*							nameVenta = 'Venta' + lExtension
+*!*							cmdEx = "UPDATE " + nameVenta + " SET cdhash = ?lcdhash WHERE cdtipodoc = ?lcdtipodoc AND nrodocumento = ?lnrodocumento "
+*!*							IF SQLEXEC(con, cmdEx, 'cExiste') = -1
+*!*								lError=AERROR(Mi_Error)
+*!*								=MensajeErrorSQL()
+*!*								RETURN
+*!*							ENDIF
+
+*!*						ENDIF
+*!*
+*!*					ENDIF
+
+*!*				ENDIF
+*!*
+*!*			ENDIF
+*!*
+*!*		ENDIF
+
+*!*	ENDIF
+
+*!*	=GrabaTran()		&&& =SqlCommit(Con)
+
+*!*	*/---------------------------------------------------------------/*
+*!*	IF !AbreTranSis()   && Cambio a Transacciones manuales del SIS
+*!*		RETURN .f.
+*!*	ENDIF
+
+*/-----------------------    TRANSPORTISTA ---------------------------------/*
+If !Isblank(cCabecera.cdtranspor)
+	*/--------------------------- TRANSPORTISTA -----------------------------/*
+	xcdTransp = Alltr(cCabecera.cdtranspor)
+	If !Empty(xcdTransp)
+		If !AbreTranSis()
+			Return
+		Endif
+		xsql = "INSERT INTO Tab0s15 (cdtranspor, dstranspor, drtranspor, ructranspor, tlftranspor, "+;
+			"nroplaca, inscripcion, marcavehic) values (?cCabecera.cdtranspor, ?cCabecera.dstranspor, " +;
+			"?cCabecera.drtranspor, ?cCabecera.ructranspor, '', ?cCabecera.nroplaca, "+;
+			"?cCabecera.Inscripcion, ?cCabecera.marcavehic)"
+
+		If SQLExec(SIS, xsql) = -1
+			lError = Aerror(Mi_Error)
+			If lError != 0
+				If Mi_Error[1,1] = 1526 And Mi_Error[1,5] = 2627
+					*!*		If sqlexec(sis, xsql) = -1
+					*!*			lError = Aerror(Mi_Error)
+					*!*			If lError = 1
+					*!*				If mi_error[1,1] = 1526 AND mi_error[1,5] = 2627
+					xsql = "Update Tab0s15 Set dstranspor=?cCabecera.dstranspor, drtranspor=?cCabecera.drtranspor, "+;
+						"ructranspor=?cCabecera.ructranspor, nroplaca=?cCabecera.nroplaca, "+;
+						"inscripcion=?cCabecera.Inscripcion, marcavehic=?cCabecera.marcavehic "+;
+						"Where ?cCabecera.cdtranspor = cdtranspor "
+					If SQLExec(SIS, xsql) = -1
+						=MensajeErrorSQL()
+						=CancelaTranSis()
+						Return .F.
+					Endif
+				Else
+					=MensajeErrorSQL()
+					=CancelaTranSis()
+					Return .F.
+				Endif
+			Endif
+		Else
+			xSql2= "INSERT INTO Tab1S99 (Tipo, Codigo, CdEmpresa, CdNivel) "+;
+				"values ('TRA', ?cCabecera.cdtranspor, ?_screen.cdempresa, '')"
+			If SQLExec(SIS, xSql2) = -1
+				lError = Aerror(Mi_Error)
+				If lError = 1
+					If Mi_Error[1,1] = 1526 And Mi_Error[1,5] = 884
+					Else
+						=MensajeErrorSQL()
+						=CancelaTranSis()
+						Return .F.
+					Endif
+				Endif
+			Endif
+		Endif
+		=GrabaTranSis()
+	Endif
+
+Endif
+=GrabaTranSis()		&&& =SqlCommit(sis)
+
+*/---------------- ACTUALIZACION DE TABLAS TRAN ??  --------------------------/*
+*/------------     GRABA LOS TRAN?? DE GASBOY SOLO SI EXISTE CARA ------------/*
+Select cDetalle
+Go Top
+Do While !Eof() And !Empty(cDetalle.cdarticulo)
+	If _Screen.Activasawa
+		xsql = "Update op_tran Set cdtipodoc=?lcdtipodoc, documento=?lnrodocumento,dateproce=?cCabecera.fecproceso Where LTRIM(RTRIM(numero)) = LTRIM(RTRIM(?cDetalle.nrogasboy)) "
+		If SQLExec(con, xsql) = -1
+			lError = Aerror(Mi_Error)
+			=MensajeErrorSQL()
+			=CancelaTran()
+		Else
+			=GrabaTran()
+		Endif
+	Else
+		xcara = Alltrim(cDetalle.cara)
+		If !Empty(xcara) And xcara !='00'
+			cAlias = _Screen.path_gasboy+'Tran'+xcara
+			If !File(cAlias+'.dbf')
+				=Messagebox('   No Existe El Alias '+cAlias+'.dbf',0,'S I G E S')
+				*=Sqlrollback(con)
+				*End transaction
+				Return
+			Endif
+			Use (cAlias) In 0 Alias Tranx Shared
+
+			Select Tranx
+			Update (cAlias) Set cdtipodoc=lcdtipodoc, documento=lnrodocumento,fecproceso=cCabecera.fecproceso ;
+				Where numero=cDetalle.nrogasboy
+			Use In Tranx   &&&&&&& cerrar la tabla
+		Endif
+	Endif
+	Select cDetalle
+	Skip
+Enddo
+*/------------------------------------------------------------------------------------------------/*
+Return .T.
+
+*/============================================================================/*
+Procedure buscainsumos
+Parameters xcodigo, xcantidad
+
+xsql = "SELECT Insumo.cdinsumo as cdarticulo, Insumo.talla, Insumo.cantidad*?xcantidad as cantidad, articulo.tpformula "+;
+	"FROM insumo LEFT OUTER JOIN articulo ON Insumo.cdinsumo = Articulo.cdarticulo "+;
+	"WHERE Insumo.cdarticulo = ?xcodigo and articulo.moverstock = 1 "
+If SQLExec(con, xsql, "cDetalleFm") = -1
+	lError = Aerror(Mi_Error)
+	=MensajeErrorSQL()
+	=CancelaTran()		&&& =SqlRollBack(con)
+	lErrorBusca = .T.
+Else
+	xdbf = Dbf()
+	Select cInsumos
+	Append From (xdbf)
+	lErrorBusca = .F.
+Endif
+Select cInsumos
+Go Top
+Endproc
+
+*/=============================================================================/*
+Procedure loteria
+
+lErrorLoteria = .F.
+lDate = Date()
+lTime = Time()
+xsql = "Select flgactivo, fecinicio, fecfin, flgefectivo, flgtarjeta, flgcheque, flgcredito, flgpromocion from loteria "
+If SQLExec(con, xsql, 'cLoteria') = -1
+	=MensajeErrorSQL()
+	=CancelaTran()		&&& =SqlRollBack(con)
+	lErrorLoteria = .T.
+	Return
+Endif
+*/------- revisamos si la loteria esta activa
+If cLoteria.flgactivo = .F.
+	Return
+Endif
+*/------- no pueden ser facturas manuales ni notas de venta
+If cCabecera.flgmanual = .T. Or Alltrim(cCabecera.cdtipodoc) = _Screen.tpntavta   &&&&&&& no pueden ser facturas manuales ni notas de venta
+	Return
+Endif
+*/------- revisamos por el tipo de pago
+lpagoactivo = .F.
+If Alltrim(cCabecera.cdtipodoc) = _Screen.tppromocion   &&&&&&& si es promocion
+	If cLoteria.flgpromocion
+		lpagoactivo = .T.
+	Endif
+Else
+	Do Case
+	Case cPago.cdtppago = _Screen.tppgoefectivo   &&&&& Efectivo
+		If cLoteria.flgefectivo
+			lpagoactivo = .T.
+		Endif
+	Case cPago.cdtppago = _Screen.tppgotarjeta      &&&&& Tarjeta
+		If cLoteria.flgtarjeta
+			lpagoactivo = .T.
+		Endif
+	Case cPago.cdtppago = _Screen.tppgocheque   &&&&& Cheque
+		If cLoteria.flgcheque
+			lpagoactivo = .T.
+		Endif
+	Case cPago.cdtppago = _Screen.tppgocredito    &&&&& Credito
+		If cLoteria.flgcredito
+			lpagoactivo = .T.
+		Endif
+	Endcase
+Endif
+If lpagoactivo = .F.
+	Return
+Endif
+*/-------- Revisamos rango de fechas
+If !Between(lDate, cLoteria.fecinicio, cLoteria.fecfin)
+	Return
+Endif
+*/----------	 Revisamos que hora y que dia es hoy para el armar el select
+xDia = Dow(lDate,1)    &&&&&& (  ,1) es para poner que domingo es el primer dia de la semana
+xWhere = ' Where Between(?lTime, LoteriaHora.horainicio, LoteriaHora.horafin) '
+Do Case
+Case xDia = 1 &&&& Domingo
+	xWhere = xWhere + ' And LoteriaHora.flgdomingo = 1 '
+Case xDia = 2 &&&& Lunes
+	xWhere = xWhere + ' And LoteriaHora.flglunes = 1 '
+Case xDia = 3 &&&& Martes
+	xWhere = xWhere + ' And LoteriaHora.flgmartes = 1 '
+Case xDia = 4 &&&& Miercoles
+	xWhere = xWhere + ' And LoteriaHora.flgmiercoles = 1 '
+Case xDia = 5 &&&& Jueves
+	xWhere = xWhere + ' And LoteriaHora.flgjueves = 1 '
+Case xDia = 6 &&&& Viernes
+	xWhere = xWhere + ' And LoteriaHora.flgviernes = 1 '
+Case xDia = 7 &&&& Sabado
+	xWhere = xWhere + ' And LoteriaHora.flgsabado = 1 '
+Endcase
+xsql = 'Select item, flgprod, nroganador, monmto, mtomax, frecuencia from loteriaHora '+xWhere
+If SQLExec(con, xsql, 'cLoteriaHora') = -1
+	lError = Aerror(Mi_Error)
+	=MensajeErrorSQL()
+	=CancelaTran()		&&&=SqlRollBack(con)
+	lErrorLoteria = .T.
+	Return
+Endif
+Select cLoteriaHora
+Go Top
+If Eof()      &&&&&&&&&  No Existen coincidencias de rango de hora y dias
+	Return
+Endif
+lProd= .F.
+Do While !Eof()
+	If cLoteriaHora.flgprod = .F.    &&&&&& si no es por producto defrente este es el registro cLoteriaHora a revisar
+		lProd= .T.
+		Exit
+	Endif
+	Select cDetalle
+	Count For !Empty(cDetalle.cdarticulo) To xCantProd
+	Go Top
+	If xCantProd =1   &&&&&&& Es un solo producto entonces buscamos en loteriaart
+		xsql = 'Select cdarticulo From LoteriaArt Where cdarticulo = ?cDetalle.cdarticulo And item = ?cLoteriaHora.item '
+		If SQLExec(con, xsql, 'cLoteriaArt') = -1
+			lError = Aerror(Mi_Error)
+			=MensajeErrorSQL()
+			=CancelaTran()		&&& =SqlRollBack(con)
+			lErrorLoteria = .T.
+			Return
+		Endif
+		Select cLoteriaArt
+		Go Top
+		If !Eof()
+			lProd = .T.
+			Exit
+		Endif
+	Endif
+	Select cLoteriaHora
+	Skip
+Enddo
+If lProd = .F.
+	Return
+Endif
+*/-------------  Revisamos los montos
+xMontoMax = 0
+If cLoteriaHora.monmto = cCabecera.cdmoneda
+	xMontoMax = cCabecera.MTOTOTAL
+Else
+	If cCabecera.cdmoneda = _Screen.monpais    &&&&&& 	El documento esta en soles pero el mto de la loteria en dolares
+		xMontoMax = Round(cCabecera.MTOTOTAL/cCabecera.tcambio,2)
+	Else    &&&&&& El documento esta en dolares pero el mto de la loteria en soles
+		xMontoMax = Round(cCabecera.MTOTOTAL*cCabecera.tcambio,2)
+	Endif
+Endif
+If xMontoMax > cLoteriaHora.mtomax      &&&&&& Excede el mto max para la loteria
+	Return
+Endif
+xsql = "Insert Into LoteriaWin (fecha, item, nroseriemaq, cdtipodoc, nrodocumento, cdmoneda, mtototal, nroganador, "+;
+	"frecuencia)  Values ( ?lDate, ?cLoteriaHora.item, Space(0), Space(0), Space(0), Space(0), 0, 0, 1) "
+If SQLExec(con, xsql) = -1
+	lError = Aerror(Mi_Error)
+	If Mi_Error[1,1] = 1526 And Mi_Error[1,5] = 2627
+		&&&&&&    revisamos que sea la frecuencia ganadora - 1
+		xsql = "Select nroganador, frecuencia From LoteriaWin Where ?lDate = fecha And ?cLoteriaHora.item = item "+;
+			"And LTRIM(RTRIM(nroseriemaq))='' And LTRIM(RTRIM(cdtipodoc))='' and LTRIM(RTRIM(nrodocumento)) "
+		If SQLExec(con, xsql, 'cLoteriaWin') = -1
+			=MensajeErrorSQL()
+			=CancelaTran()		&&& =Sqlrollback(con)
+			lErrorLoteria = .T.
+			Return
+		Endif
+		Select cLoteriaWin
+		Go Top
+		If Eof()
+			Return
+		Endif
+		If cLoteriaWin.nroganador > cLoteriaHora.nroganador   &&&&&& Ya Ha Llegado al numero max de ganadores
+			Return
+		Endif
+		If cLoteriaWin.frecuencia+1 >= cLoteriaHora.frecuencia &&&&& Este es el despacho ganador
+			Select xLoteria
+			Go Top
+			Replace xLoteria.ganador With .T.
+			xsql = "Update LoteriaWin Set nroseriemaq = ?lNroSerieMaq, cdtipodoc = LTRIM(RTRIM(?cCabecera.cdtipodoc)), "+;
+				"nrodocumento=?lnrodocumento, fecdocumento=?cCabecera.fecdocumento, fecproceso=?cCabecera.fecproceso, "+;
+				"cdmoneda = ?cCabecera.cdmoneda, mtototal = ?cCabecera.mtototal, nroganador = nroganador+1, "+;
+				"frecuencia = frecuencia + 1 Where ?lDate = fecha And ?cLoteriaHora.item = item "+;
+				"And LTRIM(RTRIM(nroseriemaq))='' And LTRIM(RTRIM(cdtipodoc))='' and LTRIM(RTRIM(nrodocumento)) "
+			If SQLExec(con, xsql) = -1
+				lError = Aerror(Mi_Error)
+				=MensajeErrorSQL()
+				=CancelaTran()		&&& =SqlRollBack(con)
+				lErrorLoteria = .T.
+				Return
+			Endif
+			****** ahora inserta en blanco aumentando el nroganador
+			xsql = "Insert Into LoteriaWin (fecha, item, nroseriemaq, cdtipodoc, nrodocumento, cdmoneda, mtototal, "+;
+				"nroganador, frecuencia) Values ( ?lDate, ?cLoteriaHora.item, Space(0), Space(0), Space(0), "+;
+				"Space(0), 0, ?cLoteriaWin.nroganador+1, 0) "
+			If SQLExec(con, xsql) = -1
+				lError = Aerror(Mi_Error)
+				If Mi_Error[1,1] = 1526 And Mi_Error[1,5] = 2627
+					******* ya existe ¿grabar otra vez con update?
+				Else
+					=MensajeErrorSQL()
+					=CancelaTran()		&&&=SqlRollBack(con)
+					lErrorLoteria = .T.
+					Return
+				Endif
+			Endif
+		Else    &&&&&& solo aumenta la frecuencia
+			xsql = "Update LoteriaWin Set frecuencia = frecuencia + 1 Where ?lDate = fecha And ?cLoteriaHora.item = item "+;
+				"And LTRIM(RTRIM(nroseriemaq))='' And LTRIM(RTRIM(cdtipodoc))='' and LTRIM(RTRIM(nrodocumento)) "
+			If SQLExec(con, xsql) = -1
+				lError = Aerror(Mi_Error)
+				=MensajeErrorSQL()
+				=CancelaTran()		&&& =SqlRollBack(con)
+				lErrorLoteria = .T.
+				Return
+			Endif
+		Endif
+	Else
+		=MensajeErrorSQL()
+		=CancelaTran()		&&&=SqlRollBack(con)
+		lErrorLoteria = .T.
+		Return
+	Endif
+Endif
+**On Error 		&&& quitar
+Endproc

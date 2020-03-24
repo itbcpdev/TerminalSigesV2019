@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:titan="clr-namespace:TerminalSIGES.Views.Lib" 
+            BackgroundColor="#cdcfd0" 
+            xmlns:syncfusion="clr-namespace:Syncfusion.SfNumericTextBox.XForms;assembly=Syncfusion.SfNumericTextBox.XForms" 
+            xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms" 
+            xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+            xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+            Title="Procesando depositos"
+             x:Class="TerminalSiges.Views.Pages.Depositos.DepositoRegistra">
+    <ContentPage.Content>
+
+        <StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  >
+
+            <StackLayout VerticalOptions="CenterAndExpand">
+
+                <Frame Padding="10,50" Margin="20, 20" CornerRadius="10"  BackgroundColor="#ffffff" BorderColor="#006ba6"  IsClippedToBounds="True" HasShadow="True">
+                    <StackLayout>
+                        <ContentView>
+                            <Label Text="Registro de Depositos" HorizontalTextAlignment="Center" FontSize="30" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"  ></Label>
+                        </ContentView>
+                        <ContentView Padding="5,0" >
+                            <BoxView  HeightRequest="3" WidthRequest="10" Color="#1c4081" />
+                        </ContentView>
+                        <ContentView Padding="5,5" >
+                            <Grid >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="80" />
+                                    <RowDefinition Height="80" />
+                                    <RowDefinition Height="80" />
+                                    <RowDefinition Height="80" />
+                                    <RowDefinition Height="80" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="200" />
+                                    <ColumnDefinition Width="280" />
+                                    <ColumnDefinition Width="200" />
+                                </Grid.ColumnDefinitions>
+                                <!--TipoPago-->
+                                <Label Grid.Row="0" 
+                                       Grid.Column="0" 
+                                       FontSize="20" 
+                                       VerticalOptions="Center"  
+                                       HorizontalTextAlignment="Center" 
+                                       Text="Tipo Pago" 
+                                       FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+
+                                <combobox:SfComboBox x:Name="cboTipoPagos" 
+                                                     Grid.Row="0" Grid.Column="1"
+                                                     Grid.ColumnSpan="2"  
+                                                     HorizontalOptions="End" 
+                                                     Text="Seleccione"  
+                                                     DropDownTextSize="25"
+                                                     DropDownItemHeight="60"
+                                                     DropDownCornerRadius="10" 
+                                                     SelectedDropDownItemColor="#cddbe6" 
+                                                     DropDownTextColor="#005797" 
+                                                     TextSize="30" 
+                                                     DisplayMemberPath="dstppago"/>
+                                
+                                <!--Sobre-->
+                                <Label Grid.Row="1" 
+                                       Grid.Column="0"
+                                       FontSize="20" 
+                                       VerticalOptions="Center" 
+                                       HorizontalTextAlignment="Center"  
+                                       Text="Nro de Sobre" 
+                                       FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+
+                                <inputLayout:SfTextInputLayout Grid.Row="1"
+                                                               Grid.Column="1" 
+                                                               FocusedColor="#0450C2"
+                                                               ContainerBackgroundColor="#E6EEF9"
+                                                               ContainerType="Outlined" 
+                                                               ReserveSpaceForAssistiveLabels="False">
+                                    <Entry x:Name="txtSobre" Keyboard="Numeric" FontSize="30" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}" />
+                                </inputLayout:SfTextInputLayout>
+
+                                <!--DOLAR-->
+                                <Label Grid.Row="2" 
+                                       Grid.Column="0"
+                                       FontSize="30"
+                                       VerticalOptions="Center"
+                                       HorizontalTextAlignment="Center" 
+                                       Text=" US$." FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+
+                                <syncfusion:SfNumericTextBox x:Name="txtMontoDolarVenta" 
+                                                             Grid.Row="2"
+                                                             Grid.Column="1"
+                                                             ParserMode="Decimal" 
+                                                             FontSize="30"
+                                                             BackgroundColor="#E6EEF9"  
+                                                             TextAlignment="End" FontAttributes="Bold"/>
+
+                                <Label Grid.Row="2"
+                                       Grid.Column="2"
+                                       FontSize="25" VerticalOptions="Center" HorizontalTextAlignment="Center"  Text="" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+                                
+                                <!--SOLES-->
+                                <Label Grid.Row="3" 
+                                       Grid.Column="0"  
+                                       FontSize="30" 
+                                       VerticalOptions="Center"
+                                       HorizontalTextAlignment="Center" 
+                                       Text="S/."
+                                       FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+                                
+                                <syncfusion:SfNumericTextBox x:Name="txtMontoSolesVenta" 
+                                                             Grid.Row="3" 
+                                                             Grid.Column="1" 
+                                                             ParserMode="Decimal"
+                                                             FontSize="30" 
+                                                             BackgroundColor="#E6EEF9"  
+                                                             TextAlignment="End"
+                                                             FontAttributes="Bold"/>
+
+                                <Label Grid.Row="3" 
+                                       Grid.Column="2" 
+                                       FontSize="25" 
+                                       VerticalOptions="Center"
+                                       HorizontalTextAlignment="Center" 
+                                       Text="" 
+                                       FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+
+                                <Label Grid.Row="4" 
+                                       Grid.Column="0" 
+                                       FontSize="25" 
+                                       VerticalOptions="Center"
+                                       HorizontalTextAlignment="Center" 
+                                       Text="Turno" IsVisible="False"
+                                       FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+                                
+                                <combobox:SfComboBox x:Name="cboTurno"
+                                                     Grid.Row="4" 
+                                                     IsVisible="False"
+                                                     Grid.Column="1"
+                                                     Grid.ColumnSpan="2"  
+                                                     HorizontalOptions="End" 
+                                                     Text="Seleccione"  
+                                                     DropDownTextSize="25"
+                                                     DropDownItemHeight="60"
+                                                     DropDownCornerRadius="10" 
+                                                     SelectedDropDownItemColor="#cddbe6"
+                                                     DropDownTextColor="#005797" 
+                                                     TextSize="30" 
+                                                     DisplayMemberPath="dstppago"/>
+                            </Grid>
+                        </ContentView>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+
+
+        </StackLayout>
+
+    </ContentPage.Content>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary"  Text="Guardar"  Clicked="BtnSave_Clicked" Priority="0"/>
+    </ContentPage.ToolbarItems>
+</ContentPage>

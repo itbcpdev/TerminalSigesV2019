@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:titan="clr-namespace:TerminalSIGES.Views.Lib" 
+            BackgroundColor="#ffffff"   
+            xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+            xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"          
+            xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+            xmlns:local="clr-namespace:TerminalSiges.Views.Lib"
+            Title="Información del Cliente"
+            x:Class="TerminalSiges.Views.Pages.Customer.SearchCustomer">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="20,0,20,0" Margin="0,20,0,0">
+            <StackLayout  x:Name="busyindicator" IsVisible="False" VerticalOptions="FillAndExpand">
+                <ContentView>
+                    <busyindicator:SfBusyIndicator AnimationType="Ball" Title="Cargando..." ViewBoxWidth = "50" ViewBoxHeight="50" Duration="0.5" TextColor="#006ba6" />
+                </ContentView>
+            </StackLayout>
+            <StackLayout VerticalOptions="Start" Orientation="Vertical">
+
+                <StackLayout Orientation="Vertical">
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition x:Name="OrientationGridColumn1" Width="0"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackLayout Grid.Column="0" Grid.Row="0" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                            <Label FontSize="22" 
+                                           VerticalOptions="Start" 
+                                           HorizontalTextAlignment="Start" 
+                                           Text="Placa" 
+                                           FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"/>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                <inputLayout:SfTextInputLayout  FocusedColor="#0450C2"
+                                                                        ContainerBackgroundColor="#E6EEF9"
+                                                                        ContainerType="Outlined"    
+                                                                        HorizontalOptions="FillAndExpand"
+                                                                        ReserveSpaceForAssistiveLabels="False">
+                                    <Entry x:Name="txtPlaca"  Text="{Binding Placa}" FontSize="26" />
+                                </inputLayout:SfTextInputLayout>
+                                <buttons:SfButton  
+                                             IsEnabled="{Binding IsSearch}"
+                                             VerticalOptions="Center"
+                                             BackgroundColor="#005797"  
+                                             BorderColor="#005797" 
+                                             FontAttributes="Bold"
+                                             Text="&#xE773;"
+                                             BorderWidth="0"
+                                             FontSize="40"
+                                             HeightRequest="60"
+                                             WidthRequest="60" 
+                                             FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteSegoe}}"
+                                             CornerRadius="10"
+                                             Clicked="search_placa_click"/>
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout Grid.Column="1" Grid.Row="0" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                            <Label FontSize="22" 
+                                           VerticalOptions="Start" 
+                                           HorizontalTextAlignment="Start" 
+                                           Text="Código" 
+                                           FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"/>
+                            <StackLayout Orientation="Horizontal">
+
+                                <inputLayout:SfTextInputLayout x:Name="txtCodigoDescription"
+                                                                    FocusedColor="#0450C2"
+                                                                    ContainerBackgroundColor="#E6EEF9"
+                                                                    ContainerType="Outlined"    
+                                                                    HorizontalOptions="FillAndExpand"
+                                                                    ReserveSpaceForAssistiveLabels="False">
+                                    <Entry x:Name="txtCodigo"  Text="{Binding Codigo_cliente}" FontSize="26" />
+
+                                </inputLayout:SfTextInputLayout>
+                                <buttons:SfButton 
+                                             IsEnabled="{Binding IsSearch}"
+                                             VerticalOptions="Center"
+                                             BackgroundColor="#005797"  
+                                             BorderColor="#005797" 
+                                             FontAttributes="Bold"
+                                             Text="&#xE773;"
+                                             BorderWidth="0"
+                                             FontSize="40"
+                                             HeightRequest="60"
+                                             WidthRequest="60" 
+                                             FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteSegoe}}"
+                                             CornerRadius="10"
+                                             Clicked="search_Cliente_click">
+                                </buttons:SfButton>
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout x:Name="OrientationStackOne" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Orientation="Vertical" HorizontalOptions="FillAndExpand" >
+                            <Label Text="Tarjeta Afilación" FontSize="22"/>
+                            <StackLayout Orientation="Horizontal">
+
+                                <inputLayout:SfTextInputLayout
+                                                                FocusedColor="#0450C2"
+                                                                ContainerBackgroundColor="#E6EEF9"
+                                                                ContainerType="Outlined" 
+                                                                HorizontalOptions="FillAndExpand"
+                                                                ReserveSpaceForAssistiveLabels="False">
+                                    <Entry Text="{Binding Tarjeta_afiliacion_cliente}" x:Name="txtTarjetaAfiliacion" Keyboard="Numeric"  Completed="search_tarjeta_click" FontSize="26" />
+                                </inputLayout:SfTextInputLayout>
+
+                                <buttons:SfButton IsEnabled="{Binding IsSearch}"
+                                                  HorizontalOptions="Center"
+                                                  VerticalOptions="Center"
+                                                  HorizontalTextAlignment="Center"
+                                                  VerticalTextAlignment="Center"
+                                                  BackgroundColor="#005797"  
+                                                  BorderColor="#005797" 
+                                                  FontAttributes="Bold"
+                                                  Text="&#xE773;"
+                                                  BorderWidth="0"
+                                                  FontSize="40"
+                                                  WidthRequest="60"
+                                                  Clicked="search_tarjeta_click"
+                                                  FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteSegoe}}"
+                                                  HeightRequest="60"
+                                                  CornerRadius="10" >
+                                </buttons:SfButton>
+
+                            </StackLayout>
+                        </StackLayout>
+
+                    </Grid>
+                </StackLayout>
+
+                <StackLayout  x:Name="OrientationStackTwo" Orientation="Vertical">
+
+                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                        <Label Text="RUC" FontSize="22"/>
+
+                        <inputLayout:SfTextInputLayout
+                            FocusedColor="#0450C2"
+                            ContainerBackgroundColor="#E6EEF9"
+                            ContainerType="Outlined" 
+                            HorizontalOptions="FillAndExpand"
+                            ReserveSpaceForAssistiveLabels="False">
+                            <Entry x:Name="txtRuc" Text="{Binding Ruc_cliente}"  Keyboard="Numeric" FontSize="26" />
+                        </inputLayout:SfTextInputLayout>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" >
+
+                        <Label Text="Razón Social" FontSize="22"/>
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+
+                            <inputLayout:SfTextInputLayout      HorizontalOptions="FillAndExpand"
+                                                                FocusedColor="#0450C2"
+                                                                ContainerBackgroundColor="#E6EEF9"
+                                                                ContainerType="Outlined" 
+                                                                ReserveSpaceForAssistiveLabels="False">
+
+                                <Entry x:Name="txtRscliente" Text="{Binding Razon_social_cliente}"  FontSize="26" />
+
+                            </inputLayout:SfTextInputLayout>
+
+                            <buttons:SfButton 
+                                                 IsEnabled="{Binding IsSearch}"
+                                                 HorizontalOptions="Center"
+                                                 VerticalOptions="Center"
+                                                 HorizontalTextAlignment="Center"
+                                                 VerticalTextAlignment="Center"
+                                                 BackgroundColor="#005797"  
+                                                 BorderColor="#005797" 
+                                                 FontAttributes="Bold"
+                                                 Text="&#xE773;"
+                                                 BorderWidth="0"
+                                                 FontSize="40"
+                                                 WidthRequest="60"
+                                                 Clicked="search_rscliente_click"
+                                                 FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteSegoe}}"
+                                                 HeightRequest="60"
+                                                 CornerRadius="10"/>
+
+                        </StackLayout>
+                    </StackLayout>
+
+                </StackLayout>
+
+                <StackLayout  x:Name="OrientationStackThree" Orientation="Vertical">
+
+                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                        <Label Text="Dirección" FontSize="22"/>
+                        <inputLayout:SfTextInputLayout FocusedColor="#0450C2"
+                                                   HorizontalOptions="FillAndExpand"
+                                                   ContainerBackgroundColor="#E6EEF9"
+                                                   ContainerType="Outlined" 
+                                                   ReserveSpaceForAssistiveLabels="False">
+
+                            <Entry x:Name="txtDireccion" Text="{Binding Direccion_cliente}" FontSize="26"/>
+
+                        </inputLayout:SfTextInputLayout>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+
+                        <Label Text="Correo Electrónico" FontSize="22"/>
+                        <inputLayout:SfTextInputLayout ContainerType="Outlined" 
+                                                   HorizontalOptions="FillAndExpand"
+                                                   ReserveSpaceForAssistiveLabels="False"
+                                                   HelperText="Ingrese correo electrónico"
+                                                   ErrorText="Correo invalido"
+                                                   HasError="true">
+
+                            <Entry x:Name="txtEmail"  FontSize="26"/>
+
+                        </inputLayout:SfTextInputLayout>
+
+                    </StackLayout>
+
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary"  Text="Guardar"  Clicked="BtnSave_Clicked" Priority="0"/>
+    </ContentPage.ToolbarItems>
+</ContentPage>

@@ -1,0 +1,1783 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Articulos_Consultar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="val_EmpresaId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_ArticuloId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="val_Tipo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Articulos_ConsultarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Articulos_ConsultarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Articulos_Caracteristicas_Consultar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="val_EmpresaId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="val_LocalId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_ArticuloId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Articulos_Caracteristicas_ConsultarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Articulos_Caracteristicas_ConsultarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Articulos_Alternativos_Consultar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="val_EmpresaId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_ArticuloId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Articulos_Alternativos_ConsultarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Articulos_Alternativos_ConsultarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insumos_Consultar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="val_EmpresaId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_ArticuloId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_InsumoId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insumos_ConsultarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Insumos_ConsultarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Saldos_Consultar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="val_nrotarjeta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Saldos_ConsultarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Saldos_ConsultarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Consultar_Tipo_Cliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="val_clienteid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Consultar_Tipo_ClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Consultar_Tipo_ClienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Saldos_Consultar_Contrato">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="val_nrotarjeta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_nrocontrato" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Saldos_Consultar_ContratoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Saldos_Consultar_ContratoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Saldo_Licitaciones_Actualizar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="val_local" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_cliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_nrocontrato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_nrotarjeta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_mtosoles" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_cantidad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_seriemaq" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_cdtipodoc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_nrodocumento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_mensaje" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Saldo_Licitaciones_ActualizarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Saldo_Licitaciones_ActualizarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Saldo_Licitaciones_Anulacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="val_local" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_cliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_nrocontrato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_nrotarjeta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_mtosoles" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_cantidad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_seriemaq" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_cdtipodoc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_nrodocumento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_mensaje" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Saldo_Licitaciones_AnulacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Saldo_Licitaciones_AnulacionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Saldo_Corporativo_Actualizar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="val_local" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_cliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_nrotarjeta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_mtosoles" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_seriemaq" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_cdtipodoc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_nrodocumento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_mensaje" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Saldo_Corporativo_ActualizarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Saldo_Corporativo_ActualizarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Saldo_Corporativo_Anulacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="val_local" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_cliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_nrotarjeta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_mtosoles" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_seriemaq" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_cdtipodoc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_nrodocumento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_mensaje" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Saldo_Corporativo_AnulacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Saldo_Corporativo_AnulacionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Saldo_Corporativo_Cobranza">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="val_local" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_cliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_nrotarjeta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_mtosoles" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_seriemaq" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_cdtipodoc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_nrodocumento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_mensaje" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Saldo_Corporativo_CobranzaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Saldo_Corporativo_CobranzaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Saldo_Corporativo_Cobranza_Anulacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="val_local" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_cliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_nrotarjeta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_mtosoles" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_seriemaq" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_cdtipodoc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_nrodocumento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_mensaje" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Saldo_Corporativo_Cobranza_AnulacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Saldo_Corporativo_Cobranza_AnulacionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PackVirtual_Consultar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="val_EmpresaId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_ArticuloId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_CdAmarre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_PromocionId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="val_Tipo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PackVirtual_ConsultarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PackVirtual_ConsultarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Precio_Promo_Consultar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="val_EmpresaId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_PromocionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_ArticuloId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="val_Tipo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Precio_Promo_ConsultarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Precio_Promo_ConsultarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Proveedores_Consultar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="val_EmpresaId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_ProveedorId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Proveedores_ConsultarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Proveedores_ConsultarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Proveedore_Articulo_Consultar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="val_EmpresaId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_ProveedorId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_ArticuloId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="val_Tipo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Proveedore_Articulo_ConsultarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Proveedore_Articulo_ConsultarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Categorias_Consultar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="val_GrupoId01" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Categorias_ConsultarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Categorias_ConsultarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Familias_Consultar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="val_GrupoId02" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Familias_ConsultarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Familias_ConsultarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubFamilias_Consultar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="val_GrupoId03" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubFamilias_ConsultarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SubFamilias_ConsultarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UMedida_Consultar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="val_UMedidaId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UMedida_ConsultarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UMedida_ConsultarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Redondeo_Consultar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="val_cat_nemonico" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Redondeo_ConsultarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Redondeo_ConsultarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Almacen_Consultar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="val_EmpresaId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="val_LocalId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="val_AlmacenId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="val_Tipo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Almacen_ConsultarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Almacen_ConsultarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Estado_Proceso_WebService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="val_EmpresaId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="val_LocalId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Estado_Proceso_WebServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Estado_Proceso_WebServiceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Orden_Compra_Consultar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="val_EmpresaId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="val_LocalId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_NroPedido" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Orden_Compra_ConsultarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Orden_Compra_ConsultarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Orden_Compra_Detalle_Consultar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="val_EmpresaId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="val_LocalId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_NroPedido" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="val_Item" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Orden_Compra_Detalle_ConsultarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Orden_Compra_Detalle_ConsultarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EasyTaxiCODESFile_Consulta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="val_value" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_localId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_nroseriemaq" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_tipodocid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_nrodocumento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_fecsistema" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_hora" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_cantidad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EasyTaxiCODESFile_ConsultaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EasyTaxiCODESFile_ConsultaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EasyTaxiCODESFile_Consulta_Documento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="val_localId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_nroseriemaq" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_tipodocid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_nrodocumento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EasyTaxiCODESFile_Consulta_DocumentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EasyTaxiCODESFile_Consulta_DocumentoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EasyTaxiCODESFile_Liberar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="val_localId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_nroseriemaq" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_tipodocid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_nrodocumento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EasyTaxiCODESFile_LiberarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EasyTaxiCODESFile_LiberarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EasyTaxiCODESFile_Anular">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="val_localId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_nroseriemaq" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_tipodocid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_nrodocumento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EasyTaxiCODESFile_AnularResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EasyTaxiCODESFile_AnularResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EasyTaxiCODESFile_Anexado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="val_localId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_nroseriemaq" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_tipodocid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_nrodocumento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_nroplaca" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EasyTaxiCODESFile_AnexadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EasyTaxiCODESFile_AnexadoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Clientes_Consultar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="val_EmpresaId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_ClienteId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="val_TipoCliente" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Clientes_ConsultarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Clientes_ConsultarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LineaCredito_SaldoClid_Consultar">
+        <s:complexType />
+      </s:element>
+      <s:element name="LineaCredito_SaldoClid_ConsultarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LineaCredito_SaldoClid_ConsultarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LineaCredito_SaldoClic_Consultar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="val_EmpresaId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="val_LocalId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="val_Cdcliente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LineaCredito_SaldoClic_ConsultarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LineaCredito_SaldoClic_ConsultarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Articulos_ConsultarSoapIn">
+    <wsdl:part name="parameters" element="tns:Articulos_Consultar" />
+  </wsdl:message>
+  <wsdl:message name="Articulos_ConsultarSoapOut">
+    <wsdl:part name="parameters" element="tns:Articulos_ConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="Articulos_Caracteristicas_ConsultarSoapIn">
+    <wsdl:part name="parameters" element="tns:Articulos_Caracteristicas_Consultar" />
+  </wsdl:message>
+  <wsdl:message name="Articulos_Caracteristicas_ConsultarSoapOut">
+    <wsdl:part name="parameters" element="tns:Articulos_Caracteristicas_ConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="Articulos_Alternativos_ConsultarSoapIn">
+    <wsdl:part name="parameters" element="tns:Articulos_Alternativos_Consultar" />
+  </wsdl:message>
+  <wsdl:message name="Articulos_Alternativos_ConsultarSoapOut">
+    <wsdl:part name="parameters" element="tns:Articulos_Alternativos_ConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="Insumos_ConsultarSoapIn">
+    <wsdl:part name="parameters" element="tns:Insumos_Consultar" />
+  </wsdl:message>
+  <wsdl:message name="Insumos_ConsultarSoapOut">
+    <wsdl:part name="parameters" element="tns:Insumos_ConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="Saldos_ConsultarSoapIn">
+    <wsdl:part name="parameters" element="tns:Saldos_Consultar" />
+  </wsdl:message>
+  <wsdl:message name="Saldos_ConsultarSoapOut">
+    <wsdl:part name="parameters" element="tns:Saldos_ConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="Consultar_Tipo_ClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:Consultar_Tipo_Cliente" />
+  </wsdl:message>
+  <wsdl:message name="Consultar_Tipo_ClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:Consultar_Tipo_ClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="Saldos_Consultar_ContratoSoapIn">
+    <wsdl:part name="parameters" element="tns:Saldos_Consultar_Contrato" />
+  </wsdl:message>
+  <wsdl:message name="Saldos_Consultar_ContratoSoapOut">
+    <wsdl:part name="parameters" element="tns:Saldos_Consultar_ContratoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Saldo_Licitaciones_ActualizarSoapIn">
+    <wsdl:part name="parameters" element="tns:Saldo_Licitaciones_Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="Saldo_Licitaciones_ActualizarSoapOut">
+    <wsdl:part name="parameters" element="tns:Saldo_Licitaciones_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="Saldo_Licitaciones_AnulacionSoapIn">
+    <wsdl:part name="parameters" element="tns:Saldo_Licitaciones_Anulacion" />
+  </wsdl:message>
+  <wsdl:message name="Saldo_Licitaciones_AnulacionSoapOut">
+    <wsdl:part name="parameters" element="tns:Saldo_Licitaciones_AnulacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Saldo_Corporativo_ActualizarSoapIn">
+    <wsdl:part name="parameters" element="tns:Saldo_Corporativo_Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="Saldo_Corporativo_ActualizarSoapOut">
+    <wsdl:part name="parameters" element="tns:Saldo_Corporativo_ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="Saldo_Corporativo_AnulacionSoapIn">
+    <wsdl:part name="parameters" element="tns:Saldo_Corporativo_Anulacion" />
+  </wsdl:message>
+  <wsdl:message name="Saldo_Corporativo_AnulacionSoapOut">
+    <wsdl:part name="parameters" element="tns:Saldo_Corporativo_AnulacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Saldo_Corporativo_CobranzaSoapIn">
+    <wsdl:part name="parameters" element="tns:Saldo_Corporativo_Cobranza" />
+  </wsdl:message>
+  <wsdl:message name="Saldo_Corporativo_CobranzaSoapOut">
+    <wsdl:part name="parameters" element="tns:Saldo_Corporativo_CobranzaResponse" />
+  </wsdl:message>
+  <wsdl:message name="Saldo_Corporativo_Cobranza_AnulacionSoapIn">
+    <wsdl:part name="parameters" element="tns:Saldo_Corporativo_Cobranza_Anulacion" />
+  </wsdl:message>
+  <wsdl:message name="Saldo_Corporativo_Cobranza_AnulacionSoapOut">
+    <wsdl:part name="parameters" element="tns:Saldo_Corporativo_Cobranza_AnulacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="PackVirtual_ConsultarSoapIn">
+    <wsdl:part name="parameters" element="tns:PackVirtual_Consultar" />
+  </wsdl:message>
+  <wsdl:message name="PackVirtual_ConsultarSoapOut">
+    <wsdl:part name="parameters" element="tns:PackVirtual_ConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="Precio_Promo_ConsultarSoapIn">
+    <wsdl:part name="parameters" element="tns:Precio_Promo_Consultar" />
+  </wsdl:message>
+  <wsdl:message name="Precio_Promo_ConsultarSoapOut">
+    <wsdl:part name="parameters" element="tns:Precio_Promo_ConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="Proveedores_ConsultarSoapIn">
+    <wsdl:part name="parameters" element="tns:Proveedores_Consultar" />
+  </wsdl:message>
+  <wsdl:message name="Proveedores_ConsultarSoapOut">
+    <wsdl:part name="parameters" element="tns:Proveedores_ConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="Proveedore_Articulo_ConsultarSoapIn">
+    <wsdl:part name="parameters" element="tns:Proveedore_Articulo_Consultar" />
+  </wsdl:message>
+  <wsdl:message name="Proveedore_Articulo_ConsultarSoapOut">
+    <wsdl:part name="parameters" element="tns:Proveedore_Articulo_ConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="Categorias_ConsultarSoapIn">
+    <wsdl:part name="parameters" element="tns:Categorias_Consultar" />
+  </wsdl:message>
+  <wsdl:message name="Categorias_ConsultarSoapOut">
+    <wsdl:part name="parameters" element="tns:Categorias_ConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="Familias_ConsultarSoapIn">
+    <wsdl:part name="parameters" element="tns:Familias_Consultar" />
+  </wsdl:message>
+  <wsdl:message name="Familias_ConsultarSoapOut">
+    <wsdl:part name="parameters" element="tns:Familias_ConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubFamilias_ConsultarSoapIn">
+    <wsdl:part name="parameters" element="tns:SubFamilias_Consultar" />
+  </wsdl:message>
+  <wsdl:message name="SubFamilias_ConsultarSoapOut">
+    <wsdl:part name="parameters" element="tns:SubFamilias_ConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="UMedida_ConsultarSoapIn">
+    <wsdl:part name="parameters" element="tns:UMedida_Consultar" />
+  </wsdl:message>
+  <wsdl:message name="UMedida_ConsultarSoapOut">
+    <wsdl:part name="parameters" element="tns:UMedida_ConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="Redondeo_ConsultarSoapIn">
+    <wsdl:part name="parameters" element="tns:Redondeo_Consultar" />
+  </wsdl:message>
+  <wsdl:message name="Redondeo_ConsultarSoapOut">
+    <wsdl:part name="parameters" element="tns:Redondeo_ConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="Almacen_ConsultarSoapIn">
+    <wsdl:part name="parameters" element="tns:Almacen_Consultar" />
+  </wsdl:message>
+  <wsdl:message name="Almacen_ConsultarSoapOut">
+    <wsdl:part name="parameters" element="tns:Almacen_ConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="Estado_Proceso_WebServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:Estado_Proceso_WebService" />
+  </wsdl:message>
+  <wsdl:message name="Estado_Proceso_WebServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:Estado_Proceso_WebServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="Orden_Compra_ConsultarSoapIn">
+    <wsdl:part name="parameters" element="tns:Orden_Compra_Consultar" />
+  </wsdl:message>
+  <wsdl:message name="Orden_Compra_ConsultarSoapOut">
+    <wsdl:part name="parameters" element="tns:Orden_Compra_ConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="Orden_Compra_Detalle_ConsultarSoapIn">
+    <wsdl:part name="parameters" element="tns:Orden_Compra_Detalle_Consultar" />
+  </wsdl:message>
+  <wsdl:message name="Orden_Compra_Detalle_ConsultarSoapOut">
+    <wsdl:part name="parameters" element="tns:Orden_Compra_Detalle_ConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="EasyTaxiCODESFile_ConsultaSoapIn">
+    <wsdl:part name="parameters" element="tns:EasyTaxiCODESFile_Consulta" />
+  </wsdl:message>
+  <wsdl:message name="EasyTaxiCODESFile_ConsultaSoapOut">
+    <wsdl:part name="parameters" element="tns:EasyTaxiCODESFile_ConsultaResponse" />
+  </wsdl:message>
+  <wsdl:message name="EasyTaxiCODESFile_Consulta_DocumentoSoapIn">
+    <wsdl:part name="parameters" element="tns:EasyTaxiCODESFile_Consulta_Documento" />
+  </wsdl:message>
+  <wsdl:message name="EasyTaxiCODESFile_Consulta_DocumentoSoapOut">
+    <wsdl:part name="parameters" element="tns:EasyTaxiCODESFile_Consulta_DocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="EasyTaxiCODESFile_LiberarSoapIn">
+    <wsdl:part name="parameters" element="tns:EasyTaxiCODESFile_Liberar" />
+  </wsdl:message>
+  <wsdl:message name="EasyTaxiCODESFile_LiberarSoapOut">
+    <wsdl:part name="parameters" element="tns:EasyTaxiCODESFile_LiberarResponse" />
+  </wsdl:message>
+  <wsdl:message name="EasyTaxiCODESFile_AnularSoapIn">
+    <wsdl:part name="parameters" element="tns:EasyTaxiCODESFile_Anular" />
+  </wsdl:message>
+  <wsdl:message name="EasyTaxiCODESFile_AnularSoapOut">
+    <wsdl:part name="parameters" element="tns:EasyTaxiCODESFile_AnularResponse" />
+  </wsdl:message>
+  <wsdl:message name="EasyTaxiCODESFile_AnexadoSoapIn">
+    <wsdl:part name="parameters" element="tns:EasyTaxiCODESFile_Anexado" />
+  </wsdl:message>
+  <wsdl:message name="EasyTaxiCODESFile_AnexadoSoapOut">
+    <wsdl:part name="parameters" element="tns:EasyTaxiCODESFile_AnexadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Clientes_ConsultarSoapIn">
+    <wsdl:part name="parameters" element="tns:Clientes_Consultar" />
+  </wsdl:message>
+  <wsdl:message name="Clientes_ConsultarSoapOut">
+    <wsdl:part name="parameters" element="tns:Clientes_ConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="LineaCredito_SaldoClid_ConsultarSoapIn">
+    <wsdl:part name="parameters" element="tns:LineaCredito_SaldoClid_Consultar" />
+  </wsdl:message>
+  <wsdl:message name="LineaCredito_SaldoClid_ConsultarSoapOut">
+    <wsdl:part name="parameters" element="tns:LineaCredito_SaldoClid_ConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="LineaCredito_SaldoClic_ConsultarSoapIn">
+    <wsdl:part name="parameters" element="tns:LineaCredito_SaldoClic_Consultar" />
+  </wsdl:message>
+  <wsdl:message name="LineaCredito_SaldoClic_ConsultarSoapOut">
+    <wsdl:part name="parameters" element="tns:LineaCredito_SaldoClic_ConsultarResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Service1Soap">
+    <wsdl:operation name="Articulos_Consultar">
+      <wsdl:input message="tns:Articulos_ConsultarSoapIn" />
+      <wsdl:output message="tns:Articulos_ConsultarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Articulos_Caracteristicas_Consultar">
+      <wsdl:input message="tns:Articulos_Caracteristicas_ConsultarSoapIn" />
+      <wsdl:output message="tns:Articulos_Caracteristicas_ConsultarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Articulos_Alternativos_Consultar">
+      <wsdl:input message="tns:Articulos_Alternativos_ConsultarSoapIn" />
+      <wsdl:output message="tns:Articulos_Alternativos_ConsultarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Insumos_Consultar">
+      <wsdl:input message="tns:Insumos_ConsultarSoapIn" />
+      <wsdl:output message="tns:Insumos_ConsultarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Saldos_Consultar">
+      <wsdl:input message="tns:Saldos_ConsultarSoapIn" />
+      <wsdl:output message="tns:Saldos_ConsultarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Consultar_Tipo_Cliente">
+      <wsdl:input message="tns:Consultar_Tipo_ClienteSoapIn" />
+      <wsdl:output message="tns:Consultar_Tipo_ClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Saldos_Consultar_Contrato">
+      <wsdl:input message="tns:Saldos_Consultar_ContratoSoapIn" />
+      <wsdl:output message="tns:Saldos_Consultar_ContratoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Saldo_Licitaciones_Actualizar">
+      <wsdl:input message="tns:Saldo_Licitaciones_ActualizarSoapIn" />
+      <wsdl:output message="tns:Saldo_Licitaciones_ActualizarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Saldo_Licitaciones_Anulacion">
+      <wsdl:input message="tns:Saldo_Licitaciones_AnulacionSoapIn" />
+      <wsdl:output message="tns:Saldo_Licitaciones_AnulacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Saldo_Corporativo_Actualizar">
+      <wsdl:input message="tns:Saldo_Corporativo_ActualizarSoapIn" />
+      <wsdl:output message="tns:Saldo_Corporativo_ActualizarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Saldo_Corporativo_Anulacion">
+      <wsdl:input message="tns:Saldo_Corporativo_AnulacionSoapIn" />
+      <wsdl:output message="tns:Saldo_Corporativo_AnulacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Saldo_Corporativo_Cobranza">
+      <wsdl:input message="tns:Saldo_Corporativo_CobranzaSoapIn" />
+      <wsdl:output message="tns:Saldo_Corporativo_CobranzaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Saldo_Corporativo_Cobranza_Anulacion">
+      <wsdl:input message="tns:Saldo_Corporativo_Cobranza_AnulacionSoapIn" />
+      <wsdl:output message="tns:Saldo_Corporativo_Cobranza_AnulacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PackVirtual_Consultar">
+      <wsdl:input message="tns:PackVirtual_ConsultarSoapIn" />
+      <wsdl:output message="tns:PackVirtual_ConsultarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Precio_Promo_Consultar">
+      <wsdl:input message="tns:Precio_Promo_ConsultarSoapIn" />
+      <wsdl:output message="tns:Precio_Promo_ConsultarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Proveedores_Consultar">
+      <wsdl:input message="tns:Proveedores_ConsultarSoapIn" />
+      <wsdl:output message="tns:Proveedores_ConsultarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Proveedore_Articulo_Consultar">
+      <wsdl:input message="tns:Proveedore_Articulo_ConsultarSoapIn" />
+      <wsdl:output message="tns:Proveedore_Articulo_ConsultarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Categorias_Consultar">
+      <wsdl:input message="tns:Categorias_ConsultarSoapIn" />
+      <wsdl:output message="tns:Categorias_ConsultarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Familias_Consultar">
+      <wsdl:input message="tns:Familias_ConsultarSoapIn" />
+      <wsdl:output message="tns:Familias_ConsultarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubFamilias_Consultar">
+      <wsdl:input message="tns:SubFamilias_ConsultarSoapIn" />
+      <wsdl:output message="tns:SubFamilias_ConsultarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UMedida_Consultar">
+      <wsdl:input message="tns:UMedida_ConsultarSoapIn" />
+      <wsdl:output message="tns:UMedida_ConsultarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Redondeo_Consultar">
+      <wsdl:input message="tns:Redondeo_ConsultarSoapIn" />
+      <wsdl:output message="tns:Redondeo_ConsultarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Almacen_Consultar">
+      <wsdl:input message="tns:Almacen_ConsultarSoapIn" />
+      <wsdl:output message="tns:Almacen_ConsultarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Estado_Proceso_WebService">
+      <wsdl:input message="tns:Estado_Proceso_WebServiceSoapIn" />
+      <wsdl:output message="tns:Estado_Proceso_WebServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Orden_Compra_Consultar">
+      <wsdl:input message="tns:Orden_Compra_ConsultarSoapIn" />
+      <wsdl:output message="tns:Orden_Compra_ConsultarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Orden_Compra_Detalle_Consultar">
+      <wsdl:input message="tns:Orden_Compra_Detalle_ConsultarSoapIn" />
+      <wsdl:output message="tns:Orden_Compra_Detalle_ConsultarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EasyTaxiCODESFile_Consulta">
+      <wsdl:input message="tns:EasyTaxiCODESFile_ConsultaSoapIn" />
+      <wsdl:output message="tns:EasyTaxiCODESFile_ConsultaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EasyTaxiCODESFile_Consulta_Documento">
+      <wsdl:input message="tns:EasyTaxiCODESFile_Consulta_DocumentoSoapIn" />
+      <wsdl:output message="tns:EasyTaxiCODESFile_Consulta_DocumentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EasyTaxiCODESFile_Liberar">
+      <wsdl:input message="tns:EasyTaxiCODESFile_LiberarSoapIn" />
+      <wsdl:output message="tns:EasyTaxiCODESFile_LiberarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EasyTaxiCODESFile_Anular">
+      <wsdl:input message="tns:EasyTaxiCODESFile_AnularSoapIn" />
+      <wsdl:output message="tns:EasyTaxiCODESFile_AnularSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EasyTaxiCODESFile_Anexado">
+      <wsdl:input message="tns:EasyTaxiCODESFile_AnexadoSoapIn" />
+      <wsdl:output message="tns:EasyTaxiCODESFile_AnexadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Clientes_Consultar">
+      <wsdl:input message="tns:Clientes_ConsultarSoapIn" />
+      <wsdl:output message="tns:Clientes_ConsultarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LineaCredito_SaldoClid_Consultar">
+      <wsdl:input message="tns:LineaCredito_SaldoClid_ConsultarSoapIn" />
+      <wsdl:output message="tns:LineaCredito_SaldoClid_ConsultarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LineaCredito_SaldoClic_Consultar">
+      <wsdl:input message="tns:LineaCredito_SaldoClic_ConsultarSoapIn" />
+      <wsdl:output message="tns:LineaCredito_SaldoClic_ConsultarSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Articulos_Consultar">
+      <soap:operation soapAction="http://tempuri.org/Articulos_Consultar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Articulos_Caracteristicas_Consultar">
+      <soap:operation soapAction="http://tempuri.org/Articulos_Caracteristicas_Consultar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Articulos_Alternativos_Consultar">
+      <soap:operation soapAction="http://tempuri.org/Articulos_Alternativos_Consultar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insumos_Consultar">
+      <soap:operation soapAction="http://tempuri.org/Insumos_Consultar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Saldos_Consultar">
+      <soap:operation soapAction="http://tempuri.org/Saldos_Consultar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Consultar_Tipo_Cliente">
+      <soap:operation soapAction="http://tempuri.org/Consultar_Tipo_Cliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Saldos_Consultar_Contrato">
+      <soap:operation soapAction="http://tempuri.org/Saldos_Consultar_Contrato" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Saldo_Licitaciones_Actualizar">
+      <soap:operation soapAction="http://tempuri.org/Saldo_Licitaciones_Actualizar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Saldo_Licitaciones_Anulacion">
+      <soap:operation soapAction="http://tempuri.org/Saldo_Licitaciones_Anulacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Saldo_Corporativo_Actualizar">
+      <soap:operation soapAction="http://tempuri.org/Saldo_Corporativo_Actualizar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Saldo_Corporativo_Anulacion">
+      <soap:operation soapAction="http://tempuri.org/Saldo_Corporativo_Anulacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Saldo_Corporativo_Cobranza">
+      <soap:operation soapAction="http://tempuri.org/Saldo_Corporativo_Cobranza" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Saldo_Corporativo_Cobranza_Anulacion">
+      <soap:operation soapAction="http://tempuri.org/Saldo_Corporativo_Cobranza_Anulacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PackVirtual_Consultar">
+      <soap:operation soapAction="http://tempuri.org/PackVirtual_Consultar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Precio_Promo_Consultar">
+      <soap:operation soapAction="http://tempuri.org/Precio_Promo_Consultar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Proveedores_Consultar">
+      <soap:operation soapAction="http://tempuri.org/Proveedores_Consultar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Proveedore_Articulo_Consultar">
+      <soap:operation soapAction="http://tempuri.org/Proveedore_Articulo_Consultar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Categorias_Consultar">
+      <soap:operation soapAction="http://tempuri.org/Categorias_Consultar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Familias_Consultar">
+      <soap:operation soapAction="http://tempuri.org/Familias_Consultar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubFamilias_Consultar">
+      <soap:operation soapAction="http://tempuri.org/SubFamilias_Consultar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UMedida_Consultar">
+      <soap:operation soapAction="http://tempuri.org/UMedida_Consultar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Redondeo_Consultar">
+      <soap:operation soapAction="http://tempuri.org/Redondeo_Consultar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Almacen_Consultar">
+      <soap:operation soapAction="http://tempuri.org/Almacen_Consultar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Estado_Proceso_WebService">
+      <soap:operation soapAction="http://tempuri.org/Estado_Proceso_WebService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Orden_Compra_Consultar">
+      <soap:operation soapAction="http://tempuri.org/Orden_Compra_Consultar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Orden_Compra_Detalle_Consultar">
+      <soap:operation soapAction="http://tempuri.org/Orden_Compra_Detalle_Consultar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EasyTaxiCODESFile_Consulta">
+      <soap:operation soapAction="http://tempuri.org/EasyTaxiCODESFile_Consulta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EasyTaxiCODESFile_Consulta_Documento">
+      <soap:operation soapAction="http://tempuri.org/EasyTaxiCODESFile_Consulta_Documento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EasyTaxiCODESFile_Liberar">
+      <soap:operation soapAction="http://tempuri.org/EasyTaxiCODESFile_Liberar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EasyTaxiCODESFile_Anular">
+      <soap:operation soapAction="http://tempuri.org/EasyTaxiCODESFile_Anular" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EasyTaxiCODESFile_Anexado">
+      <soap:operation soapAction="http://tempuri.org/EasyTaxiCODESFile_Anexado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Clientes_Consultar">
+      <soap:operation soapAction="http://tempuri.org/Clientes_Consultar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LineaCredito_SaldoClid_Consultar">
+      <soap:operation soapAction="http://tempuri.org/LineaCredito_SaldoClid_Consultar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LineaCredito_SaldoClic_Consultar">
+      <soap:operation soapAction="http://tempuri.org/LineaCredito_SaldoClic_Consultar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Articulos_Consultar">
+      <soap12:operation soapAction="http://tempuri.org/Articulos_Consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Articulos_Caracteristicas_Consultar">
+      <soap12:operation soapAction="http://tempuri.org/Articulos_Caracteristicas_Consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Articulos_Alternativos_Consultar">
+      <soap12:operation soapAction="http://tempuri.org/Articulos_Alternativos_Consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insumos_Consultar">
+      <soap12:operation soapAction="http://tempuri.org/Insumos_Consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Saldos_Consultar">
+      <soap12:operation soapAction="http://tempuri.org/Saldos_Consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Consultar_Tipo_Cliente">
+      <soap12:operation soapAction="http://tempuri.org/Consultar_Tipo_Cliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Saldos_Consultar_Contrato">
+      <soap12:operation soapAction="http://tempuri.org/Saldos_Consultar_Contrato" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Saldo_Licitaciones_Actualizar">
+      <soap12:operation soapAction="http://tempuri.org/Saldo_Licitaciones_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Saldo_Licitaciones_Anulacion">
+      <soap12:operation soapAction="http://tempuri.org/Saldo_Licitaciones_Anulacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Saldo_Corporativo_Actualizar">
+      <soap12:operation soapAction="http://tempuri.org/Saldo_Corporativo_Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Saldo_Corporativo_Anulacion">
+      <soap12:operation soapAction="http://tempuri.org/Saldo_Corporativo_Anulacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Saldo_Corporativo_Cobranza">
+      <soap12:operation soapAction="http://tempuri.org/Saldo_Corporativo_Cobranza" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Saldo_Corporativo_Cobranza_Anulacion">
+      <soap12:operation soapAction="http://tempuri.org/Saldo_Corporativo_Cobranza_Anulacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PackVirtual_Consultar">
+      <soap12:operation soapAction="http://tempuri.org/PackVirtual_Consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Precio_Promo_Consultar">
+      <soap12:operation soapAction="http://tempuri.org/Precio_Promo_Consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Proveedores_Consultar">
+      <soap12:operation soapAction="http://tempuri.org/Proveedores_Consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Proveedore_Articulo_Consultar">
+      <soap12:operation soapAction="http://tempuri.org/Proveedore_Articulo_Consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Categorias_Consultar">
+      <soap12:operation soapAction="http://tempuri.org/Categorias_Consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Familias_Consultar">
+      <soap12:operation soapAction="http://tempuri.org/Familias_Consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubFamilias_Consultar">
+      <soap12:operation soapAction="http://tempuri.org/SubFamilias_Consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UMedida_Consultar">
+      <soap12:operation soapAction="http://tempuri.org/UMedida_Consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Redondeo_Consultar">
+      <soap12:operation soapAction="http://tempuri.org/Redondeo_Consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Almacen_Consultar">
+      <soap12:operation soapAction="http://tempuri.org/Almacen_Consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Estado_Proceso_WebService">
+      <soap12:operation soapAction="http://tempuri.org/Estado_Proceso_WebService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Orden_Compra_Consultar">
+      <soap12:operation soapAction="http://tempuri.org/Orden_Compra_Consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Orden_Compra_Detalle_Consultar">
+      <soap12:operation soapAction="http://tempuri.org/Orden_Compra_Detalle_Consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EasyTaxiCODESFile_Consulta">
+      <soap12:operation soapAction="http://tempuri.org/EasyTaxiCODESFile_Consulta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EasyTaxiCODESFile_Consulta_Documento">
+      <soap12:operation soapAction="http://tempuri.org/EasyTaxiCODESFile_Consulta_Documento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EasyTaxiCODESFile_Liberar">
+      <soap12:operation soapAction="http://tempuri.org/EasyTaxiCODESFile_Liberar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EasyTaxiCODESFile_Anular">
+      <soap12:operation soapAction="http://tempuri.org/EasyTaxiCODESFile_Anular" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EasyTaxiCODESFile_Anexado">
+      <soap12:operation soapAction="http://tempuri.org/EasyTaxiCODESFile_Anexado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Clientes_Consultar">
+      <soap12:operation soapAction="http://tempuri.org/Clientes_Consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LineaCredito_SaldoClid_Consultar">
+      <soap12:operation soapAction="http://tempuri.org/LineaCredito_SaldoClid_Consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LineaCredito_SaldoClic_Consultar">
+      <soap12:operation soapAction="http://tempuri.org/LineaCredito_SaldoClic_Consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="Service1Soap" binding="tns:Service1Soap">
+      <soap:address location="http://cristhofer.ngrok.io/Ws_Tienda/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1Soap12" binding="tns:Service1Soap12">
+      <soap12:address location="http://cristhofer.ngrok.io/Ws_Tienda/Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

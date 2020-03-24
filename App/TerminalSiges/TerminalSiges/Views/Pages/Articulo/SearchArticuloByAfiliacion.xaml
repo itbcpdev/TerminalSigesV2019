@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:titan="clr-namespace:TerminalSIGES.Views.Lib" 
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             x:Class="TerminalSiges.Views.Pages.Articulo.SearchArticuloByAfiliacion"
+             Title="Listado de Productos">
+    <ContentPage.Content>
+        <StackLayout  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="5,5">
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="10,0">
+
+                <BoxView  HeightRequest="3" HorizontalOptions="FillAndExpand" Color="#1c4081" />
+
+                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" BackgroundColor="#cddbe6">
+
+                    <Label Text="Código o Descripción" FontSize="22"/>
+                    <inputLayout:SfTextInputLayout FocusedColor="#0450C2"
+                                                   ContainerBackgroundColor="#E6EEF9"
+                                                   ContainerType="Outlined" 
+                                                   HorizontalOptions="FillAndExpand"
+                                                   ReserveSpaceForAssistiveLabels="False">
+                        <Entry x:Name="txtCodigoProducto" Text="{Binding Codigo}" FontSize="26" TextChanged="_TextChanged" />
+                    </inputLayout:SfTextInputLayout>
+                    
+                </StackLayout>
+
+                <BoxView  HeightRequest="3" HorizontalOptions="FillAndExpand" Color="#1c4081" />
+
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40*" />
+                            <ColumnDefinition Width="30*" />
+                            <ColumnDefinition Width="30*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Row="0" 
+                               Grid.Column="0" 
+                               FontSize="20"     
+                               Text="Descripción"  
+                               HorizontalTextAlignment="Center"                             
+                               FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"/>
+
+                        <Label Grid.Row="0" 
+                               Grid.Column="1" 
+                               FontSize="20"   
+                               Text="Tipo"   
+                               HorizontalTextAlignment="Center"     
+                               FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"/>
+
+                        <Label Grid.Row="0" 
+                               Grid.Column="2" 
+                               FontSize="20"  
+                               Text="Valor"     
+                               HorizontalTextAlignment="Center"  
+                               FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"/>
+
+                    </Grid>
+
+                    <BoxView  HeightRequest="2" WidthRequest="10" Color="#1c4081" />
+
+                    <ListView HorizontalOptions="FillAndExpand"
+                              VerticalOptions="FillAndExpand"
+                              HasUnevenRows="True"
+                              SeparatorColor="#cddbe6"
+                              ItemTapped="ListService_OnItemTapped"
+                              ItemsSource="{Binding Articulos}"
+                              Margin="0,0">
+                        <ListView.ItemTemplate>
+
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Margin="0,2"  BackgroundColor="#cddbe6">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="40*" />
+                                                <ColumnDefinition Width="30*" />
+                                                <ColumnDefinition Width="30*" />
+                                            </Grid.ColumnDefinitions>
+
+
+                                            <Label Grid.Row="0" 
+                                                   Grid.Column="0" 
+                                                   FontSize="20"  
+                                                   Text="{Binding dsarticulo}"    
+                                                   HorizontalTextAlignment="Start"    
+                                                   FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+
+                                            <Label Grid.Row="0" 
+                                                   Grid.Column="1" 
+                                                   FontSize="20"    
+                                                   Text="{Binding config}"      
+                                                   HorizontalTextAlignment="Center"                                                   
+                                                   FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+
+                                            <Label Grid.Row="0" 
+                                                   Grid.Column="2" 
+                                                   FontSize="20"   
+                                                   Text="{Binding valor_puntos}"   
+                                                   HorizontalTextAlignment="Center"     
+                                                   FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+
+                                        </Grid>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

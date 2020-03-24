@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:titan="clr-namespace:TerminalSIGES.Views.Lib" 
+            BackgroundColor="#ffffff"  
+            xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+            xmlns:sfListView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms" 
+            xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"       
+            Title="Procesando depositos"
+             x:Class="TerminalSiges.Views.Pages.Depositos.DepositoReporte">
+    <ContentPage.Content>
+        <StackLayout Margin="10,0,10,30"  Padding="10,0,10,0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+            <ContentView  HorizontalOptions="Center"  >
+                <Label VerticalOptions="Center" Font="30" HorizontalOptions = "Center" HorizontalTextAlignment="Center" Text="Lista de Depositos" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"  >
+                    <Label.Effects>
+                        <titan:UnderlineEffect />
+                    </Label.Effects>
+                </Label>
+            </ContentView>
+            <ContentView x:Name="busyindicator" IsVisible="True" >
+                <busyindicator:SfBusyIndicator AnimationType="Ball" Title="Cargando..." ViewBoxWidth = "25" ViewBoxHeight="25" Duration="0.5" TextColor="#006ba6" />
+            </ContentView>
+            <Frame     BorderColor="#006ba6"  HorizontalOptions="CenterAndExpand" Padding="10,10" IsClippedToBounds="True" HasShadow="True" x:Name="frmlista" IsVisible="False" >
+                <StackLayout>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="25*" />
+                            <ColumnDefinition Width="25*" />
+                            <ColumnDefinition Width="25*" />
+                            <ColumnDefinition Width="25*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Row="0" 
+                                           Grid.Column="0" 
+                                           FontSize="20"   
+                                           Text="Nro Deposito"  
+                                           HorizontalTextAlignment="Center"   
+                                           FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"/>
+
+                        <Label Grid.Row="0"
+                                           Grid.Column="1" 
+                                           FontSize="20"  
+                                           Text="Tipo de Pago" 
+                                           HorizontalTextAlignment="Center"    
+                                           FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"/>
+
+                        <Label Grid.Row="0" 
+                                           Grid.Column="2" 
+                                           FontSize="20" 
+                                           Text="Soles"   
+                                           HorizontalTextAlignment="Center" 
+                                           FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"/>
+
+                        <Label Grid.Row="0" 
+                                           Grid.Column="3"  
+                                           FontSize="20"
+                                           HorizontalTextAlignment="Center"
+                                           Text="Dolares" 
+                                           FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"/>
+
+                    </Grid>
+                    <BoxView  HeightRequest="2" WidthRequest="10" Color="#1c4081" />
+
+                    <Grid x:Name="gridConDepositos">
+                        <sfListView:SfListView x:Name="listView" 
+                                                        AllowSwiping="True"
+                                                        SwipeOffset="120" 
+                                                        SwipeThreshold="30" 
+                                                        ItemSize="100" 
+                                                        HorizontalOptions="FillAndExpand"
+                                                        VerticalOptions="FillAndExpand"
+                                                        ItemSpacing="5,0,0,0"
+                                                        SwipeStarted="ListView_SwipeStarted" 
+                                                        SwipeEnded="ListView_SwipeEnded" >
+                            <sfListView:SfListView.LeftSwipeTemplate>
+                                <DataTemplate x:Name="LeftSwipeTemplate">
+                                    <Grid Margin="0,10">
+                                        <Grid BackgroundColor="#DC595F" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Column="0">
+                                            <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                                                <Image Grid.Column="0"
+                                                                Grid.Row="0"
+                                                                BackgroundColor="Transparent"
+                                                                HeightRequest="65"                                                                 
+                                                                WidthRequest="65"   
+                                                                Source="Delete.png"
+                                                                BindingContextChanged="rightImage_BindingContextChanged" />
+                                            </Grid>
+                                        </Grid>
+                                    </Grid>
+                                </DataTemplate>
+                            </sfListView:SfListView.LeftSwipeTemplate>
+                            <sfListView:SfListView.ItemTemplate>
+                                <DataTemplate>
+
+                                    <ViewCell>
+
+                                        <StackLayout Margin="0,10"  BackgroundColor="#cddbe6">
+                                            <Grid Padding="10" >
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto" />
+                                                    <RowDefinition Height="1" />
+                                                    <RowDefinition Height="Auto" />
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="25*" />
+                                                    <ColumnDefinition Width="25*" />
+                                                    <ColumnDefinition Width="25*" />
+                                                    <ColumnDefinition Width="25*" />
+
+                                                </Grid.ColumnDefinitions>
+                                                <Label    Grid.Row="0" 
+                                                          Grid.Column="0"
+                                                          FontSize="20"  
+                                                          Text="{Binding info}"       
+                                                          HorizontalTextAlignment="Center"   
+                                                          FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+
+                                                <Label    Grid.Row="0" 
+                                                          Grid.Column="3"
+                                                          FontSize="20"  
+                                                          Text="{Binding fecha}"      
+                                                          HorizontalTextAlignment="Center"   
+                                                          FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+
+                                                <BoxView  Grid.Row="1"
+                                                          Grid.Column="0"
+                                                          Grid.ColumnSpan="4"
+                                                          HeightRequest="1" 
+                                                          Color="#2187d2" />
+
+                                                <Label    Grid.Row="2"
+                                                          Grid.Column="0" 
+                                                          FontSize="20" 
+                                                          Text="{Binding nrodeposito}"
+                                                          HorizontalTextAlignment="Center"  
+                                                          FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+
+                                                <Label    Grid.Row="2"
+                                                          Grid.Column="1" 
+                                                          FontSize="20"  
+                                                          Text="{Binding dstppago}"  
+                                                          HorizontalTextAlignment="Center"    
+                                                          FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+
+                                                <Label    Grid.Row="2" 
+                                                          Grid.Column="2" 
+                                                          FontSize="20" 
+                                                          Text="{Binding mtosoles}"    
+                                                          HorizontalTextAlignment="Center"    
+                                                          FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+
+                                                <Label    Grid.Row="2" 
+                                                          Grid.Column="3" 
+                                                          FontSize="20" 
+                                                          Text="{Binding mtodolares}" 
+                                                          HorizontalTextAlignment="Center"   
+                                                          FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+
+                                            </Grid>
+                                        </StackLayout>
+
+                                    </ViewCell>
+                                </DataTemplate>
+                            </sfListView:SfListView.ItemTemplate>
+                        </sfListView:SfListView>
+                    </Grid>
+                    <Grid x:Name="gridSinDepositos">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="25*" />
+                            <ColumnDefinition Width="25*" />
+                            <ColumnDefinition Width="25*" />
+                            <ColumnDefinition Width="25*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" 
+                               Grid.Column="0" 
+                               Grid.ColumnSpan="3"
+                               FontSize="20"   
+                               Text="No existe depositos"     
+                               HorizontalTextAlignment="Center"   
+                               FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}">
+                        </Label>
+                    </Grid>
+
+                    <BoxView  HeightRequest="2" HorizontalOptions="FillAndExpand" Color="#1c4081" />
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40" />
+
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="25*" />
+                            <ColumnDefinition Width="25*" />
+                            <ColumnDefinition Width="25*" />
+                            <ColumnDefinition Width="25*" />
+                        </Grid.ColumnDefinitions>
+
+                        <!--obs-->
+                        <Label Grid.Row="0" 
+                               Grid.Column="0"
+                               Grid.ColumnSpan="2"
+                               FontSize="30"    
+                               Text=" Total depositos"   
+                               HorizontalTextAlignment="Center" 
+                               FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"/>
+
+                        <Label Grid.Row="0" 
+                               Grid.Column="2"
+                               FontSize="25"
+                               x:Name="txtTotalSoles"
+                               Text="0.00"     
+                               HorizontalTextAlignment="Center"  
+                               FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+
+                        <Label Grid.Row="0"
+                               Grid.Column="3" 
+                               FontSize="25" 
+                               x:Name="txtTotalDolares"  
+                               HorizontalTextAlignment="Center"  
+                               Text="0.000"
+                               FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+
+                    </Grid>
+                </StackLayout>
+            </Frame>
+
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

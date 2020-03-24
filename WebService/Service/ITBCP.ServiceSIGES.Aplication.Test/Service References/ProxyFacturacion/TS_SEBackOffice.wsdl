@@ -1,0 +1,2048 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TS_SEBackOffice" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:56220/Facturacion.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:56220/Facturacion.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" />
+      <xsd:import schemaLocation="http://localhost:56220/Facturacion.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_VALIDAR_OPCION_PRINT_PANTALLA_OR_FISICO_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_VALIDAR_OPCION_PRINT_PANTALLA_OR_FISICO" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_VALIDAR_OPCION_PRINT_PANTALLA_OR_FISICO_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_VALIDAR_OPCION_PRINT_PANTALLA_OR_FISICOResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_VALIDAR_OPCION_PRINT_PANTALLA_OR_FISICO_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q1:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_OBTENER_TOPES_MONTO_VENTA_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_OBTENER_TOPES_MONTO_VENTA" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_OBTENER_TOPES_MONTO_VENTA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_OBTENER_TOPES_MONTO_VENTAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_OBTENER_TOPES_MONTO_VENTA_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q2:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_OBTENER_TIPO_INGRESO_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_OBTENER_TIPO_INGRESO" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_OBTENER_TIPO_INGRESO_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_OBTENER_TIPO_INGRESOResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_OBTENER_TIPO_INGRESO_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q3:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_OBTENER_RUTA_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_OBTENER_RUTA" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_OBTENER_RUTA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_OBTENER_RUTAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_OBTENER_RUTA_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q4:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_OBTENER_PORCENTAJE_DSCTO_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_OBTENER_PORCENTAJE_DSCTO" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_OBTENER_PORCENTAJE_DSCTO_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_OBTENER_PORCENTAJE_DSCTOResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_OBTENER_PORCENTAJE_DSCTO_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q5:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_OBTENER_LOCAL_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_OBTENER_LOCAL" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_OBTENER_LOCAL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_OBTENER_LOCALResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_OBTENER_LOCAL_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q6:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_OBTENER_IGV_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_OBTENER_IGV" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_OBTENER_IGV_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_OBTENER_IGVResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_OBTENER_IGV_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q7:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_OBTENER_FECHA_SERVIDOR_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_OBTENER_FECHA_SERVIDOR" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_OBTENER_FECHA_SERVIDOR_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_OBTENER_FECHA_SERVIDORResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_OBTENER_FECHA_SERVIDOR_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q8:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_OBTENER_ALMACEN_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_OBTENER_ALMACEN" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_OBTENER_ALMACEN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_OBTENER_ALMACENResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_OBTENER_ALMACEN_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q9:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LSITAR_TERMINAL_POR_USUARIO_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LSITAR_TERMINAL_POR_USUARIO" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LSITAR_TERMINAL_POR_USUARIO_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LSITAR_TERMINAL_POR_USUARIOResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LSITAR_TERMINAL_POR_USUARIO_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q10:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTARTIPOCAMBIO_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTARTIPOCAMBIO" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTARTIPOCAMBIO_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTARTIPOCAMBIOResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTARTIPOCAMBIO_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q11:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_ZONAS_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_ZONAS" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_ZONAS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_ZONASResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_ZONAS_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q12:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VISTA_PUNTOS_TARJETA_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VISTA_PUNTOS_TARJETA" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VISTA_PUNTOS_TARJETA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VISTA_PUNTOS_TARJETAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VISTA_PUNTOS_TARJETA_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q13:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTAP_2_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VENTAP_2" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTAP_2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VENTAP_2Response" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTAP_2_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q14:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_VENTA_CABECERA_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_VENTA_CABECERA" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_VENTA_CABECERA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_VENTA_CABECERAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_VENTA_CABECERA_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q15:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTAP_1_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VENTAP_1" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTAP_1_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VENTAP_1Response" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTAP_1_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q16:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTAP_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VENTAP" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTAP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VENTAPResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTAP_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q17:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTAD_2_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VENTAD_2" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTAD_2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VENTAD_2Response" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTAD_2_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q18:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTAD_1_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VENTAD_1" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTAD_1_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VENTAD_1Response" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTAD_1_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q19:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTAD_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VENTAD" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTAD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VENTADResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTAD_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q20:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_9_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VENTA_9" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_9_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VENTA_9Response" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_9_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q21:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_8_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VENTA_8" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_8_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VENTA_8Response" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_8_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q22:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_7_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VENTA_7" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_7_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VENTA_7Response" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_7_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q23="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q23:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_6_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VENTA_6" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_6_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VENTA_6Response" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_6_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q24="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q24:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_5_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VENTA_5" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_5_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VENTA_5Response" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_5_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q25="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q25:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_4_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VENTA_4" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_4_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VENTA_4Response" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_4_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q26="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q26:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_3_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VENTA_3" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_3_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VENTA_3Response" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_3_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q27="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q27:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_2_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VENTA_2" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VENTA_2Response" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_2_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q28="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q28:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VENTA" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VENTAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q29="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q29:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VARIABLES_1_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VARIABLES_1" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VARIABLES_1_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VARIABLES_1Response" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VARIABLES_1_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q30="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q30:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VARIABLES_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VARIABLES" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VARIABLES_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VARIABLESResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VARIABLES_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q31="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q31:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VALE_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VALE" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VALE_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_VALEResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_VALE_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q32="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q32:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_ULTIMO_CIERRE_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_ULTIMO_CIERRE" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_ULTIMO_CIERRE_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_ULTIMO_CIERREResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_ULTIMO_CIERRE_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q33="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q33:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_TRANSACCION_ARTICULO_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_TRANSACCION_ARTICULO" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_TRANSACCION_ARTICULO_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_TRANSACCION_ARTICULOResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_TRANSACCION_ARTICULO_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q34="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q34:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_TIPO_PAGOS_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_TIPO_PAGOS" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_TIPO_PAGOS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_TIPO_PAGOSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_TIPO_PAGOS_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q35="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q35:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_TIPO_PAGO_EFECTIVO_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_TIPO_PAGO_EFECTIVO" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_TIPO_PAGO_EFECTIVO_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_TIPO_PAGO_EFECTIVOResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_TIPO_PAGO_EFECTIVO_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q36="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q36:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_TIPO_CAMBIO_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_TIPO_CAMBIO" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_TIPO_CAMBIO_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_TIPO_CAMBIOResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_TIPO_CAMBIO_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q37="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q37:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_TERMINALES_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_TERMINALES" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_TERMINALES_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_TERMINALESResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_TERMINALES_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q38="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q38:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_TARJETA_CONCEPTO_1_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_TARJETA_CONCEPTO_1" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_TARJETA_CONCEPTO_1_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_TARJETA_CONCEPTO_1Response" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_TARJETA_CONCEPTO_1_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q39="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q39:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_TALLAS_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_TALLAS" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_TALLAS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_TALLASResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_TALLAS_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q40="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q40:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_STOCK_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_STOCK" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_STOCK_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_STOCKResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_STOCK_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q41="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q41:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_PRECIOS_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_PRECIOS" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_PRECIOS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_PRECIOSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_PRECIOS_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q42="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q42:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_SALDOCLID_1_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_SALDOCLID_1" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_SALDOCLID_1_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_SALDOCLID_1Response" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_SALDOCLID_1_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q43="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q43:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_SALDOCLID_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_SALDOCLID" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_SALDOCLID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_SALDOCLIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_SALDOCLID_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q44="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q44:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_SALDO_CLIENTE_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_SALDO_CLIENTE" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_SALDO_CLIENTE_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_SALDO_CLIENTEResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_SALDO_CLIENTE_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q45="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q45:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_PTOS_DISPONIBLES_POR_TARJETA_AFILIACION_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_PTOS_DISPONIBLES_POR_TARJETA_AFILIACION" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_PTOS_DISPONIBLES_POR_TARJETA_AFILIACION_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_PTOS_DISPONIBLES_POR_TARJETA_AFILIACIONResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_PTOS_DISPONIBLES_POR_TARJETA_AFILIACION_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q46="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q46:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_PRECIOS_VARIOS_1_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_PRECIOS_VARIOS_1" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_PRECIOS_VARIOS_1_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_PRECIOS_VARIOS_1Response" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_PRECIOS_VARIOS_1_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q47="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q47:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_PRECIOS_VARIOS_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_PRECIOS_VARIOS" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_PRECIOS_VARIOS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_PRECIOS_VARIOSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_PRECIOS_VARIOS_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q48="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q48:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_PRECIO_POR_ARTICULO_PRECIO_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_PRECIO_POR_ARTICULO_PRECIO" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_PRECIO_POR_ARTICULO_PRECIO_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_PRECIO_POR_ARTICULO_PRECIOResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_PRECIO_POR_ARTICULO_PRECIO_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q49="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q49:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_PRECIO_CLIENTE_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_PRECIO_CLIENTE" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_PRECIO_CLIENTE_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_PRECIO_CLIENTEResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_PRECIO_CLIENTE_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q50="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q50:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_MOVPUNTOS_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_MOVPUNTOS" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_MOVPUNTOS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_MOVPUNTOSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_MOVPUNTOS_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q51="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q51:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_MOVIMIENTO_PUNTOS_POR_GRUPO_COMBUSTIBLE_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_MOVIMIENTO_PUNTOS_POR_GRUPO_COMBUSTIBLE" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_MOVIMIENTO_PUNTOS_POR_GRUPO_COMBUSTIBLE_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_MOVIMIENTO_PUNTOS_POR_GRUPO_COMBUSTIBLEResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_MOVIMIENTO_PUNTOS_POR_GRUPO_COMBUSTIBLE_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q52="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q52:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_MOVDET_PUNTOS_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_MOVDET_PUNTOS" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_MOVDET_PUNTOS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_MOVDET_PUNTOSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_MOVDET_PUNTOS_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q53="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q53:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_MOV_FACTURA_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_MOV_FACTURA" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_MOV_FACTURA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_MOV_FACTURAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_MOV_FACTURA_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q54="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q54:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_LOCAL_POR_ID_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_LOCAL_POR_ID" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_LOCAL_POR_ID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_LOCAL_POR_IDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_LOCAL_POR_ID_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q55="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q55:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_GRUPOS_CONSUMOS_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_GRUPOS_CONSUMOS" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_GRUPOS_CONSUMOS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_GRUPOS_CONSUMOSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_GRUPOS_CONSUMOS_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q56="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q56:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_FORMATO_TICKET_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_FORMATO_TICKET" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_FORMATO_TICKET_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_FORMATO_TICKETResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_FORMATO_TICKET_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q57="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q57:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_FORMATO_NOTA_VENTA_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_FORMATO_NOTA_VENTA" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_FORMATO_NOTA_VENTA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_FORMATO_NOTA_VENTAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_FORMATO_NOTA_VENTA_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q58="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q58:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_FORMATO_GUIA_DESPACHO_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_FORMATO_GUIA_DESPACHO" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_FORMATO_GUIA_DESPACHO_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_FORMATO_GUIA_DESPACHOResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_FORMATO_GUIA_DESPACHO_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q59="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q59:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_CONF_PUNTO_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_CONF_PUNTO" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_CONF_PUNTO_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_CONF_PUNTOResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_CONF_PUNTO_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q60="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q60:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_CLIENTE_POR_CODIGO_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_CLIENTE_POR_CODIGO" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_CLIENTE_POR_CODIGO_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_CLIENTE_POR_CODIGOResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_CLIENTE_POR_CODIGO_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q61="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q61:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_CIERRE_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_CIERRE" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_CIERRE_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_CIERREResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_CIERRE_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q62="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q62:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_CATEGORIAS_GRUPO2_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_CATEGORIAS_GRUPO2" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_CATEGORIAS_GRUPO2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_CATEGORIAS_GRUPO2Response" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_CATEGORIAS_GRUPO2_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q63="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q63:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_CARA_POR_POSICION_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_CARA_POR_POSICION" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_CARA_POR_POSICION_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_CARA_POR_POSICIONResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_CARA_POR_POSICION_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q64="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q64:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_ARTICULO_POR_GRUPO_COMBUSTIBLE_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_ARTICULO_POR_GRUPO_COMBUSTIBLE" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_ARTICULO_POR_GRUPO_COMBUSTIBLE_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_ARTICULO_POR_GRUPO_COMBUSTIBLEResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_ARTICULO_POR_GRUPO_COMBUSTIBLE_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q65="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q65:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_ARTICULO_POR_CODIGO_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_ARTICULO_POR_CODIGO" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_ARTICULO_POR_CODIGO_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_ARTICULO_POR_CODIGOResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_ARTICULO_POR_CODIGO_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q66="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q66:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_ARTICULO_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_ARTICULO" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_ARTICULO_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_LISTAR_ARTICULOResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_LISTAR_ARTICULO_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q67="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q67:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_IMPRIMIR_IMPRESORA_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_IMPRIMIR_IMPRESORA" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_IMPRIMIR_IMPRESORA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_IMPRIMIR_IMPRESORAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_IMPRIMIR_IMPRESORA_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q68="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q68:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_IMPRIMIR_CLIENTE_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_IMPRIMIR_CLIENTE" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_IMPRIMIR_CLIENTE_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_IMPRIMIR_CLIENTEResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_IMPRIMIR_CLIENTE_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q69="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q69:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_IMPRIMIR_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_IMPRIMIR" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_IMPRIMIR_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_IMPRIMIRResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_IMPRIMIR_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q70="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q70:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_ELIMINAR_MOV_FACTURA_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_ELIMINAR_MOV_FACTURA" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_ELIMINAR_MOV_FACTURA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_ELIMINAR_MOV_FACTURAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_ELIMINAR_MOV_FACTURA_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q71="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q71:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_BUSCAR_TERMINAL_POR_SERIEHD_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_BUSCAR_TERMINAL_POR_SERIEHD" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_BUSCAR_TERMINAL_POR_SERIEHD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_BUSCAR_TERMINAL_POR_SERIEHDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_BUSCAR_TERMINAL_POR_SERIEHD_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q72="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q72:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_BLOQUEA_VENTANA_PLAYA_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_BLOQUEA_VENTANA_PLAYA" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_BLOQUEA_VENTANA_PLAYA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_BLOQUEA_VENTANA_PLAYAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_BLOQUEA_VENTANA_PLAYA_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q73="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q73:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_AVISO_LOTERIA_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_AVISO_LOTERIA" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_AVISO_LOTERIA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_AVISO_LOTERIAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_AVISO_LOTERIA_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q74="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q74:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_ARTICULOS_EN_PLAYA_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_ARTICULOS_EN_PLAYA" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_ARTICULOS_EN_PLAYA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_ARTICULOS_EN_PLAYAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_ARTICULOS_EN_PLAYA_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q75="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q75:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_ACTUALIZAR_VENTA_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_ACTUALIZAR_VENTA" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_ACTUALIZAR_VENTA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_ACTUALIZAR_VENTAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_ACTUALIZAR_VENTA_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q76="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q76:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_ACTUALIZAR_TERMINAL_2_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_ACTUALIZAR_TERMINAL_2" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_ACTUALIZAR_TERMINAL_2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_ACTUALIZAR_TERMINAL_2Response" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_ACTUALIZAR_TERMINAL_2_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q77="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q77:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_ACTUALIZAR_TERMINAL_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_ACTUALIZAR_TERMINAL" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_ACTUALIZAR_TERMINAL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ITBCP_ACTUALIZAR_TERMINALResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITS_SIBackOffice_SP_ITBCP_ACTUALIZAR_TERMINAL_ExcepcionFault_FaultMessage">
+    <wsdl:part xmlns:q78="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities" name="detail" element="q78:Excepcion" />
+  </wsdl:message>
+  <wsdl:portType name="ITS_SIBackOffice">
+    <wsdl:operation name="SP_ITBCP_VALIDAR_OPCION_PRINT_PANTALLA_OR_FISICO">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_VALIDAR_OPCION_PRINT_PANTALLA_OR_FISICO" message="tns:ITS_SIBackOffice_SP_ITBCP_VALIDAR_OPCION_PRINT_PANTALLA_OR_FISICO_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_VALIDAR_OPCION_PRINT_PANTALLA_OR_FISICOResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_VALIDAR_OPCION_PRINT_PANTALLA_OR_FISICO_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_VALIDAR_OPCION_PRINT_PANTALLA_OR_FISICOExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_VALIDAR_OPCION_PRINT_PANTALLA_OR_FISICO_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_OBTENER_TOPES_MONTO_VENTA">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_OBTENER_TOPES_MONTO_VENTA" message="tns:ITS_SIBackOffice_SP_ITBCP_OBTENER_TOPES_MONTO_VENTA_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_OBTENER_TOPES_MONTO_VENTAResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_OBTENER_TOPES_MONTO_VENTA_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_OBTENER_TOPES_MONTO_VENTAExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_OBTENER_TOPES_MONTO_VENTA_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_OBTENER_TIPO_INGRESO">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_OBTENER_TIPO_INGRESO" message="tns:ITS_SIBackOffice_SP_ITBCP_OBTENER_TIPO_INGRESO_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_OBTENER_TIPO_INGRESOResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_OBTENER_TIPO_INGRESO_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_OBTENER_TIPO_INGRESOExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_OBTENER_TIPO_INGRESO_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_OBTENER_RUTA">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_OBTENER_RUTA" message="tns:ITS_SIBackOffice_SP_ITBCP_OBTENER_RUTA_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_OBTENER_RUTAResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_OBTENER_RUTA_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_OBTENER_RUTAExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_OBTENER_RUTA_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_OBTENER_PORCENTAJE_DSCTO">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_OBTENER_PORCENTAJE_DSCTO" message="tns:ITS_SIBackOffice_SP_ITBCP_OBTENER_PORCENTAJE_DSCTO_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_OBTENER_PORCENTAJE_DSCTOResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_OBTENER_PORCENTAJE_DSCTO_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_OBTENER_PORCENTAJE_DSCTOExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_OBTENER_PORCENTAJE_DSCTO_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_OBTENER_LOCAL">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_OBTENER_LOCAL" message="tns:ITS_SIBackOffice_SP_ITBCP_OBTENER_LOCAL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_OBTENER_LOCALResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_OBTENER_LOCAL_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_OBTENER_LOCALExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_OBTENER_LOCAL_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_OBTENER_IGV">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_OBTENER_IGV" message="tns:ITS_SIBackOffice_SP_ITBCP_OBTENER_IGV_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_OBTENER_IGVResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_OBTENER_IGV_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_OBTENER_IGVExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_OBTENER_IGV_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_OBTENER_FECHA_SERVIDOR">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_OBTENER_FECHA_SERVIDOR" message="tns:ITS_SIBackOffice_SP_ITBCP_OBTENER_FECHA_SERVIDOR_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_OBTENER_FECHA_SERVIDORResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_OBTENER_FECHA_SERVIDOR_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_OBTENER_FECHA_SERVIDORExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_OBTENER_FECHA_SERVIDOR_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_OBTENER_ALMACEN">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_OBTENER_ALMACEN" message="tns:ITS_SIBackOffice_SP_ITBCP_OBTENER_ALMACEN_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_OBTENER_ALMACENResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_OBTENER_ALMACEN_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_OBTENER_ALMACENExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_OBTENER_ALMACEN_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LSITAR_TERMINAL_POR_USUARIO">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LSITAR_TERMINAL_POR_USUARIO" message="tns:ITS_SIBackOffice_SP_ITBCP_LSITAR_TERMINAL_POR_USUARIO_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LSITAR_TERMINAL_POR_USUARIOResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LSITAR_TERMINAL_POR_USUARIO_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LSITAR_TERMINAL_POR_USUARIOExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LSITAR_TERMINAL_POR_USUARIO_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTARTIPOCAMBIO">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTARTIPOCAMBIO" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTARTIPOCAMBIO_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTARTIPOCAMBIOResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTARTIPOCAMBIO_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTARTIPOCAMBIOExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTARTIPOCAMBIO_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_ZONAS">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_ZONAS" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_ZONAS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_ZONASResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_ZONAS_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_ZONASExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_ZONAS_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VISTA_PUNTOS_TARJETA">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VISTA_PUNTOS_TARJETA" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VISTA_PUNTOS_TARJETA_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VISTA_PUNTOS_TARJETAResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VISTA_PUNTOS_TARJETA_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VISTA_PUNTOS_TARJETAExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VISTA_PUNTOS_TARJETA_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VENTAP_2">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTAP_2" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTAP_2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTAP_2Response" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTAP_2_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTAP_2ExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTAP_2_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_VENTA_CABECERA">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_VENTA_CABECERA" message="tns:ITS_SIBackOffice_SP_ITBCP_VENTA_CABECERA_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_VENTA_CABECERAResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_VENTA_CABECERA_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_VENTA_CABECERAExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_VENTA_CABECERA_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VENTAP_1">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTAP_1" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTAP_1_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTAP_1Response" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTAP_1_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTAP_1ExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTAP_1_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VENTAP">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTAP" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTAP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTAPResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTAP_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTAPExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTAP_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VENTAD_2">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTAD_2" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTAD_2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTAD_2Response" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTAD_2_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTAD_2ExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTAD_2_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VENTAD_1">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTAD_1" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTAD_1_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTAD_1Response" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTAD_1_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTAD_1ExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTAD_1_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VENTAD">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTAD" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTAD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTADResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTAD_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTADExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTAD_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VENTA_9">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTA_9" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_9_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTA_9Response" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_9_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTA_9ExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_9_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VENTA_8">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTA_8" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_8_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTA_8Response" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_8_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTA_8ExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_8_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VENTA_7">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTA_7" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_7_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTA_7Response" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_7_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTA_7ExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_7_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VENTA_6">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTA_6" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_6_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTA_6Response" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_6_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTA_6ExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_6_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VENTA_5">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTA_5" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_5_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTA_5Response" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_5_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTA_5ExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_5_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VENTA_4">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTA_4" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_4_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTA_4Response" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_4_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTA_4ExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_4_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VENTA_3">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTA_3" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_3_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTA_3Response" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_3_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTA_3ExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_3_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VENTA_2">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTA_2" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTA_2Response" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_2_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTA_2ExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_2_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VENTA">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTA" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTAResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTAExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VENTA_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VARIABLES_1">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VARIABLES_1" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VARIABLES_1_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VARIABLES_1Response" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VARIABLES_1_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VARIABLES_1ExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VARIABLES_1_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VARIABLES">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VARIABLES" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VARIABLES_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VARIABLESResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VARIABLES_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VARIABLESExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VARIABLES_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VALE">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VALE" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VALE_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VALEResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VALE_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VALEExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_VALE_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_ULTIMO_CIERRE">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_ULTIMO_CIERRE" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_ULTIMO_CIERRE_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_ULTIMO_CIERREResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_ULTIMO_CIERRE_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_ULTIMO_CIERREExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_ULTIMO_CIERRE_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_TRANSACCION_ARTICULO">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_TRANSACCION_ARTICULO" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_TRANSACCION_ARTICULO_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_TRANSACCION_ARTICULOResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_TRANSACCION_ARTICULO_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_TRANSACCION_ARTICULOExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_TRANSACCION_ARTICULO_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_TIPO_PAGOS">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_TIPO_PAGOS" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_TIPO_PAGOS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_TIPO_PAGOSResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_TIPO_PAGOS_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_TIPO_PAGOSExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_TIPO_PAGOS_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_TIPO_PAGO_EFECTIVO">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_TIPO_PAGO_EFECTIVO" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_TIPO_PAGO_EFECTIVO_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_TIPO_PAGO_EFECTIVOResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_TIPO_PAGO_EFECTIVO_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_TIPO_PAGO_EFECTIVOExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_TIPO_PAGO_EFECTIVO_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_TIPO_CAMBIO">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_TIPO_CAMBIO" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_TIPO_CAMBIO_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_TIPO_CAMBIOResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_TIPO_CAMBIO_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_TIPO_CAMBIOExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_TIPO_CAMBIO_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_TERMINALES">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_TERMINALES" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_TERMINALES_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_TERMINALESResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_TERMINALES_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_TERMINALESExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_TERMINALES_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_TARJETA_CONCEPTO_1">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_TARJETA_CONCEPTO_1" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_TARJETA_CONCEPTO_1_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_TARJETA_CONCEPTO_1Response" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_TARJETA_CONCEPTO_1_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_TARJETA_CONCEPTO_1ExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_TARJETA_CONCEPTO_1_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_TALLAS">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_TALLAS" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_TALLAS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_TALLASResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_TALLAS_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_TALLASExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_TALLAS_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_STOCK">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_STOCK" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_STOCK_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_STOCKResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_STOCK_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_STOCKExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_STOCK_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_PRECIOS">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_PRECIOS" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_PRECIOS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_PRECIOSResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_PRECIOS_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_PRECIOSExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_PRECIOS_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_SALDOCLID_1">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_SALDOCLID_1" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_SALDOCLID_1_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_SALDOCLID_1Response" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_SALDOCLID_1_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_SALDOCLID_1ExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_SALDOCLID_1_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_SALDOCLID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_SALDOCLID" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_SALDOCLID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_SALDOCLIDResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_SALDOCLID_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_SALDOCLIDExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_SALDOCLID_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_SALDO_CLIENTE">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_SALDO_CLIENTE" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_SALDO_CLIENTE_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_SALDO_CLIENTEResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_SALDO_CLIENTE_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_SALDO_CLIENTEExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_SALDO_CLIENTE_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_PTOS_DISPONIBLES_POR_TARJETA_AFILIACION">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_PTOS_DISPONIBLES_POR_TARJETA_AFILIACION" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_PTOS_DISPONIBLES_POR_TARJETA_AFILIACION_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_PTOS_DISPONIBLES_POR_TARJETA_AFILIACIONResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_PTOS_DISPONIBLES_POR_TARJETA_AFILIACION_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_PTOS_DISPONIBLES_POR_TARJETA_AFILIACIONExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_PTOS_DISPONIBLES_POR_TARJETA_AFILIACION_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_PRECIOS_VARIOS_1">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_PRECIOS_VARIOS_1" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_PRECIOS_VARIOS_1_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_PRECIOS_VARIOS_1Response" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_PRECIOS_VARIOS_1_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_PRECIOS_VARIOS_1ExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_PRECIOS_VARIOS_1_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_PRECIOS_VARIOS">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_PRECIOS_VARIOS" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_PRECIOS_VARIOS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_PRECIOS_VARIOSResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_PRECIOS_VARIOS_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_PRECIOS_VARIOSExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_PRECIOS_VARIOS_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_PRECIO_POR_ARTICULO_PRECIO">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_PRECIO_POR_ARTICULO_PRECIO" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_PRECIO_POR_ARTICULO_PRECIO_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_PRECIO_POR_ARTICULO_PRECIOResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_PRECIO_POR_ARTICULO_PRECIO_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_PRECIO_POR_ARTICULO_PRECIOExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_PRECIO_POR_ARTICULO_PRECIO_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_PRECIO_CLIENTE">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_PRECIO_CLIENTE" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_PRECIO_CLIENTE_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_PRECIO_CLIENTEResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_PRECIO_CLIENTE_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_PRECIO_CLIENTEExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_PRECIO_CLIENTE_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_MOVPUNTOS">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_MOVPUNTOS" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_MOVPUNTOS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_MOVPUNTOSResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_MOVPUNTOS_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_MOVPUNTOSExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_MOVPUNTOS_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_MOVIMIENTO_PUNTOS_POR_GRUPO_COMBUSTIBLE">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_MOVIMIENTO_PUNTOS_POR_GRUPO_COMBUSTIBLE" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_MOVIMIENTO_PUNTOS_POR_GRUPO_COMBUSTIBLE_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_MOVIMIENTO_PUNTOS_POR_GRUPO_COMBUSTIBLEResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_MOVIMIENTO_PUNTOS_POR_GRUPO_COMBUSTIBLE_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_MOVIMIENTO_PUNTOS_POR_GRUPO_COMBUSTIBLEExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_MOVIMIENTO_PUNTOS_POR_GRUPO_COMBUSTIBLE_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_MOVDET_PUNTOS">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_MOVDET_PUNTOS" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_MOVDET_PUNTOS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_MOVDET_PUNTOSResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_MOVDET_PUNTOS_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_MOVDET_PUNTOSExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_MOVDET_PUNTOS_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_MOV_FACTURA">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_MOV_FACTURA" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_MOV_FACTURA_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_MOV_FACTURAResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_MOV_FACTURA_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_MOV_FACTURAExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_MOV_FACTURA_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_LOCAL_POR_ID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_LOCAL_POR_ID" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_LOCAL_POR_ID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_LOCAL_POR_IDResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_LOCAL_POR_ID_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_LOCAL_POR_IDExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_LOCAL_POR_ID_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_GRUPOS_CONSUMOS">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_GRUPOS_CONSUMOS" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_GRUPOS_CONSUMOS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_GRUPOS_CONSUMOSResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_GRUPOS_CONSUMOS_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_GRUPOS_CONSUMOSExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_GRUPOS_CONSUMOS_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_FORMATO_TICKET">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_FORMATO_TICKET" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_FORMATO_TICKET_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_FORMATO_TICKETResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_FORMATO_TICKET_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_FORMATO_TICKETExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_FORMATO_TICKET_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_FORMATO_NOTA_VENTA">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_FORMATO_NOTA_VENTA" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_FORMATO_NOTA_VENTA_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_FORMATO_NOTA_VENTAResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_FORMATO_NOTA_VENTA_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_FORMATO_NOTA_VENTAExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_FORMATO_NOTA_VENTA_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_FORMATO_GUIA_DESPACHO">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_FORMATO_GUIA_DESPACHO" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_FORMATO_GUIA_DESPACHO_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_FORMATO_GUIA_DESPACHOResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_FORMATO_GUIA_DESPACHO_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_FORMATO_GUIA_DESPACHOExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_FORMATO_GUIA_DESPACHO_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_CONF_PUNTO">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_CONF_PUNTO" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_CONF_PUNTO_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_CONF_PUNTOResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_CONF_PUNTO_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_CONF_PUNTOExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_CONF_PUNTO_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_CLIENTE_POR_CODIGO">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_CLIENTE_POR_CODIGO" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_CLIENTE_POR_CODIGO_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_CLIENTE_POR_CODIGOResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_CLIENTE_POR_CODIGO_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_CLIENTE_POR_CODIGOExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_CLIENTE_POR_CODIGO_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_CIERRE">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_CIERRE" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_CIERRE_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_CIERREResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_CIERRE_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_CIERREExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_CIERRE_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_CATEGORIAS_GRUPO2">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_CATEGORIAS_GRUPO2" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_CATEGORIAS_GRUPO2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_CATEGORIAS_GRUPO2Response" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_CATEGORIAS_GRUPO2_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_CATEGORIAS_GRUPO2ExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_CATEGORIAS_GRUPO2_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_CARA_POR_POSICION">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_CARA_POR_POSICION" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_CARA_POR_POSICION_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_CARA_POR_POSICIONResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_CARA_POR_POSICION_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_CARA_POR_POSICIONExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_CARA_POR_POSICION_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_ARTICULO_POR_GRUPO_COMBUSTIBLE">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_ARTICULO_POR_GRUPO_COMBUSTIBLE" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_ARTICULO_POR_GRUPO_COMBUSTIBLE_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_ARTICULO_POR_GRUPO_COMBUSTIBLEResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_ARTICULO_POR_GRUPO_COMBUSTIBLE_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_ARTICULO_POR_GRUPO_COMBUSTIBLEExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_ARTICULO_POR_GRUPO_COMBUSTIBLE_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_ARTICULO_POR_CODIGO">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_ARTICULO_POR_CODIGO" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_ARTICULO_POR_CODIGO_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_ARTICULO_POR_CODIGOResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_ARTICULO_POR_CODIGO_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_ARTICULO_POR_CODIGOExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_ARTICULO_POR_CODIGO_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_ARTICULO">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_ARTICULO" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_ARTICULO_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_ARTICULOResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_ARTICULO_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_ARTICULOExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_LISTAR_ARTICULO_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_IMPRIMIR_IMPRESORA">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_IMPRIMIR_IMPRESORA" message="tns:ITS_SIBackOffice_SP_ITBCP_IMPRIMIR_IMPRESORA_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_IMPRIMIR_IMPRESORAResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_IMPRIMIR_IMPRESORA_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_IMPRIMIR_IMPRESORAExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_IMPRIMIR_IMPRESORA_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_IMPRIMIR_CLIENTE">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_IMPRIMIR_CLIENTE" message="tns:ITS_SIBackOffice_SP_ITBCP_IMPRIMIR_CLIENTE_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_IMPRIMIR_CLIENTEResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_IMPRIMIR_CLIENTE_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_IMPRIMIR_CLIENTEExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_IMPRIMIR_CLIENTE_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_IMPRIMIR">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_IMPRIMIR" message="tns:ITS_SIBackOffice_SP_ITBCP_IMPRIMIR_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_IMPRIMIRResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_IMPRIMIR_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_IMPRIMIRExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_IMPRIMIR_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_ELIMINAR_MOV_FACTURA">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_ELIMINAR_MOV_FACTURA" message="tns:ITS_SIBackOffice_SP_ITBCP_ELIMINAR_MOV_FACTURA_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_ELIMINAR_MOV_FACTURAResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_ELIMINAR_MOV_FACTURA_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_ELIMINAR_MOV_FACTURAExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_ELIMINAR_MOV_FACTURA_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_BUSCAR_TERMINAL_POR_SERIEHD">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_BUSCAR_TERMINAL_POR_SERIEHD" message="tns:ITS_SIBackOffice_SP_ITBCP_BUSCAR_TERMINAL_POR_SERIEHD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_BUSCAR_TERMINAL_POR_SERIEHDResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_BUSCAR_TERMINAL_POR_SERIEHD_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_BUSCAR_TERMINAL_POR_SERIEHDExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_BUSCAR_TERMINAL_POR_SERIEHD_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_BLOQUEA_VENTANA_PLAYA">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_BLOQUEA_VENTANA_PLAYA" message="tns:ITS_SIBackOffice_SP_ITBCP_BLOQUEA_VENTANA_PLAYA_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_BLOQUEA_VENTANA_PLAYAResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_BLOQUEA_VENTANA_PLAYA_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_BLOQUEA_VENTANA_PLAYAExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_BLOQUEA_VENTANA_PLAYA_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_AVISO_LOTERIA">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_AVISO_LOTERIA" message="tns:ITS_SIBackOffice_SP_ITBCP_AVISO_LOTERIA_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_AVISO_LOTERIAResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_AVISO_LOTERIA_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_AVISO_LOTERIAExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_AVISO_LOTERIA_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_ARTICULOS_EN_PLAYA">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_ARTICULOS_EN_PLAYA" message="tns:ITS_SIBackOffice_SP_ITBCP_ARTICULOS_EN_PLAYA_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_ARTICULOS_EN_PLAYAResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_ARTICULOS_EN_PLAYA_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_ARTICULOS_EN_PLAYAExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_ARTICULOS_EN_PLAYA_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_ACTUALIZAR_VENTA">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_ACTUALIZAR_VENTA" message="tns:ITS_SIBackOffice_SP_ITBCP_ACTUALIZAR_VENTA_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_ACTUALIZAR_VENTAResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_ACTUALIZAR_VENTA_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_ACTUALIZAR_VENTAExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_ACTUALIZAR_VENTA_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_ACTUALIZAR_TERMINAL_2">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_ACTUALIZAR_TERMINAL_2" message="tns:ITS_SIBackOffice_SP_ITBCP_ACTUALIZAR_TERMINAL_2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_ACTUALIZAR_TERMINAL_2Response" message="tns:ITS_SIBackOffice_SP_ITBCP_ACTUALIZAR_TERMINAL_2_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_ACTUALIZAR_TERMINAL_2ExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_ACTUALIZAR_TERMINAL_2_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_ACTUALIZAR_TERMINAL">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_ACTUALIZAR_TERMINAL" message="tns:ITS_SIBackOffice_SP_ITBCP_ACTUALIZAR_TERMINAL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_ACTUALIZAR_TERMINALResponse" message="tns:ITS_SIBackOffice_SP_ITBCP_ACTUALIZAR_TERMINAL_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_ACTUALIZAR_TERMINALExcepcionFault" name="ExcepcionFault" message="tns:ITS_SIBackOffice_SP_ITBCP_ACTUALIZAR_TERMINAL_ExcepcionFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ITS_SIBackOffice" type="tns:ITS_SIBackOffice">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SP_ITBCP_VALIDAR_OPCION_PRINT_PANTALLA_OR_FISICO">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_VALIDAR_OPCION_PRINT_PANTALLA_OR_FISICO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_OBTENER_TOPES_MONTO_VENTA">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_OBTENER_TOPES_MONTO_VENTA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_OBTENER_TIPO_INGRESO">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_OBTENER_TIPO_INGRESO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_OBTENER_RUTA">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_OBTENER_RUTA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_OBTENER_PORCENTAJE_DSCTO">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_OBTENER_PORCENTAJE_DSCTO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_OBTENER_LOCAL">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_OBTENER_LOCAL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_OBTENER_IGV">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_OBTENER_IGV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_OBTENER_FECHA_SERVIDOR">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_OBTENER_FECHA_SERVIDOR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_OBTENER_ALMACEN">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_OBTENER_ALMACEN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LSITAR_TERMINAL_POR_USUARIO">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LSITAR_TERMINAL_POR_USUARIO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTARTIPOCAMBIO">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTARTIPOCAMBIO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_ZONAS">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_ZONAS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VISTA_PUNTOS_TARJETA">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VISTA_PUNTOS_TARJETA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VENTAP_2">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTAP_2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_VENTA_CABECERA">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_VENTA_CABECERA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VENTAP_1">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTAP_1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VENTAP">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTAP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VENTAD_2">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTAD_2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VENTAD_1">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTAD_1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VENTAD">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTAD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VENTA_9">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTA_9" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VENTA_8">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTA_8" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VENTA_7">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTA_7" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VENTA_6">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTA_6" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VENTA_5">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTA_5" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VENTA_4">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTA_4" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VENTA_3">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTA_3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VENTA_2">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTA_2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VENTA">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VENTA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VARIABLES_1">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VARIABLES_1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VARIABLES">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VARIABLES" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_VALE">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_VALE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_ULTIMO_CIERRE">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_ULTIMO_CIERRE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_TRANSACCION_ARTICULO">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_TRANSACCION_ARTICULO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_TIPO_PAGOS">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_TIPO_PAGOS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_TIPO_PAGO_EFECTIVO">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_TIPO_PAGO_EFECTIVO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_TIPO_CAMBIO">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_TIPO_CAMBIO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_TERMINALES">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_TERMINALES" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_TARJETA_CONCEPTO_1">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_TARJETA_CONCEPTO_1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_TALLAS">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_TALLAS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_STOCK">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_STOCK" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_PRECIOS">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_PRECIOS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_SALDOCLID_1">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_SALDOCLID_1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_SALDOCLID">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_SALDOCLID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_SALDO_CLIENTE">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_SALDO_CLIENTE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_PTOS_DISPONIBLES_POR_TARJETA_AFILIACION">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_PTOS_DISPONIBLES_POR_TARJETA_AFILIACION" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_PRECIOS_VARIOS_1">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_PRECIOS_VARIOS_1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_PRECIOS_VARIOS">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_PRECIOS_VARIOS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_PRECIO_POR_ARTICULO_PRECIO">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_PRECIO_POR_ARTICULO_PRECIO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_PRECIO_CLIENTE">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_PRECIO_CLIENTE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_MOVPUNTOS">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_MOVPUNTOS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_MOVIMIENTO_PUNTOS_POR_GRUPO_COMBUSTIBLE">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_MOVIMIENTO_PUNTOS_POR_GRUPO_COMBUSTIBLE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_MOVDET_PUNTOS">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_MOVDET_PUNTOS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_MOV_FACTURA">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_MOV_FACTURA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_LOCAL_POR_ID">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_LOCAL_POR_ID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_GRUPOS_CONSUMOS">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_GRUPOS_CONSUMOS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_FORMATO_TICKET">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_FORMATO_TICKET" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_FORMATO_NOTA_VENTA">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_FORMATO_NOTA_VENTA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_FORMATO_GUIA_DESPACHO">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_FORMATO_GUIA_DESPACHO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_CONF_PUNTO">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_CONF_PUNTO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_CLIENTE_POR_CODIGO">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_CLIENTE_POR_CODIGO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_CIERRE">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_CIERRE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_CATEGORIAS_GRUPO2">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_CATEGORIAS_GRUPO2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_CARA_POR_POSICION">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_CARA_POR_POSICION" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_ARTICULO_POR_GRUPO_COMBUSTIBLE">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_ARTICULO_POR_GRUPO_COMBUSTIBLE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_ARTICULO_POR_CODIGO">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_ARTICULO_POR_CODIGO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_LISTAR_ARTICULO">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_LISTAR_ARTICULO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_IMPRIMIR_IMPRESORA">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_IMPRIMIR_IMPRESORA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_IMPRIMIR_CLIENTE">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_IMPRIMIR_CLIENTE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_IMPRIMIR">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_IMPRIMIR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_ELIMINAR_MOV_FACTURA">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_ELIMINAR_MOV_FACTURA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_BUSCAR_TERMINAL_POR_SERIEHD">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_BUSCAR_TERMINAL_POR_SERIEHD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_BLOQUEA_VENTANA_PLAYA">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_BLOQUEA_VENTANA_PLAYA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_AVISO_LOTERIA">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_AVISO_LOTERIA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_ARTICULOS_EN_PLAYA">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_ARTICULOS_EN_PLAYA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_ACTUALIZAR_VENTA">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_ACTUALIZAR_VENTA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_ACTUALIZAR_TERMINAL_2">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_ACTUALIZAR_TERMINAL_2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ITBCP_ACTUALIZAR_TERMINAL">
+      <soap:operation soapAction="http://tempuri.org/ITS_SIBackOffice/SP_ITBCP_ACTUALIZAR_TERMINAL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionFault">
+        <soap:fault use="literal" name="ExcepcionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TS_SEBackOffice">
+    <wsdl:port name="BasicHttpBinding_ITS_SIBackOffice" binding="tns:BasicHttpBinding_ITS_SIBackOffice">
+      <soap:address location="http://localhost:56220/Facturacion.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

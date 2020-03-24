@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e2a38a78-380d-4508-ab1f-039f5c15f942" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:56220/Facturacion.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Facturacion.xsd" MetadataType="Schema" ID="f5918288-2db1-4450-8991-b35e8ba90faf" SourceId="1" SourceUrl="http://localhost:56220/Facturacion.svc?xsd=xsd1" />
+    <MetadataFile FileName="Facturacion1.xsd" MetadataType="Schema" ID="c535a8f2-689d-4566-9ba6-c0267fd67450" SourceId="1" SourceUrl="http://localhost:56220/Facturacion.svc?xsd=xsd0" />
+    <MetadataFile FileName="Facturacion2.xsd" MetadataType="Schema" ID="56b2dca0-8f6d-4670-b484-a11030ebf290" SourceId="1" SourceUrl="http://localhost:56220/Facturacion.svc?xsd=xsd2" />
+    <MetadataFile FileName="TS_SEBackOffice.wsdl" MetadataType="Wsdl" ID="b5e4c45d-107d-4a98-b418-766f3a1bcda7" SourceId="1" SourceUrl="http://localhost:56220/Facturacion.svc?wsdl" />
+    <MetadataFile FileName="Facturacion.disco" MetadataType="Disco" ID="d79641f3-bfd1-42b7-bed3-b6ea7554329e" SourceId="1" SourceUrl="http://localhost:56220/Facturacion.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo se usa en el proceso de publicación y empaquetado del proyecto web. Para personalizar el comportamiento de este proceso,
+edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 para obtener más información. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\SIGES\Production</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="Autentication.svc">
+      <publishTime>02/02/2019 00:35:29</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Aplication.dll">
+      <publishTime>02/04/2019 00:03:34</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Aplication.Interfaces.dll">
+      <publishTime>02/04/2019 00:03:33</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Aplication.Interfaces.pdb">
+      <publishTime>02/04/2019 00:03:33</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Aplication.pdb">
+      <publishTime>02/04/2019 00:03:34</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Domain.dll">
+      <publishTime>02/03/2019 23:48:59</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Domain.Entities.dll">
+      <publishTime>02/03/2019 23:48:59</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Domain.Entities.pdb">
+      <publishTime>02/03/2019 23:48:59</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Domain.pdb">
+      <publishTime>02/03/2019 23:48:59</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Infraestructure.DataAcces.dll">
+      <publishTime>02/03/2019 23:49:01</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Infraestructure.DataAcces.pdb">
+      <publishTime>02/03/2019 23:49:01</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Infraestructure.IoC.dll">
+      <publishTime>02/04/2019 00:03:34</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Infraestructure.IoC.pdb">
+      <publishTime>02/04/2019 00:03:34</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Services.Host.dll">
+      <publishTime>02/04/2019 00:03:35</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Services.Host.pdb">
+      <publishTime>02/04/2019 00:03:35</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Services.Interfaces.dll">
+      <publishTime>02/03/2019 23:49:02</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Services.Interfaces.pdb">
+      <publishTime>02/03/2019 23:49:02</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Services.Services.dll">
+      <publishTime>02/04/2019 00:03:35</publishTime>
+    </File>
+    <File Include="bin/ITBCP.ServiceSIGES.Services.Services.pdb">
+      <publishTime>02/04/2019 00:03:35</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.ServiceLocation.dll">
+      <publishTime>05/18/2017 14:52:52</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.Unity.dll">
+      <publishTime>05/18/2017 14:52:52</publishTime>
+    </File>
+    <File Include="Parameters.svc">
+      <publishTime>01/26/2019 15:06:54</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>02/04/2019 00:03:36</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

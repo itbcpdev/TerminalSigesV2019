@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+             mc:Ignorable="d"
+             x:Class="TerminalSiges.Controls.InputFloat">
+  <ContentView.Content>
+        <Grid>
+            <inputLayout:SfTextInputLayout FocusedColor="#0450C2"
+                                           ContainerBackgroundColor="#E6EEF9"
+                                           ContainerType="Outlined" 
+                                           EnablePasswordVisibilityToggle="{Binding IsPassword}"
+                                           ReserveSpaceForAssistiveLabels="False">
+                <Entry x:Name="EntryField" 
+                   Completed="Handle_Completed" 
+                   Text="{Binding Text}" 
+                   ReturnType="{Binding ReturnType}"
+                   IsPassword="{Binding IsPassword}"
+                   Keyboard="{Binding Keyboard}"
+                   TextColor="Black" 
+                   FontSize="{Binding FontSizeEntry}"
+                   Unfocused="Handle_Unfocused" 
+                   Focused="Handle_Focused"/>
+            </inputLayout:SfTextInputLayout>
+            <Label x:Name="LabelTitle" 
+                   Text="{Binding Title}" TextColor="Black" VerticalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Handle_Tapped" />
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

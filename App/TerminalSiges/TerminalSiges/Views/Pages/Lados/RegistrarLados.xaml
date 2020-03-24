@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:titan="clr-namespace:TerminalSIGES.Views.Lib" 
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms" 
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+             xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+             Title=".::REGISTRAR LADO POR TERMINAL::."
+             x:Class="TerminalSiges.Views.Pages.Lados.RegistrarLados">
+    <ContentPage.Content>
+        <StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  >
+
+            <StackLayout VerticalOptions="CenterAndExpand">
+
+                <Frame Padding="10,50" Margin="20, 20" CornerRadius="10"  BackgroundColor="#ffffff" BorderColor="#006ba6"  IsClippedToBounds="True" HasShadow="True">
+                    <StackLayout>
+                        <ContentView>
+                            <Label Text="REGISTRAR LADO POR TERMINAL:" HorizontalTextAlignment="Center" FontSize="25" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"  ></Label>
+                        </ContentView>
+                        <ContentView Padding="5,0" >
+                            <BoxView  HeightRequest="3" WidthRequest="10" Color="#1c4081" />
+                        </ContentView>
+                        <ContentView Padding="5,5" >
+                            <Grid >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="80" />
+                                    <RowDefinition Height="80" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="200" />
+                                    <ColumnDefinition Width="280" />
+                                    <ColumnDefinition Width="200" />
+                                </Grid.ColumnDefinitions>
+
+
+                                <!--Lado-->
+                                <Label Grid.Row="0" Grid.Column="0" FontSize="30" VerticalOptions="Center" HorizontalTextAlignment="Center"  Text=" Lado   " FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}">
+                                </Label>
+                                <inputLayout:SfTextInputLayout Grid.Row="0" Grid.Column="1"  
+                                     FocusedColor="#0450C2"
+                                     ContainerBackgroundColor="#E6EEF9"
+                                     ContainerType="Outlined" 
+                                     ReserveSpaceForAssistiveLabels="False"
+                                >
+                                    <Entry x:Name="txtLado" Text="" Keyboard="Numeric" FontSize="30" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}" />
+                                </inputLayout:SfTextInputLayout>
+
+                                <!--NroPos-->
+                                <Label Grid.Row="1" Grid.Column="0"  FontSize="30" VerticalOptions="Center" HorizontalTextAlignment="Center"  Text="Punto de Venta" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}">
+                                </Label>
+
+                                <combobox:SfComboBox x:Name="cboPuntoVenta" 
+                                                     Grid.Row="1" 
+                                                     Grid.Column="1"
+                                                     HorizontalOptions="End" 
+                                                     Text="Seleccione" 
+                                                     DropDownTextSize="25" 
+                                                     DropDownItemHeight="70" 
+                                                     DropDownCornerRadius="10" 
+                                                     SelectedDropDownItemColor="#cddbe6"
+                                                     DropDownTextColor="#005797"  
+                                                     TextSize="30" 
+                                                     HeightRequest="80"
+                                                     DisplayMemberPath="nropos"  >
+                                </combobox:SfComboBox>
+                            </Grid>
+                        </ContentView>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary"  Text="Guardar"  Clicked="BtnSave_Clicked" Priority="0"/>
+    </ContentPage.ToolbarItems>
+</ContentPage>

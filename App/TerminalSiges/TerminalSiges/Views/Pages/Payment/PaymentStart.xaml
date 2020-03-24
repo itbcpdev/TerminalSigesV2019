@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:titan="clr-namespace:TerminalSIGES.Views.Lib" 
+             BackgroundColor="#ffffff"  
+             Title="Información de pago"
+             xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfNumericTextBox.XForms;assembly=Syncfusion.SfNumericTextBox.XForms" 
+             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+             x:Class="TerminalSiges.Views.Pages.Payment.PaymentStart">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout x:Name="PrincipalPane" VerticalOptions="FillAndExpand" HorizontalOptions="Center" Padding="10">
+
+                <StackLayout BackgroundColor="#cddbe6" Padding="10" HorizontalOptions="FillAndExpand">
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="2" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="2" />
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition x:Name="OrientationGridColumn1" Width="0" />
+                        </Grid.ColumnDefinitions>
+
+                        <BoxView Grid.Row="0" 
+                                 Grid.Column="0" 
+                                 Grid.ColumnSpan="3"
+                                 HorizontalOptions="Fill" 
+                                 VerticalOptions="Center" 
+                                 HeightRequest="2" 
+                                 Color="White"
+                                 x:Name="OrientationLineGridThree" />
+
+                        <Label Grid.Row="1"
+                               Grid.Column="0" 
+                               FontSize="26" 
+                               VerticalOptions="Center" 
+                               HorizontalTextAlignment="Center" 
+                               Text="S/." 
+                               FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+
+                        <Label Grid.Row="1" 
+                               Grid.Column="1" 
+                               FontSize="26" 
+                               VerticalOptions="Center" 
+                               HorizontalTextAlignment="Center"  
+                               Text="Tipo Cambio" 
+                               FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+
+                        <Label Grid.Row="1" 
+                               Grid.Column="2" 
+                               FontSize="26" 
+                               VerticalOptions="Center"   
+                               HorizontalTextAlignment="Center"  
+                               Text="US$" 
+                               FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+
+                        <Label Grid.Row="2"
+                               Grid.Column="0"
+                               x:Name="txtMonTotalSoles" 
+                               FontSize="26" 
+                               BackgroundColor="#1c4081" 
+                               TextColor="AliceBlue" 
+                               Text="10,000.00" 
+                               VerticalOptions="Center" 
+                               HorizontalTextAlignment="Center"  
+                               FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"
+                               HorizontalOptions="Fill"/>
+
+                        <Label Grid.Row="2" 
+                               Grid.Column="1"
+                               x:Name="txtTipoCambio"  
+                               FontSize="26" 
+                               BackgroundColor="#1c4081" 
+                               TextColor="AliceBlue"  
+                               Text="10,000.00" 
+                               VerticalOptions="Center"
+                               HorizontalTextAlignment="Center"  
+                               FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"
+                               HorizontalOptions="Fill"/>
+
+                        <Label Grid.Row="2" 
+                               Grid.Column="2" 
+                               x:Name="txtMonTotalDolar"  
+                               FontSize="26" 
+                               BackgroundColor="#1c4081" 
+                               TextColor="AliceBlue" 
+                               Text="10,000.00"
+                               VerticalOptions="Center"
+                               HorizontalTextAlignment="Center" 
+                               FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"
+                               HorizontalOptions="Fill"/>
+
+                        <BoxView x:Name="OrientationLineGrid" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="2" WidthRequest="10" Color="#1c4081" />
+
+                        <Label x:Name="txtMontoVueltoNombre" Grid.Row="4" 
+                               Grid.Column="0" 
+                               FontSize="26" 
+                               VerticalOptions="Center" 
+                               HorizontalTextAlignment="Center"  
+                               Text="Monto Vuelto"
+                               FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+
+                        <Label x:Name="txtMonTotalVueltoVenta" 
+                               Grid.Row="4" 
+                               Grid.Column="1"
+                               Grid.ColumnSpan="2"
+                               FontSize="26" 
+                               BackgroundColor="#1c4081" 
+                               TextColor="AliceBlue" 
+                               Text="" 
+                               VerticalOptions="Center" 
+                               HorizontalTextAlignment="Center"  
+                               FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"
+                               HorizontalOptions="Fill"/>
+
+                        <BoxView x:Name="OrientationLineGridTwo"  Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="2" WidthRequest="10" Color="#1c4081" />
+                    </Grid>
+
+
+
+                </StackLayout>
+
+                <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <StackLayout HorizontalOptions="FillAndExpand">
+                        <buttons:SfCheckBox x:Name="ConIgv" IsChecked="False" Text="Aplicar IGV" FontSize="30" Margin="0,10"/>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="2"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition x:Name="OrientationGridColumnPayOne" Width="0" />
+                            </Grid.ColumnDefinitions>
+
+                            <StackLayout x:Name="OrientationStackOne" Orientation="Horizontal"  HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0">
+                                <Grid HorizontalOptions="FillAndExpand">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="180"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="180"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Grid.Row="0"
+                                       Grid.Column="0"
+                                       FontSize="30" 
+                                       VerticalOptions="Center"
+                                       HorizontalTextAlignment="Center" 
+                                       Text="Efectivo US$. " 
+                                       FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+
+                                    <syncfusion:SfNumericTextBox Grid.Row="0"
+                                                             Grid.Column="1"
+                                                             x:Name="txtEfectivoDolarVenta"
+                                                             HorizontalOptions="FillAndExpand"
+                                                             ParserMode="Decimal" FontSize="30" 
+                                                             BackgroundColor="#E6EEF9" 
+                                                             TextAlignment="End"
+                                                             FocusChanged="TxtEfectivoDolarVenta_FocusChanged"
+                                                             FontAttributes="Bold"/>
+                                    <Label Grid.Row="0"
+                                       Grid.Column="2"
+                                       FontSize="25" 
+                                       VerticalOptions="Center"
+                                       HorizontalTextAlignment="Start" 
+                                       Text="Dolar Americano" 
+                                       FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+
+                                </Grid>
+
+
+                            </StackLayout>
+                            <StackLayout x:Name="OrientationStackTwo" Orientation="Horizontal" HorizontalOptions="FillAndExpand" Grid.Row="1" Grid.Column="0">
+                                <Grid HorizontalOptions="FillAndExpand">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="180"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="180"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Grid.Row="0"
+                                           Grid.Column="0"
+                                           FontSize="30" 
+                                           VerticalOptions="Center" 
+                                           HorizontalTextAlignment="Center"
+                                           Text="Efectivo S/. " 
+                                           FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+
+                                    <syncfusion:SfNumericTextBox Grid.Row="0" Grid.Column="1"
+                                                                 x:Name="txtEfectivoSolesVenta"
+                                                                 HorizontalOptions="FillAndExpand"
+                                                                 FocusChanged="TxtEfectivoSolesVenta_FocusChanged"
+                                                                 ParserMode="Decimal" FontSize="30" 
+                                                                 BackgroundColor="#E6EEF9"  
+                                                                 TextAlignment="End" 
+                                                                 FontAttributes="Bold"/>
+
+                                    <Label Grid.Row="0"
+                                           Grid.Column="2"
+                                           FontSize="25" 
+                                           VerticalOptions="Center"
+                                           HorizontalTextAlignment="Center" 
+                                           Text="Soles                " 
+                                           FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+
+                                </Grid>
+
+                            </StackLayout>
+                            <BoxView  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HeightRequest="2" HorizontalOptions="FillAndExpand" Color="#1c4081" />
+                        </Grid>
+                    </StackLayout>
+
+                    <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                        <Grid HorizontalOptions="FillAndExpand">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="2" />
+                                <RowDefinition Height="0" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="180" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="110" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" 
+                                   Grid.Column="0" 
+                                   Grid.ColumnSpan="4" 
+                                   FontSize="30" 
+                                   VerticalOptions="Center" 
+                                   HorizontalOptions="Center"
+                                   HorizontalTextAlignment="Center"  
+                                   Text="Pago con tarjeta" 
+                                   FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+                            
+                            <BoxView Grid.Row="1"
+                                     Grid.Column="0" 
+                                     Grid.ColumnSpan="4"
+                                     HorizontalOptions="Fill"
+                                     VerticalOptions="Center" 
+                                     HeightRequest="2" 
+                                     Color="#1c4081" />
+
+                            <combobox:SfComboBox x:Name="cboTarjeta1" 
+                                                 Grid.Row="3"
+                                                 Grid.Column="0"                                    
+                                                 HorizontalOptions="End"
+                                                 Text="Seleccione"  
+                                                 DropDownTextSize="26" 
+                                                 DropDownItemHeight="80" 
+                                                 HeightRequest="80"
+                                                 DropDownCornerRadius="10"
+                                                 SelectedDropDownItemColor="#cddbe6" 
+                                                 DropDownTextColor="#005797"  
+                                                 VerticalOptions="EndAndExpand"
+                                                 TextSize="26"  
+                                                 DisplayMemberPath="dstarjeta" 
+                                                 SelectionChanged="CboTarjeta1_SelectionChanged"/>
+
+                            <inputLayout:SfTextInputLayout x:Name="txtNroOperacion1" 
+                                                           IsEnabled="False"  
+                                                           Grid.Row="3" 
+                                                           Grid.Column="1" 
+                                                           FocusedColor="#0450C2" 
+                                                           VerticalOptions="Center" 
+                                                           HorizontalOptions="FillAndExpand"
+                                                           ContainerBackgroundColor="#E6EEF9" 
+                                                           ReserveSpaceForAssistiveLabels="False">
+                                <Entry Keyboard="Numeric" x:Name="txtNroTarjeta01" HorizontalTextAlignment="Center" FontSize="25" />
+                            </inputLayout:SfTextInputLayout>
+
+                            <inputLayout:SfTextInputLayout x:Name="sfTxtMtoTarjeta01"
+                                                           Grid.Row="3" 
+                                                           Grid.Column="2" 
+                                                           HorizontalOptions="FillAndExpand"
+                                                           VerticalOptions="Center"
+                                                           FocusedColor="#0450C2" 
+                                                           ContainerBackgroundColor="#E6EEF9" 
+                                                           ReserveSpaceForAssistiveLabels="False">
+                                <Entry Keyboard="Numeric"  x:Name="txtMtoTarjeta01" Unfocused="TxtMtoTarjeta01_OnFocused"  HorizontalTextAlignment="Center" FontSize="25"  />
+                            </inputLayout:SfTextInputLayout>
+
+                            <Image x:Name="imgDeletePago1" 
+                                    Grid.Column="3"
+                                    Grid.Row="3"
+                                    BackgroundColor="#DC595F"
+                                    HeightRequest="65"
+                                    VerticalOptions="Center"
+                                    WidthRequest="65" Source="Delete">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Tapped="OnImgDeletePago1_Tapped"
+                                        NumberOfTapsRequired="1" />
+                                </Image.GestureRecognizers>
+                            </Image>
+
+                            <combobox:SfComboBox x:Name="cboTarjeta2" 
+                                                 IsVisible="False"
+                                                 Grid.Row="4" 
+                                                 Grid.Column="0"
+                                                 IsEnabled="False"
+                                                 HorizontalOptions="End"
+                                                 Text="Seleccione" 
+                                                 DropDownTextSize="26"
+                                                 DropDownItemHeight="80"
+                                                 HeightRequest="80"
+                                                 DropDownCornerRadius="10" 
+                                                 SelectedDropDownItemColor="#cddbe6" 
+                                                 DropDownTextColor="#005797"  
+                                                 TextSize="26" 
+                                                 DisplayMemberPath="dstarjeta"
+                                                 SelectionChanged="CboTarjeta2_SelectionChanged"/>
+                            
+                            <inputLayout:SfTextInputLayout x:Name="txtNroOperacion2" IsVisible="False" 
+                                                               IsEnabled="False"   Grid.Row="4" Grid.Column="1"
+                                                               HorizontalOptions="FillAndExpand"
+                                                               FocusedColor="#0450C2" 
+                                                               ContainerBackgroundColor="#E6EEF9"  
+                                                               ReserveSpaceForAssistiveLabels="False">
+                                <Entry Keyboard="Numeric" HorizontalTextAlignment="Center" FontSize="25"  />
+                            </inputLayout:SfTextInputLayout>
+
+                            <inputLayout:SfTextInputLayout x:Name="sfTxtMtoTarjeta02" IsVisible="False"  
+                                                               Grid.Row="4" Grid.Column="2" 
+                                                               HorizontalOptions="FillAndExpand" VerticalOptions="Center"
+                                                               FocusedColor="#0450C2" 
+                                                               ContainerBackgroundColor="#E6EEF9" 
+                                                               ReserveSpaceForAssistiveLabels="False">
+                                <Entry Keyboard="Numeric" x:Name="txtMtoTarjeta02"  
+                                           Unfocused="TxtMtoTarjeta02_OnFocused" 
+                                           HorizontalTextAlignment="Center" 
+                                           FontSize="25"   />
+                            </inputLayout:SfTextInputLayout>
+
+                            <Image x:Name="imgDeletePago2" IsVisible="False"
+                                    Grid.Column="3"
+                                    Grid.Row="4"
+                                    BackgroundColor="#DC595F"
+                                    HeightRequest="65"
+                                    VerticalOptions="Center"
+                                    WidthRequest="65" Source="Delete">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Tapped="OnImgDeletePago2_Tapped"
+                                        NumberOfTapsRequired="1" />
+                                </Image.GestureRecognizers>
+                            </Image>
+
+
+                            <combobox:SfComboBox x:Name="cboTarjeta3" 
+                                                 IsVisible="False"
+                                                 Grid.Row="5" 
+                                                 Grid.Column="0"  
+                                                 IsEnabled="False"
+                                                 HorizontalOptions="End"
+                                                 Text="Seleccione" 
+                                                 DropDownTextSize="26" 
+                                                 DropDownItemHeight="80"
+                                                 DropDownCornerRadius="10" 
+                                                 SelectedDropDownItemColor="#cddbe6" 
+                                                 DropDownTextColor="#005797" 
+                                                 TextSize="25" 
+                                                 HeightRequest="80"
+                                                 DisplayMemberPath="dstarjeta" 
+                                                 SelectionChanged="CboTarjeta3_SelectionChanged"/>
+                            
+                            <inputLayout:SfTextInputLayout x:Name="txtNroOperacion3" 
+                                                           IsVisible="False"
+                                                           IsEnabled="False" 
+                                                           Grid.Row="5" 
+                                                           Grid.Column="1"
+                                                           HorizontalOptions="FillAndExpand"
+                                                           FocusedColor="#0450C2"
+                                                           ContainerBackgroundColor="#E6EEF9" 
+                                                           ReserveSpaceForAssistiveLabels="False">
+                                <Entry Keyboard="Numeric" HorizontalTextAlignment="Center" FontSize="25"  />
+                            </inputLayout:SfTextInputLayout>
+                            <inputLayout:SfTextInputLayout x:Name="sfTxtMtoTarjeta03" IsVisible="False"  
+                                                               Grid.Row="5" Grid.Column="2" 
+                                                               HorizontalOptions="FillAndExpand" VerticalOptions="Center"
+                                                               FocusedColor="#0450C2" 
+                                                               ContainerBackgroundColor="#E6EEF9" 
+                                                               ReserveSpaceForAssistiveLabels="False">
+                                <Entry Keyboard="Numeric" x:Name="txtMtoTarjeta03" Unfocused="TxtMtoTarjeta03_OnFocused"  
+                                           HorizontalTextAlignment="Center" FontSize="25"  />
+                            </inputLayout:SfTextInputLayout>
+                            <Image x:Name="imgDeletePago3" IsVisible="False"
+                                   Grid.Column="3"
+                                    Grid.Row="5"
+                                    BackgroundColor="#DC595F"
+                                    HeightRequest="65"
+                                    VerticalOptions="Center"
+                                    WidthRequest="65" Source="Delete">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Tapped="OnImgDeletePago3_Tapped"
+                                        NumberOfTapsRequired="1" />
+                                </Image.GestureRecognizers>
+                            </Image>
+
+                        </Grid>
+                    </StackLayout>
+
+                </StackLayout>
+
+            </StackLayout>
+
+            <StackLayout x:Name="busyindicator"  BackgroundColor="White"  VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" IsVisible="False">
+                <busyindicator:SfBusyIndicator  AnimationType="Ball" Title="Procesando venta ..." ViewBoxWidth = "100" ViewBoxHeight="100" Duration="0.5" TextColor="#006ba6" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

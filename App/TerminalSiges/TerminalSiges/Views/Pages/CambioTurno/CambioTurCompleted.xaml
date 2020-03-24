@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:titan="clr-namespace:TerminalSIGES.Views.Lib" 
+              xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+               	xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             Title="Procesando cambio de turno"
+             x:Class="TerminalSiges.Views.Pages.CambioTurno.CambioTurCompleted">
+    <ContentPage.Content>
+
+        <StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  >
+            <busyindicator:SfBusyIndicator IsVisible="True" x:Name="IndicadorDeCarga" AnimationType="Ball" Title="Cambio de Turno, este proceso puede demorar hasta 2 minutos..." ViewBoxWidth = "100" ViewBoxHeight="100" Duration="0.5" TextColor="#1c4081" TextSize="14" />
+            <StackLayout x:Name="Grilla" BackgroundColor="White" VerticalOptions="CenterAndExpand" Padding="50" Margin="50, 10" IsVisible="False"  >
+                <ContentView VerticalOptions="Center" >
+                    <Image Source="ok.png" HeightRequest="50" WidthRequest="50">
+
+                    </Image>
+                </ContentView>
+                <ContentView VerticalOptions="Center" >
+                    <Label HorizontalTextAlignment="Center" FontSize="30" Text="Se ha registrado satisfactoriamente el cambio de turno" Margin="20, 0" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"  />
+                </ContentView>
+                <ContentView VerticalOptions="Center" Margin="40, 20">
+                    <buttons:SfButton x:Name="circleBtnSi" Text="Volver al Inicio" FontSize="25"  HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center"  CornerRadius="10" HeightRequest="80" WidthRequest="250" BackgroundColor="#005797" BorderColor="#005797" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"
+                                      Clicked="IrAlInicio">
+                    </buttons:SfButton>
+                </ContentView>
+
+            </StackLayout>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

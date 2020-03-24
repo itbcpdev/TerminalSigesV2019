@@ -1,0 +1,659 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:titan="clr-namespace:TerminalSIGES.Views.Lib" 
+            BackgroundColor="#ffffff"  
+            Title="Facturación" 
+            xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms" 
+            xmlns:sfListView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms" 
+            xmlns:local="clr-namespace:TerminalSIGES.ViewModels"
+            xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+            xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+            xmlns:control="clr-namespace:TerminalSiges.Views.Lib"
+            x:Class="TerminalSiges.Views.Pages.Invoce.SemiAutomatic">
+    <ContentPage.BindingContext>
+        <local:MainViewModel></local:MainViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <AbsoluteLayout  Margin="0,0,0,0"  >
+            <StackLayout Spacing="0" x:Name="principal"  AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="100" x:Name="Fila"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="0" x:Name="Columna"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout x:Name="StackOrientationOne" Orientation="Vertical" Grid.Column="0" Grid.Row="0">
+                        <StackLayout Margin="5,0" Padding="10,0,10,0" VerticalOptions="Start" >
+                            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Fill" >
+                                <Grid VerticalOptions="Center" >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="70" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="150" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Button IsTabStop="False"   CornerRadius="5" Grid.Row="0" Grid.Column="0" Margin="0,5,0,5" TextColor="#FFFFFF" HeightRequest="70" WidthRequest="150" BackgroundColor="#1c4081" FontSize="30" VerticalOptions="Center"  Text="CARA" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+                                    <StackLayout Grid.Row="0" Grid.Column="1"  VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="70" >
+                                        <ScrollView  HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                            <StackLayout x:Name="stCaras" Margin="0,5,0,5" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                            </StackLayout>
+                                        </ScrollView>
+                                    </StackLayout>
+                                </Grid>
+                                <Grid x:Name="GridDescripcionDocumento" BackgroundColor="#cddbe6" Padding="0,10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="170" />
+                                        <ColumnDefinition Width="150" />
+                                        <ColumnDefinition Width="220" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label x:Name="txtTipoComprobante" Grid.Row="0" Grid.Column="0" FontSize="20" VerticalOptions="Center" HorizontalTextAlignment="Center"  Text="" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}">
+                                    </Label>
+                                    <Label  Grid.Row="0" Grid.Column="1" FontSize="20" VerticalOptions="Center" HorizontalTextAlignment="End"  Text="No" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}">
+                                    </Label>
+                                    <Label x:Name="lblNroComprobante" Grid.Row="0" Grid.Column="2" FontSize="25" BackgroundColor="#1c4081" TextColor="AliceBlue" VerticalTextAlignment="Center" HeightRequest="50" Text="000-000000" VerticalOptions="Center" HorizontalTextAlignment="Center"  FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"
+                               HorizontalOptions="Fill">
+                                    </Label>
+                                </Grid>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout Margin="5,0,5,0"  Padding="10,0,10,0" VerticalOptions="CenterAndExpand" >
+                            <ContentView IsVisible="False" >
+                                <Label x:Name="listaProductos" VerticalOptions="Center" Font="20" HorizontalOptions = "Center" Text="Lista de Productos" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"  />
+                            </ContentView>
+                            <ContentView x:Name="busyindicator" IsVisible="False" >
+                                <busyindicator:SfBusyIndicator AnimationType="Ball" ViewBoxWidth = "25" ViewBoxHeight="10" Duration="0.5" TextColor="#006ba6" />
+                            </ContentView>
+                            <Frame  BorderColor="#006ba6"  HorizontalOptions="CenterAndExpand" Padding="10,10,10,0" IsClippedToBounds="True" HasShadow="True">
+                                <StackLayout>
+
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="25" />
+
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="40*" />
+                                            <ColumnDefinition Width="20*" />
+                                            <ColumnDefinition Width="20*" />
+                                            <ColumnDefinition Width="20*" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <!--obs-->
+                                        <Label Grid.Row="0" Grid.Column="0" FontSize="20"     Text="Descripción"     HorizontalTextAlignment="Center"     FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}">
+                                        </Label>
+                                        <Label   Grid.Row="0" Grid.Column="1" FontSize="20"   Text="Precio"   HorizontalTextAlignment="Center"     FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"
+                                              >
+
+                                        </Label>
+                                        <Label Grid.Row="0" Grid.Column="2" FontSize="20"  Text="Cantidad"     HorizontalTextAlignment="Center"  FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}">
+                                        </Label>
+                                        <Label  Grid.Row="0" Grid.Column="3"   FontSize="20" HorizontalTextAlignment="Center"  Text="Total" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"
+                                        >
+                                        </Label>
+                                    </Grid>
+                                    <BoxView  HeightRequest="2" WidthRequest="10" Color="#1c4081" />
+
+                                    <Grid>
+                                        <sfListView:SfListView x:Name="listView" AllowSwiping="True" 
+                                                       SwipeOffset="100" 
+                                                       SwipeThreshold="30"
+                                                       ItemSize="75" 
+                                                       HeightRequest="500"  
+                                                       ItemSpacing="0,0,0,10"
+                                                       SwipeStarted="ListView_SwipeStarted" 
+                                                       SwipeEnded="ListView_SwipeEnded" >
+                                            <sfListView:SfListView.LeftSwipeTemplate>
+                                                <DataTemplate x:Name="LeftSwipeTemplate">
+                                                    <Grid>
+                                                        <Grid BackgroundColor="#DC595F" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Column="0">
+                                                            <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                                                                <Image Grid.Column="0"
+                                                                Grid.Row="0"
+                                                                BackgroundColor="Transparent"
+                                                                HeightRequest="65"
+                                                                WidthRequest="65"   BindingContextChanged="rightImage_BindingContextChanged" />
+                                                            </Grid>
+                                                        </Grid>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </sfListView:SfListView.LeftSwipeTemplate>
+                                            <sfListView:SfListView.ItemTemplate>
+                                                <DataTemplate>
+
+                                                    <ViewCell>
+
+                                                        <StackLayout BackgroundColor="#cddbe6">
+                                                            <Grid Padding="10" >
+                                                                <Grid.RowDefinitions>
+                                                                    <RowDefinition Height="25" />
+                                                                    <RowDefinition Height="1" />
+                                                                    <RowDefinition Height="25" />
+                                                                </Grid.RowDefinitions>
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="40*" />
+                                                                    <ColumnDefinition Width="20*" />
+                                                                    <ColumnDefinition Width="20*" />
+                                                                    <ColumnDefinition Width="20*" />
+
+                                                                </Grid.ColumnDefinitions>
+
+                                                                <Label Grid.Row="0"
+                                                                       Grid.Column="0"
+                                                                       FontSize="20"  
+                                                                       Text="{Binding tipo}"   
+                                                                       HorizontalTextAlignment="Start"   
+                                                                       FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+
+                                                                <Label Grid.Row="0"
+                                                                       Grid.Column="3"
+                                                                       FontSize="20"   
+                                                                       Text="{Binding hora}"      
+                                                                       HorizontalTextAlignment="Center"    
+                                                                       FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+
+                                                                <BoxView Grid.Row="1"
+                                                                         Grid.Column="0" 
+                                                                         Grid.ColumnSpan="4"
+                                                                         HeightRequest="1" 
+                                                                         Color="#2187d2"/>
+
+                                                                <Label Grid.Row="2" 
+                                                                       Grid.Column="0"
+                                                                       FontSize="20"   
+                                                                       Text="{Binding dsarticulo}"    
+                                                                       HorizontalTextAlignment="Start"   
+                                                                       FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+
+                                                                <Label Grid.Row="2"
+                                                                       Grid.Column="1" 
+                                                                       FontSize="20"   
+                                                                       Text="{Binding precio}"   
+                                                                       HorizontalTextAlignment="Center"  
+                                                                       FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+
+                                                                <Label Grid.Row="2"
+                                                                       Grid.Column="2" 
+                                                                       FontSize="20"  
+                                                                       Text="{Binding cantidad}"  
+                                                                       HorizontalTextAlignment="Center"  
+                                                                       FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+
+                                                                <Label Grid.Row="2" 
+                                                                       Grid.Column="3"  
+                                                                       FontSize="20" 
+                                                                       HorizontalTextAlignment="Center" 
+                                                                       Text="{Binding total}" 
+                                                                       FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+
+                                                            </Grid>
+                                                        </StackLayout>
+                                                    </ViewCell>
+                                                </DataTemplate>
+                                            </sfListView:SfListView.ItemTemplate>
+                                        </sfListView:SfListView>
+                                    </Grid>
+                                </StackLayout>
+                            </Frame>
+                            <StackLayout>
+                                <Grid x:Name="MiscelaneosGrid">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="90" />
+                                        <RowDefinition Height="90" />
+                                        <RowDefinition x:Name="MiscelaneosGridRow" Height="90" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition x:Name="MiscelaneosGridColumn1" Width="Auto" />
+                                        <ColumnDefinition x:Name="MiscelaneosGridColumn2" Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout x:Name="MiscelaneosBotones" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" HorizontalOptions="Start" Orientation="Horizontal" >
+                                        <StackLayout x:Name="MiscelaneosBotonesStackOne" Orientation="Vertical">
+                                            <buttons:SfButton x:Name="btnCliente" 
+                                             HorizontalOptions="Start"
+                                             VerticalOptions="Center"
+                                             HorizontalTextAlignment="Center"
+                                             VerticalTextAlignment="Center"
+                                             Text="&#xE7EE;"
+                                             BorderWidth="0"                                      
+                                             FontSize="45"
+                                             FontAttributes="Bold"
+                                             Clicked="BtnCliente_OnCliked"
+                                             WidthRequest="65"
+                                             FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteSegoe}}"
+                                             HeightRequest="65"
+                                             CornerRadius="100" >
+
+                                            </buttons:SfButton>
+                                            <buttons:SfButton x:Name="btnProducto" 
+                                             HorizontalOptions="Center"
+                                             VerticalOptions="Center"
+                                             HorizontalTextAlignment="Center"
+                                             VerticalTextAlignment="Center"
+                                             Text="&#xE710;"
+                                             BorderWidth="0" 
+                                             FontSize="45" 
+                                             FontAttributes="Bold"
+                                             Clicked="BtnAgregar_OnCliked"
+                                             WidthRequest="70"
+                                             FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteSegoe}}"
+                                             HeightRequest="70"
+                                             CornerRadius="100" >
+
+                                            </buttons:SfButton>
+                                            <buttons:SfButton x:Name="btnAutomatic"
+                                             HorizontalOptions="Center"
+                                             VerticalOptions="Center"
+                                             HorizontalTextAlignment="Center"
+                                             VerticalTextAlignment="Center"
+                                             Text="&#xE768;"
+                                             BorderWidth="0"                                      
+                                             BackgroundColor="#2555c1"  
+                                             BorderColor="#1c4081" 
+                                             FontSize="45"
+                                             FontAttributes="Bold"
+                                             Clicked="BtnAutomatic_Clicked"
+                                             WidthRequest="70"
+                                             FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteSegoe}}"
+                                             HeightRequest="70"
+                                             CornerRadius="100" >
+
+                                            </buttons:SfButton>
+                                        </StackLayout>
+                                        <StackLayout x:Name="MiscelaneosBotonesStackTwo" Orientation="Vertical">
+                                            <buttons:SfButton x:Name="btnNuevo" 
+                                             HorizontalOptions="Center"
+                                             VerticalOptions="Center"
+                                             HorizontalTextAlignment="Center"
+                                             VerticalTextAlignment="Center"
+                                              Text="&#xE7C3;"
+                                             BorderWidth="0"                                                              
+                                             BackgroundColor="#2555c1"  
+                                             BorderColor="#1c4081" 
+                                             FontSize="45"
+                                                  FontAttributes="Bold"
+                                             Clicked="BtnNuevo_Clicked"
+                                             WidthRequest="70"
+                                             FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteSegoe}}"
+                                             HeightRequest="70"
+                                             CornerRadius="100" >
+
+                                            </buttons:SfButton>
+                                            <buttons:SfButton x:Name="btnDeshacer" 
+                                              HorizontalOptions="Center"
+                                              VerticalOptions="Center"
+                                              HorizontalTextAlignment="Center"
+                                              VerticalTextAlignment="Center"
+                                              Text="&#xE7A7;"
+                                              BorderWidth="0"        
+                                              FontSize="45"
+                                              FontAttributes="Bold"
+                                              Clicked="BtnDeshacer_OnClicked"
+                                              WidthRequest="70"
+                                              FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteSegoe}}"
+                                              HeightRequest="70"
+                                              CornerRadius="100" >
+
+                                            </buttons:SfButton>
+                                        </StackLayout>
+                                    </StackLayout>
+                                    <Frame x:Name="MiscelaneosSubTotal" Padding="10" BorderColor="#006ba6" BackgroundColor="#cddbe6" HorizontalOptions="FillAndExpand"  Grid.Row="0" Grid.Column="1">
+                                        <Grid >
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="30" />
+                                                <RowDefinition Height="30" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label Grid.Row="0" Grid.Column="0" FontSize="25" VerticalOptions="Center" HorizontalTextAlignment="Center"  Text="Sub Total S/." FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}">
+                                            </Label>
+                                            <Label x:Name="txtSubTotal"   Grid.Row="1" Grid.Column="0"  FontSize="25"   VerticalOptions="Center" HorizontalTextAlignment="Center" Text="0.00"   FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}" >
+                                            </Label>
+                                            <Label Grid.Row="0" Grid.Column="1" FontSize="25" VerticalOptions="Center"  HorizontalTextAlignment="Center"  Text="I.G.V. S/." FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}">
+                                            </Label>
+                                            <Label x:Name="txtIGV" Grid.Row="1" Grid.Column="1" FontSize="25"   VerticalOptions="Center" HorizontalTextAlignment="Center" Text="0.00"   FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}">
+                                            </Label>
+                                            <Label Grid.Row="0" Grid.Column="2" FontSize="25" VerticalOptions="Center"   HorizontalTextAlignment="Center"  Text="Total S/." FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}">
+                                            </Label>
+                                            <Label x:Name="txtTotal" Grid.Row="1" Grid.Column="2" FontSize="25"   VerticalOptions="Center" HorizontalTextAlignment="Center" Text="0.00"  FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}">
+                                            </Label>
+                                        </Grid>
+                                    </Frame>
+                                    <Frame x:Name="MiscelaneosDatosCli" Padding="10" BorderColor="#006ba6" BackgroundColor="#cddbe6" HorizontalOptions="FillAndExpand" Grid.Row="1" Grid.Column="1">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="30" />
+                                                <RowDefinition Height="30" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label x:Name="labelRuc" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="25" VerticalOptions="Center" HorizontalTextAlignment="Start"  Text="RUC" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}">
+                                            </Label>
+                                            <Label x:Name="txtRuc"   Grid.Row="0" Grid.Column="1"  Grid.ColumnSpan="2" FontSize="25"   VerticalOptions="Center" HorizontalTextAlignment="Center" Text=""   FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}">
+                                            </Label>
+                                            <Label Grid.Row="1" Grid.Column="0"  Grid.ColumnSpan="2" FontSize="25" VerticalOptions="Center" HorizontalTextAlignment="Start"  Text="Razon Social" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}">
+                                            </Label>
+                                            <Label x:Name="txtRazonSocial" Grid.Row="1" Grid.Column="1" FontSize="25"  Grid.ColumnSpan="2" VerticalOptions="Center" HorizontalTextAlignment="Center" Text=""   FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}">
+                                            </Label>
+                                        </Grid>
+
+                                    </Frame>
+                                    <Frame x:Name="MiscelaneosPuntos" Padding="10" BorderColor="#006ba6" BackgroundColor="#cddbe6" HorizontalOptions="FillAndExpand" Grid.Row="2" Grid.Column="1">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="30" />
+                                                <RowDefinition Height="30" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="25" VerticalOptions="Center" HorizontalTextAlignment="Start"  Text="Puntos Disponible" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}">
+                                            </Label>
+                                            <Label x:Name="txtPuntosDisponible"   Grid.Row="0" Grid.Column="2"  FontSize="25"   VerticalOptions="Center" HorizontalTextAlignment="Center" Text="0"   FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}">
+                                            </Label>
+                                            <Label Grid.Row="1" Grid.Column="0"  Grid.ColumnSpan="2" FontSize="25" VerticalOptions="Center" HorizontalTextAlignment="Start"  Text="Valor Acumulado " FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}">
+                                            </Label>
+                                            <Label x:Name="txtValorAcumulado" Grid.Row="1" Grid.Column="2" FontSize="25"   VerticalOptions="Center" HorizontalTextAlignment="Center" Text="0.00"   FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}">
+                                            </Label>
+                                        </Grid>
+
+                                    </Frame>
+                                </Grid>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                    
+                    <StackLayout Grid.Row="1" Grid.Column="0" x:Name="StackOrientationTwo" 
+                                 Orientation="Horizontal" VerticalOptions="FillAndExpand"
+                                 BackgroundColor="#cddbe6"  HorizontalOptions="FillAndExpand" 
+                                 MinimumWidthRequest="100" MinimumHeightRequest="100">
+
+                        <ScrollView  x:Name="ScrollOrientationOne" Orientation="Horizontal">
+                            <StackLayout x:Name="StackOrientationThree" Margin="5" Orientation="Horizontal">
+
+                                <buttons:SfButton x:Name="btnCredito" HeightRequest="100"  WidthRequest="100" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#005797" BorderColor="#005797"
+                                             Clicked="BtnCredito_OnClicked" >
+                                    <buttons:SfButton.Content>
+                                        <StackLayout Orientation="Vertical" HorizontalOptions="Center" Padding="5">
+                                            <Label  Text="&#xE81E;" Style="{StaticResource Iconbutton}"  />
+                                            <Label Text="Creditos" Style="{StaticResource lblbuttons}"  />
+                                        </StackLayout>
+                                    </buttons:SfButton.Content>
+                                </buttons:SfButton>
+
+                                <buttons:SfButton x:Name="btnEfectivo" HeightRequest="100"   WidthRequest="100" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#005797" BorderColor="#005797"
+                                         Clicked="BtnEfectivo_OnClicked"      >
+                                    <buttons:SfButton.Content>
+                                        <StackLayout Orientation="Vertical" HorizontalOptions="Center" Padding="5">
+                                            <Label  Text="&#xE719;" Style="{StaticResource Iconbutton}"  />
+                                            <Label Text="Efectivo" Style="{StaticResource lblbuttons}" />
+                                        </StackLayout>
+                                    </buttons:SfButton.Content>
+                                </buttons:SfButton>
+
+                                <buttons:SfButton x:Name="btnTarjeta" HeightRequest="100"  WidthRequest="100" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#005797" BorderColor="#005797"
+                                             Clicked="BtnTarjeta_OnClicked" >
+                                    <buttons:SfButton.Content>
+                                        <StackLayout Orientation="Vertical" HorizontalOptions="Center" Padding="5">
+                                            <Label Text="&#xE912;" Style="{StaticResource Iconbutton}"  />
+                                            <Label Text="Tarjeta" Style="{StaticResource lblbuttons}" />
+                                        </StackLayout>
+                                    </buttons:SfButton.Content>
+                                </buttons:SfButton>
+
+                                <buttons:SfButton x:Name="btnPagos"  HeightRequest="100"  WidthRequest="100" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#005797" BorderColor="#005797"
+                                              Clicked="BtnPagos_OnClicked">
+                                    <buttons:SfButton.Content>
+                                        <StackLayout Orientation="Vertical" HorizontalOptions="Center" Padding="5">
+                                            <Label  Text="&#xE8EC;"  Style="{StaticResource Iconbutton}"   />
+                                            <Label Text="Pagos" Style="{StaticResource lblbuttons}"  />
+                                        </StackLayout>
+                                    </buttons:SfButton.Content>
+                                </buttons:SfButton>
+
+                                <buttons:SfButton x:Name="btnDocument" HeightRequest="100"  WidthRequest="100" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#005797" BorderColor="#005797"
+                                              Clicked="BtnDocument_OnClicked">
+                                    <buttons:SfButton.Content>
+                                        <StackLayout Orientation="Vertical" HorizontalOptions="Center" Padding="5">
+                                            <Label  Text="&#xE89A;" Style="{StaticResource Iconbutton}"  />
+                                            <Label Text="Document" Style="{StaticResource lblbuttons}"/>
+                                        </StackLayout>
+                                    </buttons:SfButton.Content>
+                                </buttons:SfButton>
+
+                                <buttons:SfButton x:Name="btnReImpresion" HeightRequest="100"  WidthRequest="100" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#005797" BorderColor="#005797"
+                                              Clicked="BtnReImpresion_OnClicked">
+                                    <buttons:SfButton.Content>
+                                        <StackLayout Orientation="Vertical" HorizontalOptions="Center" Padding="5">
+                                            <Label  Text="&#xE749; Re" Style="{StaticResource Iconbutton}"  />
+                                            <Label Text="Impresión" Style="{StaticResource lblbuttons}"  />
+                                        </StackLayout>
+                                    </buttons:SfButton.Content>
+                                </buttons:SfButton>
+
+                                <buttons:SfButton x:Name="btnTranfGrat" HeightRequest="100"  WidthRequest="100" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#005797" BorderColor="#005797"
+                                              Clicked="BtnTranfGrat_OnClicked">
+                                    <buttons:SfButton.Content>
+                                        <StackLayout Orientation="Vertical" HorizontalOptions="Center" Padding="5">
+                                            <Label  Text="&#xE7BF;" Style="{StaticResource Iconbutton}"  />
+                                            <Label Text="Tranf Grat" Style="{StaticResource lblbuttons}"  />
+                                        </StackLayout>
+                                    </buttons:SfButton.Content>
+                                </buttons:SfButton>
+
+                                <buttons:SfButton x:Name="btnSerafin" HeightRequest="100" WidthRequest="100" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#005797" BorderColor="#005797"
+                                              Clicked="BtnSerafin_OnClicked">
+                                    <buttons:SfButton.Content>
+                                        <StackLayout Orientation="Vertical" HorizontalOptions="Center" Padding="5">
+                                            <Label  Text="&#xE772;" Style="{StaticResource Iconbutton}"  />
+                                            <Label Text="Serafin" Style="{StaticResource lblbuttons}" />
+                                        </StackLayout>
+                                    </buttons:SfButton.Content>
+                                </buttons:SfButton>
+
+                                <buttons:SfButton x:Name="btnCajear" HeightRequest="100" WidthRequest="100" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#005797" BorderColor="#005797"
+                                              Clicked="btnCajear_Clicked">
+                                    <buttons:SfButton.Content>
+                                        <StackLayout Orientation="Vertical" HorizontalOptions="Center" Padding="5">
+                                            <Label  Text="&#xE899;" Style="{StaticResource Iconbutton}"  />
+                                            <Label Text="Canjear" Style="{StaticResource lblbuttons}" />
+                                        </StackLayout>
+                                    </buttons:SfButton.Content>
+                                </buttons:SfButton>
+
+                            </StackLayout>
+                        </ScrollView>
+
+                    </StackLayout>
+
+                </Grid>
+                
+                
+              
+                    
+            </StackLayout>
+            <Frame CornerRadius="10"  
+                   OutlineColor="Red" x:Name="popupTransPendiente" BackgroundColor="#ffffff" Padding="10, 0" Margin="10,10" IsVisible="False" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+
+                    <StackLayout >
+
+                        <StackLayout x:Name="ResultMultiple" IsVisible="true" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
+                            <StackLayout VerticalOptions="Center" Padding="20,10,20,2">
+                                <ContentView>
+                                    <Label  FontSize="30" HorizontalTextAlignment="Center" Text="Transacciones pendientes" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}" />
+                                </ContentView>
+                                <ContentView Padding="20,5,20,5">
+                                    <BoxView HeightRequest="2" HorizontalOptions="FillAndExpand" BackgroundColor="#1c4081"/>
+                                </ContentView>
+                                <ContentView >
+                                    <Label x:Name="txtNroCara" FontSize="30" HorizontalTextAlignment="Center" Text="" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}" />
+                                </ContentView>
+                            </StackLayout>
+                            <StackLayout Padding="10,0,10,0" HorizontalOptions="FillAndExpand">
+                                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="2" VerticalOptions="Start" Color="#1c4081" />
+
+                                <Grid HorizontalOptions="FillAndExpand">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="10*" />
+                                        <ColumnDefinition Width="35*" />
+                                        <ColumnDefinition Width="15*" />
+                                        <ColumnDefinition Width="15*" />
+                                        <ColumnDefinition Width="15*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label  Grid.Row="0" Grid.Column="0" FontSize="20" 
+                                            HorizontalTextAlignment="Center"  
+                                            Text="Hora" 
+                                            FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"/>
+
+                                    <Label  Grid.Row="0" Grid.Column="1" FontSize="20" 
+                                            HorizontalTextAlignment="Center"  
+                                            Text="Producto" 
+                                            FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"/>
+
+                                    <Label Grid.Row="0" Grid.Column="2"  FontSize="20"   
+                                           HorizontalTextAlignment="Center" 
+                                           Text="Precio"     
+                                           FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"/>
+
+                                    <Label  Grid.Row="0" Grid.Column="3" FontSize="20" 
+                                            HorizontalTextAlignment="Center"  
+                                            Text="Cantidad" 
+                                            FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"/>
+
+                                    <Label  Grid.Row="0" Grid.Column="4" FontSize="20" 
+                                            HorizontalTextAlignment="Center"  
+                                            Text="Total" 
+                                            FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"/>
+
+                                </Grid>
+                                <BoxView  HeightRequest="2" WidthRequest="10" Color="#1c4081" />
+                            </StackLayout>
+                            <StackLayout Padding="10,0,10,0" >
+
+                                <ListView x:Name="transactionPendiente" 
+                                   ItemTapped="ListService_OnItemTransaction"
+                                  HeightRequest="70"  
+                                  HasUnevenRows="True"
+                                  SeparatorColor="#cddbe6" 
+                                  Margin="0,0">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <StackLayout Padding="1">
+                                                    <Grid>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="40" />
+                                                        </Grid.RowDefinitions>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="10*" />
+                                                            <ColumnDefinition Width="35*" />
+                                                            <ColumnDefinition Width="15*" />
+                                                            <ColumnDefinition Width="15*" />
+                                                            <ColumnDefinition Width="15*" />
+                                                        </Grid.ColumnDefinitions>
+
+                                                        <!--Lado-->
+
+                                                        <Label  Grid.Row="0" Grid.Column="0" FontSize="15" 
+                                                                VerticalOptions="Center"
+                                                                HorizontalTextAlignment="Center"  
+                                                                Text="{Binding hora}" 
+                                                                FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteRegular}}"/>
+
+                                                        <Label Grid.Row="0" Grid.Column="1" FontSize="15" 
+                                                               Text="{Binding dsarticulo1}" 
+                                                               VerticalOptions="Center"
+                                                               HorizontalTextAlignment="Start"     
+                                                               FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteRegular}}"/>
+
+                                                        <Label  Grid.Row="0" Grid.Column="2" FontSize="15" 
+                                                                VerticalOptions="Center"
+                                                                HorizontalTextAlignment="Center"  
+                                                                Text="{Binding precio_orig}" 
+                                                                FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteRegular}}"/>
+
+                                                        <Label  Grid.Row="0" Grid.Column="3" FontSize="15" 
+                                                                VerticalOptions="Center"
+                                                                HorizontalTextAlignment="Center"  
+                                                                Text="{Binding cantidad}" 
+                                                                FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteRegular}}"/>
+
+
+                                                        <Label  Grid.Row="0" Grid.Column="4" FontSize="15" 
+                                                                VerticalOptions="Center"
+                                                                HorizontalTextAlignment="Center"  
+                                                                Text="{Binding total_display}" 
+                                                                FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteRegular}}"/>
+
+                                                    </Grid>
+                                                </StackLayout>
+
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </StackLayout>
+                            <StackLayout Padding="10,0,10,0" >
+                                <BoxView  HeightRequest="2" WidthRequest="10" Color="#1c4081" />
+                            </StackLayout>
+
+                            <StackLayout VerticalOptions="End" HorizontalOptions="FillAndExpand"  Orientation="Horizontal" Margin="30,8">
+
+                                <buttons:SfButton x:Name="btnCancel" Text="Cancelar" FontSize="25" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" CornerRadius="10" HeightRequest="60" HorizontalOptions="FillAndExpand" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"
+                                 Clicked="BtnCancel_Clicked"/>
+                            </StackLayout>
+                        </StackLayout>
+
+                    </StackLayout>
+
+                </StackLayout>
+
+            </Frame>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label" x:Key="Iconbutton">
+                <Setter Property="Margin" Value="0,5,0,0"></Setter>
+                <Setter Property="FontSize" Value="25"></Setter>
+                <Setter Property="VerticalTextAlignment" Value="Center"></Setter>
+                <Setter Property="HorizontalOptions" Value="Center"></Setter>
+                <Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="FontFamily" Value="{Binding  Source={x:Static titan:Estilos.FuenteSegoe}}"></Setter>
+            </Style>
+            <Style TargetType="Label" x:Key="lblbuttons">
+                <Setter Property="Margin" Value="0,4,0,0"></Setter>
+                <Setter Property="FontSize" Value="15"></Setter>
+                <Setter Property="VerticalTextAlignment" Value="Center"></Setter>
+                <Setter Property="HorizontalOptions" Value="Center"></Setter>
+                <Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="FontFamily" Value="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"></Setter>
+            </Style>
+
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary" Text="Salir" Priority="0" Clicked="OnSalir" />
+    </ContentPage.ToolbarItems>
+</ContentPage>

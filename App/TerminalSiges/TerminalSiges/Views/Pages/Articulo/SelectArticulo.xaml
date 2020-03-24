@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:titan="clr-namespace:TerminalSIGES.Views.Lib" 
+                xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+                 	xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+                xmlns:syncfusion="clr-namespace:Syncfusion.SfNumericTextBox.XForms;assembly=Syncfusion.SfNumericTextBox.XForms"
+             Title="Artículo Seleccionado "
+             x:Class="TerminalSiges.Views.Pages.Articulo.SelectArticulo">
+    <ContentPage.Content>
+        <StackLayout Margin="5,5"  VerticalOptions="StartAndExpand" >
+            <ContentView Margin="20,0" >
+                <Label VerticalOptions="Center" HorizontalOptions = "Start" Text="Información del Artículo" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"  >
+                    <Label.Effects>
+                        <titan:UnderlineEffect />
+                    </Label.Effects>
+                </Label>
+            </ContentView>
+            <Frame     BorderColor="#006ba6"  Padding="10,10" Margin="20,0" IsClippedToBounds="True" HasShadow="True">
+
+                <StackLayout  Padding="10,10" Margin="20,0" >
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" >
+
+
+                            <Label Text="Código"></Label>
+                            <StackLayout Orientation="Horizontal">
+
+                                <inputLayout:SfTextInputLayout
+                                     FocusedColor="#0450C2"
+                            ContainerBackgroundColor="#E6EEF9"
+                            ContainerType="Outlined" 
+                                WidthRequest="610"
+                             ReserveSpaceForAssistiveLabels="False"
+                                     
+                                 >
+                                    <Entry  FontSize="45" />
+
+                                </inputLayout:SfTextInputLayout>
+                                
+                              
+                            </StackLayout>
+                            <Label Text="Descripción"></Label>
+                            <StackLayout Orientation="Horizontal">
+                                <inputLayout:SfTextInputLayout
+                                     FocusedColor="#0450C2"
+                            ContainerBackgroundColor="#E6EEF9"
+                            ContainerType="Outlined"  
+                             ReserveSpaceForAssistiveLabels="False"
+                                     
+                                 >
+                                    <Entry  FontSize="45" />
+
+                                </inputLayout:SfTextInputLayout>
+
+
+
+                            </StackLayout>
+                            <Label Text="Unidad Medida"></Label>
+                            <StackLayout Orientation="Horizontal">
+                                <inputLayout:SfTextInputLayout
+                                     FocusedColor="#0450C2"
+                            ContainerBackgroundColor="#E6EEF9"
+                            ContainerType="Outlined" 
+                                WidthRequest="610"
+                             ReserveSpaceForAssistiveLabels="False"
+                                     
+                                 >
+                                    <Entry  FontSize="45" />
+
+                                </inputLayout:SfTextInputLayout>
+
+
+
+                            </StackLayout>
+                            <Label Text="Precio"></Label>
+                            <StackLayout Orientation="Horizontal">
+                                <inputLayout:SfTextInputLayout
+                                     FocusedColor="#0450C2"
+                            ContainerBackgroundColor="#E6EEF9"
+                            ContainerType="Outlined" 
+                                WidthRequest="610"
+                             ReserveSpaceForAssistiveLabels="False"
+                                     
+                                 >
+                                    <Entry  FontSize="45" />
+
+                                </inputLayout:SfTextInputLayout>
+
+
+
+                            </StackLayout>
+                        </StackLayout>
+
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout Orientation="Vertical" WidthRequest="350">
+                            <Label Text="Cantidad"></Label>
+                            <inputLayout:SfTextInputLayout
+                                     FocusedColor="#0450C2"
+                            ContainerBackgroundColor="#E6EEF9"
+                            ContainerType="Outlined" 
+                                 WidthRequest="150"
+                             ReserveSpaceForAssistiveLabels="False"
+                                  >
+                                <Entry Keyboard="Numeric" FontSize="45"   />
+
+                            </inputLayout:SfTextInputLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

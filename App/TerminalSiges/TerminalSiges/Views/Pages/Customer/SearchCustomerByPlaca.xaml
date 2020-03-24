@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:titan="clr-namespace:TerminalSIGES.Views.Lib" 
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+             mc:Ignorable="d"
+             Title="Búsqueda de clientes"
+             x:Class="TerminalSiges.Views.Pages.Customer.SearchCustomerByPlaca">
+    <ContentPage.Content >
+
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="10" >
+
+            <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+
+                <BoxView  HeightRequest="3" HorizontalOptions="FillAndExpand" Color="#1c4081" />
+
+                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" BackgroundColor="#cddbe6" >
+
+                    <Label Text="Número de placa" FontSize="22"/>
+
+                    <StackLayout Orientation="Horizontal">
+
+                        <inputLayout:SfTextInputLayout 
+                                        FocusedColor="#0450C2"
+                                        ContainerBackgroundColor="#E6EEF9"
+                                        ContainerType="Outlined" 
+                                         HorizontalOptions="FillAndExpand"
+                                        ReserveSpaceForAssistiveLabels="False">
+                            <Entry x:Name="txtPlaca" Text="{Binding Nombre}" FontSize="26" TextChanged="_TextChanged"/>
+                        </inputLayout:SfTextInputLayout>
+                    </StackLayout>
+
+                </StackLayout>
+
+                <BoxView  HeightRequest="3" HorizontalOptions="FillAndExpand" Color="#1c4081" />
+
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                <Grid HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="15*" />
+                        <ColumnDefinition Width="20*" />
+                        <ColumnDefinition Width="20*" />
+                        <ColumnDefinition Width="45*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" 
+                           Grid.Column="0" 
+                           FontSize="22"  
+                           Text="Placa"
+                           HorizontalTextAlignment="Start" 
+                           VerticalTextAlignment="Center"
+                           FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"/>
+                    
+                    <Label Grid.Row="0"
+                           Grid.Column="1" 
+                           FontSize="22"  
+                           Text="Código"
+                           HorizontalTextAlignment="Start" 
+                           VerticalTextAlignment="Center"
+                           FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"/>
+                    
+                    <Label Grid.Row="0" 
+                           Grid.Column="2" 
+                           FontSize="22" 
+                           Text="Ruc" 
+                           HorizontalTextAlignment="Start" 
+                           VerticalTextAlignment="Center"
+                           FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"/>
+                    
+                    <Label Grid.Row="0"
+                           Grid.Column="3" 
+                           FontSize="22"  
+                           Text="Nombre"
+                           HorizontalTextAlignment="Start" 
+                           VerticalTextAlignment="Center"
+                           FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"/>
+
+                </Grid>
+                
+                <BoxView  HeightRequest="2" HorizontalOptions="FillAndExpand" Color="#1c4081" />
+                
+                <ListView x:Name="ListProducts" 
+                          HorizontalOptions="FillAndExpand"
+                          VerticalOptions="FillAndExpand"
+                          HasUnevenRows="True"
+                          SeparatorColor="#cddbe6"
+                          ItemTapped="ListService_OnItemTapped"
+                          ItemsSource="{Binding vClientes}"
+                          Margin="0,0" >
+                    <ListView.ItemTemplate>
+
+                        <DataTemplate>
+                            <ViewCell>
+
+                                <StackLayout Margin="0,2"  BackgroundColor="#cddbe6">
+                                    <Grid >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="35" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="15*" />
+                                            <ColumnDefinition Width="20*" />
+                                            <ColumnDefinition Width="20*" />
+                                            <ColumnDefinition Width="45*" />
+                                        </Grid.ColumnDefinitions>
+
+
+                                        <Label Grid.Row="0" 
+                                               Grid.Column="0" 
+                                               FontSize="20"   
+                                               Text="{Binding placa}" 
+                                               HorizontalOptions="Start" 
+                                               VerticalOptions="Center" 
+                                               HorizontalTextAlignment="Start"     
+                                               FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteRegular}}"/>
+
+                                        <Label Grid.Row="0" 
+                                               Grid.Column="1" 
+                                               FontSize="20"   
+                                               Text="{Binding cdcliente}" 
+                                               HorizontalOptions="Start"
+                                               VerticalOptions="Center"
+                                               HorizontalTextAlignment="Center"   
+                                               FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteRegular}}"/>
+
+                                        <Label Grid.Row="0"
+                                               Grid.Column="2" 
+                                               FontSize="20"  
+                                               Text="{Binding  ruccliente}"  
+                                               HorizontalTextAlignment="Start" 
+                                               VerticalOptions="Center" 
+                                               FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteRegular}}"/>
+
+                                        <Label Grid.Row="0"
+                                               Grid.Column="3"
+                                               FontSize="20"  
+                                               Text="{Binding  rscliente}"   
+                                               HorizontalTextAlignment="Start"
+                                               VerticalOptions="Center" 
+                                               FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteRegular}}"/>
+
+                                    </Grid>
+
+                                </StackLayout>
+
+                            </ViewCell>
+
+                        </DataTemplate>
+
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

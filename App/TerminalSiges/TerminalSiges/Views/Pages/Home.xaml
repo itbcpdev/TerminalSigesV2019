@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                      xmlns:titan="clr-namespace:TerminalSIGES.Views.Lib"
+     	xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms" 
+             BackgroundColor="#ECEDEF" 
+             Title="Terminal SIGES"
+             x:Class="TerminalSiges.Views.Pages.Home">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="20,5">
+            <StackLayout VerticalOptions="Start" HorizontalOptions="CenterAndExpand">
+                <StackLayout  Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <StackLayout  Orientation="Vertical" Margin="10,5" WidthRequest="300" VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+
+                        <StackLayout HorizontalOptions="Center">
+                            <Label HorizontalTextAlignment="Center" x:Name="UserName" FontSize="20"  FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"></Label>
+                            <Label HorizontalTextAlignment="Center" x:Name="UserNameFull" FontSize="20"  FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"></Label>
+                            <Label HorizontalTextAlignment="Center" x:Name="Empresa" FontSize="20"  FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"></Label>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical" Margin="10,5"  WidthRequest="300"   VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+
+
+                        <StackLayout HorizontalOptions="CenterAndExpand">
+                            <StackLayout Orientation="Horizontal">
+                                <Label HorizontalTextAlignment="Center" FontSize="20" Text="Terminal"></Label>
+                                <Label HorizontalTextAlignment="Center"  x:Name="txtNroPos"  Text="" FontSize="Medium" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"></Label>
+                            </StackLayout>
+                            <Label HorizontalTextAlignment="Center" FontSize="20" Text="Fecha del Servidor" FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"></Label>
+                            <Label HorizontalTextAlignment="Center" FontSize="20" x:Name="txtFechaServer" Text=""  FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}"></Label>
+                        </StackLayout>
+                    </StackLayout>
+
+                </StackLayout>
+                
+                <BoxView  HeightRequest="4" HorizontalOptions="FillAndExpand" Color="#1c4081" />
+
+            </StackLayout>
+            
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <buttons:SfButton x:Name="btnFacturacion"  
+                                      Grid.Column="0" 
+                                      Grid.Row="0"                                      
+                                      Text="Facturación" 
+                                      ImageSource="iconfacturacion.png"
+                                      ShowIcon="True" 
+                                      ImageAlignment="End"
+                                      CornerRadius="10"  
+                                      FontSize="25"
+                                      ImageWidth="70" 
+                                      Margin="10,0"
+                                      VerticalOptions="FillAndExpand"
+                                      HorizontalOptions="FillAndExpand" 
+                                      BackgroundColor="#005797" 
+                                      BorderColor="#005797"
+                                      FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}" 
+                                      Clicked="BtnFacturacion_Clicked"/>
+                    
+                    <buttons:SfButton x:Name="btnTienda" 
+                                      Grid.Column="1" 
+                                      Grid.Row="0"   
+                                      Text="Tienda" 
+                                      ImageSource="icontienda.png" 
+                                      ShowIcon="True"
+                                      ImageAlignment="End" 
+                                      CornerRadius="10" 
+                                      FontSize="25" 
+                                      ImageWidth="70"
+                                      Margin="10,0"
+                                      VerticalOptions="FillAndExpand"
+                                      HorizontalOptions="FillAndExpand"  
+                                      BackgroundColor="#005797" 
+                                      BorderColor="#005797" 
+                                      FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"/>
+                    
+                    <buttons:SfButton x:Name="btnCierrex" 
+                                      Grid.Column="0" 
+                                      Grid.Row="1"   
+                                      Text="Cierre X"  
+                                      ImageAlignment="End" 
+                                      CornerRadius="10"
+                                      FontSize="25"
+                                      Margin="10,0"
+                                      VerticalOptions="FillAndExpand"
+                                      HorizontalOptions="FillAndExpand" 
+                                      BackgroundColor="#005797"
+                                      BorderColor="#005797" 
+                                      FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}" 
+                                      Clicked="BtnCierreX_Clicked"/>
+
+                    <buttons:SfButton x:Name="btnCierrez" 
+                                      Grid.Column="1" 
+                                      Grid.Row="1"  
+                                      Text="Cierre Z"  
+                                      CornerRadius="10" 
+                                      FontSize="25" 
+                                      Margin="10,0"
+                                      VerticalOptions="FillAndExpand"
+                                      HorizontalOptions="FillAndExpand" 
+                                      BackgroundColor="#005797" 
+                                      BorderColor="#005797" 
+                                      FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}" 
+                                      Clicked="BtnCierreZ_Clicked"/>
+
+                    <buttons:SfButton x:Name="btnLados" 
+                                      Grid.Column="0" 
+                                      Grid.Row="2"   
+                                      Text="Config. Lados"  
+                                      ImageAlignment="End" 
+                                      CornerRadius="10"
+                                      FontSize="25" 
+                                      Margin="10,0"
+                                      VerticalOptions="FillAndExpand"
+                                      HorizontalOptions="FillAndExpand" 
+                                      BackgroundColor="#005797" 
+                                      BorderColor="#005797"
+                                      FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}" 
+                                      Clicked="BtnLados_Clicked" />
+                    
+                    <buttons:SfButton x:Name="btnIniciodia"
+                                      Grid.Column="1" 
+                                      Grid.Row="2"  
+                                      Text="Inicio Día" 
+                                      CornerRadius="10" 
+                                      FontSize="25"
+                                      Margin="10,0"
+                                      VerticalOptions="FillAndExpand"
+                                      HorizontalOptions="FillAndExpand" 
+                                      BackgroundColor="#005797"
+                                      BorderColor="#005797"
+                                      FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}" 
+                                      Clicked="BtnIniciodia_Clicked"/>
+
+                    <buttons:SfButton x:Name="btnCambioTurno" 
+                                      Grid.Column="0" 
+                                      Grid.Row="3"  
+                                      Text="Cambio de Turno" 
+                                      CornerRadius="10" 
+                                      FontSize="25" 
+                                      Margin="10,0"
+                                      VerticalOptions="FillAndExpand"
+                                      HorizontalOptions="FillAndExpand" 
+                                      BackgroundColor="#005797"
+                                      BorderColor="#005797"
+                                      FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"
+                                      Clicked="BtnCambioTurno_Clicked"/>
+
+                    <buttons:SfButton x:Name="btnDeposito"
+                                      Grid.Column="1" 
+                                      Grid.Row="3"  
+                                      Text="Depósitos" 
+                                      ImageSource="iconconfig.png"
+                                      ShowIcon="True"
+                                      ImageAlignment="End"
+                                      CornerRadius="10" 
+                                      FontSize="25" 
+                                      ImageWidth="70"
+                                      Margin="10,0"
+                                      VerticalOptions="FillAndExpand"
+                                      HorizontalOptions="FillAndExpand" 
+                                      FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}" 
+                                      Clicked="BtnDepositos_Clicked"/>
+
+                    <buttons:SfButton x:Name="btnConfig" 
+                                      Grid.Column="0" 
+                                      Grid.Row="4"  
+                                      Text="Grifero Cara"
+                                      ImageSource="icondeposito.png"
+                                      ShowIcon="True"
+                                      ImageAlignment="End"
+                                      CornerRadius="10" 
+                                      FontSize="25"
+                                      ImageWidth="70" 
+                                      Margin="10,0"
+                                      VerticalOptions="FillAndExpand"
+                                      HorizontalOptions="FillAndExpand" 
+                                      BackgroundColor="#1c4081"
+                                      BorderColor="#76a9da"
+                                      FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"
+                                      Clicked="BtnGriferoCara_Clicked"/>
+
+                    <buttons:SfButton x:Name="btnAfiliacionTarj" 
+                                      Grid.Column="1" 
+                                      Grid.Row="4"  
+                                      Text="Afiliación Tarj." 
+                                      CornerRadius="10" 
+                                      FontSize="25" 
+                                      Margin="10,0"
+                                      VerticalOptions="FillAndExpand"
+                                      HorizontalOptions="FillAndExpand" 
+                                      BackgroundColor="#005797"
+                                      BorderColor="#005797" 
+                                      FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}" 
+                                      Clicked="BtnAfiliacion_Clicked"/>
+
+                    <buttons:SfButton x:Name="btnSalir"
+                                      Grid.Column="0" 
+                                      Grid.Row="5"  
+                                      Grid.ColumnSpan="2"
+                                      Text="Cerrar Sesion"   
+                                      CornerRadius="10" 
+                                      Margin="10,0"
+                                      VerticalOptions="FillAndExpand"
+                                      HorizontalOptions="FillAndExpand" 
+                                      FontSize="30"
+                                      FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteBold}}"
+                                      Clicked="BtnCerrarSession_Clicked"/>
+
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <titan:Estilos x:Key="Estilos"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+</ContentPage>
