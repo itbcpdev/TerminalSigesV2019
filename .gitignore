@@ -23,3 +23,10 @@ WebService/Service/ITBCP.ServiceSIGES.Aplication.Test/bin/
 WebService/Service/ITBCP.ServiceSIGES.Aplication.Test/obj/
 WebService/Service/ITBCP.ServiceSIGES.Aplication.Interfaces/obj/
 WebService/Service/ITBCP.ServiceSIGES.Aplication.Interfaces/bin/
+App/TerminalSiges/TerminalSiges.Android/obj/
+App/TerminalSiges/TerminalSiges.iOS/obj/
+WebService/Service/ITBCP.ServiceSIGES.Domain/bin/
+WebService/Service/ITBCP.ServiceSIGES.Domain/obj/
+WebService/Service/ITBCP.ServiceSIGES.Aplication/obj/
+WebService/Service/ITBCP.ServiceSIGES.Presentation.AgentServices/bin/
+WebService/Service/ITBCP.ServiceSIGES.Services.Host/Properties/PublishProfiles/

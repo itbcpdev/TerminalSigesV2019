@@ -185,7 +185,7 @@ namespace ITBCP.ServiceSIGES.Infraestructure.DataAcces
                             output.monctoinventario = drd.HasColumn("monctoinventario") ? drd["monctoinventario"] == DBNull.Value ? null : drd["monctoinventario"].ToString() : null;
                             output.monctoprom = drd.HasColumn("monctoprom") ? drd["monctoprom"] == DBNull.Value ? null : drd["monctoprom"].ToString() : null;
                             output.monctorepo = drd.HasColumn("monctorepo") ? drd["monctorepo"] == DBNull.Value ? null : drd["monctorepo"].ToString() : null;
-                            output.cdmedequiv = drd.HasColumn("cdmedequiv") ? drd["cdmedequiv"] == DBNull.Value ? null : drd["cdmedequiv"].ToString() : null;
+                            output.cdmedequiv = drd.HasColumn("cdmedequiv") ? drd["cdmedequiv"] == DBNull.Value ? "" : drd["cdmedequiv"].ToString() : "";
                             output.cdamarre = drd.HasColumn("cdamarre") ? drd["cdamarre"] == DBNull.Value ? null : drd["cdamarre"].ToString() : null;
                             output.tpconversion = drd.HasColumn("tpconversion") ? drd["tpconversion"] == DBNull.Value ? null : drd["tpconversion"].ToString() : null;
                             output.cdgrupo04 = drd.HasColumn("cdgrupo04") ? drd["cdgrupo04"] == DBNull.Value ? null : drd["cdgrupo04"].ToString() : null;

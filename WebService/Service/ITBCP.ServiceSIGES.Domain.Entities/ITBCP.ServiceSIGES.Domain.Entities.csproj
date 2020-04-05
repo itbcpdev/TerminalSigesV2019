@@ -156,6 +156,7 @@
     <Compile Include="TS_BELoteriaaviso.cs" />
     <Compile Include="TS_BELoteriahora.cs" />
     <Compile Include="TS_BELoteriawin.cs" />
+    <Compile Include="TS_BEMascara.cs" />
     <Compile Include="TS_BEMensaje.cs" />
     <Compile Include="TS_BEMoneda.cs" />
     <Compile Include="TS_BENropos.cs" />

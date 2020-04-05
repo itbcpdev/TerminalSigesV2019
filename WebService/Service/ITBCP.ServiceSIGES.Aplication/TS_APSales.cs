@@ -497,6 +497,7 @@ namespace ITBCP.ServiceSIGES.Aplication
             TS_BEParametro Parametros = _ITS_DOParametro.ObtenerParametros();
             TS_BEParameters TAB00S0 = _ITS_DOParametro.ObtenerParameters();
             TS_BETerminal Terminal = _ITS_DOTerminal.OBTENER_TERMINAL_POR_SERIEHD(new TS_BETerminal() { seriehd = input.Serie });
+            TS_BEMascara Mascaras = new TS_BEMascara(Parametros);
 
             //** VALIDACIONES
             if (string.IsNullOrEmpty(input.Serie))
@@ -593,6 +594,7 @@ namespace ITBCP.ServiceSIGES.Aplication
             foreach (var item in cCabeceraOutPut.cDetalleOutPut)
             {
                 var carticulo = _ITS_AIArticulo.ObtenerArticulByCodigo(cdarticulo: item.cdarticulo );
+                
                 if (carticulo.Ok)
                 {
                     item.impuesto = Convert.ToDecimal(carticulo.impuesto);
@@ -606,6 +608,13 @@ namespace ITBCP.ServiceSIGES.Aplication
                     item.trfgratuita = Convert.ToBoolean(carticulo.trfgratuita);
                     item.cdarticulosunat = carticulo.cdarticulosunat;
                     item.impuesto_plastico = carticulo.impuesto_plastico;
+
+                    if((carticulo.tpconversion ?? "").Trim().Equals("/")  && carticulo.valorconversion > 0)
+                    {
+                        item.cantidad = Math.Round(item.cantidad / carticulo.valorconversion, 7, MidpointRounding.AwayFromZero);
+                        item.precio = Math.Round(item.precio * carticulo.valorconversion, Mascaras.precio, MidpointRounding.AwayFromZero);
+                        item.cdunimed = carticulo.cdmedequiv;
+                    }
                 }
             }
 
@@ -650,14 +659,14 @@ namespace ITBCP.ServiceSIGES.Aplication
 
                 if (Parametros.galones_decimales == 0)
                 {
-                    item.cantidad_orig = item.cantidad;
+                    item.cantidad_orig = Math.Round(item.cantidad,7);
                     item.cantidad = Math.Round(item.cantidad, 3);
                    
                 }
 
                 else
                 {
-                    item.cantidad_orig = item.cantidad;
+                    item.cantidad_orig = Math.Round(item.cantidad, 7);
                     item.cantidad = Math.Round(item.cantidad, Parametros.galones_decimales);
                 }
 
