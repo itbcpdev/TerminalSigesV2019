@@ -52,6 +52,12 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
         public bool impuesto_plastico { get; set; }
         [DataMember]
         public decimal monto_impuesto_plastico { get; set; }
+        [DataMember]
+        public decimal valorconversion { get; set; }
+        [DataMember]
+        public string cdmedequiv { get; set; }
+        [DataMember]
+        public string tpconversion { get; set; }
 
         public string config { get; set; }
         public decimal valor_puntos { get; set; }

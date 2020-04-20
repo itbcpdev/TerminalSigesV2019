@@ -149,7 +149,10 @@ namespace TerminalSiges.Services
                             costo = vTransaccion.cDetalleOutPut[0].costo,
                             trfgratuita = vTransaccion.cDetalleOutPut[0].trfgratuita,
                             total_display = vTransaccion.cDetalleOutPut[0].total_display,
-                            impuesto_plastico = vTransaccion.cDetalleOutPut[0].impuesto_plastico
+                            impuesto_plastico = vTransaccion.cDetalleOutPut[0].impuesto_plastico,
+                            valorconversion = vTransaccion.cDetalleOutPut[0].valorconversion,
+                            cdmedequiv = vTransaccion.cDetalleOutPut[0].cdmedequiv,
+                            tpconversion = vTransaccion.cDetalleOutPut[0].tpconversion
                         };
 
                         TS_BEMensaje respuesta = TSSalesApp.SynchronizedSetSale(Lado, Venta);

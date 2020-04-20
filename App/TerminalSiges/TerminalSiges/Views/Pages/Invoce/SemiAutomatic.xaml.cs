@@ -462,7 +462,10 @@ namespace TerminalSiges.Views.Pages.Invoce
                 costo = Producto.costo,
                 trfgratuita = Producto.trfgratuita,
                 total_display = Math.Round(Producto.total,2),
-                impuesto_plastico = Producto.impuesto_plastico
+                impuesto_plastico = Producto.impuesto_plastico,
+                valorconversion = Producto.valorconversion,
+                cdmedequiv = Producto.cdmedequiv,
+                tpconversion = Producto.tpconversion
             };
 
             var index = TSSalesApp.Detalles.Count();
@@ -527,7 +530,10 @@ namespace TerminalSiges.Views.Pages.Invoce
                             costo = vDetalleOutput[0].costo,
                             trfgratuita = vDetalleOutput[0].trfgratuita,
                             total_display = vDetalleOutput[0].total_display,
-                            impuesto_plastico = vDetalleOutput[0].impuesto_plastico
+                            impuesto_plastico = vDetalleOutput[0].impuesto_plastico,
+                            valorconversion = vDetalleOutput[0].valorconversion,
+                            cdmedequiv = vDetalleOutput[0].cdmedequiv,
+                            tpconversion = vDetalleOutput[0].tpconversion
                         };
 
                         var index = TSSalesApp.Detalles.Count();
@@ -574,7 +580,10 @@ namespace TerminalSiges.Views.Pages.Invoce
                 costo = vDetalleOutput.costo,
                 trfgratuita = vDetalleOutput.trfgratuita,
                 moverstock = vDetalleOutput.moverstock  ,
-                impuesto_plastico = vDetalleOutput.impuesto_plastico
+                impuesto_plastico = vDetalleOutput.impuesto_plastico,
+                valorconversion = vDetalleOutput.valorconversion,
+                cdmedequiv = vDetalleOutput.cdmedequiv,
+                tpconversion = vDetalleOutput.tpconversion
             };
             var index = TSSalesApp.Detalles.Count();
             var indexDisplay = TSSalesApp.DetallesDisplay.Count();

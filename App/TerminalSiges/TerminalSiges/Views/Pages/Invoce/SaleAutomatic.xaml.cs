@@ -131,7 +131,10 @@ namespace TerminalSiges.Views.Pages.Invoce
                                 costo = Producto.costo,
                                 trfgratuita = Producto.trfgratuita,
                                 total_display = Producto.total_display,
-                                impuesto_plastico = Producto.impuesto_plastico
+                                impuesto_plastico = Producto.impuesto_plastico,
+                                valorconversion = Producto.valorconversion,
+                                cdmedequiv = Producto.cdmedequiv,
+                                tpconversion = Producto.tpconversion
                             };
                             TS_BEMensaje respuesta = TSSalesApp.SynchronizedSetSale(Lado, Venta);
                             if (respuesta.Ok)

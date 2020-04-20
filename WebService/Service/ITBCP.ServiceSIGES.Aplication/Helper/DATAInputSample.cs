@@ -220,7 +220,10 @@ namespace ITBCP.ServiceSIGES.Aplication.Helper
                     valor_puntos = item.valor_puntos,
                     config = item.config,
                     impuesto_plastico = item.impuesto_plastico,     
-                    monto_impuesto_plastico = item.monto_impuesto_plastico
+                    monto_impuesto_plastico = item.monto_impuesto_plastico,
+                    cdmedequiv = item.cdmedequiv,
+                    valorconversion = item.valorconversion,
+                    tpconversion = item.tpconversion
                 });
                 nroitem++;
             }

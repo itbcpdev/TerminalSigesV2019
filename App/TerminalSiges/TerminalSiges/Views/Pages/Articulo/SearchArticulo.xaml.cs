@@ -175,7 +175,10 @@ namespace TerminalSiges.Views.Pages.Articulo
                             costo = Convert.ToDecimal(TSSalesApp.vArticuloSeleccionado.costo),
                             impuesto = TSSalesApp.vArticuloSeleccionado.impuesto,
                             moverstock = TSSalesApp.vArticuloSeleccionado.moverstock,
-                            impuesto_plastico = TSSalesApp.vArticuloSeleccionado.impuesto_plastico
+                            impuesto_plastico = TSSalesApp.vArticuloSeleccionado.impuesto_plastico,
+                            valorconversion = TSSalesApp.vArticuloSeleccionado.valorconversion,
+                            cdmedequiv = TSSalesApp.vArticuloSeleccionado.cdmedequiv,
+                            tpconversion = TSSalesApp.vArticuloSeleccionado.tpconversion
 
                         };
                         detal.mtoimpuesto = detal.impuesto <= 0 ? 0 : Math.Round((detal.total / (100 + detal.impuesto)) * detal.impuesto,2);

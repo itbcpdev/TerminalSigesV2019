@@ -11,8 +11,8 @@ namespace ITBCP.ServiceSIGES.Domain
 {
     public interface ITS_DODetalleVenta
     {
-        bool InsertTransVentaDetalle(TS_BEArticulo input, TS_BECabecera oCabecera, SqlTransaction pSqlTransaction);
-        bool InsertTransVentaDetalleMes(string lExtension, TS_BEArticulo input, TS_BECabecera oCabecera, SqlTransaction pSqlTransaction);
+        bool InsertTransVentaDetalle(TS_BEArticulo input, TS_BECabecera oCabecera, TS_BEMascara mascara, SqlTransaction pSqlTransaction);
+        bool InsertTransVentaDetalleMes(string lExtension, TS_BEArticulo input, TS_BECabecera oCabecera, TS_BEMascara mascara, SqlTransaction pSqlTransaction);
         bool InsertTransVentaG(TS_BEVentag input, SqlTransaction pSqlTransaction);
         bool InsertTransVentaR(TS_BEVentar input, SqlTransaction pSqlTransaction);
         bool InsertTransVentaD(TS_BEArticulo item, TS_BECabecera oCabecera, SqlTransaction pSqlTransaction);

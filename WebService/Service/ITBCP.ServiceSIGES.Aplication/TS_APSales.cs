@@ -608,13 +608,10 @@ namespace ITBCP.ServiceSIGES.Aplication
                     item.trfgratuita = Convert.ToBoolean(carticulo.trfgratuita);
                     item.cdarticulosunat = carticulo.cdarticulosunat;
                     item.impuesto_plastico = carticulo.impuesto_plastico;
+                    item.tpconversion = carticulo.tpconversion;
+                    item.valorconversion = carticulo.valorconversion;
+                    item.cdmedequiv = carticulo.cdmedequiv;
 
-                    if((carticulo.tpconversion ?? "").Trim().Equals("/")  && carticulo.valorconversion > 0)
-                    {
-                        item.cantidad = Math.Round(item.cantidad / carticulo.valorconversion, 7, MidpointRounding.AwayFromZero);
-                        item.precio = Math.Round(item.precio * carticulo.valorconversion, Mascaras.precio, MidpointRounding.AwayFromZero);
-                        item.cdunimed = carticulo.cdmedequiv;
-                    }
                 }
             }
 

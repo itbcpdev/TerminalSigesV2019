@@ -128,7 +128,10 @@ namespace TerminalSiges.Lib.Sales
                     precio_orig = item.precio_orig,
                     //  redondea_indecopi = item.redondea_indecopi,
                     tpformula = item.tpformula,
-                    impuesto_plastico = item.impuesto_plastico
+                    impuesto_plastico = item.impuesto_plastico,
+                    valorconversion = item.valorconversion,
+                    cdmedequiv = item.cdmedequiv,
+                    tpconversion = item.tpconversion
 
                 });
 
@@ -258,6 +261,10 @@ namespace TerminalSiges.Lib.Sales
                         nrogasboy = item.nrogasboy,
                         precio_orig = item.precio_orig,
                         tpformula = item.tpformula,
+                        impuesto_plastico = item.impuesto_plastico,
+                        valorconversion = item.valorconversion,
+                        cdmedequiv = item.cdmedequiv,
+                        tpconversion = item.tpconversion
 
                     }
             };

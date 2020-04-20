@@ -1838,6 +1838,8 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
         
         private string cdarticulosunatField;
         
+        private string cdmedequivField;
+        
         private string cdunimedField;
         
         private decimal costoField;
@@ -1870,7 +1872,11 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
         
         private decimal totalField;
         
+        private string tpconversionField;
+        
         private string tpformulaField;
+        
+        private decimal valorconversionField;
         
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
@@ -1933,6 +1939,19 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
             set
             {
                 this.cdarticulosunatField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string cdmedequiv
+        {
+            get
+            {
+                return this.cdmedequivField;
+            }
+            set
+            {
+                this.cdmedequivField = value;
             }
         }
         
@@ -2145,6 +2164,19 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string tpconversion
+        {
+            get
+            {
+                return this.tpconversionField;
+            }
+            set
+            {
+                this.tpconversionField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string tpformula
         {
             get
@@ -2154,6 +2186,19 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
             set
             {
                 this.tpformulaField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal valorconversion
+        {
+            get
+            {
+                return this.valorconversionField;
+            }
+            set
+            {
+                this.valorconversionField = value;
             }
         }
     }

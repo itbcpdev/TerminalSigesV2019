@@ -17,7 +17,7 @@ namespace ITBCP.ServiceSIGES.Infraestructure.DataAcces
         readonly string stringConnectionSetup = ConfigurationManager.ConnectionStrings["ConnectionSetup"].ConnectionString;
         readonly string stringBackOffice = ConfigurationManager.ConnectionStrings["ConnectionBackOffice"].ConnectionString;
 
-        public bool InsertTransVentaDetalle(TS_BEArticulo item, TS_BECabecera oCabecera, SqlTransaction pSqlTransaction)
+        public bool InsertTransVentaDetalle(TS_BEArticulo item, TS_BECabecera oCabecera, TS_BEMascara mascara, SqlTransaction pSqlTransaction)
         {
 
             bool flag2;
@@ -48,9 +48,9 @@ namespace ITBCP.ServiceSIGES.Infraestructure.DataAcces
                 cmd.Parameters.Add("@pordscto2", SqlDbType.Decimal, 5).Value = item.pordscto2;
                 cmd.Parameters.Add("@pordscto3", SqlDbType.Decimal, 5).Value = item.pordscto3;
                 cmd.Parameters.Add("@pordsctoeq", SqlDbType.Decimal, 5).Value = item.pordsctoeq;
-                cmd.Parameters.Add("@cantidad", SqlDbType.Decimal, 9).Value = item.cantidad;
+                cmd.Parameters.Add("@cantidad", SqlDbType.Decimal, 18).Value = GetCantidadEquivalencia(item,mascara);
                 cmd.Parameters.Add("@cant_ncredito", SqlDbType.Decimal, 9).Value = item.cant_ncredito;// oVenta.cant_ncredito;
-                cmd.Parameters.Add("@precio", SqlDbType.Decimal, 9).Value = item.precio;
+                cmd.Parameters.Add("@precio", SqlDbType.Decimal, 18).Value = GetPrecioEquivalencia(item,mascara);
                 cmd.Parameters.Add("@mtonoafecto", SqlDbType.Decimal, 9).Value = item.mtonoafecto;
                 cmd.Parameters.Add("@valorvta", SqlDbType.Decimal, 9).Value = item.valorvta;
                 cmd.Parameters.Add("@mtodscto", SqlDbType.Decimal, 9).Value = item.mtodscto;
@@ -69,7 +69,7 @@ namespace ITBCP.ServiceSIGES.Infraestructure.DataAcces
                 cmd.Parameters.Add("@archturno", SqlDbType.Bit, 1).Value = item.archturno;// oVenta.archturno;
                 cmd.Parameters.Add("@manguera", SqlDbType.Char, 1).Value = item.manguera;// oVenta.manguera;
                 cmd.Parameters.Add("@costo", SqlDbType.Decimal, 9).Value = item.costo;// oVenta.costo;
-                cmd.Parameters.Add("@precio_orig", SqlDbType.Decimal, 9).Value = item.precio_orig;
+                cmd.Parameters.Add("@precio_orig", SqlDbType.Decimal, 9).Value = GetPrecioOriginalEquivalencia(item,mascara);
                 cmd.Parameters.Add("@PtosGanados", SqlDbType.Decimal, 9).Value = oCabecera.ptosganados;
                 cmd.Parameters.Add("@precioafiliacion", SqlDbType.Decimal, 9).Value = item.precioafiliacion;// oVenta.precioafiliacion;
                 cmd.Parameters.Add("@tipoacumula", SqlDbType.Char, 25).Value = oCabecera.TipoAcumula;
@@ -83,6 +83,12 @@ namespace ITBCP.ServiceSIGES.Infraestructure.DataAcces
                 cmd.Parameters.Add("@porcdetraccion", SqlDbType.Decimal, 5).Value = item.porcdetraccion;
                 cmd.Parameters.Add("@mtodetraccion", SqlDbType.Decimal, 9).Value = item.mtodetraccion;
                 cmd.Parameters.Add("@cdarticulosunat", SqlDbType.VarChar, 20).Value = item.cdarticulosunat;
+
+                cmd.Parameters.Add("@precio_conversion", SqlDbType.Decimal, 20).Value = IsEquivalencia(item.tpconversion) ? item.precio : (decimal?)null;
+                cmd.Parameters.Add("@precio_original_conversion", SqlDbType.Decimal, 20).Value = IsEquivalencia(item.tpconversion) ? item.precio_orig : (decimal?)null;
+                cmd.Parameters.Add("@cantidad_conversion", SqlDbType.Decimal, 20).Value = IsEquivalencia(item.tpconversion) ? item.cantidad : (decimal?)null;
+                cmd.Parameters.Add("@factor_conversion", SqlDbType.Char, 1).Value = IsEquivalencia(item.tpconversion) ? item.tpconversion : null;
+
                 flag = cmd.ExecuteNonQuery() > 0;
 
                 flag2 = flag;
@@ -93,7 +99,7 @@ namespace ITBCP.ServiceSIGES.Infraestructure.DataAcces
             }
             return flag2;
         }
-        public bool InsertTransVentaDetalleMes(string lExtension, TS_BEArticulo item, TS_BECabecera oCabecera, SqlTransaction pSqlTransaction)
+        public bool InsertTransVentaDetalleMes(string lExtension, TS_BEArticulo item, TS_BECabecera oCabecera, TS_BEMascara mascara, SqlTransaction pSqlTransaction)
         {
 
             bool flag2;
@@ -125,9 +131,9 @@ namespace ITBCP.ServiceSIGES.Infraestructure.DataAcces
                 cmd.Parameters.Add("@pordscto2", SqlDbType.Decimal, 5).Value = item.pordscto2;
                 cmd.Parameters.Add("@pordscto3", SqlDbType.Decimal, 5).Value = item.pordscto3;
                 cmd.Parameters.Add("@pordsctoeq", SqlDbType.Decimal, 5).Value = item.pordsctoeq;
-                cmd.Parameters.Add("@cantidad", SqlDbType.Decimal, 9).Value = item.cantidad;
+                cmd.Parameters.Add("@cantidad", SqlDbType.Decimal, 20).Value = GetCantidadEquivalencia(item, mascara); 
                 cmd.Parameters.Add("@cant_ncredito", SqlDbType.Decimal, 9).Value = item.cant_ncredito;// oVenta.cant_ncredito;
-                cmd.Parameters.Add("@precio", SqlDbType.Decimal, 9).Value = item.precio;
+                cmd.Parameters.Add("@precio", SqlDbType.Decimal, 20).Value = GetPrecioEquivalencia(item, mascara);
                 cmd.Parameters.Add("@mtonoafecto", SqlDbType.Decimal, 9).Value = item.mtonoafecto;
                 cmd.Parameters.Add("@valorvta", SqlDbType.Decimal, 9).Value = item.valorvta;
                 cmd.Parameters.Add("@mtodscto", SqlDbType.Decimal, 9).Value = item.mtodscto;
@@ -146,7 +152,7 @@ namespace ITBCP.ServiceSIGES.Infraestructure.DataAcces
                 cmd.Parameters.Add("@archturno", SqlDbType.Bit, 1).Value = item.archturno;// oVenta.archturno;
                 cmd.Parameters.Add("@manguera", SqlDbType.Char, 1).Value = item.manguera;// oVenta.manguera;
                 cmd.Parameters.Add("@costo", SqlDbType.Decimal, 9).Value = item.costo;// oVenta.costo;
-                cmd.Parameters.Add("@precio_orig", SqlDbType.Decimal, 9).Value = item.precio_orig;
+                cmd.Parameters.Add("@precio_orig", SqlDbType.Decimal, 9).Value = GetPrecioOriginalEquivalencia(item, mascara);
                 cmd.Parameters.Add("@PtosGanados", SqlDbType.Decimal, 9).Value = oCabecera.ptosganados;
                 cmd.Parameters.Add("@precioafiliacion", SqlDbType.Decimal, 9).Value = item.precioafiliacion;// oVenta.precioafiliacion;
                 cmd.Parameters.Add("@tipoacumula", SqlDbType.Char, 25).Value = oCabecera.TipoAcumula;
@@ -160,6 +166,12 @@ namespace ITBCP.ServiceSIGES.Infraestructure.DataAcces
                 cmd.Parameters.Add("@porcdetraccion", SqlDbType.Decimal, 5).Value = item.porcdetraccion;
                 cmd.Parameters.Add("@mtodetraccion", SqlDbType.Decimal, 9).Value = item.mtodetraccion;
                 cmd.Parameters.Add("@cdarticulosunat", SqlDbType.VarChar, 20).Value = item.cdarticulosunat;
+
+                cmd.Parameters.Add("@precio_conversion", SqlDbType.Decimal, 20).Value = IsEquivalencia(item.tpconversion) ? item.precio : (decimal?)null;
+                cmd.Parameters.Add("@precio_original_conversion", SqlDbType.Decimal, 20).Value = IsEquivalencia(item.tpconversion) ? item.precio_orig : (decimal?)null;
+                cmd.Parameters.Add("@cantidad_conversion", SqlDbType.Decimal, 20).Value = IsEquivalencia(item.tpconversion) ? item.cantidad : (decimal?)null;
+                cmd.Parameters.Add("@factor_conversion", SqlDbType.Char, 1).Value = IsEquivalencia(item.tpconversion) ? item.tpconversion : null;
+
                 flag = cmd.ExecuteNonQuery() > 0;
 
                 flag2 = flag;
@@ -233,7 +245,6 @@ namespace ITBCP.ServiceSIGES.Infraestructure.DataAcces
             return flag2;
 
         }
-        
         public bool InsertTransVentaD(TS_BEArticulo item, TS_BECabecera oCabecera, SqlTransaction pSqlTransaction)
         {
 
@@ -309,6 +320,69 @@ namespace ITBCP.ServiceSIGES.Infraestructure.DataAcces
                 throw exception;
             }
             return flag2;
+        }
+   
+        public decimal GetCantidadEquivalencia(TS_BEArticulo item, TS_BEMascara mascara)
+        {
+            if((item.tpconversion ?? "").Equals("/"))
+            {
+                return Math.Round(item.cantidad / item.valorconversion, 7, MidpointRounding.AwayFromZero);
+            }
+
+            if ((item.tpconversion ?? "").Equals("*"))
+            {
+                return Math.Round(item.cantidad * item.valorconversion, 7, MidpointRounding.AwayFromZero);
+
+            }
+
+            return item.cantidad;
+        }
+
+        public decimal GetPrecioEquivalencia(TS_BEArticulo item, TS_BEMascara mascara)
+        {
+            if ((item.tpconversion ?? "").Equals("/"))
+            {
+                return Math.Round(item.precio * item.valorconversion, mascara.precio, MidpointRounding.AwayFromZero);
+            }
+
+            if ((item.tpconversion ?? "").Equals("*"))
+            {
+                return Math.Round(item.precio / item.valorconversion, mascara.precio, MidpointRounding.AwayFromZero);
+
+            }
+
+            return item.precio;
+        }
+
+        public decimal GetPrecioOriginalEquivalencia(TS_BEArticulo item, TS_BEMascara mascara)
+        {
+            if ((item.tpconversion ?? "").Equals("/"))
+            {
+                return Math.Round(item.precio_orig * item.valorconversion, mascara.precio, MidpointRounding.AwayFromZero);
+            }
+
+            if ((item.tpconversion ?? "").Equals("*"))
+            {
+                return Math.Round(item.precio_orig / item.valorconversion, mascara.precio, MidpointRounding.AwayFromZero);
+
+            }
+
+            return item.precio_orig;
+        }
+
+        public string GetUnidadMedidaEquivalencia(TS_BEArticulo item, TS_BEMascara mascara)
+        {
+            if ((item.tpconversion ?? "").Equals("/") || (item.tpconversion ?? "").Equals("*"))
+            {
+                return item.cdmedequiv;
+            }
+
+            return item.cdunimed;
+        }
+
+        public bool IsEquivalencia(string tpconversion)
+        {
+            return (tpconversion ?? "").Trim().Equals("/") || (tpconversion ?? "").Trim().Equals("*");
         }
     }
 }

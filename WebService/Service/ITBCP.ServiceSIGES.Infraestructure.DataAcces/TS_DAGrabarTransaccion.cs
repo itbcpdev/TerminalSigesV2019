@@ -204,14 +204,17 @@ namespace ITBCP.ServiceSIGES.Infraestructure.DataAcces
                                             {
                                                 int CantDetalle = 0;
                                                 int CantDetalleMes = 0;
+                                                TS_BEMascara mascara = new TS_BEMascara(cDocumento.cParametro);
+
                                                 cDocumento.cDetalles.ForEach(delegate (TS_BEArticulo oDetalle)
                                                 {
-                                                    if (_ITS_DODetalleVenta.InsertTransVentaDetalle(oDetalle, cDocumento.cCabecera, oSqlTransaction))
+                                                   
+                                                    if (_ITS_DODetalleVenta.InsertTransVentaDetalle(oDetalle, cDocumento.cCabecera,mascara, oSqlTransaction))
                                                     {
                                                         CantDetalle++;
                                                     }
 
-                                                    if (_ITS_DODetalleVenta.InsertTransVentaDetalleMes(cDocumento.lextension, oDetalle, cDocumento.cCabecera, oSqlTransaction))
+                                                    if (_ITS_DODetalleVenta.InsertTransVentaDetalleMes(cDocumento.lextension, oDetalle, cDocumento.cCabecera,mascara, oSqlTransaction))
                                                     {
                                                         CantDetalleMes++;
                                                     }

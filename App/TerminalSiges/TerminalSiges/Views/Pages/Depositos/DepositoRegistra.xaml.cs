@@ -25,8 +25,12 @@ namespace TerminalSiges.Views.Pages.Depositos
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            if (Cargado) return;
-            this.cboTipoPagos.DataSource = new ObservableCollection<TS_BETipopago>() { new TS_BETipopago() {cdtppago = "00001", dstppago ="EFECTIVO" , flgpago = false , flgsistema = false } }; 
+            var cPagos = new ObservableCollection<TS_BETipopago>();
+            foreach(var cPago in TSSalesApp.vTipoPagos)
+            {
+                cPagos.Add(cPago);
+            }
+            this.cboTipoPagos.DataSource = cPagos;
         }
         protected override bool OnBackButtonPressed()
         {
