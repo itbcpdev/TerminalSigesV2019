@@ -18,16 +18,36 @@ using DroidWebView = Android.Webkit.WebView;
 using System.Threading.Tasks;
 using System.IO;
 using Android.Provider;
+using Android.Content.PM;
+
 [assembly: Dependency(typeof(AndroidFeatureService))]
 namespace TerminalSIGES.Droid.Services
 {
     public class AndroidFeatureService: IFeatureService
     {
+        PackageInfo _appInfo;
+
+        public AndroidFeatureService()
+        {
+            var context = Android.App.Application.Context;
+            _appInfo = context.PackageManager.GetPackageInfo(context.PackageName, 0); 
+        }
+
+        public string GetVersionNumber()
+        {
+            return _appInfo.VersionName;
+        }
+        public string GetBuildNumber()
+        {
+            return _appInfo.VersionCode.ToString();
+        }
+
         public string GetIdentifier()
         {
             return Settings.Secure.GetString(Forms.Context.ContentResolver, Settings.Secure.AndroidId);
 
         }
+
         public void Print(WebView viewToPrint)
         {
             var renderer = Platform.CreateRenderer(viewToPrint);

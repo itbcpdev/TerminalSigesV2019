@@ -9,6 +9,7 @@ using Xamarin.Forms.Xaml;
 using TerminalSiges.Lib.Include;
 using TerminalSiges.Views.Pages.PopUp;
 using Rg.Plugins.Popup.Services;
+using TerminalSIGES.Services;
 
 namespace TerminalSiges.Views.Pages.Users
 {
@@ -18,6 +19,8 @@ namespace TerminalSiges.Views.Pages.Users
 
         public ObservableCollection<TS_BEEmpresaUser> Empresas { get; set; }
         public bool Cargado = false;
+        private IFeatureService _featureService;
+
         public Login()
         {
             InitializeComponent();
@@ -25,6 +28,8 @@ namespace TerminalSiges.Views.Pages.Users
             this.BindingContext = this;
             this.txtUsuario.Completed += TxtUsuario_Completed;
             this.txtClave.Completed += TxtClave_Completed;
+            _featureService = DependencyService.Get<IFeatureService>();
+            FooterLabel.Text = "SIGES - 2019 V." + _featureService.GetVersionNumber();
         }
 
         private void TxtClave_Completed(object sender, EventArgs e)

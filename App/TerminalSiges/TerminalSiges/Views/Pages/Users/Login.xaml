@@ -59,12 +59,12 @@
                 </Grid>
 
                 <StackLayout Grid.Row="1" BackgroundColor="#005797">
-                    <Label Text="SIGES - 2019" 
-                       TextColor="White"
-                       VerticalOptions="FillAndExpand" 
-                       VerticalTextAlignment="Center" 
-                       HorizontalTextAlignment="Center"
-                       FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}" />
+                    <Label x:Name="FooterLabel"
+                           TextColor="White"
+                           VerticalOptions="FillAndExpand" 
+                           VerticalTextAlignment="Center" 
+                           HorizontalTextAlignment="Center"
+                           FontFamily="{Binding  Source={x:Static titan:Estilos.FuenteLight}}" />
                 </StackLayout>
             </Grid>
         </ScrollView>
