@@ -16,6 +16,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Net.Mail;
 using System.Security.Claims;
 using System.Security.Cryptography;
@@ -421,19 +422,15 @@ namespace ITBCP.ServiceSIGES.Aplication
         public TS_BEResultSunat ConsultaRuc(string ruc)
         {
             try
-            { 
-                string json = "{\"usuario\":\"\",\"clave\":\"\",\"ruc\":\"" + (ruc ?? "").Trim() + "\"}";
-                WebRequest request = WebRequest.Create("http://161.132.177.54:9010/consultar");
-                request.Method = "POST";
-                string postData = json;
-                byte[] byteArray = Encoding.UTF8.GetBytes(postData);
-                request.ContentType = "application/json;";
-                request.ContentLength = byteArray.Length;
-                Stream dataStream = request.GetRequestStream();
-                dataStream.Write(byteArray, 0, byteArray.Length);
-                dataStream.Close();
+            {
+                WebRequest request = WebRequest.Create(
+                    ConfigurationManager.AppSettings["SUNAT_WS"].ToString() + 
+                    ConfigurationManager.AppSettings["SUNAT_WS_CP"].ToString() +
+                    $@"?ruc={ruc}&usuario=itbcp&clave=20522513386");
+                request.Credentials = CredentialCache.DefaultCredentials;
+                request.Method = "GET";
                 WebResponse response = request.GetResponse();
-                dataStream = response.GetResponseStream();
+                Stream dataStream = response.GetResponseStream();
                 StreamReader reader = new StreamReader(dataStream);
                 string responseFromServer = reader.ReadToEnd();
                 reader.Close();
