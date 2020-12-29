@@ -30,6 +30,6 @@ namespace ITBCP.ServiceSIGES.Aplication.Interfaces
         TS_BEMensaje ANULAR_DOCUMENTO(TS_BEDAnulaInput input);
         List<TS_BECara> OBTENER_CARAS(string seriehd);
         TS_BEMensaje REGISTRAR_AFILIACION(TS_BEClienteInput cCliente, List<TS_BEArticulo> Articulos, TS_BETipoTarjetaRegistro Tipo);
-
+        TS_BEArticlePromotion VERIFICAR_PROMOCION(TS_BEPromotionInput input);
     }
 }

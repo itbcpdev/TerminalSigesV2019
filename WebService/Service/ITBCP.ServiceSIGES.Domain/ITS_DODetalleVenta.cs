@@ -16,5 +16,6 @@ namespace ITBCP.ServiceSIGES.Domain
         bool InsertTransVentaG(TS_BEVentag input, SqlTransaction pSqlTransaction);
         bool InsertTransVentaR(TS_BEVentar input, SqlTransaction pSqlTransaction);
         bool InsertTransVentaD(TS_BEArticulo item, TS_BECabecera oCabecera, SqlTransaction pSqlTransaction);
+        bool InsertTransInsumoIsR(TS_BEVentar input, SqlTransaction pSqlTransaction);
     }
 }

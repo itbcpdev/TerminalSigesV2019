@@ -108,6 +108,7 @@
     <Compile Include="TS_BEAfiliacionptos.cs" />
     <Compile Include="TS_BEAfiliaciontarj.cs" />
     <Compile Include="TS_BEAlmacen.cs" />
+    <Compile Include="TS_BEArticlePromotion.cs" />
     <Compile Include="TS_BEArticulo.cs" />
     <Compile Include="Sales\TS_BECabeceraInput.cs" />
     <Compile Include="TS_BEArticuloInput.cs" />
@@ -144,6 +145,7 @@
     <Compile Include="TS_BEHvale.cs" />
     <Compile Include="TS_BEInicioDiaOutput.cs" />
     <Compile Include="TS_BEInsumo.cs" />
+    <Compile Include="TS_BEInsumoCantidad.cs" />
     <Compile Include="TS_BEInsumois.cs" />
     <Compile Include="TS_BEInsumoisr.cs" />
     <Compile Include="TS_BELado.cs" />
@@ -167,6 +169,7 @@
     <Compile Include="TS_BEPrecio.cs" />
     <Compile Include="TS_BEPreciocliente.cs" />
     <Compile Include="TS_BEPrecio_Varios.cs" />
+    <Compile Include="TS_BEPromotionInput.cs" />
     <Compile Include="TS_BERespuesta.cs" />
     <Compile Include="TS_BERespuestaCanje.cs" />
     <Compile Include="TS_BEResultSunat.cs" />

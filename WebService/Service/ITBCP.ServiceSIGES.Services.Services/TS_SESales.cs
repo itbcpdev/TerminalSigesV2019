@@ -347,5 +347,21 @@ namespace ITBCP.ServiceSIGES.Services.Services
                 throw new FaultException<Excepcion>(new Excepcion(e), new FaultReason("REGISTRAR_AFILIACION"));
             }
         }
+
+        public TS_BEArticlePromotion VERIFICAR_PROMOCION(TS_BEPromotionInput input)
+        {
+            try
+            {
+                ITS_AISales ITS_AISales = FabricaIoC.Contenedor.Resolver<ITS_AISales>();
+                return ITS_AISales.VERIFICAR_PROMOCION(input);
+            }
+            catch (Exception e)
+            {
+
+                TS_APUtilities.Log_Consumo(e.ToString() + " - VERIFICAR_PROMOCION");
+                throw new FaultException<Excepcion>(new Excepcion(e), new FaultReason("VERIFICAR_PROMOCION"));
+            }
+        }
+
     }
 }

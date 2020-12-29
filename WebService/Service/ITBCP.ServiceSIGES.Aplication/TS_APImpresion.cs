@@ -452,13 +452,15 @@ namespace ITBCP.ServiceSIGES.Aplication
                                         bool Estado = false;
                                         do
                                         {
-                                            if (Estado = ITS_DOTurno.VERIFICAR_CAMBIO_TURNO_PEC())
+                                            Estado = ITS_DOTurno.VERIFICAR_CAMBIO_TURNO_PEC();
+                                            if (Estado)
                                             {
                                                 Tiempo = 100;
                                             }
                                             Tiempo++;
                                             Thread.Sleep(1000);
                                         } while (Tiempo <= 60);
+
                                         if (Estado)
                                         {
                                             if (ITS_DOTurno.TERMINAR_CAMBIO_TURNO_PEC())

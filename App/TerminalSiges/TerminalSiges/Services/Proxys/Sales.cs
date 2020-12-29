@@ -11,26 +11,26 @@
 namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
 {
     using System.Runtime.Serialization;
-    
-    
+
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TS_BELoadInput", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Sales")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BELoadInput", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Sales")]
     public partial class TS_BELoadInput : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private string SerieField;
-        
+
         private string cdempresaField;
-        
+
         private string cdlocalField;
-        
+
         private string cdnivelField;
-        
+
         private string cdusuarioField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -42,7 +42,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Serie
         {
@@ -55,7 +55,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.SerieField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdempresa
         {
@@ -68,7 +68,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.cdempresaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdlocal
         {
@@ -81,7 +81,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.cdlocalField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdnivel
         {
@@ -94,7 +94,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.cdnivelField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdusuario
         {
@@ -108,41 +108,41 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TS_BESales", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Sales")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BESales", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Sales")]
     public partial class TS_BESales : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BECabecera CabeceraField;
-        
+
         private ITBCP.ServiceSIGES.Domain.Entities.TS_BECara[] CarasField;
-        
+
         private string FechaServidorField;
-        
+
         private string IgvField;
-        
+
         private string MensajeField;
-        
+
         private bool OkField;
-        
+
         private ITBCP.ServiceSIGES.Domain.Entities.TS_BEParametro ParametrosField;
-        
+
         private ITBCP.ServiceSIGES.Domain.Entities.TS_BETarjeta[] TarjetasField;
-        
+
         private ITBCP.ServiceSIGES.Domain.Entities.TS_BETerminal TerminalField;
-        
+
         private decimal TipoCambioField;
-        
+
         private ITBCP.ServiceSIGES.Domain.Entities.TS_BETipopago[] TipoPagoField;
-        
+
         private ITBCP.ServiceSIGES.Domain.Entities.Users.TS_BEUsers UsuarioField;
-        
+
         private ITBCP.ServiceSIGES.Domain.Entities.TS_BEVendedor VendedorField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -154,7 +154,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BECabecera Cabecera
         {
@@ -167,7 +167,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.CabeceraField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ITBCP.ServiceSIGES.Domain.Entities.TS_BECara[] Caras
         {
@@ -180,7 +180,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.CarasField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string FechaServidor
         {
@@ -193,7 +193,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.FechaServidorField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Igv
         {
@@ -206,7 +206,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.IgvField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Mensaje
         {
@@ -219,7 +219,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.MensajeField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool Ok
         {
@@ -232,7 +232,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.OkField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ITBCP.ServiceSIGES.Domain.Entities.TS_BEParametro Parametros
         {
@@ -245,7 +245,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.ParametrosField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ITBCP.ServiceSIGES.Domain.Entities.TS_BETarjeta[] Tarjetas
         {
@@ -258,7 +258,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.TarjetasField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ITBCP.ServiceSIGES.Domain.Entities.TS_BETerminal Terminal
         {
@@ -271,7 +271,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.TerminalField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal TipoCambio
         {
@@ -284,7 +284,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.TipoCambioField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ITBCP.ServiceSIGES.Domain.Entities.TS_BETipopago[] TipoPago
         {
@@ -297,7 +297,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.TipoPagoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ITBCP.ServiceSIGES.Domain.Entities.Users.TS_BEUsers Usuario
         {
@@ -310,7 +310,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.UsuarioField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ITBCP.ServiceSIGES.Domain.Entities.TS_BEVendedor Vendedor
         {
@@ -324,201 +324,201 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TS_BECabecera", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Sales")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BECabecera", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Sales")]
     public partial class TS_BECabecera : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private decimal MtoPercepcionField;
-        
+
         private string TipoAcumulaField;
-        
+
         private bool anuladoField;
-        
+
         private string archturnoField;
-        
+
         private string c_centralizacionField;
-        
+
         private decimal cantcuponField;
-        
+
         private string cdalmacenField;
-        
+
         private string cdclienteField;
-        
+
         private string cdhashField;
-        
+
         private string cdlocalField;
-        
+
         private string cdmedio_pagoField;
-        
+
         private string cdmonedaField;
-        
+
         private string cdprecioField;
-        
+
         private string cdrutaField;
-        
+
         private string cdtipodocField;
-        
+
         private string cdtransporField;
-        
+
         private string cdusuanulaField;
-        
+
         private string cdusuarioField;
-        
+
         private string cdvendedorField;
-        
+
         private bool chkespecialField;
-        
+
         private string choferField;
-        
+
         private string codeIDField;
-        
+
         private string codesField;
-        
+
         private string ctadetraccionField;
-        
+
         private string drclienteField;
-        
+
         private string drdestinoField;
-        
+
         private string drpartidaField;
-        
+
         private string dsusuarioField;
-        
+
         private bool fact_electField;
-        
+
         private System.Nullable<System.DateTime> fecanulaField;
-        
+
         private System.Nullable<System.DateTime> fecanulasisField;
-        
+
         private System.DateTime fecdocumentoField;
-        
+
         private System.Nullable<System.DateTime> fecprocesoField;
-        
+
         private System.DateTime fecsistemaField;
-        
+
         private bool flgcierrezField;
-        
+
         private bool flgmanualField;
-        
+
         private bool flgmovimientoField;
-        
+
         private string inscripcionField;
-        
+
         private string ladoField;
-        
+
         private string marcavehicField;
-        
+
         private string mensaje1Field;
-        
+
         private string mensaje2Field;
-        
+
         private decimal mtocanjeField;
-        
+
         private decimal mtodetraccionField;
-        
+
         private decimal mtodsctoField;
-        
+
         private decimal mtoimpuestoField;
-        
+
         private decimal mtonoafectoField;
-        
+
         private decimal mtorecaudoField;
-        
+
         private decimal mtoservicioField;
-        
+
         private decimal mtosubtotalField;
-        
+
         private decimal mtototalField;
-        
+
         private decimal mtovueltodolField;
-        
+
         private decimal mtovueltosolField;
-        
+
         private string nrobonusField;
-        
+
         private string nrocelularField;
-        
+
         private string nrodocumentoField;
-        
+
         private string nroguiaField;
-        
+
         private string nrolicenciaField;
-        
+
         private string nroocompraField;
-        
+
         private string nroplacaField;
-        
+
         private string nroposField;
-        
+
         private string nroproformaField;
-        
+
         private string nroserie1Field;
-        
+
         private string nroserie2Field;
-        
+
         private string nroseriemaqField;
-        
+
         private string nrotarjetaField;
-        
+
         private string numero_textoField;
-        
+
         private string observacionField;
-        
+
         private string odometroField;
-        
+
         private string pdf417Field;
-        
+
         private decimal porcdetraccionField;
-        
+
         private decimal pordscto1Field;
-        
+
         private decimal pordscto2Field;
-        
+
         private decimal pordscto3Field;
-        
+
         private decimal pordsctoeqField;
-        
+
         private decimal porservicioField;
-        
+
         private decimal precio_origField;
-        
+
         private int ptosganadosField;
-        
+
         private decimal redondea_indecopiField;
-        
+
         private string referenciaField;
-        
+
         private string rsclienteField;
-        
+
         private string rucclienteField;
-        
+
         private bool rucinvalidoField;
-        
+
         private string ructransporField;
-        
+
         private decimal saldo_disponibleField;
-        
+
         private string scopField;
-        
+
         private System.Nullable<decimal> tcambioField;
-        
+
         private string tipofacturaField;
-        
+
         private string tipoventaField;
-        
+
         private string turnoField;
-        
+
         private bool usadecimalesField;
-        
+
         private decimal valoracumulaField;
-        
+
         private decimal valorvtaField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -530,7 +530,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal MtoPercepcion
         {
@@ -543,7 +543,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.MtoPercepcionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string TipoAcumula
         {
@@ -556,7 +556,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.TipoAcumulaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool anulado
         {
@@ -569,7 +569,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.anuladoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string archturno
         {
@@ -582,7 +582,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.archturnoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string c_centralizacion
         {
@@ -595,7 +595,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.c_centralizacionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal cantcupon
         {
@@ -608,7 +608,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.cantcuponField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdalmacen
         {
@@ -621,7 +621,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.cdalmacenField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdcliente
         {
@@ -634,7 +634,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.cdclienteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdhash
         {
@@ -647,7 +647,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.cdhashField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdlocal
         {
@@ -660,7 +660,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.cdlocalField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdmedio_pago
         {
@@ -673,7 +673,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.cdmedio_pagoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdmoneda
         {
@@ -686,7 +686,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.cdmonedaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdprecio
         {
@@ -699,7 +699,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.cdprecioField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdruta
         {
@@ -712,7 +712,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.cdrutaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdtipodoc
         {
@@ -725,7 +725,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.cdtipodocField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdtranspor
         {
@@ -738,7 +738,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.cdtransporField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdusuanula
         {
@@ -751,7 +751,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.cdusuanulaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdusuario
         {
@@ -764,7 +764,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.cdusuarioField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdvendedor
         {
@@ -777,7 +777,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.cdvendedorField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool chkespecial
         {
@@ -790,7 +790,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.chkespecialField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string chofer
         {
@@ -803,7 +803,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.choferField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string codeID
         {
@@ -816,7 +816,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.codeIDField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string codes
         {
@@ -829,7 +829,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.codesField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string ctadetraccion
         {
@@ -842,7 +842,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.ctadetraccionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string drcliente
         {
@@ -855,7 +855,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.drclienteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string drdestino
         {
@@ -868,7 +868,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.drdestinoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string drpartida
         {
@@ -881,7 +881,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.drpartidaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string dsusuario
         {
@@ -894,7 +894,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.dsusuarioField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool fact_elect
         {
@@ -907,7 +907,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.fact_electField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<System.DateTime> fecanula
         {
@@ -920,7 +920,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.fecanulaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<System.DateTime> fecanulasis
         {
@@ -933,7 +933,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.fecanulasisField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime fecdocumento
         {
@@ -946,7 +946,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.fecdocumentoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<System.DateTime> fecproceso
         {
@@ -959,7 +959,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.fecprocesoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime fecsistema
         {
@@ -972,7 +972,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.fecsistemaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool flgcierrez
         {
@@ -985,7 +985,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.flgcierrezField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool flgmanual
         {
@@ -998,7 +998,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.flgmanualField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool flgmovimiento
         {
@@ -1011,7 +1011,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.flgmovimientoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string inscripcion
         {
@@ -1024,7 +1024,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.inscripcionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string lado
         {
@@ -1037,7 +1037,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.ladoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string marcavehic
         {
@@ -1050,7 +1050,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.marcavehicField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string mensaje1
         {
@@ -1063,7 +1063,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.mensaje1Field = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string mensaje2
         {
@@ -1076,7 +1076,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.mensaje2Field = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal mtocanje
         {
@@ -1089,7 +1089,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.mtocanjeField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal mtodetraccion
         {
@@ -1102,7 +1102,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.mtodetraccionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal mtodscto
         {
@@ -1115,7 +1115,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.mtodsctoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal mtoimpuesto
         {
@@ -1128,7 +1128,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.mtoimpuestoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal mtonoafecto
         {
@@ -1141,7 +1141,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.mtonoafectoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal mtorecaudo
         {
@@ -1154,7 +1154,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.mtorecaudoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal mtoservicio
         {
@@ -1167,7 +1167,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.mtoservicioField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal mtosubtotal
         {
@@ -1180,7 +1180,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.mtosubtotalField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal mtototal
         {
@@ -1193,7 +1193,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.mtototalField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal mtovueltodol
         {
@@ -1206,7 +1206,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.mtovueltodolField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal mtovueltosol
         {
@@ -1219,7 +1219,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.mtovueltosolField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nrobonus
         {
@@ -1232,7 +1232,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.nrobonusField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nrocelular
         {
@@ -1245,7 +1245,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.nrocelularField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nrodocumento
         {
@@ -1258,7 +1258,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.nrodocumentoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nroguia
         {
@@ -1271,7 +1271,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.nroguiaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nrolicencia
         {
@@ -1284,7 +1284,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.nrolicenciaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nroocompra
         {
@@ -1297,7 +1297,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.nroocompraField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nroplaca
         {
@@ -1310,7 +1310,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.nroplacaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nropos
         {
@@ -1323,7 +1323,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.nroposField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nroproforma
         {
@@ -1336,7 +1336,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.nroproformaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nroserie1
         {
@@ -1349,7 +1349,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.nroserie1Field = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nroserie2
         {
@@ -1362,7 +1362,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.nroserie2Field = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nroseriemaq
         {
@@ -1375,7 +1375,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.nroseriemaqField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nrotarjeta
         {
@@ -1388,7 +1388,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.nrotarjetaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string numero_texto
         {
@@ -1401,7 +1401,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.numero_textoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string observacion
         {
@@ -1414,7 +1414,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.observacionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string odometro
         {
@@ -1427,7 +1427,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.odometroField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string pdf417
         {
@@ -1440,7 +1440,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.pdf417Field = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal porcdetraccion
         {
@@ -1453,7 +1453,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.porcdetraccionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal pordscto1
         {
@@ -1466,7 +1466,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.pordscto1Field = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal pordscto2
         {
@@ -1479,7 +1479,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.pordscto2Field = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal pordscto3
         {
@@ -1492,7 +1492,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.pordscto3Field = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal pordsctoeq
         {
@@ -1505,7 +1505,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.pordsctoeqField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal porservicio
         {
@@ -1518,7 +1518,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.porservicioField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal precio_orig
         {
@@ -1531,7 +1531,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.precio_origField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int ptosganados
         {
@@ -1544,7 +1544,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.ptosganadosField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal redondea_indecopi
         {
@@ -1557,7 +1557,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.redondea_indecopiField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string referencia
         {
@@ -1570,7 +1570,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.referenciaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string rscliente
         {
@@ -1583,7 +1583,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.rsclienteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string ruccliente
         {
@@ -1596,7 +1596,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.rucclienteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool rucinvalido
         {
@@ -1609,7 +1609,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.rucinvalidoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string ructranspor
         {
@@ -1622,7 +1622,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.ructransporField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal saldo_disponible
         {
@@ -1635,7 +1635,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.saldo_disponibleField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string scop
         {
@@ -1648,7 +1648,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.scopField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> tcambio
         {
@@ -1661,7 +1661,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.tcambioField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tipofactura
         {
@@ -1674,7 +1674,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.tipofacturaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tipoventa
         {
@@ -1687,7 +1687,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.tipoventaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string turno
         {
@@ -1700,7 +1700,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.turnoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool usadecimales
         {
@@ -1713,7 +1713,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.usadecimalesField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal valoracumula
         {
@@ -1726,7 +1726,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.valoracumulaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal valorvta
         {
@@ -1740,23 +1740,23 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TS_BECabeceraOutPut", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Sales")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BECabeceraOutPut", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Sales")]
     public partial class TS_BECabeceraOutPut : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private int EstadoField;
-        
+
         private string MensajeField;
-        
+
         private bool OkField;
-        
+
         private ITBCP.ServiceSIGES.Domain.Entities.TS_BEArticulo[] cDetalleOutPutField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -1768,7 +1768,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Estado
         {
@@ -1781,7 +1781,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.EstadoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Mensaje
         {
@@ -1794,7 +1794,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.MensajeField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool Ok
         {
@@ -1807,7 +1807,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.OkField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ITBCP.ServiceSIGES.Domain.Entities.TS_BEArticulo[] cDetalleOutPut
         {
@@ -1821,63 +1821,63 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TS_BEDetalleInput", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Sales")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BEDetalleInput", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Sales")]
     public partial class TS_BEDetalleInput : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private decimal cantidadField;
-        
+
         private string caraField;
-        
+
         private string cdarticuloField;
-        
+
         private string cdarticulosunatField;
-        
+
         private string cdmedequivField;
-        
+
         private string cdunimedField;
-        
+
         private decimal costoField;
-        
+
         private string dsarticuloField;
-        
+
         private decimal impuestoField;
-        
+
         private bool impuesto_plasticoField;
-        
+
         private int itemField;
-        
+
         private decimal monto_impuesto_plasticoField;
-        
+
         private bool moverstockField;
-        
+
         private decimal mtodsctoField;
-        
+
         private decimal mtoimpuestoField;
-        
+
         private string nrogasboyField;
-        
+
         private decimal precioField;
-        
+
         private decimal precio_origField;
-        
+
         private decimal redondea_indecopiField;
-        
+
         private decimal subtotalField;
-        
+
         private decimal totalField;
-        
+
         private string tpconversionField;
-        
+
         private string tpformulaField;
-        
+
         private decimal valorconversionField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -1889,7 +1889,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal cantidad
         {
@@ -1902,7 +1902,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.cantidadField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cara
         {
@@ -1915,7 +1915,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.caraField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdarticulo
         {
@@ -1928,7 +1928,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.cdarticuloField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdarticulosunat
         {
@@ -1941,7 +1941,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.cdarticulosunatField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdmedequiv
         {
@@ -1954,7 +1954,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.cdmedequivField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdunimed
         {
@@ -1967,7 +1967,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.cdunimedField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal costo
         {
@@ -1980,7 +1980,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.costoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string dsarticulo
         {
@@ -1993,7 +1993,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.dsarticuloField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal impuesto
         {
@@ -2006,7 +2006,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.impuestoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool impuesto_plastico
         {
@@ -2019,7 +2019,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.impuesto_plasticoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int item
         {
@@ -2032,7 +2032,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.itemField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal monto_impuesto_plastico
         {
@@ -2045,7 +2045,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.monto_impuesto_plasticoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool moverstock
         {
@@ -2058,7 +2058,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.moverstockField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal mtodscto
         {
@@ -2071,7 +2071,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.mtodsctoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal mtoimpuesto
         {
@@ -2084,7 +2084,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.mtoimpuestoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nrogasboy
         {
@@ -2097,7 +2097,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.nrogasboyField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal precio
         {
@@ -2110,7 +2110,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.precioField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal precio_orig
         {
@@ -2123,7 +2123,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.precio_origField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal redondea_indecopi
         {
@@ -2136,7 +2136,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.redondea_indecopiField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal subtotal
         {
@@ -2149,7 +2149,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.subtotalField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal total
         {
@@ -2162,7 +2162,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.totalField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tpconversion
         {
@@ -2175,7 +2175,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.tpconversionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tpformula
         {
@@ -2188,7 +2188,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.tpformulaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal valorconversion
         {
@@ -2202,31 +2202,31 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TS_BEPagoInput", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Sales")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BEPagoInput", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Sales")]
     public partial class TS_BEPagoInput : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private string cdbancoField;
-        
+
         private string cdtarjetaField;
-        
+
         private string cdtppagoField;
-        
+
         private System.Nullable<decimal> mtopagodolField;
-        
+
         private System.Nullable<decimal> mtopagosolField;
-        
+
         private string nrochequeField;
-        
+
         private string nrocuentaField;
-        
+
         private string nrotarjetaField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -2238,7 +2238,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdbanco
         {
@@ -2251,7 +2251,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.cdbancoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdtarjeta
         {
@@ -2264,7 +2264,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.cdtarjetaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdtppago
         {
@@ -2277,7 +2277,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.cdtppagoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> mtopagodol
         {
@@ -2290,7 +2290,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.mtopagodolField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> mtopagosol
         {
@@ -2303,7 +2303,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.mtopagosolField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nrocheque
         {
@@ -2316,7 +2316,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.nrochequeField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nrocuenta
         {
@@ -2329,7 +2329,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.nrocuentaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nrotarjeta
         {
@@ -2343,17 +2343,17 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TS_BECorrelativoInput", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Sales")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BECorrelativoInput", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Sales")]
     public partial class TS_BECorrelativoInput : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private string seriehdField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -2365,7 +2365,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string seriehd
         {
@@ -2379,35 +2379,35 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TS_BECorrelativoOutput", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Sales")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BECorrelativoOutput", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Sales")]
     public partial class TS_BECorrelativoOutput : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private string MensajeField;
-        
+
         private bool OkField;
-        
+
         private string boletaField;
-        
+
         private string facturaField;
-        
+
         private string ncreditoField;
-        
+
         private string ndebitoField;
-        
+
         private string nroposField;
-        
+
         private string nventaField;
-        
+
         private string promocionField;
-        
+
         private string ticketField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -2419,7 +2419,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Mensaje
         {
@@ -2432,7 +2432,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.MensajeField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool Ok
         {
@@ -2445,7 +2445,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.OkField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string boleta
         {
@@ -2458,7 +2458,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.boletaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string factura
         {
@@ -2471,7 +2471,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.facturaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string ncredito
         {
@@ -2484,7 +2484,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.ncreditoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string ndebito
         {
@@ -2497,7 +2497,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.ndebitoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nropos
         {
@@ -2510,7 +2510,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.nroposField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nventa
         {
@@ -2523,7 +2523,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.nventaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string promocion
         {
@@ -2536,7 +2536,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.promocionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string ticket
         {
@@ -2550,27 +2550,27 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TS_BEDAnulaInput", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Sales")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BEDAnulaInput", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Sales")]
     public partial class TS_BEDAnulaInput : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private string cdtipodocField;
-        
+
         private string cdusuarioField;
-        
+
         private bool fact_electronicaField;
-        
+
         private string nrodocumentoField;
-        
+
         private string nroposField;
-        
+
         private string nroseriemaqField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -2582,7 +2582,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdtipodoc
         {
@@ -2595,7 +2595,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.cdtipodocField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdusuario
         {
@@ -2608,7 +2608,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.cdusuarioField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool fact_electronica
         {
@@ -2621,7 +2621,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.fact_electronicaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nrodocumento
         {
@@ -2634,7 +2634,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.nrodocumentoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nropos
         {
@@ -2647,7 +2647,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
                 this.nroposField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nroseriemaq
         {
@@ -2665,522 +2665,522 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Sales
 namespace ITBCP.ServiceSIGES.Domain.Entities
 {
     using System.Runtime.Serialization;
-    
-    
+
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TS_BEParametro", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BEParametro", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     public partial class TS_BEParametro : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private System.Nullable<bool> activa_camediField;
-        
+
         private System.Nullable<bool> activa_elsolField;
-        
+
         private System.Nullable<bool> activa_formas_pagoField;
-        
+
         private System.Nullable<bool> activa_repro_stockField;
-        
+
         private System.Nullable<bool> activadispensadorField;
-        
+
         private System.Nullable<bool> activasawaField;
-        
+
         private System.Nullable<bool> arequipaField;
-        
+
         private string bbddsetupField;
-        
+
         private string bdwebField;
-        
+
         private System.Nullable<bool> bloqventaplayaField;
-        
+
         private System.Nullable<byte> boton_transfer_gratuitaField;
-        
+
         private System.Nullable<bool> cambioturnoField;
-        
+
         private System.Nullable<bool> canceladoField;
-        
+
         private System.Nullable<decimal> cant_turnoField;
-        
+
         private System.Nullable<int> cantdigitos_tarjpromoField;
-        
+
         private string cd_estacionField;
-        
+
         private string cdalmacenField;
-        
+
         private string cdcliente_automaticoField;
-        
+
         private string cdclienteautomaticoField;
-        
+
         private string cdcliprintndespachoField;
-        
+
         private string cddepart_baseField;
-        
+
         private string cdestacionField;
-        
+
         private string cdgrupocombustibleField;
-        
+
         private string cdgrupovtaplayaField;
-        
+
         private string cdletrainicialField;
-        
+
         private string cdlocalField;
-        
+
         private string cdtipodocautomaticoField;
-        
+
         private System.Nullable<bool> chkclientediaField;
-        
+
         private System.Nullable<byte> cierre_especialField;
-        
+
         private System.Nullable<byte> cierre_kardexField;
-        
+
         private System.Nullable<byte> cierrex_formatosField;
-        
+
         private System.Nullable<bool> clubgazelField;
-        
+
         private string cod_viaticoField;
-        
+
         private System.Nullable<decimal> colorgridField;
-        
+
         private System.Nullable<decimal> coloroffField;
-        
+
         private System.Nullable<decimal> coloronField;
-        
+
         private System.Nullable<decimal> colum_termicaField;
-        
+
         private System.Nullable<bool> conexiondispensadorField;
-        
+
         private string conexionwebField;
-        
+
         private System.Nullable<byte> conf_cierrexField;
-        
+
         private System.Nullable<bool> conigvField;
-        
+
         private System.Nullable<bool> consulta_sunatField;
-        
+
         private System.Nullable<bool> correlativos2_ticketField;
-        
+
         private System.Nullable<byte> credplacaField;
-        
+
         private System.Nullable<byte> cursor_tiendaField;
-        
+
         private System.Nullable<bool> depositos_playaField;
-        
+
         private System.Nullable<bool> desactivar_foxypreviewerField;
-        
+
         private System.Nullable<bool> desanularField;
-        
+
         private System.Nullable<decimal> diasresetptosField;
-        
+
         private System.Nullable<decimal> digitocdclienteField;
-        
+
         private System.Nullable<decimal> digitorucField;
-        
+
         private System.Nullable<bool> escirsaField;
-        
+
         private string factura_cField;
-        
+
         private string facturafmt_cField;
-        
+
         private string facturaimpre_cField;
-        
+
         private string fe_fecvalidaField;
-        
+
         private System.Nullable<System.DateTime> fecinstallField;
-        
+
         private System.Nullable<bool> flg_activa_ti_todosprodField;
-        
+
         private System.Nullable<bool> flg_activar_clientes_variosField;
-        
+
         private System.Nullable<bool> flg_afectarcosto_fletecomprasField;
-        
+
         private System.Nullable<bool> flg_anula_easytaxiField;
-        
+
         private System.Nullable<bool> flg_anulaposField;
-        
+
         private System.Nullable<bool> flg_boton_facturacionmanualField;
-        
+
         private System.Nullable<bool> flg_boton_promoField;
-        
+
         private System.Nullable<bool> flg_botoncreditoField;
-        
+
         private System.Nullable<bool> flg_botontiendaenplayaField;
-        
+
         private System.Nullable<bool> flg_btn_credito_playaField;
-        
+
         private System.Nullable<bool> flg_canjendField;
-        
+
         private System.Nullable<bool> flg_cliente_automaticoField;
-        
+
         private System.Nullable<bool> flg_credito_centralizadoField;
-        
+
         private System.Nullable<byte> flg_desc_prefijoField;
-        
+
         private System.Nullable<bool> flg_facturacion_automaticaField;
-        
+
         private System.Nullable<bool> flg_fecsrvField;
-        
+
         private System.Nullable<bool> flg_gastos_playaField;
-        
+
         private System.Nullable<bool> flg_imprimirnd_menos5sField;
-        
+
         private string flg_invent_2Field;
-        
+
         private System.Nullable<bool> flg_invent_fisicoteoricoField;
-        
+
         private System.Nullable<bool> flg_kardex_unalineaField;
-        
+
         private System.Nullable<bool> flg_modo_factField;
-        
+
         private System.Nullable<bool> flg_nc_liberandField;
-        
+
         private System.Nullable<bool> flg_noaplica_desc_tarjField;
-        
+
         private System.Nullable<bool> flg_nobuscar_nombreField;
-        
+
         private System.Nullable<bool> flg_notas_multirefField;
-        
+
         private System.Nullable<bool> flg_nrodiasField;
-        
+
         private System.Nullable<bool> flg_ocultar_campos_tckField;
-        
+
         private System.Nullable<bool> flg_ocultarvta_menos5sField;
-        
+
         private System.Nullable<bool> flg_pideclavecredField;
-        
+
         private System.Nullable<bool> flg_pideodometroField;
-        
+
         private System.Nullable<bool> flg_pideplacaField;
-        
+
         private System.Nullable<bool> flg_pideplacatbField;
-        
+
         private System.Nullable<bool> flg_prefij_seriesdocField;
-        
+
         private System.Nullable<bool> flg_print_qrField;
-        
+
         private System.Nullable<bool> flg_repx_terminalField;
-        
+
         private System.Nullable<bool> flg_round_dec_indecopiField;
-        
+
         private System.Nullable<bool> flg_round_indecopi_1_9Field;
-        
+
         private System.Nullable<bool> flg_transfer_gratuita_ceroField;
-        
+
         private System.Nullable<bool> flg_valdsctoField;
-        
+
         private System.Nullable<bool> flg_valfecposField;
-        
+
         private System.Nullable<bool> flg_valida_fecproce_diaField;
-        
+
         private System.Nullable<bool> flg_validateclas_cdclienteField;
-        
+
         private System.Nullable<bool> flgcierraturnoxcajaField;
-        
+
         private System.Nullable<bool> flgcontometroField;
-        
+
         private System.Nullable<bool> flgcreaprodmovField;
-        
+
         private System.Nullable<bool> flgformulaField;
-        
+
         private System.Nullable<bool> flggrifoField;
-        
+
         private System.Nullable<bool> flgintegradorField;
-        
+
         private System.Nullable<bool> flgmostrar_precio_origField;
-        
+
         private System.Nullable<bool> flgprintndespachoField;
-        
+
         private System.Nullable<bool> flgrutaField;
-        
+
         private System.Nullable<bool> flgsistema01Field;
-        
+
         private System.Nullable<bool> flgsistema02Field;
-        
+
         private System.Nullable<bool> flgsistema03Field;
-        
+
         private System.Nullable<bool> flgsoloterminalField;
-        
+
         private System.Nullable<bool> flgsolotiendaField;
-        
+
         private System.Nullable<bool> flgtallaField;
-        
+
         private System.Nullable<bool> flgvalida_nrovaleField;
-        
+
         private System.Nullable<bool> flgvalidarucField;
-        
+
         private int galones_decimalesField;
-        
+
         private string guiaField;
-        
+
         private string guiafmtField;
-        
+
         private string guiaimprField;
-        
+
         private string horacierrepdField;
-        
+
         private System.Nullable<int> impr_veces_bolField;
-        
+
         private System.Nullable<int> impr_veces_facField;
-        
+
         private System.Nullable<int> impr_veces_ndField;
-        
+
         private System.Nullable<byte> imprime_canjewebField;
-        
+
         private System.Nullable<bool> imprime_clientes_creditoField;
-        
+
         private System.Nullable<byte> imprime_fact_playaField;
-        
+
         private System.Nullable<byte> imprime_nvtaField;
-        
+
         private System.Nullable<byte> imprime_ptosacumuladosField;
-        
+
         private System.Nullable<byte> imprime_tiketeraField;
-        
+
         private System.Nullable<bool> imprime_total_dispensadoField;
-        
+
         private System.Nullable<byte> imprimir_cdarticulo_configField;
-        
+
         private System.Nullable<decimal> impuestoField;
-        
+
         private System.Nullable<bool> iniciodiaField;
-        
+
         private string instanciawebField;
-        
+
         private string interfazField;
-        
+
         private System.Nullable<decimal> intervaltimerField;
-        
+
         private System.Nullable<bool> label_bellavistaField;
-        
+
         private string lin1displayField;
-        
+
         private string lin2displayField;
-        
+
         private System.Nullable<decimal> longtarjetaField;
-        
+
         private string masccantidadField;
-        
+
         private string masccantidadfField;
-        
+
         private string masccostoField;
-        
+
         private string mascprecioField;
-        
+
         private string masctotalField;
-        
+
         private System.Nullable<decimal> minutosxtktbolField;
-        
+
         private System.Nullable<byte> modifica_depositos_parteField;
-        
+
         private System.Nullable<decimal> modifica_precio_tiendaField;
-        
+
         private string monsistemaField;
-        
+
         private string monticketField;
-        
+
         private System.Nullable<bool> mostrar_articulo_kardexField;
-        
+
         private System.Nullable<byte> mostrar_igv_pantallaField;
-        
+
         private System.Nullable<byte> mostrar_local_gastosField;
-        
+
         private System.Nullable<bool> mostrar_ptos_ganadosField;
-        
+
         private string msg_anula_documentoField;
-        
+
         private string mto_desc_descripcionField;
-        
+
         private System.Nullable<decimal> mto_facturacion_automaticaField;
-        
+
         private System.Nullable<decimal> mtocuponField;
-        
+
         private System.Nullable<decimal> mtominautomaticoField;
-        
+
         private System.Nullable<decimal> mtominidepositoField;
-        
+
         private System.Nullable<decimal> mtominimodetraccionField;
-        
+
         private System.Nullable<decimal> mtominimodniField;
-        
+
         private System.Nullable<decimal> mtominimodni_sunatField;
-        
+
         private System.Nullable<bool> nd_imp_saldoyconsumoField;
-        
+
         private System.Nullable<byte> nd_playaField;
-        
+
         private string nivelserafinField;
-        
+
         private System.Nullable<byte> noconectawpuntosField;
-        
+
         private string notad_cdarticuloField;
-        
+
         private System.Nullable<int> nro_caracteres_rsocialField;
-        
+
         private System.Nullable<decimal> nrocaraField;
-        
+
         private System.Nullable<decimal> nrocdbarraField;
-        
+
         private string nrocompraField;
-        
+
         private System.Nullable<decimal> nrodepositoField;
-        
+
         private string nroimportacionField;
-        
+
         private System.Nullable<decimal> nroinventarioField;
-        
+
         private System.Nullable<decimal> nropagoField;
-        
+
         private System.Nullable<decimal> nrotransgasboyField;
-        
+
         private string nrovaleField;
-        
+
         private string nroversionboField;
-        
+
         private string nroversionplayaField;
-        
+
         private string nroversiontiField;
-        
+
         private string nroversiontiendaField;
-        
+
         private System.Nullable<bool> pantalland_cliprintndField;
-        
+
         private System.Nullable<byte> parte_tiendaField;
-        
+
         private string passwordwebField;
-        
+
         private System.Nullable<bool> pd_separaglpField;
-        
+
         private System.Nullable<decimal> porcipmField;
-        
+
         private System.Nullable<decimal> porservicioField;
-        
+
         private System.Nullable<decimal> precio_variosField;
-        
+
         private System.Nullable<bool> precioconigvField;
-        
+
         private System.Nullable<bool> precioconservicioField;
-        
+
         private string prefbonusField;
-        
+
         private string prefcredcorpField;
-        
+
         private string prefcredlocalField;
-        
+
         private string prefflotlocalField;
-        
+
         private System.Nullable<decimal> ptobonusField;
-        
+
         private System.Nullable<bool> punto_ndField;
-        
+
         private System.Nullable<int> rango_valfecposField;
-        
+
         private System.Nullable<bool> redondeasolescombusField;
-        
+
         private System.Nullable<decimal> redondeoField;
-        
+
         private System.Nullable<byte> repite_articuloField;
-        
+
         private string rscliente_automaticoField;
-        
+
         private string ruta_backupField;
-        
+
         private string ruta_qr_jpgField;
-        
+
         private string ruta_webclubgazelField;
-        
+
         private string ruta_websaldosField;
-        
+
         private string ruta_ws_easytaxyField;
-        
+
         private System.Nullable<bool> saltoautoField;
-        
+
         private string seriehd_imprime_ticket_webField;
-        
+
         private System.Nullable<bool> stknegativoField;
-        
+
         private System.Nullable<bool> tarjcredplacaField;
-        
+
         private System.Nullable<byte> tarjeta_actu_cdclienteField;
-        
+
         private System.Nullable<bool> tarjeta_mascaraField;
-        
+
         private System.Nullable<int> terminalserverField;
-        
+
         private System.Nullable<byte> tienda_cant_negField;
-        
+
         private System.Nullable<int> tiendagazelField;
-        
+
         private string tipo_canjeField;
-        
+
         private System.Nullable<byte> tipo_menuField;
-        
+
         private string tipoafiliacionField;
-        
+
         private System.Nullable<byte> tipocierrextiendaField;
-        
+
         private string tipocontrolField;
-        
+
         private string tipoptoafiliacionField;
-        
+
         private string tpanulacionField;
-        
+
         private string tpcambiotallaField;
-        
+
         private string tpcompraField;
-        
+
         private string tpguiatransferenciaField;
-        
+
         private string tpingimportacionField;
-        
+
         private string tpingresoField;
-        
+
         private string tpinicialField;
-        
+
         private string tppgocanjeField;
-        
+
         private string tppgogastoField;
-        
+
         private string tpsaldevField;
-        
+
         private string tpsalidaField;
-        
+
         private string tpsalmermaField;
-        
+
         private string tptransferenciaField;
-        
+
         private string tptransferenciainternaField;
-        
+
         private string tptransftiendaField;
-        
+
         private System.Nullable<bool> trivenoField;
-        
+
         private string userwebField;
-        
+
         private System.Nullable<bool> utilidadcostoField;
-        
+
         private System.Nullable<byte> valida_cdarticuloField;
-        
+
         private System.Nullable<bool> valida_correlativoField;
-        
+
         private System.Nullable<int> valida_fecha_playaField;
-        
+
         private string valorcanje_regvtaField;
-        
+
         private System.Nullable<decimal> valorigvField;
-        
+
         private string versionboField;
-        
+
         private string versionplayaField;
-        
+
         private string versiontiendaField;
-        
+
         private string versiontinvenField;
-        
+
         private System.Nullable<bool> vertiposventaField;
-        
+
         private System.Nullable<bool> zenpantallaField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -3192,7 +3192,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> activa_camedi
         {
@@ -3205,7 +3205,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.activa_camediField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> activa_elsol
         {
@@ -3218,7 +3218,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.activa_elsolField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> activa_formas_pago
         {
@@ -3231,7 +3231,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.activa_formas_pagoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> activa_repro_stock
         {
@@ -3244,7 +3244,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.activa_repro_stockField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> activadispensador
         {
@@ -3257,7 +3257,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.activadispensadorField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> activasawa
         {
@@ -3270,7 +3270,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.activasawaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> arequipa
         {
@@ -3283,7 +3283,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.arequipaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string bbddsetup
         {
@@ -3296,7 +3296,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.bbddsetupField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string bdweb
         {
@@ -3309,7 +3309,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.bdwebField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> bloqventaplaya
         {
@@ -3322,7 +3322,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.bloqventaplayaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<byte> boton_transfer_gratuita
         {
@@ -3335,7 +3335,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.boton_transfer_gratuitaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> cambioturno
         {
@@ -3348,7 +3348,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cambioturnoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> cancelado
         {
@@ -3361,7 +3361,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.canceladoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> cant_turno
         {
@@ -3374,7 +3374,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cant_turnoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<int> cantdigitos_tarjpromo
         {
@@ -3387,7 +3387,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cantdigitos_tarjpromoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cd_estacion
         {
@@ -3400,7 +3400,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cd_estacionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdalmacen
         {
@@ -3413,7 +3413,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdalmacenField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdcliente_automatico
         {
@@ -3426,7 +3426,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdcliente_automaticoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdclienteautomatico
         {
@@ -3439,7 +3439,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdclienteautomaticoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdcliprintndespacho
         {
@@ -3452,7 +3452,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdcliprintndespachoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cddepart_base
         {
@@ -3465,7 +3465,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cddepart_baseField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdestacion
         {
@@ -3478,7 +3478,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdestacionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdgrupocombustible
         {
@@ -3491,7 +3491,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdgrupocombustibleField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdgrupovtaplaya
         {
@@ -3504,7 +3504,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdgrupovtaplayaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdletrainicial
         {
@@ -3517,7 +3517,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdletrainicialField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdlocal
         {
@@ -3530,7 +3530,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdlocalField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdtipodocautomatico
         {
@@ -3543,7 +3543,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdtipodocautomaticoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> chkclientedia
         {
@@ -3556,7 +3556,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.chkclientediaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<byte> cierre_especial
         {
@@ -3569,7 +3569,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cierre_especialField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<byte> cierre_kardex
         {
@@ -3582,7 +3582,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cierre_kardexField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<byte> cierrex_formatos
         {
@@ -3595,7 +3595,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cierrex_formatosField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> clubgazel
         {
@@ -3608,7 +3608,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.clubgazelField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cod_viatico
         {
@@ -3621,7 +3621,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cod_viaticoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> colorgrid
         {
@@ -3634,7 +3634,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.colorgridField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> coloroff
         {
@@ -3647,7 +3647,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.coloroffField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> coloron
         {
@@ -3660,7 +3660,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.coloronField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> colum_termica
         {
@@ -3673,7 +3673,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.colum_termicaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> conexiondispensador
         {
@@ -3686,7 +3686,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.conexiondispensadorField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string conexionweb
         {
@@ -3699,7 +3699,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.conexionwebField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<byte> conf_cierrex
         {
@@ -3712,7 +3712,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.conf_cierrexField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> conigv
         {
@@ -3725,7 +3725,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.conigvField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> consulta_sunat
         {
@@ -3738,7 +3738,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.consulta_sunatField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> correlativos2_ticket
         {
@@ -3751,7 +3751,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.correlativos2_ticketField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<byte> credplaca
         {
@@ -3764,7 +3764,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.credplacaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<byte> cursor_tienda
         {
@@ -3777,7 +3777,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cursor_tiendaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> depositos_playa
         {
@@ -3790,7 +3790,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.depositos_playaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> desactivar_foxypreviewer
         {
@@ -3803,7 +3803,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.desactivar_foxypreviewerField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> desanular
         {
@@ -3816,7 +3816,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.desanularField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> diasresetptos
         {
@@ -3829,7 +3829,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.diasresetptosField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> digitocdcliente
         {
@@ -3842,7 +3842,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.digitocdclienteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> digitoruc
         {
@@ -3855,7 +3855,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.digitorucField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> escirsa
         {
@@ -3868,7 +3868,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.escirsaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string factura_c
         {
@@ -3881,7 +3881,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.factura_cField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string facturafmt_c
         {
@@ -3894,7 +3894,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.facturafmt_cField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string facturaimpre_c
         {
@@ -3907,7 +3907,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.facturaimpre_cField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string fe_fecvalida
         {
@@ -3920,7 +3920,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.fe_fecvalidaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<System.DateTime> fecinstall
         {
@@ -3933,7 +3933,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.fecinstallField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_activa_ti_todosprod
         {
@@ -3946,7 +3946,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_activa_ti_todosprodField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_activar_clientes_varios
         {
@@ -3959,7 +3959,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_activar_clientes_variosField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_afectarcosto_fletecompras
         {
@@ -3972,7 +3972,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_afectarcosto_fletecomprasField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_anula_easytaxi
         {
@@ -3985,7 +3985,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_anula_easytaxiField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_anulapos
         {
@@ -3998,7 +3998,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_anulaposField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_boton_facturacionmanual
         {
@@ -4011,7 +4011,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_boton_facturacionmanualField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_boton_promo
         {
@@ -4024,7 +4024,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_boton_promoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_botoncredito
         {
@@ -4037,7 +4037,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_botoncreditoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_botontiendaenplaya
         {
@@ -4050,7 +4050,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_botontiendaenplayaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_btn_credito_playa
         {
@@ -4063,7 +4063,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_btn_credito_playaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_canjend
         {
@@ -4076,7 +4076,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_canjendField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_cliente_automatico
         {
@@ -4089,7 +4089,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_cliente_automaticoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_credito_centralizado
         {
@@ -4102,7 +4102,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_credito_centralizadoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<byte> flg_desc_prefijo
         {
@@ -4115,7 +4115,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_desc_prefijoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_facturacion_automatica
         {
@@ -4128,7 +4128,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_facturacion_automaticaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_fecsrv
         {
@@ -4141,7 +4141,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_fecsrvField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_gastos_playa
         {
@@ -4154,7 +4154,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_gastos_playaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_imprimirnd_menos5s
         {
@@ -4167,7 +4167,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_imprimirnd_menos5sField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string flg_invent_2
         {
@@ -4180,7 +4180,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_invent_2Field = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_invent_fisicoteorico
         {
@@ -4193,7 +4193,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_invent_fisicoteoricoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_kardex_unalinea
         {
@@ -4206,7 +4206,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_kardex_unalineaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_modo_fact
         {
@@ -4219,7 +4219,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_modo_factField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_nc_liberand
         {
@@ -4232,7 +4232,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_nc_liberandField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_noaplica_desc_tarj
         {
@@ -4245,7 +4245,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_noaplica_desc_tarjField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_nobuscar_nombre
         {
@@ -4258,7 +4258,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_nobuscar_nombreField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_notas_multiref
         {
@@ -4271,7 +4271,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_notas_multirefField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_nrodias
         {
@@ -4284,7 +4284,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_nrodiasField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_ocultar_campos_tck
         {
@@ -4297,7 +4297,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_ocultar_campos_tckField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_ocultarvta_menos5s
         {
@@ -4310,7 +4310,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_ocultarvta_menos5sField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_pideclavecred
         {
@@ -4323,7 +4323,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_pideclavecredField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_pideodometro
         {
@@ -4336,7 +4336,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_pideodometroField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_pideplaca
         {
@@ -4349,7 +4349,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_pideplacaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_pideplacatb
         {
@@ -4362,7 +4362,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_pideplacatbField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_prefij_seriesdoc
         {
@@ -4375,7 +4375,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_prefij_seriesdocField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_print_qr
         {
@@ -4388,7 +4388,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_print_qrField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_repx_terminal
         {
@@ -4401,7 +4401,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_repx_terminalField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_round_dec_indecopi
         {
@@ -4414,7 +4414,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_round_dec_indecopiField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_round_indecopi_1_9
         {
@@ -4427,7 +4427,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_round_indecopi_1_9Field = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_transfer_gratuita_cero
         {
@@ -4440,7 +4440,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_transfer_gratuita_ceroField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_valdscto
         {
@@ -4453,7 +4453,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_valdsctoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_valfecpos
         {
@@ -4466,7 +4466,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_valfecposField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_valida_fecproce_dia
         {
@@ -4479,7 +4479,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_valida_fecproce_diaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_validateclas_cdcliente
         {
@@ -4492,7 +4492,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_validateclas_cdclienteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flgcierraturnoxcaja
         {
@@ -4505,7 +4505,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flgcierraturnoxcajaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flgcontometro
         {
@@ -4518,7 +4518,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flgcontometroField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flgcreaprodmov
         {
@@ -4531,7 +4531,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flgcreaprodmovField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flgformula
         {
@@ -4544,7 +4544,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flgformulaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flggrifo
         {
@@ -4557,7 +4557,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flggrifoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flgintegrador
         {
@@ -4570,7 +4570,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flgintegradorField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flgmostrar_precio_orig
         {
@@ -4583,7 +4583,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flgmostrar_precio_origField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flgprintndespacho
         {
@@ -4596,7 +4596,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flgprintndespachoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flgruta
         {
@@ -4609,7 +4609,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flgrutaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flgsistema01
         {
@@ -4622,7 +4622,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flgsistema01Field = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flgsistema02
         {
@@ -4635,7 +4635,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flgsistema02Field = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flgsistema03
         {
@@ -4648,7 +4648,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flgsistema03Field = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flgsoloterminal
         {
@@ -4661,7 +4661,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flgsoloterminalField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flgsolotienda
         {
@@ -4674,7 +4674,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flgsolotiendaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flgtalla
         {
@@ -4687,7 +4687,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flgtallaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flgvalida_nrovale
         {
@@ -4700,7 +4700,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flgvalida_nrovaleField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flgvalidaruc
         {
@@ -4713,7 +4713,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flgvalidarucField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int galones_decimales
         {
@@ -4726,7 +4726,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.galones_decimalesField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string guia
         {
@@ -4739,7 +4739,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.guiaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string guiafmt
         {
@@ -4752,7 +4752,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.guiafmtField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string guiaimpr
         {
@@ -4765,7 +4765,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.guiaimprField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string horacierrepd
         {
@@ -4778,7 +4778,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.horacierrepdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<int> impr_veces_bol
         {
@@ -4791,7 +4791,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.impr_veces_bolField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<int> impr_veces_fac
         {
@@ -4804,7 +4804,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.impr_veces_facField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<int> impr_veces_nd
         {
@@ -4817,7 +4817,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.impr_veces_ndField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<byte> imprime_canjeweb
         {
@@ -4830,7 +4830,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.imprime_canjewebField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> imprime_clientes_credito
         {
@@ -4843,7 +4843,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.imprime_clientes_creditoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<byte> imprime_fact_playa
         {
@@ -4856,7 +4856,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.imprime_fact_playaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<byte> imprime_nvta
         {
@@ -4869,7 +4869,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.imprime_nvtaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<byte> imprime_ptosacumulados
         {
@@ -4882,7 +4882,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.imprime_ptosacumuladosField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<byte> imprime_tiketera
         {
@@ -4895,7 +4895,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.imprime_tiketeraField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> imprime_total_dispensado
         {
@@ -4908,7 +4908,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.imprime_total_dispensadoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<byte> imprimir_cdarticulo_config
         {
@@ -4921,7 +4921,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.imprimir_cdarticulo_configField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> impuesto
         {
@@ -4934,7 +4934,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.impuestoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> iniciodia
         {
@@ -4947,7 +4947,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.iniciodiaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string instanciaweb
         {
@@ -4960,7 +4960,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.instanciawebField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string interfaz
         {
@@ -4973,7 +4973,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.interfazField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> intervaltimer
         {
@@ -4986,7 +4986,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.intervaltimerField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> label_bellavista
         {
@@ -4999,7 +4999,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.label_bellavistaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string lin1display
         {
@@ -5012,7 +5012,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.lin1displayField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string lin2display
         {
@@ -5025,7 +5025,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.lin2displayField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> longtarjeta
         {
@@ -5038,7 +5038,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.longtarjetaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string masccantidad
         {
@@ -5051,7 +5051,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.masccantidadField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string masccantidadf
         {
@@ -5064,7 +5064,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.masccantidadfField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string masccosto
         {
@@ -5077,7 +5077,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.masccostoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string mascprecio
         {
@@ -5090,7 +5090,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.mascprecioField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string masctotal
         {
@@ -5103,7 +5103,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.masctotalField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> minutosxtktbol
         {
@@ -5116,7 +5116,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.minutosxtktbolField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<byte> modifica_depositos_parte
         {
@@ -5129,7 +5129,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.modifica_depositos_parteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> modifica_precio_tienda
         {
@@ -5142,7 +5142,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.modifica_precio_tiendaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string monsistema
         {
@@ -5155,7 +5155,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.monsistemaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string monticket
         {
@@ -5168,7 +5168,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.monticketField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> mostrar_articulo_kardex
         {
@@ -5181,7 +5181,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.mostrar_articulo_kardexField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<byte> mostrar_igv_pantalla
         {
@@ -5194,7 +5194,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.mostrar_igv_pantallaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<byte> mostrar_local_gastos
         {
@@ -5207,7 +5207,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.mostrar_local_gastosField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> mostrar_ptos_ganados
         {
@@ -5220,7 +5220,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.mostrar_ptos_ganadosField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string msg_anula_documento
         {
@@ -5233,7 +5233,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.msg_anula_documentoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string mto_desc_descripcion
         {
@@ -5246,7 +5246,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.mto_desc_descripcionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> mto_facturacion_automatica
         {
@@ -5259,7 +5259,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.mto_facturacion_automaticaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> mtocupon
         {
@@ -5272,7 +5272,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.mtocuponField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> mtominautomatico
         {
@@ -5285,7 +5285,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.mtominautomaticoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> mtominideposito
         {
@@ -5298,7 +5298,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.mtominidepositoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> mtominimodetraccion
         {
@@ -5311,7 +5311,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.mtominimodetraccionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> mtominimodni
         {
@@ -5324,7 +5324,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.mtominimodniField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> mtominimodni_sunat
         {
@@ -5337,7 +5337,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.mtominimodni_sunatField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> nd_imp_saldoyconsumo
         {
@@ -5350,7 +5350,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nd_imp_saldoyconsumoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<byte> nd_playa
         {
@@ -5363,7 +5363,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nd_playaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nivelserafin
         {
@@ -5376,7 +5376,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nivelserafinField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<byte> noconectawpuntos
         {
@@ -5389,7 +5389,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.noconectawpuntosField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string notad_cdarticulo
         {
@@ -5402,7 +5402,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.notad_cdarticuloField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<int> nro_caracteres_rsocial
         {
@@ -5415,7 +5415,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nro_caracteres_rsocialField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> nrocara
         {
@@ -5428,7 +5428,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nrocaraField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> nrocdbarra
         {
@@ -5441,7 +5441,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nrocdbarraField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nrocompra
         {
@@ -5454,7 +5454,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nrocompraField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> nrodeposito
         {
@@ -5467,7 +5467,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nrodepositoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nroimportacion
         {
@@ -5480,7 +5480,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nroimportacionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> nroinventario
         {
@@ -5493,7 +5493,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nroinventarioField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> nropago
         {
@@ -5506,7 +5506,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nropagoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> nrotransgasboy
         {
@@ -5519,7 +5519,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nrotransgasboyField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nrovale
         {
@@ -5532,7 +5532,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nrovaleField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nroversionbo
         {
@@ -5545,7 +5545,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nroversionboField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nroversionplaya
         {
@@ -5558,7 +5558,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nroversionplayaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nroversionti
         {
@@ -5571,7 +5571,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nroversiontiField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nroversiontienda
         {
@@ -5584,7 +5584,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nroversiontiendaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> pantalland_cliprintnd
         {
@@ -5597,7 +5597,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.pantalland_cliprintndField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<byte> parte_tienda
         {
@@ -5610,7 +5610,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.parte_tiendaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string passwordweb
         {
@@ -5623,7 +5623,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.passwordwebField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> pd_separaglp
         {
@@ -5636,7 +5636,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.pd_separaglpField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> porcipm
         {
@@ -5649,7 +5649,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.porcipmField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> porservicio
         {
@@ -5662,7 +5662,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.porservicioField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> precio_varios
         {
@@ -5675,7 +5675,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.precio_variosField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> precioconigv
         {
@@ -5688,7 +5688,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.precioconigvField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> precioconservicio
         {
@@ -5701,7 +5701,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.precioconservicioField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string prefbonus
         {
@@ -5714,7 +5714,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.prefbonusField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string prefcredcorp
         {
@@ -5727,7 +5727,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.prefcredcorpField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string prefcredlocal
         {
@@ -5740,7 +5740,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.prefcredlocalField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string prefflotlocal
         {
@@ -5753,7 +5753,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.prefflotlocalField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> ptobonus
         {
@@ -5766,7 +5766,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.ptobonusField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> punto_nd
         {
@@ -5779,7 +5779,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.punto_ndField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<int> rango_valfecpos
         {
@@ -5792,7 +5792,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.rango_valfecposField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> redondeasolescombus
         {
@@ -5805,7 +5805,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.redondeasolescombusField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> redondeo
         {
@@ -5818,7 +5818,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.redondeoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<byte> repite_articulo
         {
@@ -5831,7 +5831,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.repite_articuloField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string rscliente_automatico
         {
@@ -5844,7 +5844,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.rscliente_automaticoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string ruta_backup
         {
@@ -5857,7 +5857,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.ruta_backupField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string ruta_qr_jpg
         {
@@ -5870,7 +5870,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.ruta_qr_jpgField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string ruta_webclubgazel
         {
@@ -5883,7 +5883,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.ruta_webclubgazelField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string ruta_websaldos
         {
@@ -5896,7 +5896,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.ruta_websaldosField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string ruta_ws_easytaxy
         {
@@ -5909,7 +5909,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.ruta_ws_easytaxyField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> saltoauto
         {
@@ -5922,7 +5922,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.saltoautoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string seriehd_imprime_ticket_web
         {
@@ -5935,7 +5935,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.seriehd_imprime_ticket_webField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> stknegativo
         {
@@ -5948,7 +5948,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.stknegativoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> tarjcredplaca
         {
@@ -5961,7 +5961,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tarjcredplacaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<byte> tarjeta_actu_cdcliente
         {
@@ -5974,7 +5974,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tarjeta_actu_cdclienteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> tarjeta_mascara
         {
@@ -5987,7 +5987,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tarjeta_mascaraField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<int> terminalserver
         {
@@ -6000,7 +6000,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.terminalserverField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<byte> tienda_cant_neg
         {
@@ -6013,7 +6013,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tienda_cant_negField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<int> tiendagazel
         {
@@ -6026,7 +6026,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tiendagazelField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tipo_canje
         {
@@ -6039,7 +6039,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tipo_canjeField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<byte> tipo_menu
         {
@@ -6052,7 +6052,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tipo_menuField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tipoafiliacion
         {
@@ -6065,7 +6065,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tipoafiliacionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<byte> tipocierrextienda
         {
@@ -6078,7 +6078,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tipocierrextiendaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tipocontrol
         {
@@ -6091,7 +6091,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tipocontrolField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tipoptoafiliacion
         {
@@ -6104,7 +6104,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tipoptoafiliacionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tpanulacion
         {
@@ -6117,7 +6117,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tpanulacionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tpcambiotalla
         {
@@ -6130,7 +6130,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tpcambiotallaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tpcompra
         {
@@ -6143,7 +6143,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tpcompraField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tpguiatransferencia
         {
@@ -6156,7 +6156,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tpguiatransferenciaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tpingimportacion
         {
@@ -6169,7 +6169,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tpingimportacionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tpingreso
         {
@@ -6182,7 +6182,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tpingresoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tpinicial
         {
@@ -6195,7 +6195,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tpinicialField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tppgocanje
         {
@@ -6208,7 +6208,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tppgocanjeField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tppgogasto
         {
@@ -6221,7 +6221,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tppgogastoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tpsaldev
         {
@@ -6234,7 +6234,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tpsaldevField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tpsalida
         {
@@ -6247,7 +6247,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tpsalidaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tpsalmerma
         {
@@ -6260,7 +6260,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tpsalmermaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tptransferencia
         {
@@ -6273,7 +6273,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tptransferenciaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tptransferenciainterna
         {
@@ -6286,7 +6286,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tptransferenciainternaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tptransftienda
         {
@@ -6299,7 +6299,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tptransftiendaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> triveno
         {
@@ -6312,7 +6312,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.trivenoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string userweb
         {
@@ -6325,7 +6325,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.userwebField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> utilidadcosto
         {
@@ -6338,7 +6338,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.utilidadcostoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<byte> valida_cdarticulo
         {
@@ -6351,7 +6351,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.valida_cdarticuloField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> valida_correlativo
         {
@@ -6364,7 +6364,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.valida_correlativoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<int> valida_fecha_playa
         {
@@ -6377,7 +6377,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.valida_fecha_playaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string valorcanje_regvta
         {
@@ -6390,7 +6390,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.valorcanje_regvtaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> valorigv
         {
@@ -6403,7 +6403,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.valorigvField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string versionbo
         {
@@ -6416,7 +6416,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.versionboField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string versionplaya
         {
@@ -6429,7 +6429,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.versionplayaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string versiontienda
         {
@@ -6442,7 +6442,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.versiontiendaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string versiontinven
         {
@@ -6455,7 +6455,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.versiontinvenField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> vertiposventa
         {
@@ -6468,7 +6468,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.vertiposventaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> zenpantalla
         {
@@ -6482,247 +6482,247 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TS_BETerminal", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BETerminal", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     public partial class TS_BETerminal : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private string MensajeField;
-        
+
         private bool OkField;
-        
+
         private System.Nullable<bool> _virtualField;
-        
+
         private System.Nullable<bool> activa_boton_playaField;
-        
+
         private string boletaField;
-        
+
         private string boletafmtField;
-        
+
         private string boletaimpreField;
-        
+
         private System.Nullable<bool> boletapreimpreField;
-        
+
         private string cdalmacenField;
-        
+
         private string cdprecioField;
-        
+
         private string cdusuarioField;
-        
+
         private string cierrexfmtField;
-        
+
         private string cierrezfmtField;
-        
+
         private System.Nullable<byte> conexion_dispensadorField;
-        
+
         private string depositofmtField;
-        
+
         private string displayimpreField;
-        
+
         private string facturaField;
-        
+
         private string facturafmtField;
-        
+
         private string facturaimpreField;
-        
+
         private System.Nullable<bool> facturapreimpreField;
-        
+
         private System.Nullable<int> fe_idposField;
-        
+
         private string fe_nomposField;
-        
+
         private System.Nullable<System.DateTime> fecprocesoField;
-        
+
         private System.Nullable<bool> flg_formato_a4Field;
-        
+
         private System.Nullable<bool> flg_nc_correlativoField;
-        
+
         private System.Nullable<bool> flg_nd_correlativoField;
-        
+
         private System.Nullable<bool> flg_pdf417Field;
-        
+
         private System.Nullable<bool> flg_print_qrField;
-        
+
         private System.Nullable<bool> flgaperturacajaField;
-        
+
         private System.Nullable<bool> flgautomaticaField;
-        
+
         private System.Nullable<bool> flgcierrezokField;
-        
+
         private System.Nullable<bool> flgfacturacionField;
-        
+
         private System.Nullable<bool> flghotkeyField;
-        
+
         private System.Nullable<bool> flgpagochequeField;
-        
+
         private System.Nullable<bool> flgpagocreditoField;
-        
+
         private System.Nullable<bool> flgpagoefectivoField;
-        
+
         private System.Nullable<bool> flgpagoncreditoField;
-        
+
         private System.Nullable<bool> flgpagotarjetaField;
-        
+
         private System.Nullable<bool> flgtransferenciaField;
-        
+
         private System.Nullable<bool> flgvalidazField;
-        
+
         private string gavetachrField;
-        
+
         private string gavetaimpreField;
-        
+
         private System.Nullable<bool> generapdfField;
-        
+
         private System.Nullable<bool> grabarclienteField;
-        
+
         private string guiaField;
-        
+
         private string guiafmtField;
-        
+
         private string guiaimpreField;
-        
+
         private string letraField;
-        
+
         private string letrafmtField;
-        
+
         private string letraimpreField;
-        
+
         private System.Nullable<bool> modalmacenField;
-        
+
         private System.Nullable<bool> moddsctogralField;
-        
+
         private System.Nullable<bool> moddsctoitemField;
-        
+
         private System.Nullable<bool> modfechaField;
-        
+
         private System.Nullable<bool> modif_corrField;
-        
+
         private System.Nullable<bool> modlistapField;
-        
+
         private System.Nullable<bool> modmonedaField;
-        
+
         private System.Nullable<bool> modobservacionField;
-        
+
         private System.Nullable<bool> modocompraField;
-        
+
         private System.Nullable<bool> modprecioField;
-        
+
         private System.Nullable<bool> modservicioField;
-        
+
         private System.Nullable<bool> modvendedorField;
-        
+
         private System.Nullable<decimal> mtodsctomaxField;
-        
+
         private System.Nullable<decimal> mtozetaField;
-        
+
         private string ncreditoField;
-        
+
         private string ncreditoboletaField;
-        
+
         private string ncreditofmtField;
-        
+
         private string ncreditoimpreField;
-        
+
         private string ndebitoField;
-        
+
         private string ndebitoboletaField;
-        
+
         private string ndebitofmtField;
-        
+
         private string ndebitoimpreField;
-        
+
         private System.Nullable<decimal> nrodepositoField;
-        
+
         private string nroposField;
-        
+
         private string nroserie1Field;
-        
+
         private string nroserie2Field;
-        
+
         private string nroseriemaqField;
-        
+
         private System.Nullable<decimal> nrozetaField;
-        
+
         private string nventaField;
-        
+
         private string nventachrfinField;
-        
+
         private string nventachriniField;
-        
+
         private System.Nullable<decimal> nventafeedField;
-        
+
         private string nventafmtField;
-        
+
         private string nventaimpreField;
-        
+
         private string path_loteriaField;
-        
+
         private System.Nullable<bool> playa_formasdepagoField;
-        
+
         private System.Nullable<bool> precioceroField;
-        
+
         private string proformaField;
-        
+
         private string proformafmtField;
-        
+
         private string proformaimpreField;
-        
+
         private string promocionField;
-        
+
         private string promocionchrfinField;
-        
+
         private string promocionchriniField;
-        
+
         private System.Nullable<decimal> promocionfeedField;
-        
+
         private string promocionfmtField;
-        
+
         private string promocionimpreField;
-        
+
         private System.Nullable<bool> promocionpreimpreField;
-        
+
         private System.Nullable<bool> rucinvalidoField;
-        
+
         private string rutaservicioField;
-        
+
         private string serafinfmtField;
-        
+
         private string seriehdField;
-        
+
         private string ticketField;
-        
+
         private System.Nullable<decimal> ticket2columnasField;
-        
+
         private string ticketchrfinField;
-        
+
         private string ticketchriniField;
-        
+
         private string ticketfacturaField;
-        
+
         private System.Nullable<decimal> ticketfeedField;
-        
+
         private string ticketimpreField;
-        
+
         private System.Nullable<decimal> ticketlineacorteField;
-        
+
         private string tipoterminalField;
-        
+
         private System.Nullable<bool> tktboletaField;
-        
+
         private System.Nullable<bool> tktfacturaField;
-        
+
         private System.Nullable<bool> tktnotadespachoField;
-        
+
         private System.Nullable<bool> tktpromocionField;
-        
+
         private System.Nullable<decimal> tranvirtualField;
-        
+
         private System.Nullable<decimal> turnoField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -6734,7 +6734,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Mensaje
         {
@@ -6747,7 +6747,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.MensajeField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool Ok
         {
@@ -6760,7 +6760,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.OkField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> _virtual
         {
@@ -6773,7 +6773,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this._virtualField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> activa_boton_playa
         {
@@ -6786,7 +6786,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.activa_boton_playaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string boleta
         {
@@ -6799,7 +6799,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.boletaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string boletafmt
         {
@@ -6812,7 +6812,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.boletafmtField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string boletaimpre
         {
@@ -6825,7 +6825,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.boletaimpreField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> boletapreimpre
         {
@@ -6838,7 +6838,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.boletapreimpreField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdalmacen
         {
@@ -6851,7 +6851,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdalmacenField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdprecio
         {
@@ -6864,7 +6864,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdprecioField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdusuario
         {
@@ -6877,7 +6877,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdusuarioField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cierrexfmt
         {
@@ -6890,7 +6890,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cierrexfmtField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cierrezfmt
         {
@@ -6903,7 +6903,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cierrezfmtField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<byte> conexion_dispensador
         {
@@ -6916,7 +6916,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.conexion_dispensadorField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string depositofmt
         {
@@ -6929,7 +6929,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.depositofmtField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string displayimpre
         {
@@ -6942,7 +6942,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.displayimpreField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string factura
         {
@@ -6955,7 +6955,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.facturaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string facturafmt
         {
@@ -6968,7 +6968,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.facturafmtField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string facturaimpre
         {
@@ -6981,7 +6981,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.facturaimpreField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> facturapreimpre
         {
@@ -6994,7 +6994,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.facturapreimpreField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<int> fe_idpos
         {
@@ -7007,7 +7007,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.fe_idposField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string fe_nompos
         {
@@ -7020,7 +7020,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.fe_nomposField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<System.DateTime> fecproceso
         {
@@ -7033,7 +7033,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.fecprocesoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_formato_a4
         {
@@ -7046,7 +7046,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_formato_a4Field = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_nc_correlativo
         {
@@ -7059,7 +7059,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_nc_correlativoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_nd_correlativo
         {
@@ -7072,7 +7072,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_nd_correlativoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_pdf417
         {
@@ -7085,7 +7085,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_pdf417Field = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_print_qr
         {
@@ -7098,7 +7098,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flg_print_qrField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flgaperturacaja
         {
@@ -7111,7 +7111,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flgaperturacajaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flgautomatica
         {
@@ -7124,7 +7124,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flgautomaticaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flgcierrezok
         {
@@ -7137,7 +7137,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flgcierrezokField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flgfacturacion
         {
@@ -7150,7 +7150,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flgfacturacionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flghotkey
         {
@@ -7163,7 +7163,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flghotkeyField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flgpagocheque
         {
@@ -7176,7 +7176,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flgpagochequeField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flgpagocredito
         {
@@ -7189,7 +7189,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flgpagocreditoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flgpagoefectivo
         {
@@ -7202,7 +7202,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flgpagoefectivoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flgpagoncredito
         {
@@ -7215,7 +7215,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flgpagoncreditoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flgpagotarjeta
         {
@@ -7228,7 +7228,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flgpagotarjetaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flgtransferencia
         {
@@ -7241,7 +7241,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flgtransferenciaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flgvalidaz
         {
@@ -7254,7 +7254,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flgvalidazField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string gavetachr
         {
@@ -7267,7 +7267,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.gavetachrField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string gavetaimpre
         {
@@ -7280,7 +7280,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.gavetaimpreField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> generapdf
         {
@@ -7293,7 +7293,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.generapdfField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> grabarcliente
         {
@@ -7306,7 +7306,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.grabarclienteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string guia
         {
@@ -7319,7 +7319,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.guiaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string guiafmt
         {
@@ -7332,7 +7332,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.guiafmtField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string guiaimpre
         {
@@ -7345,7 +7345,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.guiaimpreField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string letra
         {
@@ -7358,7 +7358,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.letraField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string letrafmt
         {
@@ -7371,7 +7371,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.letrafmtField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string letraimpre
         {
@@ -7384,7 +7384,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.letraimpreField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> modalmacen
         {
@@ -7397,7 +7397,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.modalmacenField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> moddsctogral
         {
@@ -7410,7 +7410,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.moddsctogralField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> moddsctoitem
         {
@@ -7423,7 +7423,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.moddsctoitemField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> modfecha
         {
@@ -7436,7 +7436,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.modfechaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> modif_corr
         {
@@ -7449,7 +7449,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.modif_corrField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> modlistap
         {
@@ -7462,7 +7462,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.modlistapField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> modmoneda
         {
@@ -7475,7 +7475,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.modmonedaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> modobservacion
         {
@@ -7488,7 +7488,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.modobservacionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> modocompra
         {
@@ -7501,7 +7501,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.modocompraField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> modprecio
         {
@@ -7514,7 +7514,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.modprecioField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> modservicio
         {
@@ -7527,7 +7527,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.modservicioField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> modvendedor
         {
@@ -7540,7 +7540,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.modvendedorField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> mtodsctomax
         {
@@ -7553,7 +7553,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.mtodsctomaxField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> mtozeta
         {
@@ -7566,7 +7566,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.mtozetaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string ncredito
         {
@@ -7579,7 +7579,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.ncreditoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string ncreditoboleta
         {
@@ -7592,7 +7592,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.ncreditoboletaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string ncreditofmt
         {
@@ -7605,7 +7605,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.ncreditofmtField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string ncreditoimpre
         {
@@ -7618,7 +7618,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.ncreditoimpreField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string ndebito
         {
@@ -7631,7 +7631,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.ndebitoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string ndebitoboleta
         {
@@ -7644,7 +7644,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.ndebitoboletaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string ndebitofmt
         {
@@ -7657,7 +7657,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.ndebitofmtField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string ndebitoimpre
         {
@@ -7670,7 +7670,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.ndebitoimpreField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> nrodeposito
         {
@@ -7683,7 +7683,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nrodepositoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nropos
         {
@@ -7696,7 +7696,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nroposField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nroserie1
         {
@@ -7709,7 +7709,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nroserie1Field = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nroserie2
         {
@@ -7722,7 +7722,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nroserie2Field = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nroseriemaq
         {
@@ -7735,7 +7735,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nroseriemaqField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> nrozeta
         {
@@ -7748,7 +7748,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nrozetaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nventa
         {
@@ -7761,7 +7761,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nventaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nventachrfin
         {
@@ -7774,7 +7774,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nventachrfinField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nventachrini
         {
@@ -7787,7 +7787,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nventachriniField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> nventafeed
         {
@@ -7800,7 +7800,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nventafeedField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nventafmt
         {
@@ -7813,7 +7813,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nventafmtField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nventaimpre
         {
@@ -7826,7 +7826,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nventaimpreField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string path_loteria
         {
@@ -7839,7 +7839,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.path_loteriaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> playa_formasdepago
         {
@@ -7852,7 +7852,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.playa_formasdepagoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> preciocero
         {
@@ -7865,7 +7865,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.precioceroField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string proforma
         {
@@ -7878,7 +7878,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.proformaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string proformafmt
         {
@@ -7891,7 +7891,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.proformafmtField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string proformaimpre
         {
@@ -7904,7 +7904,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.proformaimpreField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string promocion
         {
@@ -7917,7 +7917,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.promocionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string promocionchrfin
         {
@@ -7930,7 +7930,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.promocionchrfinField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string promocionchrini
         {
@@ -7943,7 +7943,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.promocionchriniField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> promocionfeed
         {
@@ -7956,7 +7956,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.promocionfeedField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string promocionfmt
         {
@@ -7969,7 +7969,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.promocionfmtField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string promocionimpre
         {
@@ -7982,7 +7982,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.promocionimpreField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> promocionpreimpre
         {
@@ -7995,7 +7995,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.promocionpreimpreField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> rucinvalido
         {
@@ -8008,7 +8008,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.rucinvalidoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string rutaservicio
         {
@@ -8021,7 +8021,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.rutaservicioField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string serafinfmt
         {
@@ -8034,7 +8034,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.serafinfmtField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string seriehd
         {
@@ -8047,7 +8047,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.seriehdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string ticket
         {
@@ -8060,7 +8060,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.ticketField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> ticket2columnas
         {
@@ -8073,7 +8073,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.ticket2columnasField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string ticketchrfin
         {
@@ -8086,7 +8086,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.ticketchrfinField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string ticketchrini
         {
@@ -8099,7 +8099,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.ticketchriniField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string ticketfactura
         {
@@ -8112,7 +8112,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.ticketfacturaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> ticketfeed
         {
@@ -8125,7 +8125,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.ticketfeedField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string ticketimpre
         {
@@ -8138,7 +8138,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.ticketimpreField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> ticketlineacorte
         {
@@ -8151,7 +8151,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.ticketlineacorteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tipoterminal
         {
@@ -8164,7 +8164,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tipoterminalField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> tktboleta
         {
@@ -8177,7 +8177,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tktboletaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> tktfactura
         {
@@ -8190,7 +8190,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tktfacturaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> tktnotadespacho
         {
@@ -8203,7 +8203,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tktnotadespachoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> tktpromocion
         {
@@ -8216,7 +8216,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tktpromocionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> tranvirtual
         {
@@ -8229,7 +8229,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tranvirtualField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> turno
         {
@@ -8243,19 +8243,19 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TS_BEVendedor", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BEVendedor", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     public partial class TS_BEVendedor : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private string cdusuarioField;
-        
+
         private string dsvendedorField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -8267,7 +8267,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdusuario
         {
@@ -8280,7 +8280,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdusuarioField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string dsvendedor
         {
@@ -8294,19 +8294,19 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TS_BECara", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BECara", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     public partial class TS_BECara : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private string caraField;
-        
+
         private string nroposField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -8318,7 +8318,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cara
         {
@@ -8331,7 +8331,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.caraField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nropos
         {
@@ -8345,21 +8345,21 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TS_BETarjeta", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BETarjeta", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     public partial class TS_BETarjeta : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private string c_cuentaField;
-        
+
         private string cdtarjetaField;
-        
+
         private string dstarjetaField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -8371,7 +8371,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string c_cuenta
         {
@@ -8384,7 +8384,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.c_cuentaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdtarjeta
         {
@@ -8397,7 +8397,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdtarjetaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string dstarjeta
         {
@@ -8411,23 +8411,23 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TS_BETipopago", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BETipopago", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     public partial class TS_BETipopago : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private string cdtppagoField;
-        
+
         private string dstppagoField;
-        
+
         private System.Nullable<bool> flgpagoField;
-        
+
         private System.Nullable<bool> flgsistemaField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -8439,7 +8439,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdtppago
         {
@@ -8452,7 +8452,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdtppagoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string dstppago
         {
@@ -8465,7 +8465,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.dstppagoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flgpago
         {
@@ -8478,7 +8478,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flgpagoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flgsistema
         {
@@ -8492,251 +8492,251 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TS_BEArticulo", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BEArticulo", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     public partial class TS_BEArticulo : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private string MensajeField;
-        
+
         private bool OkField;
-        
+
         private System.Nullable<bool> _virtualField;
-        
+
         private bool archturnoField;
-        
+
         private System.Nullable<bool> bloqcomField;
-        
+
         private System.Nullable<bool> bloqgralField;
-        
+
         private System.Nullable<bool> bloqvtaField;
-        
+
         private string c_centrocostoField;
-        
+
         private string c_cuentaField;
-        
+
         private string c_cuenta_comprasField;
-        
+
         private string c_cuenta_ventasField;
-        
+
         private decimal cant_ncreditoField;
-        
+
         private System.Nullable<decimal> cantfidelizacionField;
-        
+
         private decimal cantidadField;
-        
+
         private decimal cantidad2Field;
-        
+
         private decimal cantidad_origField;
-        
+
         private string caraField;
-        
+
         private string cdalternaField;
-        
+
         private string cdamarreField;
-        
+
         private string cdarticuloField;
-        
+
         private string cdarticulosunatField;
-        
+
         private string cdarticulovulcanoField;
-        
+
         private string cdgrupo01Field;
-        
+
         private string cdgrupo02Field;
-        
+
         private string cdgrupo03Field;
-        
+
         private string cdgrupo04Field;
-        
+
         private string cdgrupo05Field;
-        
+
         private string cdlocalField;
-        
+
         private string cdmedequivField;
-        
+
         private string cdpackField;
-        
+
         private string cdtallaField;
-        
+
         private string cdtipodocField;
-        
+
         private string cdunimedField;
-        
+
         private string cdvendedorField;
-        
+
         private string configField;
-        
+
         private System.Nullable<bool> consignacionField;
-        
+
         private decimal costoField;
-        
+
         private decimal costo_ventaField;
-        
+
         private string ctaalmacenField;
-        
+
         private string ctacompraField;
-        
+
         private string ctacostoField;
-        
+
         private string ctaventaField;
-        
+
         private System.Nullable<decimal> ctoinicialField;
-        
+
         private System.Nullable<decimal> ctoinventarioField;
-        
+
         private System.Nullable<decimal> ctopromedioField;
-        
+
         private System.Nullable<decimal> ctoreposicionField;
-        
+
         private string dsarticuloField;
-        
+
         private string dsarticulo1Field;
-        
+
         private System.Nullable<decimal> equivalenciaField;
-        
+
         private System.Nullable<System.DateTime> fecedicionField;
-        
+
         private System.Nullable<System.DateTime> fecinicialField;
-        
+
         private System.Nullable<System.DateTime> fecinventarioField;
-        
+
         private bool flgcierrezField;
-        
+
         private System.Nullable<bool> flgglosaField;
-        
+
         private bool flgpromocionField;
-        
+
         private string glosaField;
-        
+
         private string horaField;
-        
+
         private decimal impuestoField;
-        
+
         private System.Nullable<decimal> impuesto1Field;
-        
+
         private bool impuesto_plasticoField;
-        
+
         private bool is_easytaxiField;
-        
+
         private int itemField;
-        
+
         private string mangueraField;
-        
+
         private System.Nullable<decimal> mgutilidadField;
-        
+
         private string monctoinicialField;
-        
+
         private string monctoinventarioField;
-        
+
         private string monctopromField;
-        
+
         private string monctorepoField;
-        
+
         private decimal monto_impuesto_plasticoField;
-        
+
         private System.Nullable<decimal> montofidelizacionField;
-        
+
         private bool moverstockField;
-        
+
         private bool movimientoField;
-        
+
         private decimal mtodetraccionField;
-        
+
         private decimal mtodsctoField;
-        
+
         private decimal mtoimpuestoField;
-        
+
         private decimal mtonoafectoField;
-        
+
         private decimal mtopercepcionField;
-        
+
         private decimal mtoservicioField;
-        
+
         private decimal mtototalField;
-        
+
         private string nrodocumentoField;
-        
+
         private string nrogasboyField;
-        
+
         private string nroseriemaqField;
-        
+
         private decimal origsolesField;
-        
+
         private decimal porcdetraccionField;
-        
+
         private decimal porcpercepcionField;
-        
+
         private decimal pordscto1Field;
-        
+
         private decimal pordscto2Field;
-        
+
         private decimal pordscto3Field;
-        
+
         private decimal pordsctoeqField;
-        
+
         private decimal precioField;
-        
+
         private decimal precio2Field;
-        
+
         private decimal precio_origField;
-        
+
         private decimal precioafiliacionField;
-        
+
         private decimal ptosganadosField;
-        
+
         private System.Nullable<decimal> puntosfidelizacionField;
-        
+
         private decimal redondea_indecopiField;
-        
+
         private bool rev_promoField;
-        
+
         private decimal subtotalField;
-        
+
         private string tallaField;
-        
+
         private string ticketfacturaField;
-        
+
         private string tipoField;
-        
+
         private string tipoacumulaField;
-        
+
         private string tiposumaField;
-        
+
         private decimal totalField;
-        
+
         private decimal total_displayField;
-        
+
         private string tpconversionField;
-        
+
         private string tpformulaField;
-        
+
         private bool trfgratuitaField;
-        
+
         private string turnoField;
-        
+
         private bool usadecimalesField;
-        
+
         private decimal valor_acumuladoField;
-        
+
         private decimal valor_puntosField;
-        
+
         private decimal valoracumulaField;
-        
+
         private decimal valorconversionField;
-        
+
         private int valoridField;
-        
+
         private decimal valorvtaField;
-        
+
         private System.Nullable<bool> ventaField;
-        
+
         private bool vtaxmontoField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -8748,7 +8748,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Mensaje
         {
@@ -8761,7 +8761,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.MensajeField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool Ok
         {
@@ -8774,7 +8774,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.OkField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> _virtual
         {
@@ -8787,7 +8787,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this._virtualField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool archturno
         {
@@ -8800,7 +8800,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.archturnoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> bloqcom
         {
@@ -8813,7 +8813,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.bloqcomField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> bloqgral
         {
@@ -8826,7 +8826,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.bloqgralField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> bloqvta
         {
@@ -8839,7 +8839,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.bloqvtaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string c_centrocosto
         {
@@ -8852,7 +8852,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.c_centrocostoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string c_cuenta
         {
@@ -8865,7 +8865,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.c_cuentaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string c_cuenta_compras
         {
@@ -8878,7 +8878,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.c_cuenta_comprasField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string c_cuenta_ventas
         {
@@ -8891,7 +8891,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.c_cuenta_ventasField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal cant_ncredito
         {
@@ -8904,7 +8904,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cant_ncreditoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> cantfidelizacion
         {
@@ -8917,7 +8917,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cantfidelizacionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal cantidad
         {
@@ -8930,7 +8930,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cantidadField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal cantidad2
         {
@@ -8943,7 +8943,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cantidad2Field = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal cantidad_orig
         {
@@ -8956,7 +8956,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cantidad_origField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cara
         {
@@ -8969,7 +8969,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.caraField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdalterna
         {
@@ -8982,7 +8982,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdalternaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdamarre
         {
@@ -8995,7 +8995,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdamarreField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdarticulo
         {
@@ -9008,7 +9008,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdarticuloField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdarticulosunat
         {
@@ -9021,7 +9021,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdarticulosunatField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdarticulovulcano
         {
@@ -9034,7 +9034,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdarticulovulcanoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdgrupo01
         {
@@ -9047,7 +9047,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdgrupo01Field = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdgrupo02
         {
@@ -9060,7 +9060,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdgrupo02Field = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdgrupo03
         {
@@ -9073,7 +9073,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdgrupo03Field = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdgrupo04
         {
@@ -9086,7 +9086,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdgrupo04Field = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdgrupo05
         {
@@ -9099,7 +9099,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdgrupo05Field = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdlocal
         {
@@ -9112,7 +9112,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdlocalField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdmedequiv
         {
@@ -9125,7 +9125,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdmedequivField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdpack
         {
@@ -9138,7 +9138,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdpackField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdtalla
         {
@@ -9151,7 +9151,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdtallaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdtipodoc
         {
@@ -9164,7 +9164,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdtipodocField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdunimed
         {
@@ -9177,7 +9177,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdunimedField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdvendedor
         {
@@ -9190,7 +9190,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdvendedorField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string config
         {
@@ -9203,7 +9203,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.configField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> consignacion
         {
@@ -9216,7 +9216,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.consignacionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal costo
         {
@@ -9229,7 +9229,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.costoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal costo_venta
         {
@@ -9242,7 +9242,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.costo_ventaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string ctaalmacen
         {
@@ -9255,7 +9255,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.ctaalmacenField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string ctacompra
         {
@@ -9268,7 +9268,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.ctacompraField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string ctacosto
         {
@@ -9281,7 +9281,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.ctacostoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string ctaventa
         {
@@ -9294,7 +9294,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.ctaventaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> ctoinicial
         {
@@ -9307,7 +9307,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.ctoinicialField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> ctoinventario
         {
@@ -9320,7 +9320,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.ctoinventarioField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> ctopromedio
         {
@@ -9333,7 +9333,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.ctopromedioField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> ctoreposicion
         {
@@ -9346,7 +9346,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.ctoreposicionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string dsarticulo
         {
@@ -9359,7 +9359,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.dsarticuloField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string dsarticulo1
         {
@@ -9372,7 +9372,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.dsarticulo1Field = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> equivalencia
         {
@@ -9385,7 +9385,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.equivalenciaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<System.DateTime> fecedicion
         {
@@ -9398,7 +9398,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.fecedicionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<System.DateTime> fecinicial
         {
@@ -9411,7 +9411,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.fecinicialField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<System.DateTime> fecinventario
         {
@@ -9424,7 +9424,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.fecinventarioField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool flgcierrez
         {
@@ -9437,7 +9437,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flgcierrezField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flgglosa
         {
@@ -9450,7 +9450,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flgglosaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool flgpromocion
         {
@@ -9463,7 +9463,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flgpromocionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string glosa
         {
@@ -9476,7 +9476,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.glosaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string hora
         {
@@ -9489,7 +9489,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.horaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal impuesto
         {
@@ -9502,7 +9502,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.impuestoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> impuesto1
         {
@@ -9515,7 +9515,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.impuesto1Field = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool impuesto_plastico
         {
@@ -9528,7 +9528,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.impuesto_plasticoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool is_easytaxi
         {
@@ -9541,7 +9541,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.is_easytaxiField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int item
         {
@@ -9554,7 +9554,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.itemField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string manguera
         {
@@ -9567,7 +9567,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.mangueraField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> mgutilidad
         {
@@ -9580,7 +9580,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.mgutilidadField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string monctoinicial
         {
@@ -9593,7 +9593,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.monctoinicialField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string monctoinventario
         {
@@ -9606,7 +9606,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.monctoinventarioField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string monctoprom
         {
@@ -9619,7 +9619,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.monctopromField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string monctorepo
         {
@@ -9632,7 +9632,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.monctorepoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal monto_impuesto_plastico
         {
@@ -9645,7 +9645,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.monto_impuesto_plasticoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> montofidelizacion
         {
@@ -9658,7 +9658,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.montofidelizacionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool moverstock
         {
@@ -9671,7 +9671,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.moverstockField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool movimiento
         {
@@ -9684,7 +9684,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.movimientoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal mtodetraccion
         {
@@ -9697,7 +9697,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.mtodetraccionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal mtodscto
         {
@@ -9710,7 +9710,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.mtodsctoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal mtoimpuesto
         {
@@ -9723,7 +9723,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.mtoimpuestoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal mtonoafecto
         {
@@ -9736,7 +9736,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.mtonoafectoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal mtopercepcion
         {
@@ -9749,7 +9749,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.mtopercepcionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal mtoservicio
         {
@@ -9762,7 +9762,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.mtoservicioField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal mtototal
         {
@@ -9775,7 +9775,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.mtototalField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nrodocumento
         {
@@ -9788,7 +9788,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nrodocumentoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nrogasboy
         {
@@ -9801,7 +9801,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nrogasboyField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nroseriemaq
         {
@@ -9814,7 +9814,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nroseriemaqField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal origsoles
         {
@@ -9827,7 +9827,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.origsolesField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal porcdetraccion
         {
@@ -9840,7 +9840,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.porcdetraccionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal porcpercepcion
         {
@@ -9853,7 +9853,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.porcpercepcionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal pordscto1
         {
@@ -9866,7 +9866,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.pordscto1Field = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal pordscto2
         {
@@ -9879,7 +9879,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.pordscto2Field = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal pordscto3
         {
@@ -9892,7 +9892,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.pordscto3Field = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal pordsctoeq
         {
@@ -9905,7 +9905,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.pordsctoeqField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal precio
         {
@@ -9918,7 +9918,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.precioField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal precio2
         {
@@ -9931,7 +9931,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.precio2Field = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal precio_orig
         {
@@ -9944,7 +9944,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.precio_origField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal precioafiliacion
         {
@@ -9957,7 +9957,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.precioafiliacionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal ptosganados
         {
@@ -9970,7 +9970,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.ptosganadosField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> puntosfidelizacion
         {
@@ -9983,7 +9983,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.puntosfidelizacionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal redondea_indecopi
         {
@@ -9996,7 +9996,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.redondea_indecopiField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool rev_promo
         {
@@ -10009,7 +10009,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.rev_promoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal subtotal
         {
@@ -10022,7 +10022,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.subtotalField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string talla
         {
@@ -10035,7 +10035,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tallaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string ticketfactura
         {
@@ -10048,7 +10048,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.ticketfacturaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tipo
         {
@@ -10061,7 +10061,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tipoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tipoacumula
         {
@@ -10074,7 +10074,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tipoacumulaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tiposuma
         {
@@ -10087,7 +10087,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tiposumaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal total
         {
@@ -10100,7 +10100,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.totalField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal total_display
         {
@@ -10113,7 +10113,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.total_displayField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tpconversion
         {
@@ -10126,7 +10126,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tpconversionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tpformula
         {
@@ -10139,7 +10139,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.tpformulaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool trfgratuita
         {
@@ -10152,7 +10152,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.trfgratuitaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string turno
         {
@@ -10165,7 +10165,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.turnoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool usadecimales
         {
@@ -10178,7 +10178,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.usadecimalesField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal valor_acumulado
         {
@@ -10191,7 +10191,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.valor_acumuladoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal valor_puntos
         {
@@ -10204,7 +10204,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.valor_puntosField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal valoracumula
         {
@@ -10217,7 +10217,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.valoracumulaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal valorconversion
         {
@@ -10230,7 +10230,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.valorconversionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int valorid
         {
@@ -10243,7 +10243,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.valoridField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal valorvta
         {
@@ -10256,7 +10256,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.valorvtaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> venta
         {
@@ -10269,7 +10269,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.ventaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool vtaxmonto
         {
@@ -10283,51 +10283,51 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TS_BESaldoclid", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BESaldoclid", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     public partial class TS_BESaldoclid : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private string MensajeField;
-        
+
         private bool OkField;
-        
+
         private string cdarticuloField;
-        
+
         private string cdclienteField;
-        
+
         private string cdgrupo02Field;
-        
+
         private string cdtipodocField;
-        
+
         private string claveField;
-        
+
         private System.Nullable<decimal> consumtoField;
-        
+
         private System.Nullable<bool> enviadoField;
-        
+
         private System.Nullable<System.DateTime> fechaatencionField;
-        
+
         private System.Nullable<bool> flgbloqueaField;
-        
+
         private System.Nullable<bool> flgilimitField;
-        
+
         private System.Nullable<decimal> limitemtoField;
-        
+
         private string nrobonusField;
-        
+
         private string nrodocumentoField;
-        
+
         private string nroplacaField;
-        
+
         private string nrotarjetaField;
-        
+
         private string tipodespachoField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -10339,7 +10339,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Mensaje
         {
@@ -10352,7 +10352,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.MensajeField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool Ok
         {
@@ -10365,7 +10365,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.OkField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdarticulo
         {
@@ -10378,7 +10378,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdarticuloField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdcliente
         {
@@ -10391,7 +10391,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdclienteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdgrupo02
         {
@@ -10404,7 +10404,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdgrupo02Field = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdtipodoc
         {
@@ -10417,7 +10417,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdtipodocField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string clave
         {
@@ -10430,7 +10430,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.claveField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> consumto
         {
@@ -10443,7 +10443,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.consumtoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> enviado
         {
@@ -10456,7 +10456,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.enviadoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<System.DateTime> fechaatencion
         {
@@ -10469,7 +10469,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.fechaatencionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flgbloquea
         {
@@ -10482,7 +10482,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flgbloqueaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flgilimit
         {
@@ -10495,7 +10495,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.flgilimitField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> limitemto
         {
@@ -10508,7 +10508,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.limitemtoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nrobonus
         {
@@ -10521,7 +10521,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nrobonusField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nrodocumento
         {
@@ -10534,7 +10534,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nrodocumentoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nroplaca
         {
@@ -10547,7 +10547,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nroplacaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nrotarjeta
         {
@@ -10560,7 +10560,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nrotarjetaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tipodespacho
         {
@@ -10574,49 +10574,49 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TS_BECabeceraInput", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BECabeceraInput", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     public partial class TS_BECabeceraInput : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private string TipoVentaField;
-        
+
         private string cdclienteField;
-        
+
         private string cdmonedaField;
-        
+
         private string cdtipodocField;
-        
+
         private string cdusuarioField;
-        
+
         private string cdvendedorField;
-        
+
         private string choferField;
-        
+
         private string dsusuarioField;
-        
+
         private decimal mtovueltodolField;
-        
+
         private decimal mtovueltosolField;
-        
+
         private string nroplacaField;
-        
+
         private string nrotarjetaField;
-        
+
         private string observacionField;
-        
+
         private string odometroField;
-        
+
         private decimal redondea_indecopiField;
-        
+
         private string rsclienteField;
-        
+
         private string rucclienteField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -10628,7 +10628,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string TipoVenta
         {
@@ -10641,7 +10641,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.TipoVentaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdcliente
         {
@@ -10654,7 +10654,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdclienteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdmoneda
         {
@@ -10667,7 +10667,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdmonedaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdtipodoc
         {
@@ -10680,7 +10680,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdtipodocField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdusuario
         {
@@ -10693,7 +10693,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdusuarioField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdvendedor
         {
@@ -10706,7 +10706,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdvendedorField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string chofer
         {
@@ -10719,7 +10719,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.choferField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string dsusuario
         {
@@ -10732,7 +10732,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.dsusuarioField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal mtovueltodol
         {
@@ -10745,7 +10745,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.mtovueltodolField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal mtovueltosol
         {
@@ -10758,7 +10758,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.mtovueltosolField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nroplaca
         {
@@ -10771,7 +10771,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nroplacaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nrotarjeta
         {
@@ -10784,7 +10784,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nrotarjetaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string observacion
         {
@@ -10797,7 +10797,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.observacionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string odometro
         {
@@ -10810,7 +10810,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.odometroField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal redondea_indecopi
         {
@@ -10823,7 +10823,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.redondea_indecopiField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string rscliente
         {
@@ -10836,7 +10836,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.rsclienteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string ruccliente
         {
@@ -10850,17 +10850,17 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TS_BEGrabarConfig", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BEGrabarConfig", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     public partial class TS_BEGrabarConfig : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private bool IsNotPrintField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -10872,7 +10872,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool IsNotPrint
         {
@@ -10886,27 +10886,27 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TS_BERetornoTransaccion", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BERetornoTransaccion", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     public partial class TS_BERetornoTransaccion : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private string CodigoField;
-        
+
         private string MensajeField;
-        
+
         private int NoMensajeField;
-        
+
         private string NumeroField;
-        
+
         private bool OkField;
-        
+
         private string ValidoField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -10918,7 +10918,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Codigo
         {
@@ -10931,7 +10931,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.CodigoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Mensaje
         {
@@ -10944,7 +10944,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.MensajeField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int NoMensaje
         {
@@ -10957,7 +10957,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.NoMensajeField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Numero
         {
@@ -10970,7 +10970,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.NumeroField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool Ok
         {
@@ -10983,7 +10983,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.OkField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Valido
         {
@@ -10997,19 +10997,19 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TS_BEMensaje", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BEMensaje", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     public partial class TS_BEMensaje : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private bool OkField;
-        
+
         private string mensajeField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -11021,7 +11021,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool Ok
         {
@@ -11034,7 +11034,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.OkField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string mensaje
         {
@@ -11048,19 +11048,19 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TS_BENropos", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BENropos", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     public partial class TS_BENropos : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private string nroposField;
-        
+
         private string seriehdField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -11072,7 +11072,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nropos
         {
@@ -11085,7 +11085,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.nroposField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string seriehd
         {
@@ -11099,19 +11099,19 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TS_BELados", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BELados", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     public partial class TS_BELados : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private ITBCP.ServiceSIGES.Domain.Entities.TS_BEMensaje MensajeField;
-        
+
         private ITBCP.ServiceSIGES.Domain.Entities.TS_BELado[] cLadosField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -11123,7 +11123,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ITBCP.ServiceSIGES.Domain.Entities.TS_BEMensaje Mensaje
         {
@@ -11136,7 +11136,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.MensajeField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ITBCP.ServiceSIGES.Domain.Entities.TS_BELado[] cLados
         {
@@ -11150,23 +11150,23 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TS_BELado", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BELado", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     public partial class TS_BELado : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private string cdvendedorField;
-        
+
         private string dsvendedorField;
-        
+
         private string ladoField;
-        
+
         private string nroposField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -11178,7 +11178,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdvendedor
         {
@@ -11191,7 +11191,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.cdvendedorField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string dsvendedor
         {
@@ -11204,7 +11204,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.dsvendedorField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string lado
         {
@@ -11217,7 +11217,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.ladoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nropos
         {
@@ -11231,34 +11231,44 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TS_BETipoTarjetaRegistro", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BETipoTarjetaRegistro", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     public enum TS_BETipoTarjetaRegistro : int
     {
-        
+
         [System.Runtime.Serialization.EnumMemberAttribute()]
         NUEVO_REGISTRO = 0,
-        
+
         [System.Runtime.Serialization.EnumMemberAttribute()]
         ACTUALIZACION_REGISTRO = 1,
-        
+
         [System.Runtime.Serialization.EnumMemberAttribute()]
         TRASPASO_REGISTRO = 2,
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Excepcion", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
-    public partial class Excepcion : object, System.Runtime.Serialization.IExtensibleDataObject
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BEPromotionInput", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+    public partial class TS_BEPromotionInput : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private string CodigoField;
-        
-        private string MensajeField;
-        
+
+        private decimal cantidadField;
+
+        private string cdarticuloField;
+
+        private string cdclienteField;
+
+        private bool isCreditoField;
+
+        private decimal precioField;
+
+        private decimal precio_origField;
+
+        private decimal totalField;
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -11270,7 +11280,174 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.extensionDataField = value;
             }
         }
-        
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal cantidad
+        {
+            get
+            {
+                return this.cantidadField;
+            }
+            set
+            {
+                this.cantidadField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string cdarticulo
+        {
+            get
+            {
+                return this.cdarticuloField;
+            }
+            set
+            {
+                this.cdarticuloField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string cdcliente
+        {
+            get
+            {
+                return this.cdclienteField;
+            }
+            set
+            {
+                this.cdclienteField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool isCredito
+        {
+            get
+            {
+                return this.isCreditoField;
+            }
+            set
+            {
+                this.isCreditoField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal precio
+        {
+            get
+            {
+                return this.precioField;
+            }
+            set
+            {
+                this.precioField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal precio_orig
+        {
+            get
+            {
+                return this.precio_origField;
+            }
+            set
+            {
+                this.precio_origField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal total
+        {
+            get
+            {
+                return this.totalField;
+            }
+            set
+            {
+                this.totalField = value;
+            }
+        }
+    }
+
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BEArticlePromotion", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+    public partial class TS_BEArticlePromotion : object, System.Runtime.Serialization.IExtensibleDataObject
+    {
+
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+
+        private ITBCP.ServiceSIGES.Domain.Entities.TS_BEMensaje MensajeField;
+
+        private ITBCP.ServiceSIGES.Domain.Entities.TS_BEPromotionInput outputField;
+
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData
+        {
+            get
+            {
+                return this.extensionDataField;
+            }
+            set
+            {
+                this.extensionDataField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ITBCP.ServiceSIGES.Domain.Entities.TS_BEMensaje Mensaje
+        {
+            get
+            {
+                return this.MensajeField;
+            }
+            set
+            {
+                this.MensajeField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ITBCP.ServiceSIGES.Domain.Entities.TS_BEPromotionInput output
+        {
+            get
+            {
+                return this.outputField;
+            }
+            set
+            {
+                this.outputField = value;
+            }
+        }
+    }
+
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "Excepcion", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+    public partial class Excepcion : object, System.Runtime.Serialization.IExtensibleDataObject
+    {
+
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+
+        private string CodigoField;
+
+        private string MensajeField;
+
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData
+        {
+            get
+            {
+                return this.extensionDataField;
+            }
+            set
+            {
+                this.extensionDataField = value;
+            }
+        }
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Codigo
         {
@@ -11283,7 +11460,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
                 this.CodigoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Mensaje
         {
@@ -11301,38 +11478,83 @@ namespace ITBCP.ServiceSIGES.Domain.Entities
 namespace ITBCP.ServiceSIGES.Domain.Entities.Users
 {
     using System.Runtime.Serialization;
-    
-    
+
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TS_BEUsers", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Users")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BEUsers", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Users")]
     public partial class TS_BEUsers : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private string cdnivelField;
-        
+
         private string cdusuarioField;
-        
+
         private string drusuarioField;
-        
+
         private string dsusuarioField;
-        
+
         private bool flganularField;
-        
+
         private bool flgborraritemField;
-        
+
         private bool flgdsctoField;
-        
+
         private double passwordField;
-        
+
         private string rucusuarioField;
-        
+
         private string tlfusuarioField;
-        
+
         private string tlfusuario1Field;
-        
+
+        private bool flgTurnoField;
+
+        private bool flgCierreXField;
+
+        private bool flgCierreZField;
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool flgCierreZ
+        {
+            get
+            {
+                return this.flgCierreZField;
+            }
+            set
+            {
+                this.flgCierreZField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool flgCierreX
+        {
+            get
+            {
+                return this.flgCierreXField;
+            }
+            set
+            {
+                this.flgCierreXField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool flgTurno
+        {
+            get
+            {
+                return this.flgTurnoField;
+            }
+            set
+            {
+                this.flgTurnoField = value;
+            }
+        }
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -11344,7 +11566,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Users
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdnivel
         {
@@ -11357,7 +11579,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Users
                 this.cdnivelField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdusuario
         {
@@ -11370,7 +11592,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Users
                 this.cdusuarioField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string drusuario
         {
@@ -11383,7 +11605,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Users
                 this.drusuarioField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string dsusuario
         {
@@ -11396,7 +11618,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Users
                 this.dsusuarioField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool flganular
         {
@@ -11409,7 +11631,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Users
                 this.flganularField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool flgborraritem
         {
@@ -11422,7 +11644,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Users
                 this.flgborraritemField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool flgdscto
         {
@@ -11435,7 +11657,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Users
                 this.flgdsctoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public double password
         {
@@ -11448,7 +11670,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Users
                 this.passwordField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string rucusuario
         {
@@ -11461,7 +11683,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Users
                 this.rucusuarioField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tlfusuario
         {
@@ -11474,7 +11696,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Users
                 this.tlfusuarioField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tlfusuario1
         {
@@ -11492,27 +11714,27 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Users
 namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
 {
     using System.Runtime.Serialization;
-    
-    
+
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TS_BEClienteSearch", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Client" +
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BEClienteSearch", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Client" +
         "e")]
     public partial class TS_BEClienteSearch : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private string CodigoField;
-        
+
         private bool IsArticuloField;
-        
+
         private string NroTarjetaField;
-        
+
         private string PrefijoAfiliacionField;
-        
+
         private bool flagBusquedaSunatField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -11524,7 +11746,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Codigo
         {
@@ -11537,7 +11759,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.CodigoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool IsArticulo
         {
@@ -11550,7 +11772,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.IsArticuloField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string NroTarjeta
         {
@@ -11563,7 +11785,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.NroTarjetaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string PrefijoAfiliacion
         {
@@ -11576,7 +11798,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.PrefijoAfiliacionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool flagBusquedaSunat
         {
@@ -11590,116 +11812,116 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TS_BEClienteOutput", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Client" +
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BEClienteOutput", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Client" +
         "e")]
     public partial class TS_BEClienteOutput : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private ITBCP.ServiceSIGES.Domain.Entities.TS_BEArticulo[] ArticulosPrefijoField;
-        
+
         private ITBCP.ServiceSIGES.Domain.Entities.TS_BEArticulo[] ArticulosTarjetaField;
-        
+
         private string MensajeField;
-        
+
         private string NroBonusField;
-        
+
         private bool OkField;
-        
+
         private ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BESaldos SaldosField;
-        
+
         private bool bajaField;
-        
+
         private System.Nullable<bool> bloqcreditoField;
-        
+
         private bool bloqueadoField;
-        
+
         private string cdalmacenField;
-        
+
         private string cdclienteField;
-        
+
         private string cddepartamentoField;
-        
+
         private string cddistritoField;
-        
+
         private string cdgrupocliField;
-        
+
         private string cdzonaField;
-        
+
         private string clienteField;
-        
+
         private bool cmdserafinField;
-        
+
         private System.Nullable<bool> consulta_sunatField;
-        
+
         private string contactoField;
-        
+
         private System.Nullable<int> diascreditoField;
-        
+
         private System.Nullable<int> diasmax_ndField;
-        
+
         private string drclienteField;
-        
+
         private string drcobranzaField;
-        
+
         private string drentregaField;
-        
+
         private string emclienteField;
-        
+
         private string faxclienteField;
-        
+
         private System.Nullable<System.DateTime> fecha_creacionField;
-        
+
         private System.Nullable<System.DateTime> fecnacimientoField;
-        
+
         private System.Nullable<bool> flg_pideclaveField;
-        
+
         private bool flgmostrarsaldoField;
-        
+
         private System.Nullable<bool> flgpreciondField;
-        
+
         private System.Nullable<bool> flgtotalndField;
-        
+
         private string gruporutaField;
-        
+
         private bool isafiliacionField;
-        
+
         private string lbl_documentoField;
-        
+
         private string monlimiteField;
-        
+
         private decimal mtodisminuirField;
-        
+
         private System.Nullable<decimal> mtodisponibleField;
-        
+
         private System.Nullable<decimal> mtolimiteField;
-        
+
         private string nroPlacaField;
-        
+
         private string nroTarjetaField;
-        
+
         private int puntosField;
-        
+
         private string rsclienteField;
-        
+
         private string rucclienteField;
-        
+
         private System.Nullable<byte> sunat_actualizaField;
-        
+
         private string tarjafiliacionField;
-        
+
         private string tipocliField;
-        
+
         private string tlfclienteField;
-        
+
         private string tlfcliente1Field;
-        
+
         private decimal valoracumulaField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -11711,7 +11933,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ITBCP.ServiceSIGES.Domain.Entities.TS_BEArticulo[] ArticulosPrefijo
         {
@@ -11724,7 +11946,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.ArticulosPrefijoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ITBCP.ServiceSIGES.Domain.Entities.TS_BEArticulo[] ArticulosTarjeta
         {
@@ -11737,7 +11959,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.ArticulosTarjetaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Mensaje
         {
@@ -11750,7 +11972,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.MensajeField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string NroBonus
         {
@@ -11763,7 +11985,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.NroBonusField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool Ok
         {
@@ -11776,7 +11998,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.OkField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BESaldos Saldos
         {
@@ -11789,7 +12011,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.SaldosField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool baja
         {
@@ -11802,7 +12024,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.bajaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> bloqcredito
         {
@@ -11815,7 +12037,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.bloqcreditoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool bloqueado
         {
@@ -11828,7 +12050,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.bloqueadoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdalmacen
         {
@@ -11841,7 +12063,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.cdalmacenField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdcliente
         {
@@ -11854,7 +12076,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.cdclienteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cddepartamento
         {
@@ -11867,7 +12089,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.cddepartamentoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cddistrito
         {
@@ -11880,7 +12102,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.cddistritoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdgrupocli
         {
@@ -11893,7 +12115,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.cdgrupocliField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdzona
         {
@@ -11906,7 +12128,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.cdzonaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cliente
         {
@@ -11919,7 +12141,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.clienteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool cmdserafin
         {
@@ -11932,7 +12154,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.cmdserafinField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> consulta_sunat
         {
@@ -11945,7 +12167,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.consulta_sunatField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string contacto
         {
@@ -11958,7 +12180,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.contactoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<int> diascredito
         {
@@ -11971,7 +12193,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.diascreditoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<int> diasmax_nd
         {
@@ -11984,7 +12206,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.diasmax_ndField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string drcliente
         {
@@ -11997,7 +12219,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.drclienteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string drcobranza
         {
@@ -12010,7 +12232,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.drcobranzaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string drentrega
         {
@@ -12023,7 +12245,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.drentregaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string emcliente
         {
@@ -12036,7 +12258,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.emclienteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string faxcliente
         {
@@ -12049,7 +12271,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.faxclienteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<System.DateTime> fecha_creacion
         {
@@ -12062,7 +12284,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.fecha_creacionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<System.DateTime> fecnacimiento
         {
@@ -12075,7 +12297,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.fecnacimientoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flg_pideclave
         {
@@ -12088,7 +12310,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.flg_pideclaveField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool flgmostrarsaldo
         {
@@ -12101,7 +12323,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.flgmostrarsaldoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flgpreciond
         {
@@ -12114,7 +12336,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.flgpreciondField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> flgtotalnd
         {
@@ -12127,7 +12349,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.flgtotalndField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string gruporuta
         {
@@ -12140,7 +12362,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.gruporutaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool isafiliacion
         {
@@ -12153,7 +12375,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.isafiliacionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string lbl_documento
         {
@@ -12166,7 +12388,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.lbl_documentoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string monlimite
         {
@@ -12179,7 +12401,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.monlimiteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal mtodisminuir
         {
@@ -12192,7 +12414,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.mtodisminuirField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> mtodisponible
         {
@@ -12205,7 +12427,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.mtodisponibleField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> mtolimite
         {
@@ -12218,7 +12440,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.mtolimiteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nroPlaca
         {
@@ -12231,7 +12453,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.nroPlacaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nroTarjeta
         {
@@ -12244,7 +12466,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.nroTarjetaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int puntos
         {
@@ -12257,7 +12479,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.puntosField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string rscliente
         {
@@ -12270,7 +12492,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.rsclienteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string ruccliente
         {
@@ -12283,7 +12505,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.rucclienteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<byte> sunat_actualiza
         {
@@ -12296,7 +12518,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.sunat_actualizaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tarjafiliacion
         {
@@ -12309,7 +12531,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.tarjafiliacionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tipocli
         {
@@ -12322,7 +12544,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.tipocliField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tlfcliente
         {
@@ -12335,7 +12557,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.tlfclienteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tlfcliente1
         {
@@ -12348,7 +12570,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.tlfcliente1Field = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal valoracumula
         {
@@ -12362,64 +12584,64 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TS_BESaldos", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Client" +
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BESaldos", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Client" +
         "e")]
     public partial class TS_BESaldos : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private string MensajeField;
-        
+
         private bool OkField;
-        
+
         private ITBCP.ServiceSIGES.Domain.Entities.Campos.TS_BECreditosValidacion camposField;
-        
+
         private string cdarticuloField;
-        
+
         private string cdclienteField;
-        
+
         private string cdgrupo02Field;
-        
+
         private decimal consumtoField;
-        
+
         private decimal consumtoCField;
-        
+
         private string direccionField;
-        
+
         private bool flgbloqueaField;
-        
+
         private bool flgbloqueaCField;
-        
+
         private bool flgilimitField;
-        
+
         private bool flgilimitCField;
-        
+
         private decimal limitemtoField;
-        
+
         private decimal limitemtoCField;
-        
+
         private string nrobonusField;
-        
+
         private string nrocontratoField;
-        
+
         private string nrocontrato1Field;
-        
+
         private string nroplacaField;
-        
+
         private string nrotarjetaField;
-        
+
         private string razonsocialField;
-        
+
         private string rucField;
-        
+
         private string tipodespachoField;
-        
+
         private string tpsaldoField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -12431,7 +12653,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Mensaje
         {
@@ -12444,7 +12666,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.MensajeField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool Ok
         {
@@ -12457,7 +12679,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.OkField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ITBCP.ServiceSIGES.Domain.Entities.Campos.TS_BECreditosValidacion campos
         {
@@ -12470,7 +12692,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.camposField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdarticulo
         {
@@ -12483,7 +12705,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.cdarticuloField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdcliente
         {
@@ -12496,7 +12718,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.cdclienteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdgrupo02
         {
@@ -12509,7 +12731,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.cdgrupo02Field = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal consumto
         {
@@ -12522,7 +12744,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.consumtoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal consumtoC
         {
@@ -12535,7 +12757,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.consumtoCField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string direccion
         {
@@ -12548,7 +12770,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.direccionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool flgbloquea
         {
@@ -12561,7 +12783,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.flgbloqueaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool flgbloqueaC
         {
@@ -12574,7 +12796,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.flgbloqueaCField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool flgilimit
         {
@@ -12587,7 +12809,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.flgilimitField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool flgilimitC
         {
@@ -12600,7 +12822,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.flgilimitCField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal limitemto
         {
@@ -12613,7 +12835,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.limitemtoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal limitemtoC
         {
@@ -12626,7 +12848,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.limitemtoCField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nrobonus
         {
@@ -12639,7 +12861,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.nrobonusField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nrocontrato
         {
@@ -12652,7 +12874,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.nrocontratoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nrocontrato1
         {
@@ -12665,7 +12887,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.nrocontrato1Field = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nroplaca
         {
@@ -12678,7 +12900,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.nroplacaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nrotarjeta
         {
@@ -12691,7 +12913,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.nrotarjetaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string razonsocial
         {
@@ -12704,7 +12926,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.razonsocialField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string ruc
         {
@@ -12717,7 +12939,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.rucField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tipodespacho
         {
@@ -12730,7 +12952,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.tipodespachoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tpsaldo
         {
@@ -12744,26 +12966,26 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TS_BEClienteLista", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Client" +
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BEClienteLista", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Client" +
         "e")]
     public partial class TS_BEClienteLista : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private string cdclienteField;
-        
+
         private string drclienteField;
-        
+
         private string placaField;
-        
+
         private string rsclienteField;
-        
+
         private string rucclienteField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -12775,7 +12997,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdcliente
         {
@@ -12788,7 +13010,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.cdclienteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string drcliente
         {
@@ -12801,7 +13023,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.drclienteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string placa
         {
@@ -12814,7 +13036,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.placaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string rscliente
         {
@@ -12827,7 +13049,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.rsclienteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string ruccliente
         {
@@ -12841,26 +13063,26 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TS_BEOpTransInput", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Client" +
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BEOpTransInput", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Client" +
         "e")]
     public partial class TS_BEOpTransInput : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private string SerieField;
-        
+
         private bool automaticField;
-        
+
         private string caraField;
-        
+
         private string cdclienteField;
-        
+
         private string tipoclienteField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -12872,7 +13094,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Serie
         {
@@ -12885,7 +13107,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.SerieField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool automatic
         {
@@ -12898,7 +13120,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.automaticField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cara
         {
@@ -12911,7 +13133,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.caraField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdcliente
         {
@@ -12924,7 +13146,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.cdclienteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tipocliente
         {
@@ -12938,94 +13160,94 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TS_BEClienteInput", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Client" +
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BEClienteInput", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Client" +
         "e")]
     public partial class TS_BEClienteInput : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private bool bloqcreditoField;
-        
+
         private bool bloqueado_afiliacionField;
-        
+
         private string cdalmacenField;
-        
+
         private string cdclienteField;
-        
+
         private string cddepartamentoField;
-        
+
         private string cddistritoField;
-        
+
         private string cdgrupocliField;
-        
+
         private string cdusuarioField;
-        
+
         private string cdzonaField;
-        
+
         private string clienteField;
-        
+
         private bool consulta_sunatField;
-        
+
         private string contactoField;
-        
+
         private string correoelectronicoField;
-        
+
         private int diascreditoField;
-        
+
         private int diasmax_ndField;
-        
+
         private string drclienteField;
-        
+
         private string drcobranzaField;
-        
+
         private string drentregaField;
-        
+
         private string emclienteField;
-        
+
         private bool estado_afiliacionField;
-        
+
         private string faxclienteField;
-        
+
         private bool flg_pideclaveField;
-        
+
         private bool flgmostrarsaldoField;
-        
+
         private bool flgpreciondField;
-        
+
         private bool flgtotalndField;
-        
+
         private string gruporutaField;
-        
+
         private bool iscanjeField;
-        
+
         private string monlimiteField;
-        
+
         private decimal mtodisminuirField;
-        
+
         private decimal mtodisponibleField;
-        
+
         private decimal mtolimiteField;
-        
+
         private string nroTarjetaField;
-        
+
         private string rsclienteField;
-        
+
         private string rucclienteField;
-        
+
         private byte sunat_actualizaField;
-        
+
         private string tarjAfiliacionField;
-        
+
         private string tipocliField;
-        
+
         private string tlfclienteField;
-        
+
         private string tlfcliente1Field;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -13037,7 +13259,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool bloqcredito
         {
@@ -13050,7 +13272,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.bloqcreditoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool bloqueado_afiliacion
         {
@@ -13063,7 +13285,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.bloqueado_afiliacionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdalmacen
         {
@@ -13076,7 +13298,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.cdalmacenField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdcliente
         {
@@ -13089,7 +13311,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.cdclienteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cddepartamento
         {
@@ -13102,7 +13324,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.cddepartamentoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cddistrito
         {
@@ -13115,7 +13337,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.cddistritoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdgrupocli
         {
@@ -13128,7 +13350,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.cdgrupocliField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdusuario
         {
@@ -13141,7 +13363,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.cdusuarioField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cdzona
         {
@@ -13154,7 +13376,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.cdzonaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string cliente
         {
@@ -13167,7 +13389,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.clienteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool consulta_sunat
         {
@@ -13180,7 +13402,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.consulta_sunatField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string contacto
         {
@@ -13193,7 +13415,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.contactoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string correoelectronico
         {
@@ -13206,7 +13428,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.correoelectronicoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int diascredito
         {
@@ -13219,7 +13441,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.diascreditoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int diasmax_nd
         {
@@ -13232,7 +13454,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.diasmax_ndField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string drcliente
         {
@@ -13245,7 +13467,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.drclienteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string drcobranza
         {
@@ -13258,7 +13480,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.drcobranzaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string drentrega
         {
@@ -13271,7 +13493,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.drentregaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string emcliente
         {
@@ -13284,7 +13506,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.emclienteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool estado_afiliacion
         {
@@ -13297,7 +13519,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.estado_afiliacionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string faxcliente
         {
@@ -13310,7 +13532,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.faxclienteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool flg_pideclave
         {
@@ -13323,7 +13545,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.flg_pideclaveField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool flgmostrarsaldo
         {
@@ -13336,7 +13558,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.flgmostrarsaldoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool flgpreciond
         {
@@ -13349,7 +13571,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.flgpreciondField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool flgtotalnd
         {
@@ -13362,7 +13584,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.flgtotalndField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string gruporuta
         {
@@ -13375,7 +13597,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.gruporutaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool iscanje
         {
@@ -13388,7 +13610,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.iscanjeField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string monlimite
         {
@@ -13401,7 +13623,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.monlimiteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal mtodisminuir
         {
@@ -13414,7 +13636,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.mtodisminuirField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal mtodisponible
         {
@@ -13427,7 +13649,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.mtodisponibleField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal mtolimite
         {
@@ -13440,7 +13662,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.mtolimiteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nroTarjeta
         {
@@ -13453,7 +13675,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.nroTarjetaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string rscliente
         {
@@ -13466,7 +13688,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.rsclienteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string ruccliente
         {
@@ -13479,7 +13701,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.rucclienteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public byte sunat_actualiza
         {
@@ -13492,7 +13714,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.sunat_actualizaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tarjAfiliacion
         {
@@ -13505,7 +13727,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.tarjAfiliacionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tipocli
         {
@@ -13518,7 +13740,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.tipocliField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tlfcliente
         {
@@ -13531,7 +13753,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
                 this.tlfclienteField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tlfcliente1
         {
@@ -13549,27 +13771,27 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Cliente
 namespace ITBCP.ServiceSIGES.Domain.Entities.Campos
 {
     using System.Runtime.Serialization;
-    
-    
+
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TS_BECreditosValidacion", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Campos" +
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BECreditosValidacion", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Campos" +
         "")]
     public partial class TS_BECreditosValidacion : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private ITBCP.ServiceSIGES.Domain.Entities.Campos.TS_BEField choferField;
-        
+
         private ITBCP.ServiceSIGES.Domain.Entities.Campos.TS_BEField nrovaleField;
-        
+
         private ITBCP.ServiceSIGES.Domain.Entities.Campos.TS_BEField odometroField;
-        
+
         private ITBCP.ServiceSIGES.Domain.Entities.Campos.TS_BEField placaField;
-        
+
         private ITBCP.ServiceSIGES.Domain.Entities.Campos.TS_BEField rsclienteField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -13581,7 +13803,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Campos
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ITBCP.ServiceSIGES.Domain.Entities.Campos.TS_BEField chofer
         {
@@ -13594,7 +13816,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Campos
                 this.choferField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ITBCP.ServiceSIGES.Domain.Entities.Campos.TS_BEField nrovale
         {
@@ -13607,7 +13829,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Campos
                 this.nrovaleField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ITBCP.ServiceSIGES.Domain.Entities.Campos.TS_BEField odometro
         {
@@ -13620,7 +13842,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Campos
                 this.odometroField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ITBCP.ServiceSIGES.Domain.Entities.Campos.TS_BEField placa
         {
@@ -13633,7 +13855,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Campos
                 this.placaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ITBCP.ServiceSIGES.Domain.Entities.Campos.TS_BEField rscliente
         {
@@ -13647,20 +13869,20 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Campos
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TS_BEField", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Campos" +
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BEField", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Campos" +
         "")]
     public partial class TS_BEField : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private bool disabledField;
-        
+
         private bool visibleField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -13672,7 +13894,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Campos
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool disabled
         {
@@ -13685,7 +13907,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Campos
                 this.disabledField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool visible
         {
@@ -13703,23 +13925,23 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Campos
 namespace ITBCP.ServiceSIGES.Domain.Entities.Articulo
 {
     using System.Runtime.Serialization;
-    
-    
+
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TS_BEArticuloOutput", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Articu" +
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BEArticuloOutput", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities.Articu" +
         "lo")]
     public partial class TS_BEArticuloOutput : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private ITBCP.ServiceSIGES.Domain.Entities.TS_BEArticulo[] ArticulosField;
-        
+
         private string MensajeField;
-        
+
         private bool OkField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -13731,7 +13953,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Articulo
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ITBCP.ServiceSIGES.Domain.Entities.TS_BEArticulo[] Articulos
         {
@@ -13744,7 +13966,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Articulo
                 this.ArticulosField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Mensaje
         {
@@ -13757,7 +13979,7 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Articulo
                 this.MensajeField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool Ok
         {
@@ -13775,24 +13997,24 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Articulo
 namespace ITBCP.ServiceSIGES.Domain
 {
     using System.Runtime.Serialization;
-    
-    
+
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TS_BEPTarjeta", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "TS_BEPTarjeta", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain")]
     public partial class TS_BEPTarjeta : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private string descripcionField;
-        
+
         private string prefijoField;
-        
+
         private string tipoField;
-        
+
         private string varidField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -13804,7 +14026,7 @@ namespace ITBCP.ServiceSIGES.Domain
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string descripcion
         {
@@ -13817,7 +14039,7 @@ namespace ITBCP.ServiceSIGES.Domain
                 this.descripcionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string prefijo
         {
@@ -13830,7 +14052,7 @@ namespace ITBCP.ServiceSIGES.Domain
                 this.prefijoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string tipo
         {
@@ -13843,7 +14065,7 @@ namespace ITBCP.ServiceSIGES.Domain
                 this.tipoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string varid
         {
@@ -13860,250 +14082,451 @@ namespace ITBCP.ServiceSIGES.Domain
 }
 
 
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]
-[System.ServiceModel.ServiceContractAttribute(ConfigurationName="ITS_SISales")]
+[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+[System.ServiceModel.ServiceContractAttribute(ConfigurationName = "ITS_SISales")]
 public interface ITS_SISales
 {
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITS_SISales/Loading", ReplyAction="http://tempuri.org/ITS_SISales/LoadingResponse")]
-    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action="http://tempuri.org/ITS_SISales/LoadingExcepcionFault", Name="Excepcion", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/Loading", ReplyAction = "http://tempuri.org/ITS_SISales/LoadingResponse")]
+    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action = "http://tempuri.org/ITS_SISales/LoadingExcepcionFault", Name = "Excepcion", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BESales Loading(ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BELoadInput input);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITS_SISales/OBTENER_CARAS", ReplyAction="http://tempuri.org/ITS_SISales/OBTENER_CARASResponse")]
-    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action="http://tempuri.org/ITS_SISales/OBTENER_CARASExcepcionFault", Name="Excepcion", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/Loading", ReplyAction = "http://tempuri.org/ITS_SISales/LoadingResponse")]
+    System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BESales> LoadingAsync(ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BELoadInput input);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/OBTENER_CARAS", ReplyAction = "http://tempuri.org/ITS_SISales/OBTENER_CARASResponse")]
+    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action = "http://tempuri.org/ITS_SISales/OBTENER_CARASExcepcionFault", Name = "Excepcion", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     ITBCP.ServiceSIGES.Domain.Entities.TS_BECara[] OBTENER_CARAS(string seriehd);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITS_SISales/ObtenerClientByRuc", ReplyAction="http://tempuri.org/ITS_SISales/ObtenerClientByRucResponse")]
-    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action="http://tempuri.org/ITS_SISales/ObtenerClientByRucExcepcionFault", Name="Excepcion", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/OBTENER_CARAS", ReplyAction = "http://tempuri.org/ITS_SISales/OBTENER_CARASResponse")]
+    System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.TS_BECara[]> OBTENER_CARASAsync(string seriehd);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/ObtenerClientByRuc", ReplyAction = "http://tempuri.org/ITS_SISales/ObtenerClientByRucResponse")]
+    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action = "http://tempuri.org/ITS_SISales/ObtenerClientByRucExcepcionFault", Name = "Excepcion", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteOutput ObtenerClientByRuc(ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteSearch input);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITS_SISales/ObternerClienteByCodigo", ReplyAction="http://tempuri.org/ITS_SISales/ObternerClienteByCodigoResponse")]
-    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action="http://tempuri.org/ITS_SISales/ObternerClienteByCodigoExcepcionFault", Name="Excepcion", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/ObtenerClientByRuc", ReplyAction = "http://tempuri.org/ITS_SISales/ObtenerClientByRucResponse")]
+    System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteOutput> ObtenerClientByRucAsync(ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteSearch input);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/ObternerClienteByCodigo", ReplyAction = "http://tempuri.org/ITS_SISales/ObternerClienteByCodigoResponse")]
+    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action = "http://tempuri.org/ITS_SISales/ObternerClienteByCodigoExcepcionFault", Name = "Excepcion", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteOutput ObternerClienteByCodigo(ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteSearch input);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITS_SISales/ObtenerClienteByTarjeta", ReplyAction="http://tempuri.org/ITS_SISales/ObtenerClienteByTarjetaResponse")]
-    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action="http://tempuri.org/ITS_SISales/ObtenerClienteByTarjetaExcepcionFault", Name="Excepcion", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/ObternerClienteByCodigo", ReplyAction = "http://tempuri.org/ITS_SISales/ObternerClienteByCodigoResponse")]
+    System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteOutput> ObternerClienteByCodigoAsync(ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteSearch input);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/ObtenerClienteByTarjeta", ReplyAction = "http://tempuri.org/ITS_SISales/ObtenerClienteByTarjetaResponse")]
+    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action = "http://tempuri.org/ITS_SISales/ObtenerClienteByTarjetaExcepcionFault", Name = "Excepcion", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteOutput ObtenerClienteByTarjeta(ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteSearch input);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITS_SISales/ListarClientes", ReplyAction="http://tempuri.org/ITS_SISales/ListarClientesResponse")]
-    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action="http://tempuri.org/ITS_SISales/ListarClientesExcepcionFault", Name="Excepcion", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/ObtenerClienteByTarjeta", ReplyAction = "http://tempuri.org/ITS_SISales/ObtenerClienteByTarjetaResponse")]
+    System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteOutput> ObtenerClienteByTarjetaAsync(ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteSearch input);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/ListarClientes", ReplyAction = "http://tempuri.org/ITS_SISales/ListarClientesResponse")]
+    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action = "http://tempuri.org/ITS_SISales/ListarClientesExcepcionFault", Name = "Excepcion", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteLista[] ListarClientes();
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITS_SISales/ListarClientesByName", ReplyAction="http://tempuri.org/ITS_SISales/ListarClientesByNameResponse")]
-    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action="http://tempuri.org/ITS_SISales/ListarClientesByNameExcepcionFault", Name="Excepcion", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/ListarClientes", ReplyAction = "http://tempuri.org/ITS_SISales/ListarClientesResponse")]
+    System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteLista[]> ListarClientesAsync();
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/ListarClientesByName", ReplyAction = "http://tempuri.org/ITS_SISales/ListarClientesByNameResponse")]
+    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action = "http://tempuri.org/ITS_SISales/ListarClientesByNameExcepcionFault", Name = "Excepcion", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteLista[] ListarClientesByName(string rscliente);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITS_SISales/ListarClientesByPlaca", ReplyAction="http://tempuri.org/ITS_SISales/ListarClientesByPlacaResponse")]
-    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action="http://tempuri.org/ITS_SISales/ListarClientesByPlacaExcepcionFault", Name="Excepcion", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/ListarClientesByName", ReplyAction = "http://tempuri.org/ITS_SISales/ListarClientesByNameResponse")]
+    System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteLista[]> ListarClientesByNameAsync(string rscliente);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/ListarClientesByPlaca", ReplyAction = "http://tempuri.org/ITS_SISales/ListarClientesByPlacaResponse")]
+    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action = "http://tempuri.org/ITS_SISales/ListarClientesByPlacaExcepcionFault", Name = "Excepcion", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteLista[] ListarClientesByPlaca(string placa);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITS_SISales/ObtenerSaldoClientTarjeta", ReplyAction="http://tempuri.org/ITS_SISales/ObtenerSaldoClientTarjetaResponse")]
-    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action="http://tempuri.org/ITS_SISales/ObtenerSaldoClientTarjetaExcepcionFault", Name="Excepcion", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/ListarClientesByPlaca", ReplyAction = "http://tempuri.org/ITS_SISales/ListarClientesByPlacaResponse")]
+    System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteLista[]> ListarClientesByPlacaAsync(string placa);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/ObtenerSaldoClientTarjeta", ReplyAction = "http://tempuri.org/ITS_SISales/ObtenerSaldoClientTarjetaResponse")]
+    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action = "http://tempuri.org/ITS_SISales/ObtenerSaldoClientTarjetaExcepcionFault", Name = "Excepcion", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     ITBCP.ServiceSIGES.Domain.Entities.TS_BESaldoclid ObtenerSaldoClientTarjeta(ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteSearch input);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITS_SISales/ObtenerOpTransaccion", ReplyAction="http://tempuri.org/ITS_SISales/ObtenerOpTransaccionResponse")]
-    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action="http://tempuri.org/ITS_SISales/ObtenerOpTransaccionExcepcionFault", Name="Excepcion", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/ObtenerSaldoClientTarjeta", ReplyAction = "http://tempuri.org/ITS_SISales/ObtenerSaldoClientTarjetaResponse")]
+    System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.TS_BESaldoclid> ObtenerSaldoClientTarjetaAsync(ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteSearch input);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/ObtenerOpTransaccion", ReplyAction = "http://tempuri.org/ITS_SISales/ObtenerOpTransaccionResponse")]
+    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action = "http://tempuri.org/ITS_SISales/ObtenerOpTransaccionExcepcionFault", Name = "Excepcion", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BECabeceraOutPut ObtenerOpTransaccion(ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEOpTransInput input);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITS_SISales/GrabarTransaccion", ReplyAction="http://tempuri.org/ITS_SISales/GrabarTransaccionResponse")]
-    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action="http://tempuri.org/ITS_SISales/GrabarTransaccionExcepcionFault", Name="Excepcion", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/ObtenerOpTransaccion", ReplyAction = "http://tempuri.org/ITS_SISales/ObtenerOpTransaccionResponse")]
+    System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BECabeceraOutPut> ObtenerOpTransaccionAsync(ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEOpTransInput input);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/GrabarTransaccion", ReplyAction = "http://tempuri.org/ITS_SISales/GrabarTransaccionResponse")]
+    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action = "http://tempuri.org/ITS_SISales/GrabarTransaccionExcepcionFault", Name = "Excepcion", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     ITBCP.ServiceSIGES.Domain.Entities.TS_BERetornoTransaccion GrabarTransaccion(ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BEDetalleInput[] cdetalle, ITBCP.ServiceSIGES.Domain.Entities.TS_BECabeceraInput cCabecera, ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BEPagoInput[] cPago, ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteInput cCliente, ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BELoadInput cLoading, ITBCP.ServiceSIGES.Domain.Entities.TS_BEGrabarConfig cConfiguracion);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITS_SISales/ValidaSaldos", ReplyAction="http://tempuri.org/ITS_SISales/ValidaSaldosResponse")]
-    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action="http://tempuri.org/ITS_SISales/ValidaSaldosExcepcionFault", Name="Excepcion", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/GrabarTransaccion", ReplyAction = "http://tempuri.org/ITS_SISales/GrabarTransaccionResponse")]
+    System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.TS_BERetornoTransaccion> GrabarTransaccionAsync(ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BEDetalleInput[] cdetalle, ITBCP.ServiceSIGES.Domain.Entities.TS_BECabeceraInput cCabecera, ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BEPagoInput[] cPago, ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteInput cCliente, ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BELoadInput cLoading, ITBCP.ServiceSIGES.Domain.Entities.TS_BEGrabarConfig cConfiguracion);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/ValidaSaldos", ReplyAction = "http://tempuri.org/ITS_SISales/ValidaSaldosResponse")]
+    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action = "http://tempuri.org/ITS_SISales/ValidaSaldosExcepcionFault", Name = "Excepcion", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BESaldos ValidaSaldos(ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteSearch cCliente);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITS_SISales/ObtenerCorrelativo", ReplyAction="http://tempuri.org/ITS_SISales/ObtenerCorrelativoResponse")]
-    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action="http://tempuri.org/ITS_SISales/ObtenerCorrelativoExcepcionFault", Name="Excepcion", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/ValidaSaldos", ReplyAction = "http://tempuri.org/ITS_SISales/ValidaSaldosResponse")]
+    System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BESaldos> ValidaSaldosAsync(ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteSearch cCliente);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/ObtenerCorrelativo", ReplyAction = "http://tempuri.org/ITS_SISales/ObtenerCorrelativoResponse")]
+    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action = "http://tempuri.org/ITS_SISales/ObtenerCorrelativoExcepcionFault", Name = "Excepcion", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BECorrelativoOutput ObtenerCorrelativo(ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BECorrelativoInput input);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITS_SISales/ObtenerListaArticulos", ReplyAction="http://tempuri.org/ITS_SISales/ObtenerListaArticulosResponse")]
-    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action="http://tempuri.org/ITS_SISales/ObtenerListaArticulosExcepcionFault", Name="Excepcion", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/ObtenerCorrelativo", ReplyAction = "http://tempuri.org/ITS_SISales/ObtenerCorrelativoResponse")]
+    System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BECorrelativoOutput> ObtenerCorrelativoAsync(ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BECorrelativoInput input);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/ObtenerListaArticulos", ReplyAction = "http://tempuri.org/ITS_SISales/ObtenerListaArticulosResponse")]
+    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action = "http://tempuri.org/ITS_SISales/ObtenerListaArticulosExcepcionFault", Name = "Excepcion", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     ITBCP.ServiceSIGES.Domain.Entities.Articulo.TS_BEArticuloOutput ObtenerListaArticulos(string cdgrupo02);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITS_SISales/ListarArticuloPrecios", ReplyAction="http://tempuri.org/ITS_SISales/ListarArticuloPreciosResponse")]
-    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action="http://tempuri.org/ITS_SISales/ListarArticuloPreciosExcepcionFault", Name="Excepcion", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/ObtenerListaArticulos", ReplyAction = "http://tempuri.org/ITS_SISales/ObtenerListaArticulosResponse")]
+    System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.Articulo.TS_BEArticuloOutput> ObtenerListaArticulosAsync(string cdgrupo02);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/ListarArticuloPrecios", ReplyAction = "http://tempuri.org/ITS_SISales/ListarArticuloPreciosResponse")]
+    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action = "http://tempuri.org/ITS_SISales/ListarArticuloPreciosExcepcionFault", Name = "Excepcion", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     ITBCP.ServiceSIGES.Domain.Entities.Articulo.TS_BEArticuloOutput ListarArticuloPrecios(string glosa);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITS_SISales/ANULAR_DOCUMENTO", ReplyAction="http://tempuri.org/ITS_SISales/ANULAR_DOCUMENTOResponse")]
-    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action="http://tempuri.org/ITS_SISales/ANULAR_DOCUMENTOExcepcionFault", Name="Excepcion", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/ListarArticuloPrecios", ReplyAction = "http://tempuri.org/ITS_SISales/ListarArticuloPreciosResponse")]
+    System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.Articulo.TS_BEArticuloOutput> ListarArticuloPreciosAsync(string glosa);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/ANULAR_DOCUMENTO", ReplyAction = "http://tempuri.org/ITS_SISales/ANULAR_DOCUMENTOResponse")]
+    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action = "http://tempuri.org/ITS_SISales/ANULAR_DOCUMENTOExcepcionFault", Name = "Excepcion", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     ITBCP.ServiceSIGES.Domain.Entities.TS_BEMensaje ANULAR_DOCUMENTO(ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BEDAnulaInput input);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITS_SISales/LISTAR_NROPOS", ReplyAction="http://tempuri.org/ITS_SISales/LISTAR_NROPOSResponse")]
-    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action="http://tempuri.org/ITS_SISales/LISTAR_NROPOSExcepcionFault", Name="Excepcion", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/ANULAR_DOCUMENTO", ReplyAction = "http://tempuri.org/ITS_SISales/ANULAR_DOCUMENTOResponse")]
+    System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.TS_BEMensaje> ANULAR_DOCUMENTOAsync(ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BEDAnulaInput input);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/LISTAR_NROPOS", ReplyAction = "http://tempuri.org/ITS_SISales/LISTAR_NROPOSResponse")]
+    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action = "http://tempuri.org/ITS_SISales/LISTAR_NROPOSExcepcionFault", Name = "Excepcion", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     ITBCP.ServiceSIGES.Domain.Entities.TS_BENropos[] LISTAR_NROPOS();
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITS_SISales/REGISTRAR_LADO", ReplyAction="http://tempuri.org/ITS_SISales/REGISTRAR_LADOResponse")]
-    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action="http://tempuri.org/ITS_SISales/REGISTRAR_LADOExcepcionFault", Name="Excepcion", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/LISTAR_NROPOS", ReplyAction = "http://tempuri.org/ITS_SISales/LISTAR_NROPOSResponse")]
+    System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.TS_BENropos[]> LISTAR_NROPOSAsync();
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/REGISTRAR_LADO", ReplyAction = "http://tempuri.org/ITS_SISales/REGISTRAR_LADOResponse")]
+    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action = "http://tempuri.org/ITS_SISales/REGISTRAR_LADOExcepcionFault", Name = "Excepcion", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     ITBCP.ServiceSIGES.Domain.Entities.TS_BEMensaje REGISTRAR_LADO(string nropos, string lado);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITS_SISales/ELIMINAR_LADO", ReplyAction="http://tempuri.org/ITS_SISales/ELIMINAR_LADOResponse")]
-    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action="http://tempuri.org/ITS_SISales/ELIMINAR_LADOExcepcionFault", Name="Excepcion", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/REGISTRAR_LADO", ReplyAction = "http://tempuri.org/ITS_SISales/REGISTRAR_LADOResponse")]
+    System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.TS_BEMensaje> REGISTRAR_LADOAsync(string nropos, string lado);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/ELIMINAR_LADO", ReplyAction = "http://tempuri.org/ITS_SISales/ELIMINAR_LADOResponse")]
+    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action = "http://tempuri.org/ITS_SISales/ELIMINAR_LADOExcepcionFault", Name = "Excepcion", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     ITBCP.ServiceSIGES.Domain.Entities.TS_BEMensaje ELIMINAR_LADO(string lado);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITS_SISales/OBTENER_LADOS", ReplyAction="http://tempuri.org/ITS_SISales/OBTENER_LADOSResponse")]
-    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action="http://tempuri.org/ITS_SISales/OBTENER_LADOSExcepcionFault", Name="Excepcion", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/ELIMINAR_LADO", ReplyAction = "http://tempuri.org/ITS_SISales/ELIMINAR_LADOResponse")]
+    System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.TS_BEMensaje> ELIMINAR_LADOAsync(string lado);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/OBTENER_LADOS", ReplyAction = "http://tempuri.org/ITS_SISales/OBTENER_LADOSResponse")]
+    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action = "http://tempuri.org/ITS_SISales/OBTENER_LADOSExcepcionFault", Name = "Excepcion", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     ITBCP.ServiceSIGES.Domain.Entities.TS_BELados OBTENER_LADOS();
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITS_SISales/OBTENER_ARTICULOS_POR_PREFIJO", ReplyAction="http://tempuri.org/ITS_SISales/OBTENER_ARTICULOS_POR_PREFIJOResponse")]
-    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action="http://tempuri.org/ITS_SISales/OBTENER_ARTICULOS_POR_PREFIJOExcepcionFault", Name="Excepcion", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/OBTENER_LADOS", ReplyAction = "http://tempuri.org/ITS_SISales/OBTENER_LADOSResponse")]
+    System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.TS_BELados> OBTENER_LADOSAsync();
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/OBTENER_ARTICULOS_POR_PREFIJO", ReplyAction = "http://tempuri.org/ITS_SISales/OBTENER_ARTICULOS_POR_PREFIJOResponse")]
+    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action = "http://tempuri.org/ITS_SISales/OBTENER_ARTICULOS_POR_PREFIJOExcepcionFault", Name = "Excepcion", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     ITBCP.ServiceSIGES.Domain.Entities.Articulo.TS_BEArticuloOutput OBTENER_ARTICULOS_POR_PREFIJO(string prefijo);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITS_SISales/OBTENER_PREFIJOS_AFILIACION", ReplyAction="http://tempuri.org/ITS_SISales/OBTENER_PREFIJOS_AFILIACIONResponse")]
-    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action="http://tempuri.org/ITS_SISales/OBTENER_PREFIJOS_AFILIACIONExcepcionFault", Name="Excepcion", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/OBTENER_ARTICULOS_POR_PREFIJO", ReplyAction = "http://tempuri.org/ITS_SISales/OBTENER_ARTICULOS_POR_PREFIJOResponse")]
+    System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.Articulo.TS_BEArticuloOutput> OBTENER_ARTICULOS_POR_PREFIJOAsync(string prefijo);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/OBTENER_PREFIJOS_AFILIACION", ReplyAction = "http://tempuri.org/ITS_SISales/OBTENER_PREFIJOS_AFILIACIONResponse")]
+    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action = "http://tempuri.org/ITS_SISales/OBTENER_PREFIJOS_AFILIACIONExcepcionFault", Name = "Excepcion", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     ITBCP.ServiceSIGES.Domain.TS_BEPTarjeta[] OBTENER_PREFIJOS_AFILIACION();
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITS_SISales/REGISTRAR_AFILIACION", ReplyAction="http://tempuri.org/ITS_SISales/REGISTRAR_AFILIACIONResponse")]
-    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action="http://tempuri.org/ITS_SISales/REGISTRAR_AFILIACIONExcepcionFault", Name="Excepcion", Namespace="http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/OBTENER_PREFIJOS_AFILIACION", ReplyAction = "http://tempuri.org/ITS_SISales/OBTENER_PREFIJOS_AFILIACIONResponse")]
+    System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.TS_BEPTarjeta[]> OBTENER_PREFIJOS_AFILIACIONAsync();
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/REGISTRAR_AFILIACION", ReplyAction = "http://tempuri.org/ITS_SISales/REGISTRAR_AFILIACIONResponse")]
+    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action = "http://tempuri.org/ITS_SISales/REGISTRAR_AFILIACIONExcepcionFault", Name = "Excepcion", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
     ITBCP.ServiceSIGES.Domain.Entities.TS_BEMensaje REGISTRAR_AFILIACION(ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteInput cCliente, ITBCP.ServiceSIGES.Domain.Entities.TS_BEArticulo[] Articulos, ITBCP.ServiceSIGES.Domain.Entities.TS_BETipoTarjetaRegistro Tipo);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/REGISTRAR_AFILIACION", ReplyAction = "http://tempuri.org/ITS_SISales/REGISTRAR_AFILIACIONResponse")]
+    System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.TS_BEMensaje> REGISTRAR_AFILIACIONAsync(ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteInput cCliente, ITBCP.ServiceSIGES.Domain.Entities.TS_BEArticulo[] Articulos, ITBCP.ServiceSIGES.Domain.Entities.TS_BETipoTarjetaRegistro Tipo);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/VERIFICAR_PROMOCION", ReplyAction = "http://tempuri.org/ITS_SISales/VERIFICAR_PROMOCIONResponse")]
+    [System.ServiceModel.FaultContractAttribute(typeof(ITBCP.ServiceSIGES.Domain.Entities.Excepcion), Action = "http://tempuri.org/ITS_SISales/VERIFICAR_PROMOCIONExcepcionFault", Name = "Excepcion", Namespace = "http://schemas.datacontract.org/2004/07/ITBCP.ServiceSIGES.Domain.Entities")]
+    ITBCP.ServiceSIGES.Domain.Entities.TS_BEArticlePromotion VERIFICAR_PROMOCION(ITBCP.ServiceSIGES.Domain.Entities.TS_BEPromotionInput input);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ITS_SISales/VERIFICAR_PROMOCION", ReplyAction = "http://tempuri.org/ITS_SISales/VERIFICAR_PROMOCIONResponse")]
+    System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.TS_BEArticlePromotion> VERIFICAR_PROMOCIONAsync(ITBCP.ServiceSIGES.Domain.Entities.TS_BEPromotionInput input);
 }
 
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]
+[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
 public interface ITS_SISalesChannel : ITS_SISales, System.ServiceModel.IClientChannel
 {
 }
 
 [System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]
+[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
 public partial class TS_SISalesClient : System.ServiceModel.ClientBase<ITS_SISales>, ITS_SISales
 {
-    
+
     public TS_SISalesClient()
     {
     }
-    
-    public TS_SISalesClient(string endpointConfigurationName) : 
+
+    public TS_SISalesClient(string endpointConfigurationName) :
             base(endpointConfigurationName)
     {
     }
-    
-    public TS_SISalesClient(string endpointConfigurationName, string remoteAddress) : 
+
+    public TS_SISalesClient(string endpointConfigurationName, string remoteAddress) :
             base(endpointConfigurationName, remoteAddress)
     {
     }
-    
-    public TS_SISalesClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+
+    public TS_SISalesClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) :
             base(endpointConfigurationName, remoteAddress)
     {
     }
-    
-    public TS_SISalesClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+
+    public TS_SISalesClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) :
             base(binding, remoteAddress)
     {
     }
-    
+
     public ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BESales Loading(ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BELoadInput input)
     {
         return base.Channel.Loading(input);
     }
-    
+
+    public System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BESales> LoadingAsync(ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BELoadInput input)
+    {
+        return base.Channel.LoadingAsync(input);
+    }
+
     public ITBCP.ServiceSIGES.Domain.Entities.TS_BECara[] OBTENER_CARAS(string seriehd)
     {
         return base.Channel.OBTENER_CARAS(seriehd);
     }
-    
+
+    public System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.TS_BECara[]> OBTENER_CARASAsync(string seriehd)
+    {
+        return base.Channel.OBTENER_CARASAsync(seriehd);
+    }
+
     public ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteOutput ObtenerClientByRuc(ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteSearch input)
     {
         return base.Channel.ObtenerClientByRuc(input);
     }
-    
+
+    public System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteOutput> ObtenerClientByRucAsync(ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteSearch input)
+    {
+        return base.Channel.ObtenerClientByRucAsync(input);
+    }
+
     public ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteOutput ObternerClienteByCodigo(ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteSearch input)
     {
         return base.Channel.ObternerClienteByCodigo(input);
     }
-    
+
+    public System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteOutput> ObternerClienteByCodigoAsync(ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteSearch input)
+    {
+        return base.Channel.ObternerClienteByCodigoAsync(input);
+    }
+
     public ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteOutput ObtenerClienteByTarjeta(ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteSearch input)
     {
         return base.Channel.ObtenerClienteByTarjeta(input);
     }
-    
+
+    public System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteOutput> ObtenerClienteByTarjetaAsync(ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteSearch input)
+    {
+        return base.Channel.ObtenerClienteByTarjetaAsync(input);
+    }
+
     public ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteLista[] ListarClientes()
     {
         return base.Channel.ListarClientes();
     }
-    
+
+    public System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteLista[]> ListarClientesAsync()
+    {
+        return base.Channel.ListarClientesAsync();
+    }
+
     public ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteLista[] ListarClientesByName(string rscliente)
     {
         return base.Channel.ListarClientesByName(rscliente);
     }
-    
+
+    public System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteLista[]> ListarClientesByNameAsync(string rscliente)
+    {
+        return base.Channel.ListarClientesByNameAsync(rscliente);
+    }
+
     public ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteLista[] ListarClientesByPlaca(string placa)
     {
         return base.Channel.ListarClientesByPlaca(placa);
     }
-    
+
+    public System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteLista[]> ListarClientesByPlacaAsync(string placa)
+    {
+        return base.Channel.ListarClientesByPlacaAsync(placa);
+    }
+
     public ITBCP.ServiceSIGES.Domain.Entities.TS_BESaldoclid ObtenerSaldoClientTarjeta(ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteSearch input)
     {
         return base.Channel.ObtenerSaldoClientTarjeta(input);
     }
-    
+
+    public System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.TS_BESaldoclid> ObtenerSaldoClientTarjetaAsync(ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteSearch input)
+    {
+        return base.Channel.ObtenerSaldoClientTarjetaAsync(input);
+    }
+
     public ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BECabeceraOutPut ObtenerOpTransaccion(ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEOpTransInput input)
     {
         return base.Channel.ObtenerOpTransaccion(input);
     }
-    
+
+    public System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BECabeceraOutPut> ObtenerOpTransaccionAsync(ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEOpTransInput input)
+    {
+        return base.Channel.ObtenerOpTransaccionAsync(input);
+    }
+
     public ITBCP.ServiceSIGES.Domain.Entities.TS_BERetornoTransaccion GrabarTransaccion(ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BEDetalleInput[] cdetalle, ITBCP.ServiceSIGES.Domain.Entities.TS_BECabeceraInput cCabecera, ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BEPagoInput[] cPago, ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteInput cCliente, ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BELoadInput cLoading, ITBCP.ServiceSIGES.Domain.Entities.TS_BEGrabarConfig cConfiguracion)
     {
         return base.Channel.GrabarTransaccion(cdetalle, cCabecera, cPago, cCliente, cLoading, cConfiguracion);
     }
-    
+
+    public System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.TS_BERetornoTransaccion> GrabarTransaccionAsync(ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BEDetalleInput[] cdetalle, ITBCP.ServiceSIGES.Domain.Entities.TS_BECabeceraInput cCabecera, ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BEPagoInput[] cPago, ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteInput cCliente, ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BELoadInput cLoading, ITBCP.ServiceSIGES.Domain.Entities.TS_BEGrabarConfig cConfiguracion)
+    {
+        return base.Channel.GrabarTransaccionAsync(cdetalle, cCabecera, cPago, cCliente, cLoading, cConfiguracion);
+    }
+
     public ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BESaldos ValidaSaldos(ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteSearch cCliente)
     {
         return base.Channel.ValidaSaldos(cCliente);
     }
-    
+
+    public System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BESaldos> ValidaSaldosAsync(ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteSearch cCliente)
+    {
+        return base.Channel.ValidaSaldosAsync(cCliente);
+    }
+
     public ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BECorrelativoOutput ObtenerCorrelativo(ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BECorrelativoInput input)
     {
         return base.Channel.ObtenerCorrelativo(input);
     }
-    
+
+    public System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BECorrelativoOutput> ObtenerCorrelativoAsync(ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BECorrelativoInput input)
+    {
+        return base.Channel.ObtenerCorrelativoAsync(input);
+    }
+
     public ITBCP.ServiceSIGES.Domain.Entities.Articulo.TS_BEArticuloOutput ObtenerListaArticulos(string cdgrupo02)
     {
         return base.Channel.ObtenerListaArticulos(cdgrupo02);
     }
-    
+
+    public System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.Articulo.TS_BEArticuloOutput> ObtenerListaArticulosAsync(string cdgrupo02)
+    {
+        return base.Channel.ObtenerListaArticulosAsync(cdgrupo02);
+    }
+
     public ITBCP.ServiceSIGES.Domain.Entities.Articulo.TS_BEArticuloOutput ListarArticuloPrecios(string glosa)
     {
         return base.Channel.ListarArticuloPrecios(glosa);
     }
-    
+
+    public System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.Articulo.TS_BEArticuloOutput> ListarArticuloPreciosAsync(string glosa)
+    {
+        return base.Channel.ListarArticuloPreciosAsync(glosa);
+    }
+
     public ITBCP.ServiceSIGES.Domain.Entities.TS_BEMensaje ANULAR_DOCUMENTO(ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BEDAnulaInput input)
     {
         return base.Channel.ANULAR_DOCUMENTO(input);
     }
-    
+
+    public System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.TS_BEMensaje> ANULAR_DOCUMENTOAsync(ITBCP.ServiceSIGES.Domain.Entities.Sales.TS_BEDAnulaInput input)
+    {
+        return base.Channel.ANULAR_DOCUMENTOAsync(input);
+    }
+
     public ITBCP.ServiceSIGES.Domain.Entities.TS_BENropos[] LISTAR_NROPOS()
     {
         return base.Channel.LISTAR_NROPOS();
     }
-    
+
+    public System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.TS_BENropos[]> LISTAR_NROPOSAsync()
+    {
+        return base.Channel.LISTAR_NROPOSAsync();
+    }
+
     public ITBCP.ServiceSIGES.Domain.Entities.TS_BEMensaje REGISTRAR_LADO(string nropos, string lado)
     {
         return base.Channel.REGISTRAR_LADO(nropos, lado);
     }
-    
+
+    public System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.TS_BEMensaje> REGISTRAR_LADOAsync(string nropos, string lado)
+    {
+        return base.Channel.REGISTRAR_LADOAsync(nropos, lado);
+    }
+
     public ITBCP.ServiceSIGES.Domain.Entities.TS_BEMensaje ELIMINAR_LADO(string lado)
     {
         return base.Channel.ELIMINAR_LADO(lado);
     }
-    
+
+    public System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.TS_BEMensaje> ELIMINAR_LADOAsync(string lado)
+    {
+        return base.Channel.ELIMINAR_LADOAsync(lado);
+    }
+
     public ITBCP.ServiceSIGES.Domain.Entities.TS_BELados OBTENER_LADOS()
     {
         return base.Channel.OBTENER_LADOS();
     }
-    
+
+    public System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.TS_BELados> OBTENER_LADOSAsync()
+    {
+        return base.Channel.OBTENER_LADOSAsync();
+    }
+
     public ITBCP.ServiceSIGES.Domain.Entities.Articulo.TS_BEArticuloOutput OBTENER_ARTICULOS_POR_PREFIJO(string prefijo)
     {
         return base.Channel.OBTENER_ARTICULOS_POR_PREFIJO(prefijo);
     }
-    
+
+    public System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.Articulo.TS_BEArticuloOutput> OBTENER_ARTICULOS_POR_PREFIJOAsync(string prefijo)
+    {
+        return base.Channel.OBTENER_ARTICULOS_POR_PREFIJOAsync(prefijo);
+    }
+
     public ITBCP.ServiceSIGES.Domain.TS_BEPTarjeta[] OBTENER_PREFIJOS_AFILIACION()
     {
         return base.Channel.OBTENER_PREFIJOS_AFILIACION();
     }
-    
+
+    public System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.TS_BEPTarjeta[]> OBTENER_PREFIJOS_AFILIACIONAsync()
+    {
+        return base.Channel.OBTENER_PREFIJOS_AFILIACIONAsync();
+    }
+
     public ITBCP.ServiceSIGES.Domain.Entities.TS_BEMensaje REGISTRAR_AFILIACION(ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteInput cCliente, ITBCP.ServiceSIGES.Domain.Entities.TS_BEArticulo[] Articulos, ITBCP.ServiceSIGES.Domain.Entities.TS_BETipoTarjetaRegistro Tipo)
     {
         return base.Channel.REGISTRAR_AFILIACION(cCliente, Articulos, Tipo);
+    }
+
+    public System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.TS_BEMensaje> REGISTRAR_AFILIACIONAsync(ITBCP.ServiceSIGES.Domain.Entities.Cliente.TS_BEClienteInput cCliente, ITBCP.ServiceSIGES.Domain.Entities.TS_BEArticulo[] Articulos, ITBCP.ServiceSIGES.Domain.Entities.TS_BETipoTarjetaRegistro Tipo)
+    {
+        return base.Channel.REGISTRAR_AFILIACIONAsync(cCliente, Articulos, Tipo);
+    }
+
+    public ITBCP.ServiceSIGES.Domain.Entities.TS_BEArticlePromotion VERIFICAR_PROMOCION(ITBCP.ServiceSIGES.Domain.Entities.TS_BEPromotionInput input)
+    {
+        return base.Channel.VERIFICAR_PROMOCION(input);
+    }
+
+    public System.Threading.Tasks.Task<ITBCP.ServiceSIGES.Domain.Entities.TS_BEArticlePromotion> VERIFICAR_PROMOCIONAsync(ITBCP.ServiceSIGES.Domain.Entities.TS_BEPromotionInput input)
+    {
+        return base.Channel.VERIFICAR_PROMOCIONAsync(input);
     }
 }

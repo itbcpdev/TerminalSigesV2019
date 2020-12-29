@@ -140,7 +140,6 @@ namespace ITBCP.ServiceSIGES.Aplication.Interfaces
         void SP_ITBCP_INSERTAR_STOCK(TS_BEStock input);
         void SP_ITBCP_ACTUALIZAR_STOCK(TS_BEStock input);
         void SP_ITBCP_INSERTAR_INSUMOISR(TS_BEInsumoisr input);
-        void SP_ITBCP_INSERTAR_INSUMOIS(TS_BEInsumois input, string nombreTabla);
         void SP_ITBCP_ACTUALIZAR_ARTICULO(TS_BEArticulo input);
         void SP_ITBCP_INSERTAR_CIERREMOV(TS_BECierremov input);
         void SP_ITBCP_ACTUALIZAR_CIERREMOV(TS_BECierremov input);

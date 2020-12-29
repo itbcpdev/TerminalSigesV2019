@@ -154,6 +154,12 @@ namespace TerminalSiges.Views.Pages.Invoce
                 PrintTotales();
                 flagArticulo = false;
             }
+            if (TSSalesApp.ArticleAdd)
+            {
+                PrintTotales();
+                TSSalesApp.ArticleAdd = false;
+            }
+
             txtRuc.Text = (TSCustomerApp.ClientOuput.ruccliente ?? "").Trim().Length == 11 ? (TSCustomerApp.ClientOuput.ruccliente ?? "").Trim() : (TSCustomerApp.ClientOuput.cdcliente ?? "" ).Trim();
             txtRazonSocial.Text = (TSCustomerApp.ClientOuput.rscliente ?? "").Trim();
             flagCliente = false;

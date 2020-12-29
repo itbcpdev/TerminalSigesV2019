@@ -12,12 +12,13 @@ using System.Threading.Tasks;
 using TerminalSiges.Lib.Customer;
 using TerminalSiges.Lib.Loading;
 using TerminalSiges.Lib.Sales;
+using TerminalSiges.Views.Pages.Invoce;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace TerminalSiges.Views.Pages.Articulo
 {
-   
+
     public partial class SearchArticulo : ContentPage
     {
         public BindingContextArticle vContexto;
@@ -42,7 +43,7 @@ namespace TerminalSiges.Views.Pages.Articulo
         {
             LoadEstado resultado = LoadEstado.ErrorSistema;
             await Task.Delay(1000);
-            if(texto.Equals(vContexto.Codigo) == false)
+            if (texto.Equals(vContexto.Codigo) == false)
             {
                 return;
             }
@@ -91,6 +92,63 @@ namespace TerminalSiges.Views.Pages.Articulo
             });
         }
 
+        private async void BuscarPromocion()
+        {
+            SalesEstado resultado = SalesEstado.ErrorSistema;
+            await Task.Run(() =>
+            {
+                TSSalesApp.SalesVerificarPromocion += TSSalesApp_SalesVerificarPromocion;
+                resultado = TSSalesApp.VerificarPrecioArticulo(new TS_BEPromotionInput()
+                {
+                    cdarticulo = TSSalesApp.vArticuloSeleccionado.cdarticulo,
+                    cantidad = TSSalesApp.CantidadProducto,
+                    precio = TSSalesApp.vArticuloSeleccionado.precio,
+                    precio_orig = TSSalesApp.vArticuloSeleccionado.precio_orig,
+                    total = Math.Round(TSSalesApp.CantidadProducto * (decimal)TSSalesApp.vArticuloSeleccionado.precio, 2),
+                    cdcliente = TSCustomerApp.ClientOuput == null ? "" : (TSCustomerApp.ClientOuput.cdcliente ?? "").Trim(),
+                    isCredito = TSCustomerApp.TipoComprobante == TSSalesInput.NotaDeDespacho()
+                }).Result;
+            }); 
+            if (resultado != SalesEstado.EsperandoRespuesta)
+            {
+                switch (resultado)
+                {
+                    case SalesEstado.ErrorInternet:
+                        await DisplayAlert("Aviso", "Su dispositivo no cuenta con internet en estos momentos.", "Aceptar");
+                        break;
+                    case SalesEstado.ErrorSistema:
+                        await DisplayAlert("Aviso", "Hubo un problema de comunicación con el servidor, por favor intente después.", "Aceptar");
+                        break;
+                }
+            }
+        }
+
+        [MethodImpl(MethodImplOptions.Synchronized)]
+        private void TSSalesApp_SalesVerificarPromocion(TSSales respuesta)
+        {
+            TSSalesApp.SalesVerificarPromocion -= TSSalesApp_SalesVerificarPromocion;
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                if (respuesta.EstadoRespuesta == SalesEstado.InformacionNoObtenida)
+                {
+                    await DisplayAlert("Aviso", respuesta.vSales.Mensaje, "Aceptar");
+                    return;
+                }
+                if (respuesta.EstadoRespuesta == SalesEstado.ErrorSistema)
+                {
+                    await DisplayAlert("Aviso", "Hubo un problema en la comunicación con el servidor, por favor intente después.", "Aceptar");
+                    return;
+                }
+                if (respuesta.EstadoRespuesta == SalesEstado.InformacionObtenida)
+                {
+
+                    TSSalesApp.vArticuloSeleccionado.precio = respuesta.vPromotion.precio;
+                    TSSalesApp.vArticuloSeleccionado.precio_orig = respuesta.vPromotion.precio_orig;
+                    TerminarAgregarArticulo();
+                }
+            });
+        }
+
 
         [MethodImpl(MethodImplOptions.Synchronized)]
         private void InsertItems(TS_BEArticulo[] items)
@@ -109,7 +167,7 @@ namespace TerminalSiges.Views.Pages.Articulo
 
             }
         }
- 
+
         private void ListService_OnItemTapped(object sender, ItemTappedEventArgs e)
         {
             BackgroundColor = Color.FromHex("#a9cae0");
@@ -152,43 +210,7 @@ namespace TerminalSiges.Views.Pages.Articulo
                     if (cant > 0)
                     {
                         TSSalesApp.CantidadProducto = Convert.ToInt32(dato.Text);
-                        var detal = new TS_BEArticulo()
-                        {
-                            item = 0,
-                            dsarticulo = TSSalesApp.vArticuloSeleccionado.dsarticulo.Trim(),
-                            precio = (decimal)TSSalesApp.vArticuloSeleccionado.precio,
-                            cantidad = TSSalesApp.CantidadProducto,
-                            cdarticulo = TSSalesApp.vArticuloSeleccionado.cdarticulo,
-                            hora = DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString(),
-                            trfgratuita = TSSalesApp.vArticuloSeleccionado.trfgratuita,
-                            tipo = "PRODUCTO",
-                            total = Math.Round(TSSalesApp.CantidadProducto * (decimal)TSSalesApp.vArticuloSeleccionado.precio, 2),
-                            cara = "",//TSSalesApp.vArticuloSeleccionado.cara,
-                            mtoimpuesto = TSSalesApp.vArticuloSeleccionado.mtoimpuesto,
-                            nrogasboy = "",//TSSalesApp.vArticuloSeleccionado.nrogasboy.Trim(),
-                            cdarticulosunat = TSSalesApp.vArticuloSeleccionado.cdarticulosunat,
-                            mtodscto = TSSalesApp.vArticuloSeleccionado.mtodscto,
-                            cdunimed = TSSalesApp.vArticuloSeleccionado.cdunimed,
-                            precio_orig = TSSalesApp.vArticuloSeleccionado.precio_orig,
-                            redondea_indecopi = TSSalesApp.vArticuloSeleccionado.redondea_indecopi,
-                            tpformula = TSSalesApp.vArticuloSeleccionado.tpformula ?? "",
-                            costo = Convert.ToDecimal(TSSalesApp.vArticuloSeleccionado.costo),
-                            impuesto = TSSalesApp.vArticuloSeleccionado.impuesto,
-                            moverstock = TSSalesApp.vArticuloSeleccionado.moverstock,
-                            impuesto_plastico = TSSalesApp.vArticuloSeleccionado.impuesto_plastico,
-                            valorconversion = TSSalesApp.vArticuloSeleccionado.valorconversion,
-                            cdmedequiv = TSSalesApp.vArticuloSeleccionado.cdmedequiv,
-                            tpconversion = TSSalesApp.vArticuloSeleccionado.tpconversion
-
-                        };
-                        detal.mtoimpuesto = detal.impuesto <= 0 ? 0 : Math.Round((detal.total / (100 + detal.impuesto)) * detal.impuesto,2);
-                        detal.subtotal = detal.impuesto <= 0 ? detal.total : Math.Round(detal.total-detal.mtoimpuesto,2);
-
-                        var index = TSSalesApp.Detalles.Count();
-                        var indexDisplay = TSSalesApp.DetallesDisplay.Count();
-                        TSSalesApp.Detalles.Insert(index, detal);
-                        TSSalesApp.DetallesDisplay.Insert(indexDisplay, detal);
-
+                        BuscarPromocion();
                     }
                     else
                     {
@@ -205,8 +227,52 @@ namespace TerminalSiges.Views.Pages.Articulo
             {
                 await DisplayAlert("Aviso", "Ingrese Cantidad, por favor", "Aceptar");
             }
-        await     Navigation.PopAsync();
             //await Navigation.PopModalAsync();//
+        }
+
+        public async void TerminarAgregarArticulo()
+        {
+            var detal = new TS_BEArticulo()
+            {
+                item = 0,
+                dsarticulo = TSSalesApp.vArticuloSeleccionado.dsarticulo.Trim(),
+                precio = (decimal)TSSalesApp.vArticuloSeleccionado.precio,
+                cantidad = TSSalesApp.CantidadProducto,
+                cdarticulo = TSSalesApp.vArticuloSeleccionado.cdarticulo,
+                hora = DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString(),
+                trfgratuita = TSSalesApp.vArticuloSeleccionado.trfgratuita,
+                tipo = "PRODUCTO",
+                cara = "",//TSSalesApp.vArticuloSeleccionado.cara,
+                nrogasboy = "",//TSSalesApp.vArticuloSeleccionado.nrogasboy.Trim(),
+                cdarticulosunat = TSSalesApp.vArticuloSeleccionado.cdarticulosunat,
+                cdunimed = TSSalesApp.vArticuloSeleccionado.cdunimed,
+                precio_orig = TSSalesApp.vArticuloSeleccionado.precio_orig,
+                redondea_indecopi = TSSalesApp.vArticuloSeleccionado.redondea_indecopi,
+                tpformula = TSSalesApp.vArticuloSeleccionado.tpformula ?? "",
+                costo = Convert.ToDecimal(TSSalesApp.vArticuloSeleccionado.costo),
+                impuesto = TSSalesApp.vArticuloSeleccionado.impuesto,
+                moverstock = TSSalesApp.vArticuloSeleccionado.moverstock,
+                impuesto_plastico = TSSalesApp.vArticuloSeleccionado.impuesto_plastico,
+                valorconversion = TSSalesApp.vArticuloSeleccionado.valorconversion,
+                cdmedequiv = TSSalesApp.vArticuloSeleccionado.cdmedequiv,
+                tpconversion = TSSalesApp.vArticuloSeleccionado.tpconversion
+            };
+
+            detal.total = Math.Round(detal.cantidad * detal.precio, 2, MidpointRounding.AwayFromZero);            
+            decimal MtoSubTot = detal.total / ((100 + detal.impuesto) / 100);
+
+            detal.subtotal = Math.Round(MtoSubTot, 2, MidpointRounding.AwayFromZero);
+            detal.mtoimpuesto = detal.impuesto <= 0 ? 0 : Math.Round(detal.total - MtoSubTot, 2, MidpointRounding.AwayFromZero);
+            detal.mtodscto = Math.Round((detal.precio_orig - detal.precio) * detal.cantidad, 2, MidpointRounding.AwayFromZero);
+            detal.mtototal = detal.total;
+            detal.total_display = detal.mtototal;
+
+            var index = TSSalesApp.Detalles.Count();
+            var indexDisplay = TSSalesApp.DetallesDisplay.Count();
+            TSSalesApp.Detalles.Insert(index, detal);
+            TSSalesApp.DetallesDisplay.Insert(indexDisplay, detal);
+            TSSalesApp.ArticleAdd = true;
+            await Navigation.PopAsync();
         }
 
         public bool isInt32(String num)

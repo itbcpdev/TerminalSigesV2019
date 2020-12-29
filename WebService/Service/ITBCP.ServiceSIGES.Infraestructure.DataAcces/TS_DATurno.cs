@@ -206,7 +206,7 @@ namespace ITBCP.ServiceSIGES.Infraestructure.DataAcces
                 OleDbCommand cmd = new OleDbCommand(sql, con);
                 con.Open();
                 OleDbDataAdapter da = new OleDbDataAdapter(cmd);
-                DataSet ds = new System.Data.DataSet();
+                DataSet ds = new DataSet();
                 da.Fill(ds, "Parametro");
                 con.Dispose();
                 estado = true;

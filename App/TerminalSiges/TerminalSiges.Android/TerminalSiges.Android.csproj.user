@@ -2,7 +2,7 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <SelectedDevice>Android Emulator</SelectedDevice>
-    <DefaultDevice>tablet_m-dpi_7in_nougat_7_1_-_api_25_1</DefaultDevice>
+    <DefaultDevice>nexus_10_nougat_7_1_-_api_25</DefaultDevice>
     <ProjectView>ShowAllFiles</ProjectView>
     <AndroidDesignerPreferredTheme>Theme.AppCompat.Light.NoActionBar</AndroidDesignerPreferredTheme>
     <AndroidDesignerPreferredDevice>Nexus 4</AndroidDesignerPreferredDevice>

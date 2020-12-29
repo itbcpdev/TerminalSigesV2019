@@ -43,9 +43,16 @@ namespace TerminalSiges.Lib.Sales
         public TS_BEMensaje vMensaje { get; set; }
         public TS_BEPTarjeta[] vPrefijos { get; set; }
         public TS_BEArticuloOutput vArticulosPrefijo { get; set; }
+        public TS_BEPromotionInput vPromotion { get; set; }
         public TSSales(SalesEstado resultado)
         {
             EstadoRespuesta = resultado;
+        }
+
+        public TSSales(SalesEstado resultado, TS_BEPromotionInput promotion)
+        {
+            EstadoRespuesta = resultado;
+            vPromotion = promotion;
         }
 
         public TSSales(SalesEstado resultado,TS_BERetornoTransaccion respuesta)

@@ -32,5 +32,11 @@ namespace ITBCP.ServiceSIGES.Domain.Entities.Users
         public bool flganular { get; set; }
         [DataMember]
         public string cdnivel { get; set; }
+        [DataMember]
+        public bool flgTurno { get; set; }
+        [DataMember]
+        public bool flgCierreX { get; set; }
+        [DataMember]
+        public bool flgCierreZ { get; set; }
     }
 }

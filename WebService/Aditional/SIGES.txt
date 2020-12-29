@@ -7,3 +7,4 @@ svcutil.exe /language:cs /out:Autentication.cs /config:app.config http://35.238.
 svcutil.exe /language:cs /out:Autentication.cs /config:app.config http://35.238.143.87/Autentication.svc /a /tcv:Version35
 svcutil.exe /language:cs /out:Sales.cs /config:app.config http://35.238.143.87/Sales.svc /a /tcv:Version35
 svcutil.exe /language:cs /out:Facturacion.cs /config:app.config http://35.238.143.87/Facturacion.svc /a /tcv:Version35
+svcutil.exe /language:cs /out:Sales.cs /config:app.config http://127.0.0.1:9002/Sales.svc /a /tcv:Version30

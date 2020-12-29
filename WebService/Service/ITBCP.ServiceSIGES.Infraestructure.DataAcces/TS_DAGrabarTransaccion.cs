@@ -3,15 +3,11 @@ using ITBCP.ServiceSIGES.Domain;
 using ITBCP.ServiceSIGES.Domain.Entities;
 using ITBCP.ServiceSIGES.Domain.Entities.Cliente;
 using ITBCP.ServiceSIGES.Domain.Entities.Sales;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ITBCP.ServiceSIGES.Infraestructure.DataAcces
 {
@@ -229,6 +225,10 @@ namespace ITBCP.ServiceSIGES.Infraestructure.DataAcces
                                                     int CantPtos = 0;
                                                     int CantPtosGanados = 0;
                                                     int CantPtosUpdate = 0;
+
+                                                    int CantInsumo = 0;
+                                                    int CantInsumoUpdated = 0;
+                                                    int CantInsumoInsert = 0;
                                                     if (cDocumento.cCabecera.cdtipodoc != "99998")
                                                     {
                                                         cDocumento.cDetalles.ForEach(delegate (TS_BEArticulo oDetalle)
@@ -239,6 +239,51 @@ namespace ITBCP.ServiceSIGES.Infraestructure.DataAcces
                                                                 if (_ITS_DOStock.UpdateStock(cDocumento.cParametro, oDetalle.cdarticulo, oDetalle.cantidad, cDocumento.cCabecera, cDocumento.cLoading, oSqlTransaction))
                                                                 {
                                                                     CantStockActu++;
+                                                                }
+                                                            }
+
+                                                            if(oDetalle.tpformula == "A")
+                                                            {
+                                                                foreach(var articleInsumo in _ITS_DOBackOffice.SP_ITBCP_OBTENER_ARTICULO_INSUMO(oDetalle.cdarticulo))
+                                                                {
+                                                                    CantInsumo++;
+                                                                    if (_ITS_DOStock.UpdateStock(cDocumento.cParametro, articleInsumo.cdarticulo, articleInsumo.cantidad * oDetalle.cantidad, cDocumento.cCabecera, cDocumento.cLoading, oSqlTransaction))
+                                                                    {
+                                                                        CantInsumoUpdated++;
+                                                                    }
+
+                                                                    if(_ITS_DOBackOffice.SP_ITBCP_INSERTAR_INSUMOIS(new TS_BEInsumois()
+                                                                    {
+                                                                        fecproceso = cDocumento.cCabecera.fecproceso,
+                                                                        fecdocumento = cDocumento.cCabecera.fecdocumento,
+                                                                        fecsistema = cDocumento.cCabecera.fecsistema,
+                                                                        flganulacion = false,
+                                                                        nroitem = oDetalle.item,
+                                                                        cantidad = articleInsumo.cantidad * oDetalle.cantidad,
+                                                                        ctoreposicion = articleInsumo.ctoreposicion,
+                                                                        ctopromedio = articleInsumo.ctopromedio,
+                                                                        tcambio = cDocumento.cCabecera.tcambio,
+                                                                        precio = articleInsumo.precio,
+                                                                        cdlocal = cDocumento.cCabecera.cdlocal,
+                                                                        nroseriemaq = cDocumento.cCabecera.nroseriemaq,
+                                                                        cdtpmov = "",
+                                                                        nromov = "",
+                                                                        cdtipodoc = cDocumento.cCabecera.cdtipodoc,
+                                                                        nrodocumento = cDocumento.cCabecera.nrodocumento,
+                                                                        movimiento = "S",
+                                                                        cdalmacen = cDocumento.cCabecera.cdalmacen,
+                                                                        cdarticulo = articleInsumo.cdarticulo,
+                                                                        talla = "",
+                                                                        monctorepo = ""
+                                                                    }, "Insumois" + cDocumento.lextension, oSqlTransaction))
+                                                                    {
+                                                                        CantInsumoInsert++;
+                                                                    }
+
+                                                                    if(!_ITS_DODetalleVenta.InsertTransInsumoIsR(cDocumento.cVentar, oSqlTransaction))
+                                                                    {
+                                                                        CantInsumoInsert--;
+                                                                    }
                                                                 }
                                                             }
 
@@ -257,7 +302,7 @@ namespace ITBCP.ServiceSIGES.Infraestructure.DataAcces
                                                         });
                                                     }
 
-                                                    Respuesta.Ok = (CantStock == CantStockActu) && (CantPtos == CantPtosGanados) && (CantPtos == CantPtosUpdate);
+                                                    Respuesta.Ok = (CantStock == CantStockActu) && (CantPtos == CantPtosGanados) && (CantPtos == CantPtosUpdate) && (CantInsumo == CantInsumoUpdated) && (CantInsumo == CantInsumoInsert);
                                                     Respuesta.mensaje = Respuesta.Ok ? "" : "ERROR AL ACTUALIZAR STOCK";
                                                     if (Respuesta.Ok)
                                                     {
@@ -339,7 +384,7 @@ namespace ITBCP.ServiceSIGES.Infraestructure.DataAcces
                                                                     }
                                                                 });
                                                                 Respuesta.Ok = (CantTran == CantTranActu);
-                                                                Respuesta.mensaje = Respuesta.Ok ? "" : "ERROR AL ACTUALIZAR EL LA TRANSACCION";
+                                                                Respuesta.mensaje = Respuesta.Ok ? "" : "No se pudo actualizar la transacción, posiblemente ya fue procesada con anterioridad.";
 
                                                                 if (Respuesta.Ok)
                                                                 {
@@ -387,7 +432,7 @@ namespace ITBCP.ServiceSIGES.Infraestructure.DataAcces
                                                                             formato = "";
                                                                             break;
                                                                     }
-                                                                    string lJson = JsonConvert.SerializeObject(cDocumento);
+                                                                    string lJson = Newtonsoft.Json.JsonConvert.SerializeObject(cDocumento);
 
                                                                     Respuesta.Ok = _ITS_DOColaImpresion.InsertColaImpresion(cDocumento.cCabecera,cDocumento.cConfig, impresora, cDocumento.ltrama, lJson, oSqlTransaction, formato);
                                                                     Respuesta.mensaje = Respuesta.Ok ? "" : "ERROR AL INSERTAR EN COLA DE IMPRESION";
@@ -452,7 +497,7 @@ namespace ITBCP.ServiceSIGES.Infraestructure.DataAcces
                         }
                     }
                 }
-
+   
                 if (Respuesta.Ok)
                 {
                     oSqlTransaction.Commit();

@@ -1223,5 +1223,16 @@ namespace ITBCP.ServiceSIGES.Aplication
                 return new TS_BEMensaje("No se reconocio el tipo de registro", false);
             }
         }
+
+        public TS_BEArticlePromotion VERIFICAR_PROMOCION(TS_BEPromotionInput input)
+        {
+            TS_BEMensaje response = _ITS_DOBackOffice.SP_ITBCP_APLICAR_DESCUENTO(input);
+
+            return new TS_BEArticlePromotion()
+            {
+                Mensaje = response,
+                output = input
+            };
+        }
     }
 }

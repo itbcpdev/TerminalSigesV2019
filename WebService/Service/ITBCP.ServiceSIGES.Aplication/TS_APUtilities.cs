@@ -821,7 +821,7 @@ namespace ITBCP.ServiceSIGES.Aplication
                 try
                 {
 
-                    string updateRow = $"UPDATE " + Directory + " SET CDTIPODOC='" + cdtipodoc + "' , DOCUMENTO = '" + nrodocumento + "' WHERE NUMERO = '" + gasboy + "'  ";
+                    string updateRow = $"UPDATE " + Directory + " SET CDTIPODOC='" + cdtipodoc + "' , DOCUMENTO = '" + nrodocumento + "' WHERE NUMERO = '" + gasboy + "'  AND DOCUMENTO = '' AND CDTIPODOC = '' ";
                     OleDbCommand cmd = new OleDbCommand(updateRow, con);
 
                     con.Open();

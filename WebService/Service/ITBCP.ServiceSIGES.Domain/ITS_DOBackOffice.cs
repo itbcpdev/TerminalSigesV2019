@@ -4,6 +4,7 @@ using ITBCP.ServiceSIGES.Domain.Entities.Cliente;
 using ITBCP.ServiceSIGES.Domain.Entities.Sales;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -142,7 +143,7 @@ namespace ITBCP.ServiceSIGES.Domain
         void SP_ITBCP_INSERTAR_STOCK(TS_BEStock input);
         void SP_ITBCP_ACTUALIZAR_STOCK(TS_BEStock input);
         void SP_ITBCP_INSERTAR_INSUMOISR(TS_BEInsumoisr input);
-        void SP_ITBCP_INSERTAR_INSUMOIS(TS_BEInsumois input, string nombreTabla);
+        bool SP_ITBCP_INSERTAR_INSUMOIS(TS_BEInsumois input, string nombreTabla, SqlTransaction pSqlTransaction);
         void SP_ITBCP_ACTUALIZAR_ARTICULO(TS_BEArticulo input);
         void SP_ITBCP_INSERTAR_CIERREMOV(TS_BECierremov input);
         void SP_ITBCP_ACTUALIZAR_CIERREMOV(TS_BECierremov input);
@@ -165,9 +166,8 @@ namespace ITBCP.ServiceSIGES.Domain
         List<TS_BELoteriawin> SP_ITBCP_SELECT_LOTERIAWIN(TS_BELoteriawin input);
         void SP_ITBCP_INSERTAR_LOTERIAWIN(TS_BELoteriawin input);
         void SP_ITBCP_ACTUALIZAR_LOTERIAWIN(TS_BELoteriawin input);
-
         TS_BEMensaje SP_ITBCP_APLICAR_DESCUENTO(TS_BECabeceraOutPut input, TS_BEOpTransInput inputcli);
-
-
+        TS_BEMensaje SP_ITBCP_APLICAR_DESCUENTO(TS_BEPromotionInput input);
+        List<TS_BEInsumoCantidad> SP_ITBCP_OBTENER_ARTICULO_INSUMO(string cdarticulo);
     }
 }

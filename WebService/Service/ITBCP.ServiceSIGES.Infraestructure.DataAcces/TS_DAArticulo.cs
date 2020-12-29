@@ -436,6 +436,7 @@ namespace ITBCP.ServiceSIGES.Infraestructure.DataAcces
                             output.cdgrupo01 = drd.HasColumn("cdgrupo01") ? drd["cdgrupo01"] == DBNull.Value ? null : drd["cdgrupo01"].ToString() : null;
                             output.costo = drd.HasColumn("ctoreposicion") ? drd["ctoreposicion"] == DBNull.Value ? 0 : Convert.ToDecimal(drd["ctoreposicion"]) : 0;
                             output.cdunimed = drd.HasColumn("cdunimed") ? drd["cdunimed"] == DBNull.Value ? null : drd["cdunimed"].ToString() : null;
+                            output.tpformula = drd.HasColumn("tpformula") ? drd["tpformula"] == DBNull.Value ? null : drd["tpformula"].ToString() : null;
                             output.cdarticulosunat = drd.HasColumn("cdarticulosunat") ? drd["cdarticulosunat"] == DBNull.Value ? null : drd["cdarticulosunat"].ToString() : null;
                             output.impuesto_plastico = drd.HasColumn("impplastico") ? drd["impplastico"] == DBNull.Value ? false : Convert.ToBoolean(drd["impplastico"]) : false;
                             lista.Add(output);

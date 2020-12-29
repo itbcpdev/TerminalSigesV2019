@@ -31,6 +31,7 @@ namespace TerminalSiges.Views.Pages
             Empresa.Text = TSLoginApp.CurrentEmpresa.dsempresa.Trim();
             txtNroPos.Text = TSSalesApp.vTerminal.nropos;
             txtFechaServer.Text = TSSalesApp.FechaServidor;
+
             Device.StartTimer(TimeSpan.FromSeconds(1), () => {
                 Device.BeginInvokeOnMainThread(() => txtFechaServer.Text = TSSalesApp.FechaServidor.Substring(0,10) + " - " + DateTime.Now.ToString().Substring(10));
                 return true;
@@ -55,6 +56,11 @@ namespace TerminalSiges.Views.Pages
             this.btnDeposito.IsEnabled = status;
             this.btnConfig.IsEnabled = status;
             this.btnSalir.IsEnabled = status;
+
+            if (!TSSalesApp.vUsuarioActual.flgCierreX)
+                btnCierrex.IsEnabled = false;
+            if (!TSSalesApp.vUsuarioActual.flgCierreZ)
+                btnCierrez.IsEnabled = false;
         }
 
         public void IrAConsultas(object sender, EventArgs e)

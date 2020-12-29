@@ -72,7 +72,7 @@ namespace TerminalSiges.Views.Pages.Users
             this.busyindicator.IsVisible = true;
             await Task.Run(() =>
             {
-                TSLoginApp.LoginAuthorize += LoginAuthorize; ;
+                TSLoginApp.LoginAuthorize += LoginAuthorize;
                 resultado = TSLoginApp.Authorize().Result;
             });
             if (resultado != LoginEstado.EsperandoRespuesta)

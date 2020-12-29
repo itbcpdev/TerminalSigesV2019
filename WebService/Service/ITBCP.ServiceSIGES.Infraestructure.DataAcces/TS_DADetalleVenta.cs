@@ -245,6 +245,35 @@ namespace ITBCP.ServiceSIGES.Infraestructure.DataAcces
             return flag2;
 
         }
+
+        public bool InsertTransInsumoIsR(TS_BEVentar input, SqlTransaction pSqlTransaction)
+        {
+            bool flag2;
+            try
+            {
+                bool flag = false;
+                SqlCommand command = new SqlCommand("SP_ITBCP_INSERTAR_INSUMOISR")
+                {
+                    CommandType = CommandType.StoredProcedure,
+                    Connection = pSqlTransaction.Connection,
+                    Transaction = pSqlTransaction
+                };
+                command.Parameters.Clear();
+                command.Parameters.Add("@cdlocal", SqlDbType.Char, 3).Value = input.cdlocal;
+                command.Parameters.Add("@fecdocumento", SqlDbType.SmallDateTime, 4).Value = input.fecdocumento;
+                command.Parameters.Add("@fecproceso", SqlDbType.SmallDateTime, 4).Value = input.fecproceso;
+                flag = command.ExecuteNonQuery() > 0;
+
+                flag2 = flag;
+            }
+            catch (Exception exception)
+            {
+                throw exception;
+            }
+            return flag2;
+
+        }
+
         public bool InsertTransVentaD(TS_BEArticulo item, TS_BECabecera oCabecera, SqlTransaction pSqlTransaction)
         {
 

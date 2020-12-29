@@ -61,6 +61,9 @@ namespace TerminalSiges.Lib.Sales
         public static event SalesGrabarAfiliacionDelegado GrabarTransaccionPrefijos;
         public delegate void SalesGrabarAfiliacionDelegado(TSSales respuesta);
 
+        public static event SalesGrabarPromotion SalesVerificarPromocion;
+        public delegate void SalesGrabarPromotion(TSSales respuesta);
+
         public static TS_BEParametro vParemetros;
         public static TS_BETerminal vTerminal;
         public static TSSales CurrentResultado;
@@ -108,6 +111,7 @@ namespace TerminalSiges.Lib.Sales
         public static string NroDocumento;
         public static string NroSerieMaq;
         public static bool FactElectronica;
+        public static bool ArticleAdd;
 
         public static async Task<SalesEstado> ListNroPos()
         {
@@ -879,6 +883,56 @@ namespace TerminalSiges.Lib.Sales
             if (Result.Ok)
             {
                 GrabarTransaccionPrefijos(new TSSales(SalesEstado.InformacionObtenida, Result));
+                return;
+            }
+
+        }
+
+        public static async Task<SalesEstado> VerificarPrecioArticulo(TS_BEPromotionInput input)
+        {
+            SalesEstado Respuesta = SalesEstado.ErrorSistema;
+            await Task.Run(() => {
+                TS_SISalesClient cliente = null;
+                try
+                {
+                    cliente = new TS_SISalesClient(Helper.ServicioSoapBinding(), new EndpointAddress(Config.Services.Sales));
+                    VerificarPrecioArticuloCompleted(cliente.VERIFICAR_PROMOCION(input));
+                    Respuesta = SalesEstado.EsperandoRespuesta;
+                }
+                catch
+                {
+                    Respuesta = SalesEstado.ErrorSistema;
+                }
+                finally
+                {
+                    if (cliente != null)
+                    {
+                        if (cliente.State == CommunicationState.Opened)
+                        {
+                            cliente.Close();
+                        }
+                    }
+                }
+            });
+
+            return Respuesta;
+        }
+
+        private static void VerificarPrecioArticuloCompleted(TS_BEArticlePromotion Result)
+        {
+            if (Result == null || Result.Mensaje == null)
+            {
+                SalesVerificarPromocion(new TSSales(SalesEstado.ErrorSistema));
+                return;
+            }
+            if (!Result.Mensaje.Ok)
+            {
+                SalesVerificarPromocion(new TSSales(SalesEstado.InformacionNoObtenida, Result.Mensaje));
+                return;
+            }
+            if (Result.Mensaje.Ok)
+            {
+                SalesVerificarPromocion(new TSSales(SalesEstado.InformacionObtenida, Result.output));
                 return;
             }
 

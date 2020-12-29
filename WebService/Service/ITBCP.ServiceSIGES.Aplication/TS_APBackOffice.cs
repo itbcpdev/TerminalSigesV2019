@@ -1577,19 +1577,6 @@ namespace ITBCP.ServiceSIGES.Aplication
                 throw new Exception(Helpers.RaiseError(ex));
             }
         }
-
-        public void SP_ITBCP_INSERTAR_INSUMOIS(TS_BEInsumois input, string nombreTabla)
-        {
-            try
-            {
-                _ITS_DOBackOffice.SP_ITBCP_INSERTAR_INSUMOIS(input, nombreTabla);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(Helpers.RaiseError(ex));
-            }
-        }
-
         public void SP_ITBCP_ACTUALIZAR_ARTICULO(TS_BEArticulo input)
         {
             try

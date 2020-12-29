@@ -341,6 +341,7 @@ namespace ITBCP.ServiceSIGES.Services.Services
                 throw new FaultException<Excepcion>(new Excepcion(e), new FaultReason("OBTENER_PREFIJOS_AFILIACION"));
             }
         }
+
         [HttpPost]
         public TS_BEMensaje REGISTRAR_AFILIACION([FromUri]TS_BEClienteInput cCliente, [FromUri]List<TS_BEArticulo> Articulos, [FromUri]TS_BETipoTarjetaRegistro Tipo)
         {
@@ -354,6 +355,22 @@ namespace ITBCP.ServiceSIGES.Services.Services
 
                 TS_APUtilities.Log_Consumo(e.ToString() + " - REGISTRAR_AFILIACION");
                 throw new FaultException<Excepcion>(new Excepcion(e), new FaultReason("REGISTRAR_AFILIACION"));
+            }
+        }
+
+        [HttpPost]
+        public TS_BEArticlePromotion VERIFICAR_PROMOCION([FromBody]TS_BEPromotionInput input)
+        {
+            try
+            {
+                ITS_AISales ITS_AISales = FabricaIoC.Contenedor.Resolver<ITS_AISales>();
+                return ITS_AISales.VERIFICAR_PROMOCION(input);
+            }
+            catch (Exception e)
+            {
+
+                TS_APUtilities.Log_Consumo(e.ToString() + " - VERIFICAR_PROMOCION");
+                throw new FaultException<Excepcion>(new Excepcion(e), new FaultReason("VERIFICAR_PROMOCION"));
             }
         }
     }

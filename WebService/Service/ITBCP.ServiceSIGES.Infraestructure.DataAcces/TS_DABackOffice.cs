@@ -3100,7 +3100,52 @@ namespace ITBCP.ServiceSIGES.Infraestructure.DataAcces
             }
             return Mensaje;
         }
-        
+
+        public TS_BEMensaje SP_ITBCP_APLICAR_DESCUENTO(TS_BEPromotionInput input)
+        {
+            TS_BEMensaje Mensaje = new TS_BEMensaje("", true);
+            using (SqlConnection con = new SqlConnection(stringBackOffice))
+            {
+                try
+                {
+                    con.Open();
+
+                    SqlCommand cmd = new SqlCommand("SP_ITBCP_APLICAR_DESCUENTO", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@CDCLIENTE", SqlDbType.VarChar, 50).Value = input.cdcliente ?? "";
+                    cmd.Parameters.Add("@CDARTICULO", SqlDbType.VarChar, 50).Value = input.cdarticulo;
+                    cmd.Parameters.Add("@PRECIO", SqlDbType.Decimal, 50).Value = input.precio;
+                    cmd.Parameters.Add("@CANTIDAD", SqlDbType.Decimal, 50).Value = input.cantidad;
+                    cmd.Parameters.Add("@CREDITO", SqlDbType.Bit, 5).Value = input.isCredito;
+
+                    using (SqlDataReader drd = cmd.ExecuteReader())
+                    {
+                        while (drd.Read())
+                        {
+                            input.precio = drd.HasColumn("PRECIO") ? drd["PRECIO"] == DBNull.Value ? 0 : Convert.ToDecimal(drd["PRECIO"]) : 0;
+                            input.precio_orig = drd.HasColumn("PRECIO_ORG") ? drd["PRECIO_ORG"] == DBNull.Value ? 0 : Convert.ToDecimal(drd["PRECIO_ORG"]) : 0;
+                            input.total = drd.HasColumn("TOTAL") ? drd["TOTAL"] == DBNull.Value ? 0 : Convert.ToDecimal(drd["TOTAL"]) : 0;
+                            if (drd.HasColumn("ERROR") ? drd["ERROR"] == DBNull.Value ? false : Convert.ToBoolean(drd["ERROR"]) : false)
+                            {
+                                Mensaje.Ok = false;
+                                Mensaje.mensaje = "Hubo un error al consultar las promociones para dicho cliente";
+                            }
+                        }
+                    }
+                    cmd.Dispose();
+
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+                finally
+                {
+                    if (con != null) { con.Dispose(); }
+                }
+            }
+            return Mensaje;
+        }
 
         public List<TS_BETmpmovpuntosArticulo> SP_ITBCP_LISTAR_MOVPUNTOS(TS_BETmpmovpuntosArticulo input)
         {
@@ -6490,50 +6535,52 @@ namespace ITBCP.ServiceSIGES.Infraestructure.DataAcces
             }
         }
 
-        public void SP_ITBCP_INSERTAR_INSUMOIS(TS_BEInsumois input, string nombreTabla)
+        public bool SP_ITBCP_INSERTAR_INSUMOIS(TS_BEInsumois input, string nombreTabla, SqlTransaction pSqlTransaction)
         {
-            using (SqlConnection con = new SqlConnection(stringConnectionSetup))
-            {
-                try
-                {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("SP_ITBCP_INSERTAR_INSUMOIS", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@nombreTabla", SqlDbType.VarChar, 50).Value = nombreTabla;
-                    cmd.Parameters.Add("@cdlocal", SqlDbType.Char, 3).Value = input.cdlocal;
-                    cmd.Parameters.Add("@nroseriemaq", SqlDbType.Char, 20).Value = input.nroseriemaq;
-                    cmd.Parameters.Add("@cdtpmov", SqlDbType.Char, 5).Value = input.cdtpmov;
-                    cmd.Parameters.Add("@nromov", SqlDbType.Char, 10).Value = input.nromov;
-                    cmd.Parameters.Add("@cdtipodoc", SqlDbType.Char, 5).Value = input.cdtipodoc;
-                    cmd.Parameters.Add("@nrodocumento", SqlDbType.Char, 15).Value = input.nrodocumento;
-                    cmd.Parameters.Add("@movimiento", SqlDbType.Char, 1).Value = input.movimiento;
-                    cmd.Parameters.Add("@nroitem", SqlDbType.Decimal, 5).Value = input.nroitem;
-                    cmd.Parameters.Add("@cdarticulo", SqlDbType.Char, 20).Value = input.cdarticulo;
-                    cmd.Parameters.Add("@talla", SqlDbType.Char, 10).Value = input.talla;
-                    cmd.Parameters.Add("@cdalmacen", SqlDbType.Char, 3).Value = input.cdalmacen;
-                    cmd.Parameters.Add("@cantidad", SqlDbType.Decimal, 9).Value = input.cantidad;
-                    cmd.Parameters.Add("@monctorepo", SqlDbType.Char, 1).Value = input.monctorepo;
-                    cmd.Parameters.Add("@ctoreposicion", SqlDbType.Decimal, 9).Value = input.ctoreposicion;
-                    cmd.Parameters.Add("@ctopromedio", SqlDbType.Decimal, 9).Value = input.ctopromedio;
-                    cmd.Parameters.Add("@tcambio", SqlDbType.Decimal, 9).Value = input.tcambio;
-                    cmd.Parameters.Add("@fecdocumento", SqlDbType.DateTime, 8).Value = input.fecdocumento;
-                    cmd.Parameters.Add("@flganulacion", SqlDbType.Bit, 1).Value = input.flganulacion;
-                    cmd.Parameters.Add("@fecsistema", SqlDbType.DateTime, 8).Value = input.fecsistema;
-                    cmd.Parameters.Add("@fecproceso", SqlDbType.SmallDateTime, 4).Value = input.fecproceso;
-                    cmd.Parameters.Add("@precio", SqlDbType.Decimal, 9).Value = input.precio;
+            bool flag = false;
 
-                    cmd.ExecuteNonQuery();
-                    cmd.Dispose();
-                }
-                catch (Exception ex)
+            try
+            {
+                SqlCommand cmd = new SqlCommand("SP_ITBCP_INSERTAR_INSUMOIS")
                 {
-                    throw new Exception(ex.Message);
-                }
-                finally
-                {
-                    if (con != null) { con.Dispose(); }
-                }
+                    CommandType = CommandType.StoredProcedure,
+                    Connection = pSqlTransaction.Connection,
+                    Transaction = pSqlTransaction
+                };
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@nombreTabla", SqlDbType.VarChar, 50).Value = nombreTabla;
+                cmd.Parameters.Add("@cdlocal", SqlDbType.Char, 3).Value = input.cdlocal;
+                cmd.Parameters.Add("@nroseriemaq", SqlDbType.Char, 20).Value = input.nroseriemaq;
+                cmd.Parameters.Add("@cdtpmov", SqlDbType.Char, 5).Value = input.cdtpmov;
+                cmd.Parameters.Add("@nromov", SqlDbType.Char, 10).Value = input.nromov;
+                cmd.Parameters.Add("@cdtipodoc", SqlDbType.Char, 5).Value = input.cdtipodoc;
+                cmd.Parameters.Add("@nrodocumento", SqlDbType.Char, 15).Value = input.nrodocumento;
+                cmd.Parameters.Add("@movimiento", SqlDbType.Char, 1).Value = input.movimiento;
+                cmd.Parameters.Add("@nroitem", SqlDbType.Decimal, 5).Value = input.nroitem;
+                cmd.Parameters.Add("@cdarticulo", SqlDbType.Char, 20).Value = input.cdarticulo;
+                cmd.Parameters.Add("@talla", SqlDbType.Char, 10).Value = input.talla;
+                cmd.Parameters.Add("@cdalmacen", SqlDbType.Char, 3).Value = input.cdalmacen;
+                cmd.Parameters.Add("@cantidad", SqlDbType.Decimal, 9).Value = input.cantidad;
+                cmd.Parameters.Add("@monctorepo", SqlDbType.Char, 1).Value = input.monctorepo;
+                cmd.Parameters.Add("@ctoreposicion", SqlDbType.Decimal, 9).Value = input.ctoreposicion;
+                cmd.Parameters.Add("@ctopromedio", SqlDbType.Decimal, 9).Value = input.ctopromedio;
+                cmd.Parameters.Add("@tcambio", SqlDbType.Decimal, 9).Value = input.tcambio;
+                cmd.Parameters.Add("@fecdocumento", SqlDbType.DateTime, 8).Value = input.fecdocumento;
+                cmd.Parameters.Add("@flganulacion", SqlDbType.Bit, 1).Value = input.flganulacion;
+                cmd.Parameters.Add("@fecsistema", SqlDbType.DateTime, 8).Value = input.fecsistema;
+                cmd.Parameters.Add("@fecproceso", SqlDbType.SmallDateTime, 4).Value = input.fecproceso;
+                cmd.Parameters.Add("@precio", SqlDbType.Decimal, 9).Value = input.precio;
+
+                flag = cmd.ExecuteNonQuery() > 0;
+                cmd.Dispose();
             }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return flag;
         }
 
         public void SP_ITBCP_ACTUALIZAR_ARTICULO(TS_BEArticulo input)
@@ -7252,6 +7299,47 @@ namespace ITBCP.ServiceSIGES.Infraestructure.DataAcces
                     if (con != null) { con.Dispose(); }
                 }
             }
+        }
+
+        public List<TS_BEInsumoCantidad> SP_ITBCP_OBTENER_ARTICULO_INSUMO(string cdarticulo)
+        {
+            List<TS_BEInsumoCantidad> lista = new List<TS_BEInsumoCantidad>();
+            
+            using (SqlConnection con = new SqlConnection(stringBackOffice))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SP_ITBCP_OBTENER_ARTICULO_INSUMO", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@CDARTICULO", SqlDbType.Char, 30).Value = cdarticulo;
+
+                    using (SqlDataReader drd = cmd.ExecuteReader())
+                    {
+                        while (drd.Read())
+                        {
+                            lista.Add(new TS_BEInsumoCantidad()
+                            {
+                                cantidad = drd.HasColumn("cantidad") ? drd["cantidad"] == DBNull.Value ? 0 : Convert.ToDecimal(drd["cantidad"]) : 0,
+                                cdarticulo = drd.HasColumn("cdarticulo") ? drd["cdarticulo"] == DBNull.Value ? "" : drd["cdarticulo"].ToString().Trim() : "",
+                                ctoreposicion = drd.HasColumn("ctoreposicion") ? drd["ctoreposicion"] == DBNull.Value ? 0 : Convert.ToDecimal(drd["ctoreposicion"]) : 0,
+                                ctopromedio = drd.HasColumn("ctopromedio") ? drd["ctopromedio"] == DBNull.Value ? 0 : Convert.ToDecimal(drd["ctopromedio"]) : 0,
+                                precio = drd.HasColumn("precio") ? drd["precio"] == DBNull.Value ? 0 : Convert.ToDecimal(drd["precio"]) : 0,
+                            });
+                        }
+                    }
+                    cmd.Dispose();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+                finally
+                {
+                    if (con != null) { con.Dispose(); }
+                }
+            }
+            return lista;
         }
 
     }

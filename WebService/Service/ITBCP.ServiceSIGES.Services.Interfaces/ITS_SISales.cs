@@ -111,5 +111,9 @@ namespace ITBCP.ServiceSIGES.Services.Interfaces
         [OperationContract]
         [FaultContract(typeof(Excepcion))]
         TS_BEMensaje REGISTRAR_AFILIACION(TS_BEClienteInput cCliente, List<TS_BEArticulo> Articulos, TS_BETipoTarjetaRegistro Tipo);
+
+        [OperationContract]
+        [FaultContract(typeof(Excepcion))]
+        TS_BEArticlePromotion VERIFICAR_PROMOCION(TS_BEPromotionInput input);
     }
 }
