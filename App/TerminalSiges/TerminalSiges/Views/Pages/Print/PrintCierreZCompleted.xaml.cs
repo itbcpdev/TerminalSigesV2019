@@ -54,7 +54,7 @@ namespace TerminalSiges.Views.Pages.Print
             {
                 if (respuesta.EstadoRespuesta == PrintEstado.InformacionNoObtenida)
                 {
-                    await DisplayAlert("Aviso", respuesta.vMensaje.mensaje, "Aceptar");
+                    await DisplayAlert("Aviso", respuesta.vRespuesta.respuesta, "Aceptar");
                     App.Current.MainPage = new NavigationPage(new ReporteCierreZ());
                     return;
                 }

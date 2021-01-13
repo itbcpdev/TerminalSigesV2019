@@ -12,5 +12,7 @@ namespace TerminalSIGES.Services
         string GetIdentifier();
         void Print(WebView viewToPrint);
         Task<string> SaveFile(string filename, byte[] bytes);
+        string GetGeneralSetting(string settingsKey, string settingsDefault = null);
+        void SetGeneralSetting(string settingsKey, string value);
     }
 }

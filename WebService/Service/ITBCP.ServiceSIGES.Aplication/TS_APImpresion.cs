@@ -160,12 +160,7 @@ namespace ITBCP.ServiceSIGES.Aplication
 
                             var json = JsonConvert.SerializeObject(Documento);
 
-                            string url = Terminal.rutaservicio + "/print?" + "printer=" + HttpUtility.UrlEncode(impresora) +
-                                                                   "&formato=" + HttpUtility.UrlEncode(formato) +
-                                                                   "&cdtipodoc=" + Documento.cCabecera.cdtipodoc +
-                                                                   "&nombre=" + HttpUtility.UrlEncode(nombre) +
-                                                                   "&DOC=" + (true) +
-                                                                   "&PDF=" + (Terminal.generapdf == true ? true : false) + "";
+                            string url = $@"{Terminal.rutaservicio}/api/print?formato={HttpUtility.UrlEncode(formato)}&impresora={HttpUtility.UrlEncode(impresora)}&type=";
 
                             WebRequest request = WebRequest.Create(url);
                             request.Method = "POST";
@@ -331,13 +326,9 @@ namespace ITBCP.ServiceSIGES.Aplication
                                     Documento.cCabecera.nrodocumento.Substring(3); 
 
                     var json = JsonConvert.SerializeObject(Documento);
-                                                                    
-                    string url = Terminal.rutaservicio + "/print?"+ "printer=" + HttpUtility.UrlEncode(impresora) +
-                                                                    "&formato="+ HttpUtility.UrlEncode(formato) + 
-                                                                    "&cdtipodoc=" + Documento.cCabecera.cdtipodoc + 
-                                                                    "&nombre="+ HttpUtility.UrlEncode(nombre)+
-                                                                    "&DOC=" + (true) + 
-                                                                    "&PDF=" + (Terminal.generapdf == true ? true : false) + "";
+
+                    string url = $@"{Terminal.rutaservicio}/api/print?formato={HttpUtility.UrlEncode(formato)}&impresora={HttpUtility.UrlEncode(impresora)}&type=";
+
                     WebRequest request = WebRequest.Create(url);
                     request.Method = "POST";
                     string postData = json;
@@ -745,13 +736,8 @@ namespace ITBCP.ServiceSIGES.Aplication
                         string impresora = Terminal.ticketimpre;
                         string formato   = Terminal.cierrexfmt;
                         string nombre    = "CX "+ DateTime.Now.ToString("yyyyMMdd") + " T" + Terminal.turno;
-                        string cdtipodoc = "80001";
-                        string url = Terminal.rutaservicio + "/print?" + "printer=" + HttpUtility.UrlEncode(impresora) +
-                                                                    "&formato=" + HttpUtility.UrlEncode(formato) +
-                                                                    "&cdtipodoc=" + cdtipodoc +
-                                                                    "&nombre=" + HttpUtility.UrlEncode(nombre) +
-                                                                    "&DOC=" + (input.imprimir) +
-                                                                    "&PDF=" + (Terminal.generapdf == true ? true : false) + "";
+                        string url = $@"{Terminal.rutaservicio}/api/print?formato={HttpUtility.UrlEncode(formato)}&impresora={HttpUtility.UrlEncode(impresora)}&type=";
+
                         WebRequest request = WebRequest.Create(url);
                         request.Method = "POST";
                         string postData = json;
@@ -773,7 +759,7 @@ namespace ITBCP.ServiceSIGES.Aplication
                     else
                     {
                         string formato = Terminal.cierrexfmt;
-                        string url = Terminal.rutaservicio + "/base64pdf?formato=" + HttpUtility.UrlEncode(formato);
+                        string url = $@"{Terminal.rutaservicio}/api/print?formato={HttpUtility.UrlEncode(formato)}&impresora=&type=PDF";
 
                         WebRequest request = WebRequest.Create(url);
                         request.Method = "POST";
@@ -943,8 +929,6 @@ namespace ITBCP.ServiceSIGES.Aplication
                     if (cCierreZ.cStockNegativos.Count == 0) { cCierreZ.cParametros.flgstcknegativo = false; }
                 }
 
-
-
                 try
                 {
                     TS_BETicket cTicket = ITS_DOBackOffice.SP_ITBCP_LISTAR_FORMATO_TICKET();
@@ -956,13 +940,8 @@ namespace ITBCP.ServiceSIGES.Aplication
                         string impresora = Terminal.ticketimpre;
                         string formato = Terminal.cierrexfmt;
                         string nombre = "CZ " + DateTime.Now.ToString("yyyyMMdd");
-                        string cdtipodoc = "80002";
-                        string url = Terminal.rutaservicio + "/print?" + "printer=" + HttpUtility.UrlEncode(impresora) +
-                                                                    "&formato=" + HttpUtility.UrlEncode(formato) +
-                                                                    "&cdtipodoc=" + cdtipodoc +
-                                                                    "&nombre=" + HttpUtility.UrlEncode(nombre) +
-                                                                    "&DOC=" + (input.imprimir) +
-                                                                    "&PDF=" + (Terminal.generapdf == true ? true : false) + "";
+                        string url = $@"{Terminal.rutaservicio}/api/print?formato={HttpUtility.UrlEncode(formato)}&impresora={HttpUtility.UrlEncode(impresora)}&type=";
+
                         WebRequest request = WebRequest.Create(url);
                         request.Method = "POST";
                         string postData = json;
@@ -985,7 +964,7 @@ namespace ITBCP.ServiceSIGES.Aplication
                     else
                     {
                         string formato = Terminal.cierrezfmt;
-                        string url = Terminal.rutaservicio + "/base64pdf?formato=" + HttpUtility.UrlEncode(formato);
+                        string url = $@"{Terminal.rutaservicio}/api/print?formato={HttpUtility.UrlEncode(formato)}&impresora=&type=PDF";
 
                         WebRequest request = WebRequest.Create(url);
                         request.Method = "POST";
@@ -1274,7 +1253,7 @@ namespace ITBCP.ServiceSIGES.Aplication
             }
             try
             {
-                string url = Terminal.rutaservicio + "/search";
+                string url = Terminal.rutaservicio + "/api/print/VerifyAllTransactions";
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
                 request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
 
@@ -1361,12 +1340,8 @@ namespace ITBCP.ServiceSIGES.Aplication
                     string formato = terminal.depositofmt;
                     string nombre = "DE " + Convert.ToString(Output.nrodeposito) + " " + DateTime.Now.ToString("yyyyMMdd");
                     string cdtipodoc = "80003";
-                    string url = terminal.rutaservicio + "/print?" +"printer=" + HttpUtility.UrlEncode(impresora) +
-                                                                    "&formato=" + HttpUtility.UrlEncode(formato) +
-                                                                    "&cdtipodoc=" + cdtipodoc +
-                                                                    "&nombre=" + HttpUtility.UrlEncode(nombre) +
-                                                                    "&DOC=" + (true) +
-                                                                    "&PDF=" + (terminal.generapdf == true ? true : false) + "";
+                    string url = $@"{terminal.rutaservicio}/api/print?formato={HttpUtility.UrlEncode(formato)}&impresora={impresora}&type=&cdtipodoc={cdtipodoc}";
+
                     WebRequest request = WebRequest.Create(url);
                     request.Method = "POST";
                     string postData = json;

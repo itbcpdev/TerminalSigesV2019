@@ -14,8 +14,6 @@ namespace TerminalSiges
 
     public partial class App : Application
     {
-        public static string BASEURL;
-        public static string Serie;
         public static Color Color = Color.FromHex("#2196F3");
         public App()
         {

@@ -3,22 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TerminalSiges.Lib.Include;
 using TerminalSiges.Views.Pages.Users;
+using TerminalSIGES.Services;
 using Xamarin.Forms;
 
 namespace TerminalSiges
 {
     public partial class MainPage : ContentPage
     {
+        private IFeatureService _featureService;
+
         public MainPage()
         {
             InitializeComponent();
-            var url = App.Current.Properties.ContainsKey("BASEURL") ? App.Current.Properties["BASEURL"].ToString() : "";
-            var varserie = App.Current.Properties.ContainsKey("Serie") ?  App.Current.Properties["Serie"].ToString() : "";
-            var varnomimprimir = App.Current.Properties.ContainsKey("IMPRIMIR") ? App.Current.Properties["IMPRIMIR"].ToString().Equals("T") : false;
-            this.txtUrlBase.Text = url;
-            this.txtCodPos.Text = varserie;
-            this.cCheckImprimir.IsChecked = varnomimprimir;
+
+            _featureService = DependencyService.Get<IFeatureService>();
+            var url = _featureService.GetGeneralSetting(Config.Services.ServiceUrlKey);
+            var varserie = _featureService.GetGeneralSetting(Config.Services.SerieHdKey);
+            var varnomimprimir = _featureService.GetGeneralSetting(Config.Services.PrintKey).Equals("T");
+            txtUrlBase.Text = url;
+            txtCodPos.Text = varserie;
+            cCheckImprimir.IsChecked = varnomimprimir;
         }
         private void BtnCancel_Clicked(object sender, EventArgs e)
         {
@@ -26,9 +32,9 @@ namespace TerminalSiges
         }
         private void BtnSave_Clicked(object sender, EventArgs e)
         {
-            App.Current.Properties["BASEURL"] = this.txtUrlBase.Text;
-            App.Current.Properties["Serie"] = this.txtCodPos.Text;
-            App.Current.Properties["IMPRIMIR"] = (this.cCheckImprimir.IsChecked ?? false) ? "T" : "F";
+            _featureService.SetGeneralSetting(Config.Services.ServiceUrlKey, txtUrlBase.Text);
+            _featureService.SetGeneralSetting(Config.Services.SerieHdKey, txtCodPos.Text);
+            _featureService.SetGeneralSetting(Config.Services.PrintKey, (cCheckImprimir.IsChecked ?? false) ? "T" : "F");
             App.Current.MainPage = new NavigationPage( new Login());
         }
     }

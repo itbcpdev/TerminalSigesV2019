@@ -19,18 +19,20 @@ using System.Threading.Tasks;
 using System.IO;
 using Android.Provider;
 using Android.Content.PM;
+using Plugin.Settings;
+using Plugin.Settings.Abstractions;
 
 [assembly: Dependency(typeof(AndroidFeatureService))]
 namespace TerminalSIGES.Droid.Services
 {
-    public class AndroidFeatureService: IFeatureService
+    public class AndroidFeatureService : IFeatureService
     {
         PackageInfo _appInfo;
 
         public AndroidFeatureService()
         {
             var context = Android.App.Application.Context;
-            _appInfo = context.PackageManager.GetPackageInfo(context.PackageName, 0); 
+            _appInfo = context.PackageManager.GetPackageInfo(context.PackageName, 0);
         }
 
         public string GetVersionNumber()
@@ -65,7 +67,7 @@ namespace TerminalSIGES.Droid.Services
                 }
             }
         }
-         
+
         public async Task<string> SaveFile(string filename, byte[] bytes)
         {
             var documentsPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
@@ -73,5 +75,24 @@ namespace TerminalSIGES.Droid.Services
             File.WriteAllBytes(filePath, bytes);
             return filePath;
         }
+
+        public string GetGeneralSetting(string settingsKey, string settingsDefault = null)
+        {
+            return AppSettings.GetValueOrDefault(settingsKey, settingsDefault ?? "");
+        }
+
+        public void SetGeneralSetting(string settingsKey, string value)
+        {
+            AppSettings.AddOrUpdateValue(settingsKey, value);
+        }
+
+        private static ISettings AppSettings
+        {
+            get
+            {
+                return CrossSettings.Current;
+            }
+        }
     }
+
 }

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using TerminalSiges.Lib.Customer;
+using TerminalSiges.Lib.Include;
 using TerminalSiges.Lib.Sales;
 using TerminalSiges.ViewModels;
 using TerminalSIGES.Models;
@@ -45,7 +46,7 @@ namespace TerminalSiges.Views.Pages.Invoce
             foreach (TS_BECara cara in TSSalesApp.vCaras)
             {
                 string TipoDocumento = (TSSalesApp.vParemetros.cdtipodocautomatico ?? "").Trim().Equals("99999") ? "99999" : "00003";
-                bool NoImprimir = App.Current.Properties.ContainsKey("IMPRIMIR") ? App.Current.Properties["IMPRIMIR"].ToString().Equals("T") : false;
+                bool NoImprimir = Config.Services.PrintAvaliable;
 
                 Lado lado = new Lado();
                 lado.Cara = (cara.cara ?? "").Trim();

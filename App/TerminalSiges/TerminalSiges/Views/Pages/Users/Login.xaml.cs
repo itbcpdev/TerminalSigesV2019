@@ -25,9 +25,8 @@ namespace TerminalSiges.Views.Pages.Users
         {
             InitializeComponent();
             Empresas = new ObservableCollection<TS_BEEmpresaUser>();
-            this.BindingContext = this;
-            this.txtUsuario.Completed += TxtUsuario_Completed;
-            this.txtClave.Completed += TxtClave_Completed;
+            BindingContext = this;
+            txtUsuario.Completed += TxtUsuario_Completed;
             _featureService = DependencyService.Get<IFeatureService>();
             FooterLabel.Text = "SIGES - 2019 V." + _featureService.GetVersionNumber();
         }
@@ -43,9 +42,9 @@ namespace TerminalSiges.Views.Pages.Users
 
         private void TxtUsuario_Completed(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty((this.txtClave.Text ?? "").Trim()))
+            if (String.IsNullOrEmpty((txtClave.Text ?? "").Trim()))
             {
-                this.txtClave.Focus();
+                txtClave.Focus();
                 return;
             }
         }
@@ -53,23 +52,25 @@ namespace TerminalSiges.Views.Pages.Users
         private async void OnLogin(object sender, EventArgs e)
         {
 
-            if(App.Current.Properties.ContainsKey("BASEURL") == false || App.Current.Properties.ContainsKey("Serie") == false)
+            if(_featureService.GetGeneralSetting(Config.Services.ServiceUrlKey) == "" || _featureService.GetGeneralSetting(Config.Services.SerieHdKey) == "")
             {
                 await DisplayAlert("Aviso", "Debe configurar las rutas de acceso al sistema.", "Aceptar");
                 return;
             }
 
-            Config.Services.Autenticate = (App.Current.Properties.ContainsKey("BASEURL") ? App.Current.Properties["BASEURL"].ToString() : "") + Config.Services.AutenticateName;
-            Config.Services.Impresion = (App.Current.Properties.ContainsKey("BASEURL") ? App.Current.Properties["BASEURL"].ToString() : "") + Config.Services.ImpresionName;
-            Config.Services.Sales = (App.Current.Properties.ContainsKey("BASEURL") ? App.Current.Properties["BASEURL"].ToString() : "") + Config.Services.SalesName;
-            TSLoginApp.Serie = App.Current.Properties.ContainsKey("Serie") ? App.Current.Properties["Serie"].ToString() : "";
+            Config.Services.Autenticate = _featureService.GetGeneralSetting(Config.Services.ServiceUrlKey) + Config.Services.AutenticateName;
+            Config.Services.Impresion = _featureService.GetGeneralSetting(Config.Services.ServiceUrlKey)  + Config.Services.ImpresionName;
+            Config.Services.Sales = _featureService.GetGeneralSetting(Config.Services.ServiceUrlKey) + Config.Services.SalesName;
+            Config.Services.PrintAvaliable = _featureService.GetGeneralSetting(Config.Services.PrintKey).Equals("T");
 
-            TSLoginApp.UserName = this.txtUsuario.Text;
-            TSLoginApp.Password = this.txtClave.Text;
+            TSLoginApp.Serie = _featureService.GetGeneralSetting(Config.Services.SerieHdKey);
+            TSLoginApp.UserName = txtUsuario.Text;
+            TSLoginApp.Password = txtClave.Text;
 
             LoginEstado resultado = LoginEstado.ErrorSistema;
-            this.circleBtnLogin.IsVisible = false;
-            this.busyindicator.IsVisible = true;
+            circleBtnLogin.IsVisible = false;
+            busyindicator.IsVisible = true;
+
             await Task.Run(() =>
             {
                 TSLoginApp.LoginAuthorize += LoginAuthorize;
@@ -77,8 +78,9 @@ namespace TerminalSiges.Views.Pages.Users
             });
             if (resultado != LoginEstado.EsperandoRespuesta)
             {
-                this.busyindicator.IsVisible = false;
-                this.circleBtnLogin.IsVisible = true;
+                busyindicator.IsVisible = false;
+                circleBtnLogin.IsVisible = true;
+
                 switch (resultado)
                 {
                     case LoginEstado.ErrorInternet:
